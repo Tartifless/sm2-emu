@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -795,6 +795,24 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Axes"
 msgstr "Akser"
 
@@ -1050,7 +1068,26 @@ msgid ""
 "The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
 "is Virtual On's. Test and Service are Guide+Start and Guide+Back."
 msgstr ""
-"Venstre stikke beveger også; skulderknappene fungerer også som Knapp 3/4. Høyre spak er for Virtual On. Test og Service er Guide+Start og Guide+Back."
+"Venstre stikke beveger også; skulderknappene fungerer også som Knapp 3/4. "
+"Høyre spak er for Virtual On. Test og Service er Guide+Start og Guide+Back."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1190,7 +1227,8 @@ msgid ""
 "Player 1 aims with the mouse; the left button fires and the right button "
 "reloads (shoot off screen)."
 msgstr ""
-"Spiller 1 sikter med musen; venstre knapp skyter og høyre knapp lader om (skyt utenfor skjermen)."
+"Spiller 1 sikter med musen; venstre knapp skyter og høyre knapp lader om "
+"(skyt utenfor skjermen)."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1236,7 +1274,10 @@ msgid ""
 "in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
 "independent per-player aiming."
 msgstr ""
-"Ingen dedikerte lyspistoler funnet. Spiller 1 sikter med musen; venstre knapp skyter og høyre knapp lader om (skyt utenfor skjermen). Koble til pistoler i absolutt musemodus (GUN4IR, Sinden, AimTrak) før oppstart for uavhengig sikting per spiller."
+"Ingen dedikerte lyspistoler funnet. Spiller 1 sikter med musen; venstre "
+"knapp skyter og høyre knapp lader om (skyt utenfor skjermen). Koble til "
+"pistoler i absolutt musemodus (GUN4IR, Sinden, AimTrak) før oppstart for "
+"uavhengig sikting per spiller."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1245,7 +1286,9 @@ msgid ""
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "tagged ID_INPUT_GUN for independent per-player aiming."
 msgstr ""
-"Ingen dedikerte lyspistoler funnet. Spiller 1 sikter med musen; venstre knapp skyter og høyre knapp lader om (skyt utenfor skjermen). Koble til pistoler merket ID_INPUT_GUN for uavhengig sikting per spiller."
+"Ingen dedikerte lyspistoler funnet. Spiller 1 sikter med musen; venstre "
+"knapp skyter og høyre knapp lader om (skyt utenfor skjermen). Koble til "
+"pistoler merket ID_INPUT_GUN for uavhengig sikting per spiller."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1346,7 +1389,9 @@ msgid ""
 "to the next cabinet. For two machines, point each at the other. The master/"
 "slave role is chosen in the game's own test menu, not here."
 msgstr ""
-"Kommunikasjonskortet er en ring: hvert kabinett lytter på sin egen adresse og sender til neste kabinett. For to maskiner peker hver på den andre. Master/slave-rollen velges i spillets egen testmeny, ikke her."
+"Kommunikasjonskortet er en ring: hvert kabinett lytter på sin egen adresse "
+"og sender til neste kabinett. For to maskiner peker hver på den andre. "
+"Master/slave-rollen velges i spillets egen testmeny, ikke her."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1472,7 +1517,8 @@ msgid ""
 "Save the whole machine to a slot and restore it later. Quick-save is F6, "
 "quick-load is F7."
 msgstr ""
-"Lagre hele maskinen på en plass og gjenopprett den senere. Hurtiglagring er F6, hurtiglasting er F7."
+"Lagre hele maskinen på en plass og gjenopprett den senere. Hurtiglagring er "
+"F6, hurtiglasting er F7."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1550,7 +1596,8 @@ msgid ""
 "No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
 "(F1) > Paths, then relaunch."
 msgstr ""
-"Fant ingen Model 2-ROM-arkiver i ROM-mappen. Angi den under Innstillinger (F1) > Stier, og start på nytt."
+"Fant ingen Model 2-ROM-arkiver i ROM-mappen. Angi den under Innstillinger "
+"(F1) > Stier, og start på nytt."
 
 #: src/osd/gui.cpp
 #, no-c-format

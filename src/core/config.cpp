@@ -607,8 +607,16 @@ bool load_config(const std::string& path, Config* out, std::vector<std::string>*
             if (!parse_u32(value, &out->pad_stick_sensitivity)) {
                 bad_value();
             }
+        } else if (key == "pad_stick_deadzone") {
+            if (!parse_u32(value, &out->pad_stick_deadzone)) {
+                bad_value();
+            }
         } else if (key == "wheel_lock_degrees") {
             if (!parse_u32(value, &out->wheel_lock_degrees)) {
+                bad_value();
+            }
+        } else if (key == "wheel_steer_deadzone") {
+            if (!parse_u32(value, &out->wheel_steer_deadzone)) {
                 bad_value();
             }
         } else if (key == "wheel_steer_degrees") {
@@ -780,6 +788,8 @@ bool load_config(const std::string& path, Config* out, std::vector<std::string>*
     out->wheel_rumble_strength = std::min(out->wheel_rumble_strength, 100u);
     out->pad_rumble_strength = std::min(out->pad_rumble_strength, 100u);
     out->pad_stick_sensitivity = std::clamp(out->pad_stick_sensitivity, 25u, 300u);
+    out->pad_stick_deadzone    = std::min(out->pad_stick_deadzone, 40u);
+    out->wheel_steer_deadzone  = std::min(out->wheel_steer_deadzone, 20u);
     if (out->outputs_network_port == 0 || out->outputs_network_port > 65535) {
         out->outputs_network_port = 8000;
     }
@@ -947,6 +957,9 @@ bool save_config(const std::string& path, const Config& config)
         << "# deflection is always full lock; under 100 the middle of the travel\n"
         << "# does less, over 100 it does more.\n"
         << "pad_stick_sensitivity = " << config.pad_stick_sensitivity << "\n"
+        << "# Stick travel about centre that reads as centre, percent (0..40).\n"
+        << "# Raise it for a stick that no longer settles at rest.\n"
+        << "pad_stick_deadzone = " << config.pad_stick_deadzone << "\n"
         << "# Cabinet lamps and drive-board bytes for MAMEHooker, DOFLinx and\n"
         << "# similar tools, in MAME's formats: over TCP (network) and, on\n"
         << "# Windows, as window messages.\n"
@@ -960,6 +973,8 @@ bool save_config(const std::string& path, const Config& config)
         << "# Physical rotation (total) at which the game reaches full lock;\n"
         << "# lower is more sensitive. 180..270.\n"
         << "wheel_lock_degrees = " << config.wheel_lock_degrees << "\n"
+        << "# Wheel travel about centre that reads as centre, percent (0..20).\n"
+        << "wheel_steer_deadzone = " << config.wheel_steer_deadzone << "\n"
         << "# Which wheel button drives each control (numbering varies by wheel;\n"
         << "# -1 unbinds). Set these in the GUI's Wheel tab. Buttons 1..4 are the\n"
         << "# arcade buttons, which is where a cabinet's VR/view buttons land too.\n"

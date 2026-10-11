@@ -655,6 +655,15 @@ bool Input::sample_wheel_channel(const rom::AnalogChannel& channel, u8* out) con
             fraction = 0.5f;
         }
 
+        // The user's deadzone: read its edge as centre and rescale beyond it.
+        const float dead = 0.5f * static_cast<float>(m_wheel_settings.steer_deadzone) / 100.0f;
+        if (dead > 0.0f) {
+            const float off  = fraction - 0.5f;
+            const float past = std::abs(off) - dead;
+            fraction = past <= 0.0f ? 0.5f
+                                    : 0.5f + std::copysign(past / (0.5f - dead), off) * 0.5f;
+        }
+
         // steer_degrees is the wheel's own physical rotation range; lock_degrees
         // is the physical rotation (total) at which the game reaches full lock.
         // Mapping one onto the other makes full lock arrive after turning about
@@ -695,8 +704,7 @@ bool Input::sample_wheel_channel(const rom::AnalogChannel& channel, u8* out) con
     return true;
 }
 
-u8 Input::sample_channel(const rom::AnalogChannel& channel, float centre_dead,
-                         float curve) const
+u8 Input::sample_channel(const rom::AnalogChannel& channel, float curve) const
 {
     // A wheel, when present, owns the driving controls; everything else, and any
     // control the wheel has no axis for, falls through to the gamepad.
@@ -730,8 +738,8 @@ u8 Input::sample_channel(const rom::AnalogChannel& channel, float centre_dead,
         return static_cast<u8>(value + 0.5f);
     };
 
-    const auto centred = [centre_dead, curve, response = m_pad_stick_response](s16 raw) {
-        return centred_fraction(raw, centre_dead, curve, response);
+    const auto centred = [dead = m_pad_stick_dead, curve, response = m_pad_stick_response](s16 raw) {
+        return centred_fraction(raw, dead, curve, response);
     };
 
     // The axis a role reads: the user's override, else the default. Player
@@ -887,6 +895,27 @@ void Input::pad_axis_baseline(u32 player, s16* out) const
                      ? SDL_GetGamepadAxis(pad, static_cast<SDL_GamepadAxis>(a))
                      : 0;
     }
+}
+
+s16 Input::pad_steer_raw(u32 player) const
+{
+    SDL_Gamepad* pad = pad_for(player);
+    if (pad == nullptr || player > 1) {
+        return 0;
+    }
+    const auto role  = static_cast<u32>(Config::PadAxisRole::AimX);
+    const s32  bound = m_pad_axes[player][role];
+    const auto axis  = bound >= 0 ? static_cast<SDL_GamepadAxis>(bound) : SDL_GAMEPAD_AXIS_LEFTX;
+    const int  raw   = SDL_GetGamepadAxis(pad, axis);
+    return static_cast<s16>(std::clamp(m_pad_axis_invert[player][role] ? -raw : raw, -32768, 32767));
+}
+
+s16 Input::wheel_steer_raw() const
+{
+    if (m_wheel.handle == nullptr || m_wheel.steer_axis < 0) {
+        return 0;
+    }
+    return wheel_axis(m_wheel.steer_axis);
 }
 
 s32 Input::captured_pad_axis(u32 player, const s16* baseline, bool* positive) const
@@ -1343,11 +1372,11 @@ void Input::update_pad_rumble(const rom::GameSpec& game)
     int cornering = 0;
     if (active && m_pad_rumble_cornering) {
         const int deflection = std::abs(steer);
-        constexpr int kDeadzone = 7000;
-        if (deflection > kDeadzone) {
-            constexpr int kSpan = 32767 - kDeadzone;
-            const int over = std::min(deflection - kDeadzone, kSpan);
-            cornering = (ceiling * 2 / 5) * over / kSpan;  // kept under the jolts
+        const int deadzone   = static_cast<int>(m_pad_stick_dead);
+        if (deflection > deadzone) {
+            const int span = std::max(1, 32767 - deadzone);
+            const int over = std::min(deflection - deadzone, span);
+            cornering = (ceiling * 2 / 5) * over / span;  // kept under the jolts
         }
     }
 
@@ -2098,16 +2127,14 @@ void Input::poll(hw::Inputs* inputs, const rom::GameSpec& game) const
     // Analogue channels follow the title's own machine config: which channel a
     // control sits on, how far it travels and where it rests are all per-title.
     // An unconnected channel reads zero, as an unbound an_port_callback does.
-    // Top Skater wants fine carving; the driving titles need the larger
-    // deadzone to re-centre.
-    const bool  fine_stick  = game.name == "topskatr" || game.parent == "topskatr";
-    const float centre_dead = fine_stick ? 3000.0f : 8000.0f;
-    const float curve       = fine_stick ? 2.0f : 1.0f;
+    // Top Skater wants fine carving; the rest are linear.
+    const bool  fine_stick = game.name == "topskatr" || game.parent == "topskatr";
+    const float curve      = fine_stick ? 2.0f : 1.0f;
     for (usize channel = 0; channel < inputs->analog.size(); ++channel) {
         const rom::AnalogChannel& wiring = game.analog[channel];
         inputs->analog[channel] = wiring.control == rom::AnalogControl::None
                                       ? 0x00
-                                      : sample_channel(wiring, centre_dead, curve);
+                                      : sample_channel(wiring, curve);
     }
 
     // Keyboard analog driver, so any analog title is playable without a pad:

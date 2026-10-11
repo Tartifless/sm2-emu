@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -789,6 +789,24 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Axes"
 msgstr "צירים"
 
@@ -1042,7 +1060,26 @@ msgid ""
 "The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
 "is Virtual On's. Test and Service are Guide+Start and Guide+Back."
 msgstr ""
-"גם הסטיק השמאלי מזיז; כפתורי הכתף פועלים גם ככפתור 3/4. הידית הימנית היא של Virtual On. בדיקה ושירות הם Guide+Start ו-Guide+Back."
+"גם הסטיק השמאלי מזיז; כפתורי הכתף פועלים גם ככפתור 3/4. הידית הימנית היא של "
+"Virtual On. בדיקה ושירות הם Guide+Start ו-Guide+Back."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1228,7 +1265,9 @@ msgid ""
 "in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
 "independent per-player aiming."
 msgstr ""
-"לא זוהו אקדחי אור ייעודיים. שחקן 1 מכוון בעכבר; הכפתור השמאלי יורה והימני טוען מחדש (ירי מחוץ למסך). חברו אקדחים במצב עכבר מוחלט (GUN4IR, Sinden, AimTrak) לפני ההפעלה לכיוון עצמאי לכל שחקן."
+"לא זוהו אקדחי אור ייעודיים. שחקן 1 מכוון בעכבר; הכפתור השמאלי יורה והימני "
+"טוען מחדש (ירי מחוץ למסך). חברו אקדחים במצב עכבר מוחלט (GUN4IR, Sinden, "
+"AimTrak) לפני ההפעלה לכיוון עצמאי לכל שחקן."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1237,7 +1276,9 @@ msgid ""
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "tagged ID_INPUT_GUN for independent per-player aiming."
 msgstr ""
-"לא זוהו אקדחי אור ייעודיים. שחקן 1 מכוון בעכבר; הכפתור השמאלי יורה והימני טוען מחדש (ירי מחוץ למסך). חברו אקדחים המסומנים ID_INPUT_GUN לכיוון עצמאי לכל שחקן."
+"לא זוהו אקדחי אור ייעודיים. שחקן 1 מכוון בעכבר; הכפתור השמאלי יורה והימני "
+"טוען מחדש (ירי מחוץ למסך). חברו אקדחים המסומנים ID_INPUT_GUN לכיוון עצמאי "
+"לכל שחקן."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1338,7 +1379,9 @@ msgid ""
 "to the next cabinet. For two machines, point each at the other. The master/"
 "slave role is chosen in the game's own test menu, not here."
 msgstr ""
-"לוח התקשורת הוא טבעת: כל עמדה מאזינה בכתובת שלה ושולחת לעמדה הבאה. עבור שתי מכונות, כוונו כל אחת לשנייה. תפקיד ראשי/משני נבחר בתפריט הבדיקה של המשחק עצמו, לא כאן."
+"לוח התקשורת הוא טבעת: כל עמדה מאזינה בכתובת שלה ושולחת לעמדה הבאה. עבור שתי "
+"מכונות, כוונו כל אחת לשנייה. תפקיד ראשי/משני נבחר בתפריט הבדיקה של המשחק "
+"עצמו, לא כאן."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1464,7 +1507,8 @@ msgid ""
 "Save the whole machine to a slot and restore it later. Quick-save is F6, "
 "quick-load is F7."
 msgstr ""
-"שמירת המכונה כולה בחריץ ושחזורה מאוחר יותר. שמירה מהירה היא F6, טעינה מהירה היא F7."
+"שמירת המכונה כולה בחריץ ושחזורה מאוחר יותר. שמירה מהירה היא F6, טעינה מהירה "
+"היא F7."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1542,7 +1586,8 @@ msgid ""
 "No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
 "(F1) > Paths, then relaunch."
 msgstr ""
-"לא נמצאו ארכיוני ROM של Model 2 בתיקיית ה-ROM. הגדירו אותה בהגדרות (F1) > נתיבים, ואז הפעילו מחדש."
+"לא נמצאו ארכיוני ROM של Model 2 בתיקיית ה-ROM. הגדירו אותה בהגדרות (F1) > "
+"נתיבים, ואז הפעילו מחדש."
 
 #: src/osd/gui.cpp
 #, no-c-format

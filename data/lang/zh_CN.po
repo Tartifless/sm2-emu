@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 12:00+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -792,6 +792,24 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Axes"
 msgstr "轴"
 
@@ -1043,7 +1061,27 @@ msgstr ""
 msgid ""
 "The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
 "is Virtual On's. Test and Service are Guide+Start and Guide+Back."
-msgstr "左摇杆同样可以移动；肩键同样可作为按键 3/4。右操纵杆用于 Virtual On。测试和服务分别为 Guide+Start 和 Guide+Back。"
+msgstr ""
+"左摇杆同样可以移动；肩键同样可作为按键 3/4。右操纵杆用于 Virtual On。测试和服"
+"务分别为 Guide+Start 和 Guide+Back。"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1227,7 +1265,10 @@ msgid ""
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
 "independent per-player aiming."
-msgstr "未检测到专用光枪。玩家 1 用鼠标瞄准；左键射击，右键装弹（向屏幕外射击）。如需各玩家独立瞄准，请在启动前接入处于绝对鼠标模式的光枪（GUN4IR、Sinden、AimTrak）。"
+msgstr ""
+"未检测到专用光枪。玩家 1 用鼠标瞄准；左键射击，右键装弹（向屏幕外射击）。如需"
+"各玩家独立瞄准，请在启动前接入处于绝对鼠标模式的光枪（GUN4IR、Sinden、"
+"AimTrak）。"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1235,7 +1276,9 @@ msgid ""
 "No dedicated light guns detected. Player 1 aims with the mouse; the left "
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "tagged ID_INPUT_GUN for independent per-player aiming."
-msgstr "未检测到专用光枪。玩家 1 用鼠标瞄准；左键射击，右键装弹（向屏幕外射击）。如需各玩家独立瞄准，请接入标记为 ID_INPUT_GUN 的光枪。"
+msgstr ""
+"未检测到专用光枪。玩家 1 用鼠标瞄准；左键射击，右键装弹（向屏幕外射击）。如需"
+"各玩家独立瞄准，请接入标记为 ID_INPUT_GUN 的光枪。"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1335,7 +1378,10 @@ msgid ""
 "The comms board is a ring: each cabinet listens on its own address and sends "
 "to the next cabinet. For two machines, point each at the other. The master/"
 "slave role is chosen in the game's own test menu, not here."
-msgstr "通信板为环形结构：每台机台在自己的地址上监听，并发送到下一台机台。两台机器时，让它们互相指向对方。主机/从机角色在游戏自身的测试菜单中选择，而不是在这里。"
+msgstr ""
+"通信板为环形结构：每台机台在自己的地址上监听，并发送到下一台机台。两台机器"
+"时，让它们互相指向对方。主机/从机角色在游戏自身的测试菜单中选择，而不是在这"
+"里。"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1537,7 +1583,9 @@ msgstr "Enter：启动   F10：设置   F9：退出"
 msgid ""
 "No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
 "(F1) > Paths, then relaunch."
-msgstr "在 ROM 目录中未找到 Model 2 ROM 压缩包。请在 设置（F1）> 路径 中设置，然后重新启动。"
+msgstr ""
+"在 ROM 目录中未找到 Model 2 ROM 压缩包。请在 设置（F1）> 路径 中设置，然后重"
+"新启动。"
 
 #: src/osd/gui.cpp
 #, no-c-format

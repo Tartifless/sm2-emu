@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -620,7 +620,9 @@ msgstr "stb_image - descodificació de les portades (Sean Barrett)"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Gamepad picture - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
-msgstr "Imatge del comandament - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
+msgstr ""
+"Imatge del comandament - Xelu's Free Controller Prompts (Nicolae Berbece), "
+"CC0"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -635,7 +637,8 @@ msgstr "HarfBuzz - composició de text per a les traduccions"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "SheenBidi - right-to-left text layout (Muhammad Tayyab Akram)"
-msgstr "SheenBidi - disposició de text de dreta a esquerra (Muhammad Tayyab Akram)"
+msgstr ""
+"SheenBidi - disposició de text de dreta a esquerra (Muhammad Tayyab Akram)"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -675,7 +678,8 @@ msgstr "Volant connectat."
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "No wheel connected. Settings still apply once one is."
-msgstr "No hi ha cap volant connectat. La configuració s'aplicarà quan n'hi hagi un."
+msgstr ""
+"No hi ha cap volant connectat. La configuració s'aplicarà quan n'hi hagi un."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -789,13 +793,33 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Axes"
 msgstr "Eixos"
 
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Auto-detected. Recalibrate if steering or a pedal is wrong."
-msgstr "Detectats automàticament. Recalibreu si la direcció o un pedal no és correcte."
+msgstr ""
+"Detectats automàticament. Recalibreu si la direcció o un pedal no és "
+"correcte."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -942,7 +966,9 @@ msgstr[1] "%d comandaments connectats."
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "No gamepad connected. Settings still apply once one is."
-msgstr "No hi ha cap comandament connectat. La configuració s'aplicarà quan n'hi hagi un."
+msgstr ""
+"No hi ha cap comandament connectat. La configuració s'aplicarà quan n'hi "
+"hagi un."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1041,7 +1067,28 @@ msgstr ""
 msgid ""
 "The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
 "is Virtual On's. Test and Service are Guide+Start and Guide+Back."
-msgstr "La palanca esquerra també mou; els botons superiors també fan de Botó 3/4. La Palanca dreta és la de Virtual On. Test i Servei són Guide+Start i Guide+Back."
+msgstr ""
+"La palanca esquerra també mou; els botons superiors també fan de Botó 3/4. "
+"La Palanca dreta és la de Virtual On. Test i Servei són Guide+Start i "
+"Guide+Back."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1181,7 +1228,9 @@ msgstr ""
 msgid ""
 "Player 1 aims with the mouse; the left button fires and the right button "
 "reloads (shoot off screen)."
-msgstr "El Jugador 1 apunta amb el ratolí; el botó esquerre dispara i el dret recarrega (dispareu fora de la pantalla)."
+msgstr ""
+"El Jugador 1 apunta amb el ratolí; el botó esquerre dispara i el dret "
+"recarrega (dispareu fora de la pantalla)."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1226,7 +1275,11 @@ msgid ""
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
 "independent per-player aiming."
-msgstr "No s'ha detectat cap pistola de llum dedicada. El Jugador 1 apunta amb el ratolí; el botó esquerre dispara i el dret recarrega (dispareu fora de la pantalla). Connecteu pistoles en mode de ratolí absolut (GUN4IR, Sinden, AimTrak) abans d'iniciar per apuntar de manera independent per jugador."
+msgstr ""
+"No s'ha detectat cap pistola de llum dedicada. El Jugador 1 apunta amb el "
+"ratolí; el botó esquerre dispara i el dret recarrega (dispareu fora de la "
+"pantalla). Connecteu pistoles en mode de ratolí absolut (GUN4IR, Sinden, "
+"AimTrak) abans d'iniciar per apuntar de manera independent per jugador."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1234,7 +1287,11 @@ msgid ""
 "No dedicated light guns detected. Player 1 aims with the mouse; the left "
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "tagged ID_INPUT_GUN for independent per-player aiming."
-msgstr "No s'ha detectat cap pistola de llum dedicada. El Jugador 1 apunta amb el ratolí; el botó esquerre dispara i el dret recarrega (dispareu fora de la pantalla). Connecteu pistoles etiquetades ID_INPUT_GUN per apuntar de manera independent per jugador."
+msgstr ""
+"No s'ha detectat cap pistola de llum dedicada. El Jugador 1 apunta amb el "
+"ratolí; el botó esquerre dispara i el dret recarrega (dispareu fora de la "
+"pantalla). Connecteu pistoles etiquetades ID_INPUT_GUN per apuntar de manera "
+"independent per jugador."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1334,7 +1391,11 @@ msgid ""
 "The comms board is a ring: each cabinet listens on its own address and sends "
 "to the next cabinet. For two machines, point each at the other. The master/"
 "slave role is chosen in the game's own test menu, not here."
-msgstr "La placa de comunicacions és un anell: cada màquina escolta a la seva pròpia adreça i envia a la màquina següent. Per a dues màquines, feu que cadascuna apunti a l'altra. El rol de mestre/esclau es tria al menú de test del mateix joc, no aquí."
+msgstr ""
+"La placa de comunicacions és un anell: cada màquina escolta a la seva pròpia "
+"adreça i envia a la màquina següent. Per a dues màquines, feu que cadascuna "
+"apunti a l'altra. El rol de mestre/esclau es tria al menú de test del mateix "
+"joc, no aquí."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1459,7 +1520,9 @@ msgstr "Carregueu un joc per desar i restaurar-ne l'estat."
 msgid ""
 "Save the whole machine to a slot and restore it later. Quick-save is F6, "
 "quick-load is F7."
-msgstr "Deseu tota la màquina en una ranura i restaureu-la més tard. Desat ràpid és F6, càrrega ràpida és F7."
+msgstr ""
+"Deseu tota la màquina en una ranura i restaureu-la més tard. Desat ràpid és "
+"F6, càrrega ràpida és F7."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1536,7 +1599,9 @@ msgstr "Enter: inicia   F10: configuració   F9: surt"
 msgid ""
 "No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
 "(F1) > Paths, then relaunch."
-msgstr "No s'ha trobat cap arxiu de ROM de Model 2 al directori de ROM. Definiu-lo a Configuració (F1) > Camins i reinicieu."
+msgstr ""
+"No s'ha trobat cap arxiu de ROM de Model 2 al directori de ROM. Definiu-lo a "
+"Configuració (F1) > Camins i reinicieu."
 
 #: src/osd/gui.cpp
 #, no-c-format

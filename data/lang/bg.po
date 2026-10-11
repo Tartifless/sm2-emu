@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -626,7 +626,8 @@ msgstr "stb_image - декодиране на обложки (Sean Barrett)"
 #, no-c-format
 msgid "Gamepad picture - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
 msgstr ""
-"Изображение на геймпад - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
+"Изображение на геймпад - Xelu's Free Controller Prompts (Nicolae Berbece), "
+"CC0"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -792,6 +793,24 @@ msgid ""
 msgstr ""
 "Колко да завъртите за пълен завой в играта (общо,\n"
 "т.е. половината на всяка страна). По-малко е по-чувствително."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1048,7 +1067,26 @@ msgid ""
 "The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
 "is Virtual On's. Test and Service are Guide+Start and Guide+Back."
 msgstr ""
-"Левият стик също движи; раменните бутони са и Бутон 3/4. Десният лост е за Virtual On. Тест и Сервиз са Guide+Start и Guide+Back."
+"Левият стик също движи; раменните бутони са и Бутон 3/4. Десният лост е за "
+"Virtual On. Тест и Сервиз са Guide+Start и Guide+Back."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1188,7 +1226,8 @@ msgid ""
 "Player 1 aims with the mouse; the left button fires and the right button "
 "reloads (shoot off screen)."
 msgstr ""
-"Играч 1 се прицелва с мишката; левият бутон стреля, а десният презарежда (изстрел извън екрана)."
+"Играч 1 се прицелва с мишката; левият бутон стреля, а десният презарежда "
+"(изстрел извън екрана)."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1234,7 +1273,10 @@ msgid ""
 "in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
 "independent per-player aiming."
 msgstr ""
-"Не са открити отделни светлинни пистолети. Играч 1 се прицелва с мишката; левият бутон стреля, а десният презарежда (изстрел извън екрана). Свържете пистолети в режим на абсолютна мишка (GUN4IR, Sinden, AimTrak) преди стартиране за независимо прицелване на всеки играч."
+"Не са открити отделни светлинни пистолети. Играч 1 се прицелва с мишката; "
+"левият бутон стреля, а десният презарежда (изстрел извън екрана). Свържете "
+"пистолети в режим на абсолютна мишка (GUN4IR, Sinden, AimTrak) преди "
+"стартиране за независимо прицелване на всеки играч."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1243,7 +1285,9 @@ msgid ""
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "tagged ID_INPUT_GUN for independent per-player aiming."
 msgstr ""
-"Не са открити отделни светлинни пистолети. Играч 1 се прицелва с мишката; левият бутон стреля, а десният презарежда (изстрел извън екрана). Свържете пистолети с маркер ID_INPUT_GUN за независимо прицелване на всеки играч."
+"Не са открити отделни светлинни пистолети. Играч 1 се прицелва с мишката; "
+"левият бутон стреля, а десният презарежда (изстрел извън екрана). Свържете "
+"пистолети с маркер ID_INPUT_GUN за независимо прицелване на всеки играч."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1344,7 +1388,9 @@ msgid ""
 "to the next cabinet. For two machines, point each at the other. The master/"
 "slave role is chosen in the game's own test menu, not here."
 msgstr ""
-"Комуникационната платка е пръстен: всеки автомат слуша на своя адрес и изпраща към следващия. За две машини насочете всяка към другата. Ролята master/slave се избира в тестовото меню на играта, не тук."
+"Комуникационната платка е пръстен: всеки автомат слуша на своя адрес и "
+"изпраща към следващия. За две машини насочете всяка към другата. Ролята "
+"master/slave се избира в тестовото меню на играта, не тук."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1470,7 +1516,8 @@ msgid ""
 "Save the whole machine to a slot and restore it later. Quick-save is F6, "
 "quick-load is F7."
 msgstr ""
-"Запишете цялата машина в слот и я възстановете по-късно. Бърз запис е F6, бързо зареждане е F7."
+"Запишете цялата машина в слот и я възстановете по-късно. Бърз запис е F6, "
+"бързо зареждане е F7."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1548,7 +1595,8 @@ msgid ""
 "No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
 "(F1) > Paths, then relaunch."
 msgstr ""
-"Не са открити ROM архиви за Model 2 в папката с ROM. Задайте я в Настройки (F1) > Пътища и рестартирайте."
+"Не са открити ROM архиви за Model 2 в папката с ROM. Задайте я в Настройки "
+"(F1) > Пътища и рестартирайте."
 
 #: src/osd/gui.cpp
 #, no-c-format

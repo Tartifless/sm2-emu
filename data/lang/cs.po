@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -620,7 +620,8 @@ msgstr "stb_image - dekódování obrázků obalů (Sean Barrett)"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Gamepad picture - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
-msgstr "Obrázek gamepadu - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
+msgstr ""
+"Obrázek gamepadu - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -789,13 +790,33 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Axes"
 msgstr "Osy"
 
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Auto-detected. Recalibrate if steering or a pedal is wrong."
-msgstr "Zjištěno automaticky. Překalibrujte, pokud řízení nebo pedál nefunguje správně."
+msgstr ""
+"Zjištěno automaticky. Překalibrujte, pokud řízení nebo pedál nefunguje "
+"správně."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1039,8 +1060,30 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "The left stick also moves; the shoulders also act as Button 3/4. Right Lever is Virtual On's. Test and Service are Guide+Start and Guide+Back."
-msgstr "Levá páčka také pohybuje; ramenní tlačítka fungují i jako Tlačítko 3/4. Pravá páka je pro Virtual On. Test a Servis jsou Guide+Start a Guide+Back."
+msgid ""
+"The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
+"is Virtual On's. Test and Service are Guide+Start and Guide+Back."
+msgstr ""
+"Levá páčka také pohybuje; ramenní tlačítka fungují i jako Tlačítko 3/4. "
+"Pravá páka je pro Virtual On. Test a Servis jsou Guide+Start a Guide+Back."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1176,8 +1219,12 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "Player 1 aims with the mouse; the left button fires and the right button reloads (shoot off screen)."
-msgstr "Hráč 1 míří myší; levé tlačítko střílí a pravé nabíjí (výstřel mimo obrazovku)."
+msgid ""
+"Player 1 aims with the mouse; the left button fires and the right button "
+"reloads (shoot off screen)."
+msgstr ""
+"Hráč 1 míří myší; levé tlačítko střílí a pravé nabíjí (výstřel mimo "
+"obrazovku)."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1217,13 +1264,27 @@ msgstr "Pistole %zu (hráč %zu): %s"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "No dedicated light guns detected. Player 1 aims with the mouse; the left button fires and the right button reloads (shoot off screen). Plug in guns in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for independent per-player aiming."
-msgstr "Nebyly zjištěny žádné světelné pistole. Hráč 1 míří myší; levé tlačítko střílí a pravé nabíjí (výstřel mimo obrazovku). Pro nezávislé míření každého hráče připojte před spuštěním pistole v režimu absolutní myši (GUN4IR, Sinden, AimTrak)."
+msgid ""
+"No dedicated light guns detected. Player 1 aims with the mouse; the left "
+"button fires and the right button reloads (shoot off screen). Plug in guns "
+"in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
+"independent per-player aiming."
+msgstr ""
+"Nebyly zjištěny žádné světelné pistole. Hráč 1 míří myší; levé tlačítko "
+"střílí a pravé nabíjí (výstřel mimo obrazovku). Pro nezávislé míření každého "
+"hráče připojte před spuštěním pistole v režimu absolutní myši (GUN4IR, "
+"Sinden, AimTrak)."
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "No dedicated light guns detected. Player 1 aims with the mouse; the left button fires and the right button reloads (shoot off screen). Plug in guns tagged ID_INPUT_GUN for independent per-player aiming."
-msgstr "Nebyly zjištěny žádné světelné pistole. Hráč 1 míří myší; levé tlačítko střílí a pravé nabíjí (výstřel mimo obrazovku). Pro nezávislé míření každého hráče připojte pistole označené ID_INPUT_GUN."
+msgid ""
+"No dedicated light guns detected. Player 1 aims with the mouse; the left "
+"button fires and the right button reloads (shoot off screen). Plug in guns "
+"tagged ID_INPUT_GUN for independent per-player aiming."
+msgstr ""
+"Nebyly zjištěny žádné světelné pistole. Hráč 1 míří myší; levé tlačítko "
+"střílí a pravé nabíjí (výstřel mimo obrazovku). Pro nezávislé míření každého "
+"hráče připojte pistole označené ID_INPUT_GUN."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1319,8 +1380,14 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "The comms board is a ring: each cabinet listens on its own address and sends to the next cabinet. For two machines, point each at the other. The master/slave role is chosen in the game's own test menu, not here."
-msgstr "Komunikační deska tvoří kruh: každý automat naslouchá na své adrese a posílá dalšímu automatu. U dvou strojů nasměrujte každý na ten druhý. Role master/slave se volí v testovací nabídce hry, ne zde."
+msgid ""
+"The comms board is a ring: each cabinet listens on its own address and sends "
+"to the next cabinet. For two machines, point each at the other. The master/"
+"slave role is chosen in the game's own test menu, not here."
+msgstr ""
+"Komunikační deska tvoří kruh: každý automat naslouchá na své adrese a posílá "
+"dalšímu automatu. U dvou strojů nasměrujte každý na ten druhý. Role master/"
+"slave se volí v testovací nabídce hry, ne zde."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1442,8 +1509,12 @@ msgstr "Načtěte hru, abyste mohli ukládat a obnovovat její stav."
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "Save the whole machine to a slot and restore it later. Quick-save is F6, quick-load is F7."
-msgstr "Uloží celý stroj do pozice a později ho obnoví. Rychlé uložení je F6, rychlé načtení F7."
+msgid ""
+"Save the whole machine to a slot and restore it later. Quick-save is F6, "
+"quick-load is F7."
+msgstr ""
+"Uloží celý stroj do pozice a později ho obnoví. Rychlé uložení je F6, rychlé "
+"načtení F7."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1517,8 +1588,12 @@ msgstr "Enter: spustit   F10: nastavení   F9: ukončit"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "No Model 2 ROM archives were found in the ROM directory. Set it in Settings (F1) > Paths, then relaunch."
-msgstr "V adresáři ROM nebyly nalezeny žádné archivy ROM pro Model 2. Nastavte jej v Nastavení (F1) > Cesty a spusťte znovu."
+msgid ""
+"No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
+"(F1) > Paths, then relaunch."
+msgstr ""
+"V adresáři ROM nebyly nalezeny žádné archivy ROM pro Model 2. Nastavte jej v "
+"Nastavení (F1) > Cesty a spusťte znovu."
 
 #: src/osd/gui.cpp
 #, no-c-format

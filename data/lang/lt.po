@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -13,7 +13,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Language-Name: Lietuvių\n"
 "X-Language-Name-English: Lithuanian\n"
 
@@ -557,7 +558,8 @@ msgstr "BSD 3-Clause licencija. Žr. LICENSE."
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "sm2-emu exists because of open source shared with the community."
-msgstr "sm2-emu egzistuoja dėka atvirojo kodo, kuriuo dalijamasi su bendruomene."
+msgstr ""
+"sm2-emu egzistuoja dėka atvirojo kodo, kuriuo dalijamasi su bendruomene."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -622,7 +624,8 @@ msgstr "stb_image - viršelių paveikslėlių dekodavimas (Sean Barrett)"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Gamepad picture - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
-msgstr "Pultelio paveikslėlis - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
+msgstr ""
+"Pultelio paveikslėlis - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -637,7 +640,8 @@ msgstr "HarfBuzz - teksto formavimas vertimams"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "SheenBidi - right-to-left text layout (Muhammad Tayyab Akram)"
-msgstr "SheenBidi - teksto iš dešinės į kairę išdėstymas (Muhammad Tayyab Akram)"
+msgstr ""
+"SheenBidi - teksto iš dešinės į kairę išdėstymas (Muhammad Tayyab Akram)"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -791,13 +795,33 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Axes"
 msgstr "Ašys"
 
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Auto-detected. Recalibrate if steering or a pedal is wrong."
-msgstr "Aptikta automatiškai. Kalibruokite iš naujo, jei vairas ar pedalas veikia netinkamai."
+msgstr ""
+"Aptikta automatiškai. Kalibruokite iš naujo, jei vairas ar pedalas veikia "
+"netinkamai."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -852,7 +876,8 @@ msgstr "Mygtukai"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Press Bind, then press the wheel button for that control."
-msgstr "Paspauskite „Priskirti“, tada paspauskite vairo mygtuką tam valdikliui."
+msgstr ""
+"Paspauskite „Priskirti“, tada paspauskite vairo mygtuką tam valdikliui."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1044,7 +1069,28 @@ msgstr ""
 msgid ""
 "The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
 "is Virtual On's. Test and Service are Guide+Start and Guide+Back."
-msgstr "Kairė lazdelė taip pat judina; peties mygtukai taip pat veikia kaip Mygtukas 3/4. Dešinė svirtis skirta Virtual On. Testas ir Aptarnavimas yra Guide+Start ir Guide+Back."
+msgstr ""
+"Kairė lazdelė taip pat judina; peties mygtukai taip pat veikia kaip Mygtukas "
+"3/4. Dešinė svirtis skirta Virtual On. Testas ir Aptarnavimas yra "
+"Guide+Start ir Guide+Back."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1183,7 +1229,9 @@ msgstr ""
 msgid ""
 "Player 1 aims with the mouse; the left button fires and the right button "
 "reloads (shoot off screen)."
-msgstr "Žaidėjas 1 taiko pele; kairysis mygtukas šauna, o dešinysis užtaiso (šaukite už ekrano ribų)."
+msgstr ""
+"Žaidėjas 1 taiko pele; kairysis mygtukas šauna, o dešinysis užtaiso (šaukite "
+"už ekrano ribų)."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1228,7 +1276,11 @@ msgid ""
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
 "independent per-player aiming."
-msgstr "Specialių šviesos ginklų neaptikta. Žaidėjas 1 taiko pele; kairysis mygtukas šauna, o dešinysis užtaiso (šaukite už ekrano ribų). Prieš paleisdami prijunkite ginklus absoliučios pelės režimu (GUN4IR, Sinden, AimTrak), kad kiekvienas žaidėjas taikytų atskirai."
+msgstr ""
+"Specialių šviesos ginklų neaptikta. Žaidėjas 1 taiko pele; kairysis mygtukas "
+"šauna, o dešinysis užtaiso (šaukite už ekrano ribų). Prieš paleisdami "
+"prijunkite ginklus absoliučios pelės režimu (GUN4IR, Sinden, AimTrak), kad "
+"kiekvienas žaidėjas taikytų atskirai."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1236,7 +1288,10 @@ msgid ""
 "No dedicated light guns detected. Player 1 aims with the mouse; the left "
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "tagged ID_INPUT_GUN for independent per-player aiming."
-msgstr "Specialių šviesos ginklų neaptikta. Žaidėjas 1 taiko pele; kairysis mygtukas šauna, o dešinysis užtaiso (šaukite už ekrano ribų). Prijunkite ginklus, pažymėtus ID_INPUT_GUN, kad kiekvienas žaidėjas taikytų atskirai."
+msgstr ""
+"Specialių šviesos ginklų neaptikta. Žaidėjas 1 taiko pele; kairysis mygtukas "
+"šauna, o dešinysis užtaiso (šaukite už ekrano ribų). Prijunkite ginklus, "
+"pažymėtus ID_INPUT_GUN, kad kiekvienas žaidėjas taikytų atskirai."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1328,7 +1383,8 @@ msgid ""
 msgstr ""
 "Lenktyniauti kartu su kitais tame pačiame LAN tinkle tą patį\n"
 "žaidimą paleidusiais kompiuteriais (Sega Rally, Daytona, Super GT 24h,\n"
-"Indy 500, ...). Išjungus automatas lieka atskiras. Įsigalioja kitą kartą paleidus žaidimą."
+"Indy 500, ...). Išjungus automatas lieka atskiras. Įsigalioja kitą kartą "
+"paleidus žaidimą."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1336,7 +1392,10 @@ msgid ""
 "The comms board is a ring: each cabinet listens on its own address and sends "
 "to the next cabinet. For two machines, point each at the other. The master/"
 "slave role is chosen in the game's own test menu, not here."
-msgstr "Ryšio plokštė yra žiedas: kiekvienas automatas klauso savo adresu ir siunčia kitam automatui. Dviem kompiuteriams nurodykite vienas kitą. Pagrindinio/pavaldaus vaidmuo pasirenkamas paties žaidimo testo meniu, ne čia."
+msgstr ""
+"Ryšio plokštė yra žiedas: kiekvienas automatas klauso savo adresu ir siunčia "
+"kitam automatui. Dviem kompiuteriams nurodykite vienas kitą. Pagrindinio/"
+"pavaldaus vaidmuo pasirenkamas paties žaidimo testo meniu, ne čia."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1461,7 +1520,9 @@ msgstr "Įkelkite žaidimą, kad galėtumėte išsaugoti ir atkurti jo būseną.
 msgid ""
 "Save the whole machine to a slot and restore it later. Quick-save is F6, "
 "quick-load is F7."
-msgstr "Išsaugokite visą mašiną į lizdą ir atkurkite vėliau. Greitas išsaugojimas - F6, greitas įkėlimas - F7."
+msgstr ""
+"Išsaugokite visą mašiną į lizdą ir atkurkite vėliau. Greitas išsaugojimas - "
+"F6, greitas įkėlimas - F7."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1506,7 +1567,8 @@ msgstr "Atnaujinti"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Cannot list this directory (permission denied, or it doesn't exist)."
-msgstr "Negalima parodyti šio aplanko turinio (nėra leidimo arba jis neegzistuoja)."
+msgstr ""
+"Negalima parodyti šio aplanko turinio (nėra leidimo arba jis neegzistuoja)."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1538,7 +1600,9 @@ msgstr "Enter: paleisti   F10: nustatymai   F9: išeiti"
 msgid ""
 "No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
 "(F1) > Paths, then relaunch."
-msgstr "ROM aplanke nerasta Model 2 ROM archyvų. Nustatykite jį skiltyje Nustatymai (F1) > Keliai ir paleiskite iš naujo."
+msgstr ""
+"ROM aplanke nerasta Model 2 ROM archyvų. Nustatykite jį skiltyje Nustatymai "
+"(F1) > Keliai ir paleiskite iš naujo."
 
 #: src/osd/gui.cpp
 #, no-c-format

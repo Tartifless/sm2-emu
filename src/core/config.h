@@ -208,6 +208,10 @@ struct Config {
     /// stop. Lower is more sensitive. Clamped to 180..270.
     u32 wheel_lock_degrees = 240;
 
+    /// Wheel travel about centre that reads as centre, in percent of its
+    /// range. Most wheels want none.
+    u32 wheel_steer_deadzone = 0;
+
     /// Cabinet controls a wheel button can be bound to. Buttons 1..4 are the
     /// arcade buttons, which is also where a driving cabinet's view-change / VR
     /// buttons land (e.g. Daytona's VR1..VR4). Test/Service are the operator
@@ -265,6 +269,10 @@ struct Config {
     /// deflection is always full lock; under 100 the middle of the travel
     /// does less, over 100 it does more.
     u32 pad_stick_sensitivity = 100;
+
+    /// Stick travel about centre that reads as centre, in percent of full
+    /// deflection. Raise it for a stick that no longer settles at rest.
+    u32 pad_stick_deadzone = 5;
 
     /// The cabinet controls a gamepad button can be bound to. Test and Service
     /// stay on the Guide chord, so they are not here. Keep kCount last.

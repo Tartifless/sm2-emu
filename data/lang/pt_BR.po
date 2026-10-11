@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -555,7 +555,8 @@ msgstr "Licença BSD de 3 cláusulas. Veja LICENSE."
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "sm2-emu exists because of open source shared with the community."
-msgstr "O sm2-emu existe graças ao código aberto compartilhado com a comunidade."
+msgstr ""
+"O sm2-emu existe graças ao código aberto compartilhado com a comunidade."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -620,7 +621,8 @@ msgstr "stb_image - decodificação das capas (Sean Barrett)"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Gamepad picture - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
-msgstr "Imagem do controle - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
+msgstr ""
+"Imagem do controle - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -635,7 +637,9 @@ msgstr "HarfBuzz - modelagem de texto para traduções"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "SheenBidi - right-to-left text layout (Muhammad Tayyab Akram)"
-msgstr "SheenBidi - layout de texto da direita para a esquerda (Muhammad Tayyab Akram)"
+msgstr ""
+"SheenBidi - layout de texto da direita para a esquerda (Muhammad Tayyab "
+"Akram)"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -789,13 +793,33 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Axes"
 msgstr "Eixos"
 
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Auto-detected. Recalibrate if steering or a pedal is wrong."
-msgstr "Detectados automaticamente. Recalibre se a direção ou um pedal estiver errado."
+msgstr ""
+"Detectados automaticamente. Recalibre se a direção ou um pedal estiver "
+"errado."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1041,7 +1065,28 @@ msgstr ""
 msgid ""
 "The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
 "is Virtual On's. Test and Service are Guide+Start and Guide+Back."
-msgstr "O analógico esquerdo também move; os botões de ombro também servem como Botão 3/4. A Alavanca direita é a do Virtual On. Teste e Serviço são Guide+Start e Guide+Back."
+msgstr ""
+"O analógico esquerdo também move; os botões de ombro também servem como "
+"Botão 3/4. A Alavanca direita é a do Virtual On. Teste e Serviço são "
+"Guide+Start e Guide+Back."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1180,7 +1225,9 @@ msgstr ""
 msgid ""
 "Player 1 aims with the mouse; the left button fires and the right button "
 "reloads (shoot off screen)."
-msgstr "O Jogador 1 mira com o mouse; o botão esquerdo atira e o botão direito recarrega (atire fora da tela)."
+msgstr ""
+"O Jogador 1 mira com o mouse; o botão esquerdo atira e o botão direito "
+"recarrega (atire fora da tela)."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1225,7 +1272,11 @@ msgid ""
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
 "independent per-player aiming."
-msgstr "Nenhuma pistola de luz dedicada detectada. O Jogador 1 mira com o mouse; o botão esquerdo atira e o direito recarrega (atire fora da tela). Conecte pistolas em modo de mouse absoluto (GUN4IR, Sinden, AimTrak) antes de iniciar para mira independente por jogador."
+msgstr ""
+"Nenhuma pistola de luz dedicada detectada. O Jogador 1 mira com o mouse; o "
+"botão esquerdo atira e o direito recarrega (atire fora da tela). Conecte "
+"pistolas em modo de mouse absoluto (GUN4IR, Sinden, AimTrak) antes de "
+"iniciar para mira independente por jogador."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1233,7 +1284,10 @@ msgid ""
 "No dedicated light guns detected. Player 1 aims with the mouse; the left "
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "tagged ID_INPUT_GUN for independent per-player aiming."
-msgstr "Nenhuma pistola de luz dedicada detectada. O Jogador 1 mira com o mouse; o botão esquerdo atira e o direito recarrega (atire fora da tela). Conecte pistolas marcadas com ID_INPUT_GUN para mira independente por jogador."
+msgstr ""
+"Nenhuma pistola de luz dedicada detectada. O Jogador 1 mira com o mouse; o "
+"botão esquerdo atira e o direito recarrega (atire fora da tela). Conecte "
+"pistolas marcadas com ID_INPUT_GUN para mira independente por jogador."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1333,7 +1387,11 @@ msgid ""
 "The comms board is a ring: each cabinet listens on its own address and sends "
 "to the next cabinet. For two machines, point each at the other. The master/"
 "slave role is chosen in the game's own test menu, not here."
-msgstr "A placa de comunicação é um anel: cada gabinete escuta no seu próprio endereço e envia para o próximo gabinete. Para duas máquinas, aponte uma para a outra. O papel de mestre/escravo é escolhido no menu de teste do próprio jogo, não aqui."
+msgstr ""
+"A placa de comunicação é um anel: cada gabinete escuta no seu próprio "
+"endereço e envia para o próximo gabinete. Para duas máquinas, aponte uma "
+"para a outra. O papel de mestre/escravo é escolhido no menu de teste do "
+"próprio jogo, não aqui."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1458,7 +1516,9 @@ msgstr "Carregue um jogo para salvar e restaurar seu estado."
 msgid ""
 "Save the whole machine to a slot and restore it later. Quick-save is F6, "
 "quick-load is F7."
-msgstr "Salva a máquina inteira em um slot e a restaura depois. Salvar rápido é F6, carregar rápido é F7."
+msgstr ""
+"Salva a máquina inteira em um slot e a restaura depois. Salvar rápido é F6, "
+"carregar rápido é F7."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1535,7 +1595,9 @@ msgstr "Enter: iniciar   F10: configurações   F9: sair"
 msgid ""
 "No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
 "(F1) > Paths, then relaunch."
-msgstr "Nenhum arquivo de ROM do Model 2 foi encontrado na pasta de ROMs. Defina-a em Configurações (F1) > Pastas e reinicie."
+msgstr ""
+"Nenhum arquivo de ROM do Model 2 foi encontrado na pasta de ROMs. Defina-a "
+"em Configurações (F1) > Pastas e reinicie."
 
 #: src/osd/gui.cpp
 #, no-c-format

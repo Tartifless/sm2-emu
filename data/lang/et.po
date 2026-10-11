@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -622,7 +622,8 @@ msgstr "stb_image - karbipiltide dekodeerimine (Sean Barrett)"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Gamepad picture - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
-msgstr "Mängupuldi pilt - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
+msgstr ""
+"Mängupuldi pilt - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -791,13 +792,32 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Axes"
 msgstr "Teljed"
 
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Auto-detected. Recalibrate if steering or a pedal is wrong."
-msgstr "Tuvastatud automaatselt. Kalibreeri uuesti, kui rool või pedaal on vale."
+msgstr ""
+"Tuvastatud automaatselt. Kalibreeri uuesti, kui rool või pedaal on vale."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1043,7 +1063,27 @@ msgstr ""
 msgid ""
 "The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
 "is Virtual On's. Test and Service are Guide+Start and Guide+Back."
-msgstr "Vasak juhtkang samuti liigutab; õlanupud toimivad ka kui Nupp 3/4. Parem hoob on Virtual On jaoks. Test ja Hooldus on Guide+Start ja Guide+Back."
+msgstr ""
+"Vasak juhtkang samuti liigutab; õlanupud toimivad ka kui Nupp 3/4. Parem "
+"hoob on Virtual On jaoks. Test ja Hooldus on Guide+Start ja Guide+Back."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1182,7 +1222,9 @@ msgstr ""
 msgid ""
 "Player 1 aims with the mouse; the left button fires and the right button "
 "reloads (shoot off screen)."
-msgstr "Mängija 1 sihib hiirega; vasak nupp tulistab ja parem laeb (tulista ekraanist välja)."
+msgstr ""
+"Mängija 1 sihib hiirega; vasak nupp tulistab ja parem laeb (tulista "
+"ekraanist välja)."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1227,7 +1269,11 @@ msgid ""
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
 "independent per-player aiming."
-msgstr "Spetsiaalseid valguspüsse ei tuvastatud. Mängija 1 sihib hiirega; vasak nupp tulistab ja parem laeb (tulista ekraanist välja). Ühenda enne käivitamist püssid absoluutses hiirerežiimis (GUN4IR, Sinden, AimTrak), et iga mängija saaks eraldi sihtida."
+msgstr ""
+"Spetsiaalseid valguspüsse ei tuvastatud. Mängija 1 sihib hiirega; vasak nupp "
+"tulistab ja parem laeb (tulista ekraanist välja). Ühenda enne käivitamist "
+"püssid absoluutses hiirerežiimis (GUN4IR, Sinden, AimTrak), et iga mängija "
+"saaks eraldi sihtida."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1235,7 +1281,10 @@ msgid ""
 "No dedicated light guns detected. Player 1 aims with the mouse; the left "
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "tagged ID_INPUT_GUN for independent per-player aiming."
-msgstr "Spetsiaalseid valguspüsse ei tuvastatud. Mängija 1 sihib hiirega; vasak nupp tulistab ja parem laeb (tulista ekraanist välja). Ühenda püssid märgendiga ID_INPUT_GUN, et iga mängija saaks eraldi sihtida."
+msgstr ""
+"Spetsiaalseid valguspüsse ei tuvastatud. Mängija 1 sihib hiirega; vasak nupp "
+"tulistab ja parem laeb (tulista ekraanist välja). Ühenda püssid märgendiga "
+"ID_INPUT_GUN, et iga mängija saaks eraldi sihtida."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1335,7 +1384,10 @@ msgid ""
 "The comms board is a ring: each cabinet listens on its own address and sends "
 "to the next cabinet. For two machines, point each at the other. The master/"
 "slave role is chosen in the game's own test menu, not here."
-msgstr "Sideplaat on rõngas: iga kapp kuulab oma aadressil ja saadab järgmisele kapile. Kahe masina puhul suuna kumbki teisele. Ülem/alluv-roll valitakse mängu enda testmenüüs, mitte siin."
+msgstr ""
+"Sideplaat on rõngas: iga kapp kuulab oma aadressil ja saadab järgmisele "
+"kapile. Kahe masina puhul suuna kumbki teisele. Ülem/alluv-roll valitakse "
+"mängu enda testmenüüs, mitte siin."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1460,7 +1512,9 @@ msgstr "Laadi mäng, et selle olekut salvestada ja taastada."
 msgid ""
 "Save the whole machine to a slot and restore it later. Quick-save is F6, "
 "quick-load is F7."
-msgstr "Salvesta kogu masin pessa ja taasta hiljem. Kiirsalvestus on F6, kiirlaadimine on F7."
+msgstr ""
+"Salvesta kogu masin pessa ja taasta hiljem. Kiirsalvestus on F6, "
+"kiirlaadimine on F7."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1537,7 +1591,9 @@ msgstr "Enter: käivita   F10: seaded   F9: välju"
 msgid ""
 "No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
 "(F1) > Paths, then relaunch."
-msgstr "ROM-ide kaustast ei leitud ühtegi Model 2 ROM-arhiivi. Määra see jaotises Seaded (F1) > Teed ja käivita uuesti."
+msgstr ""
+"ROM-ide kaustast ei leitud ühtegi Model 2 ROM-arhiivi. Määra see jaotises "
+"Seaded (F1) > Teed ja käivita uuesti."
 
 #: src/osd/gui.cpp
 #, no-c-format

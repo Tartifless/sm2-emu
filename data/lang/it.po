@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 12:00+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: Italian\n"
@@ -620,7 +620,8 @@ msgstr "stb_image - decodifica immagini copertine (Sean Barrett)"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Gamepad picture - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
-msgstr "Immagine gamepad - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
+msgstr ""
+"Immagine gamepad - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -635,7 +636,8 @@ msgstr "HarfBuzz - composizione del testo per le traduzioni"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "SheenBidi - right-to-left text layout (Muhammad Tayyab Akram)"
-msgstr "SheenBidi - impaginazione testo da destra a sinistra (Muhammad Tayyab Akram)"
+msgstr ""
+"SheenBidi - impaginazione testo da destra a sinistra (Muhammad Tayyab Akram)"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -675,7 +677,8 @@ msgstr "Volante collegato."
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "No wheel connected. Settings still apply once one is."
-msgstr "Nessun volante collegato. Le impostazioni valgono appena ne colleghi uno."
+msgstr ""
+"Nessun volante collegato. Le impostazioni valgono appena ne colleghi uno."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -786,6 +789,24 @@ msgid ""
 msgstr ""
 "Quanto girare fisicamente per la sterzata massima (totale,\n"
 "quindi metà per lato dal centro). Più basso = più sensibile."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -942,7 +963,8 @@ msgstr[1] "%d gamepad collegati."
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "No gamepad connected. Settings still apply once one is."
-msgstr "Nessun gamepad collegato. Le impostazioni valgono appena ne colleghi uno."
+msgstr ""
+"Nessun gamepad collegato. Le impostazioni valgono appena ne colleghi uno."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1041,7 +1063,28 @@ msgstr ""
 msgid ""
 "The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
 "is Virtual On's. Test and Service are Guide+Start and Guide+Back."
-msgstr "Anche lo stick sinistro muove; i dorsali fungono anche da Pulsante 3/4. La Leva destra è quella di Virtual On. Test e Service sono Guide+Start e Guide+Back."
+msgstr ""
+"Anche lo stick sinistro muove; i dorsali fungono anche da Pulsante 3/4. La "
+"Leva destra è quella di Virtual On. Test e Service sono Guide+Start e "
+"Guide+Back."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1180,7 +1223,9 @@ msgstr ""
 msgid ""
 "Player 1 aims with the mouse; the left button fires and the right button "
 "reloads (shoot off screen)."
-msgstr "Il giocatore 1 mira con il mouse; il tasto sinistro spara e il destro ricarica (spara fuori schermo)."
+msgstr ""
+"Il giocatore 1 mira con il mouse; il tasto sinistro spara e il destro "
+"ricarica (spara fuori schermo)."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1225,7 +1270,11 @@ msgid ""
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
 "independent per-player aiming."
-msgstr "Nessuna pistola ottica dedicata rilevata. Il giocatore 1 mira con il mouse; il tasto sinistro spara e il destro ricarica (spara fuori schermo). Collega le pistole in modalità mouse assoluto (GUN4IR, Sinden, AimTrak) prima dell'avvio per una mira indipendente per giocatore."
+msgstr ""
+"Nessuna pistola ottica dedicata rilevata. Il giocatore 1 mira con il mouse; "
+"il tasto sinistro spara e il destro ricarica (spara fuori schermo). Collega "
+"le pistole in modalità mouse assoluto (GUN4IR, Sinden, AimTrak) prima "
+"dell'avvio per una mira indipendente per giocatore."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1233,7 +1282,10 @@ msgid ""
 "No dedicated light guns detected. Player 1 aims with the mouse; the left "
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "tagged ID_INPUT_GUN for independent per-player aiming."
-msgstr "Nessuna pistola ottica dedicata rilevata. Il giocatore 1 mira con il mouse; il tasto sinistro spara e il destro ricarica (spara fuori schermo). Collega pistole marcate ID_INPUT_GUN per una mira indipendente per giocatore."
+msgstr ""
+"Nessuna pistola ottica dedicata rilevata. Il giocatore 1 mira con il mouse; "
+"il tasto sinistro spara e il destro ricarica (spara fuori schermo). Collega "
+"pistole marcate ID_INPUT_GUN per una mira indipendente per giocatore."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1333,7 +1385,10 @@ msgid ""
 "The comms board is a ring: each cabinet listens on its own address and sends "
 "to the next cabinet. For two machines, point each at the other. The master/"
 "slave role is chosen in the game's own test menu, not here."
-msgstr "La scheda di comunicazione è un anello: ogni cabinato ascolta sul proprio indirizzo e invia al cabinato successivo. Con due macchine, punta ciascuna all'altra. Il ruolo master/slave si sceglie nel menu test del gioco, non qui."
+msgstr ""
+"La scheda di comunicazione è un anello: ogni cabinato ascolta sul proprio "
+"indirizzo e invia al cabinato successivo. Con due macchine, punta ciascuna "
+"all'altra. Il ruolo master/slave si sceglie nel menu test del gioco, non qui."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1458,7 +1513,9 @@ msgstr "Carica un gioco per salvarne e ripristinarne lo stato."
 msgid ""
 "Save the whole machine to a slot and restore it later. Quick-save is F6, "
 "quick-load is F7."
-msgstr "Salva l'intera macchina in uno slot e ripristinala in seguito. Salvataggio rapido con F6, caricamento rapido con F7."
+msgstr ""
+"Salva l'intera macchina in uno slot e ripristinala in seguito. Salvataggio "
+"rapido con F6, caricamento rapido con F7."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1535,7 +1592,9 @@ msgstr "Enter: avvia   F10: impostazioni   F9: esci"
 msgid ""
 "No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
 "(F1) > Paths, then relaunch."
-msgstr "Nessun archivio ROM Model 2 trovato nella cartella ROM. Impostala in Impostazioni (F1) > Percorsi, poi riavvia."
+msgstr ""
+"Nessun archivio ROM Model 2 trovato nella cartella ROM. Impostala in "
+"Impostazioni (F1) > Percorsi, poi riavvia."
 
 #: src/osd/gui.cpp
 #, no-c-format

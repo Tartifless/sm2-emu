@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -789,6 +789,24 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Axes"
 msgstr "محور"
 
@@ -796,7 +814,8 @@ msgstr "محور"
 #, no-c-format
 msgid "Auto-detected. Recalibrate if steering or a pedal is wrong."
 msgstr ""
-"خودکار طور پر شناخت ہوئی۔ اگر اسٹیئرنگ یا پیڈل غلط ہو تو دوبارہ کیلیبریٹ کریں۔"
+"خودکار طور پر شناخت ہوئی۔ اگر اسٹیئرنگ یا پیڈل غلط ہو تو دوبارہ کیلیبریٹ "
+"کریں۔"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1043,7 +1062,26 @@ msgid ""
 "The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
 "is Virtual On's. Test and Service are Guide+Start and Guide+Back."
 msgstr ""
-"بائیں اسٹک بھی حرکت دیتی ہے؛ شولڈر بٹن بٹن 3/4 کا کام بھی کرتے ہیں۔ دایاں لیور Virtual On کے لیے ہے۔ ٹیسٹ اور سروس Guide+Start اور Guide+Back ہیں۔"
+"بائیں اسٹک بھی حرکت دیتی ہے؛ شولڈر بٹن بٹن 3/4 کا کام بھی کرتے ہیں۔ دایاں "
+"لیور Virtual On کے لیے ہے۔ ٹیسٹ اور سروس Guide+Start اور Guide+Back ہیں۔"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1183,7 +1221,8 @@ msgid ""
 "Player 1 aims with the mouse; the left button fires and the right button "
 "reloads (shoot off screen)."
 msgstr ""
-"کھلاڑی 1 ماؤس سے نشانہ لیتا ہے؛ بایاں بٹن فائر کرتا ہے اور دایاں بٹن ری لوڈ کرتا ہے (اسکرین سے باہر فائر)۔"
+"کھلاڑی 1 ماؤس سے نشانہ لیتا ہے؛ بایاں بٹن فائر کرتا ہے اور دایاں بٹن ری لوڈ "
+"کرتا ہے (اسکرین سے باہر فائر)۔"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1229,7 +1268,10 @@ msgid ""
 "in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
 "independent per-player aiming."
 msgstr ""
-"کوئی مخصوص لائٹ گن نہیں ملی۔ کھلاڑی 1 ماؤس سے نشانہ لیتا ہے؛ بایاں بٹن فائر کرتا ہے اور دایاں بٹن ری لوڈ کرتا ہے (اسکرین سے باہر فائر)۔ ہر کھلاڑی کے الگ نشانے کے لیے گیم چلانے سے پہلے گنز کو مطلق ماؤس موڈ (GUN4IR، Sinden، AimTrak) میں لگائیں۔"
+"کوئی مخصوص لائٹ گن نہیں ملی۔ کھلاڑی 1 ماؤس سے نشانہ لیتا ہے؛ بایاں بٹن فائر "
+"کرتا ہے اور دایاں بٹن ری لوڈ کرتا ہے (اسکرین سے باہر فائر)۔ ہر کھلاڑی کے الگ "
+"نشانے کے لیے گیم چلانے سے پہلے گنز کو مطلق ماؤس موڈ (GUN4IR، Sinden، "
+"AimTrak) میں لگائیں۔"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1238,7 +1280,9 @@ msgid ""
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "tagged ID_INPUT_GUN for independent per-player aiming."
 msgstr ""
-"کوئی مخصوص لائٹ گن نہیں ملی۔ کھلاڑی 1 ماؤس سے نشانہ لیتا ہے؛ بایاں بٹن فائر کرتا ہے اور دایاں بٹن ری لوڈ کرتا ہے (اسکرین سے باہر فائر)۔ ہر کھلاڑی کے الگ نشانے کے لیے ID_INPUT_GUN ٹیگ والی گنز لگائیں۔"
+"کوئی مخصوص لائٹ گن نہیں ملی۔ کھلاڑی 1 ماؤس سے نشانہ لیتا ہے؛ بایاں بٹن فائر "
+"کرتا ہے اور دایاں بٹن ری لوڈ کرتا ہے (اسکرین سے باہر فائر)۔ ہر کھلاڑی کے الگ "
+"نشانے کے لیے ID_INPUT_GUN ٹیگ والی گنز لگائیں۔"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1339,7 +1383,9 @@ msgid ""
 "to the next cabinet. For two machines, point each at the other. The master/"
 "slave role is chosen in the game's own test menu, not here."
 msgstr ""
-"کمیونیکیشن بورڈ ایک حلقہ ہے: ہر کیبنٹ اپنے پتے پر سنتا ہے اور اگلے کیبنٹ کو بھیجتا ہے۔ دو مشینوں کے لیے ہر ایک کو دوسری کی طرف اشارہ کریں۔ ماسٹر/سلیو کردار یہاں نہیں بلکہ گیم کے اپنے ٹیسٹ مینو میں چنا جاتا ہے۔"
+"کمیونیکیشن بورڈ ایک حلقہ ہے: ہر کیبنٹ اپنے پتے پر سنتا ہے اور اگلے کیبنٹ کو "
+"بھیجتا ہے۔ دو مشینوں کے لیے ہر ایک کو دوسری کی طرف اشارہ کریں۔ ماسٹر/سلیو "
+"کردار یہاں نہیں بلکہ گیم کے اپنے ٹیسٹ مینو میں چنا جاتا ہے۔"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1465,7 +1511,8 @@ msgid ""
 "Save the whole machine to a slot and restore it later. Quick-save is F6, "
 "quick-load is F7."
 msgstr ""
-"پوری مشین کو ایک سلاٹ میں محفوظ کریں اور بعد میں بحال کریں۔ فوری محفوظ F6 اور فوری لوڈ F7 ہے۔"
+"پوری مشین کو ایک سلاٹ میں محفوظ کریں اور بعد میں بحال کریں۔ فوری محفوظ F6 "
+"اور فوری لوڈ F7 ہے۔"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1543,7 +1590,8 @@ msgid ""
 "No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
 "(F1) > Paths, then relaunch."
 msgstr ""
-"ROM ڈائریکٹری میں کوئی Model 2 ROM آرکائیو نہیں ملا۔ اسے ترتیبات (F1) > راستے میں مقرر کریں، پھر دوبارہ چلائیں۔"
+"ROM ڈائریکٹری میں کوئی Model 2 ROM آرکائیو نہیں ملا۔ اسے ترتیبات (F1) > "
+"راستے میں مقرر کریں، پھر دوبارہ چلائیں۔"
 
 #: src/osd/gui.cpp
 #, no-c-format

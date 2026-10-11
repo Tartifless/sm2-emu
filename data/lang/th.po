@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -794,6 +794,24 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Axes"
 msgstr "แกน"
 
@@ -1045,7 +1063,27 @@ msgstr ""
 msgid ""
 "The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
 "is Virtual On's. Test and Service are Guide+Start and Guide+Back."
-msgstr "สติกซ้ายใช้เคลื่อนที่ได้ด้วย ปุ่มไหล่ทำหน้าที่เป็นปุ่ม 3/4 ด้วย คันโยกขวาใช้สำหรับ Virtual On ทดสอบและเซอร์วิสคือ Guide+Start และ Guide+Back"
+msgstr ""
+"สติกซ้ายใช้เคลื่อนที่ได้ด้วย ปุ่มไหล่ทำหน้าที่เป็นปุ่ม 3/4 ด้วย คันโยกขวาใช้สำหรับ Virtual On "
+"ทดสอบและเซอร์วิสคือ Guide+Start และ Guide+Back"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1229,7 +1267,10 @@ msgid ""
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
 "independent per-player aiming."
-msgstr "ไม่พบปืนแสงเฉพาะ ผู้เล่น 1 เล็งด้วยเมาส์ ปุ่มซ้ายยิง ปุ่มขวาบรรจุกระสุน (ยิงนอกจอ) เสียบปืนในโหมด absolute mouse (GUN4IR, Sinden, AimTrak) ก่อนเปิดโปรแกรม เพื่อเล็งแยกกันสำหรับแต่ละผู้เล่น"
+msgstr ""
+"ไม่พบปืนแสงเฉพาะ ผู้เล่น 1 เล็งด้วยเมาส์ ปุ่มซ้ายยิง ปุ่มขวาบรรจุกระสุน (ยิงนอกจอ) "
+"เสียบปืนในโหมด absolute mouse (GUN4IR, Sinden, AimTrak) ก่อนเปิดโปรแกรม "
+"เพื่อเล็งแยกกันสำหรับแต่ละผู้เล่น"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1237,7 +1278,9 @@ msgid ""
 "No dedicated light guns detected. Player 1 aims with the mouse; the left "
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "tagged ID_INPUT_GUN for independent per-player aiming."
-msgstr "ไม่พบปืนแสงเฉพาะ ผู้เล่น 1 เล็งด้วยเมาส์ ปุ่มซ้ายยิง ปุ่มขวาบรรจุกระสุน (ยิงนอกจอ) เสียบปืนที่มีแท็ก ID_INPUT_GUN เพื่อเล็งแยกกันสำหรับแต่ละผู้เล่น"
+msgstr ""
+"ไม่พบปืนแสงเฉพาะ ผู้เล่น 1 เล็งด้วยเมาส์ ปุ่มซ้ายยิง ปุ่มขวาบรรจุกระสุน (ยิงนอกจอ) "
+"เสียบปืนที่มีแท็ก ID_INPUT_GUN เพื่อเล็งแยกกันสำหรับแต่ละผู้เล่น"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1337,7 +1380,9 @@ msgid ""
 "The comms board is a ring: each cabinet listens on its own address and sends "
 "to the next cabinet. For two machines, point each at the other. The master/"
 "slave role is chosen in the game's own test menu, not here."
-msgstr "บอร์ดสื่อสารเป็นแบบวงแหวน: แต่ละตู้รับฟังที่แอดเดรสของตัวเองและส่งไปยังตู้ถัดไป สำหรับสองเครื่อง ให้ชี้แต่ละเครื่องไปยังอีกเครื่อง บทบาท master/slave เลือกในเมนูทดสอบของเกม ไม่ใช่ที่นี่"
+msgstr ""
+"บอร์ดสื่อสารเป็นแบบวงแหวน: แต่ละตู้รับฟังที่แอดเดรสของตัวเองและส่งไปยังตู้ถัดไป สำหรับสองเครื่อง "
+"ให้ชี้แต่ละเครื่องไปยังอีกเครื่อง บทบาท master/slave เลือกในเมนูทดสอบของเกม ไม่ใช่ที่นี่"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1539,7 +1584,8 @@ msgstr "Enter: เปิดเกม   F10: การตั้งค่า   F9:
 msgid ""
 "No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
 "(F1) > Paths, then relaunch."
-msgstr "ไม่พบไฟล์ ROM ของ Model 2 ในไดเรกทอรี ROM ตั้งค่าได้ใน การตั้งค่า (F1) > พาธ แล้วเปิดใหม่"
+msgstr ""
+"ไม่พบไฟล์ ROM ของ Model 2 ในไดเรกทอรี ROM ตั้งค่าได้ใน การตั้งค่า (F1) > พาธ แล้วเปิดใหม่"
 
 #: src/osd/gui.cpp
 #, no-c-format

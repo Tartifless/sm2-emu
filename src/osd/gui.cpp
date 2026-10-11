@@ -33,6 +33,7 @@
 #include <algorithm>
 #include <array>
 #include <cctype>
+#include <cmath>
 #include <cstdio>
 #include <cstdlib>
 #include <filesystem>
@@ -92,6 +93,38 @@ void tooltip(const char* text)
         right_aligned_lines(text);
         ImGui::EndTooltip();
     }
+}
+
+/// A centring axis as a bar: the deadzone shaded about the middle and the raw
+/// reading as a marker, so the zone can be set to just cover a resting stick.
+void centre_bar(const char* id, s16 raw, u32 deadzone_percent)
+{
+    const ImGuiStyle& style  = ImGui::GetStyle();
+    const float       width  = ImGui::CalcItemWidth();
+    const float       height = ImGui::GetFrameHeight();
+    const ImVec2      pos    = ImGui::GetCursorScreenPos();
+    ImGui::InvisibleButton(id, ImVec2(width, height));
+    ImDrawList* draw = ImGui::GetWindowDrawList();
+
+    const float mid  = pos.x + width * 0.5f;
+    const float dead = static_cast<float>(deadzone_percent) / 100.0f;
+    draw->AddRectFilled(pos, ImVec2(pos.x + width, pos.y + height),
+                        ImGui::GetColorU32(ImGuiCol_FrameBg), style.FrameRounding);
+    if (dead > 0.0f) {
+        const float half = width * 0.5f * dead;
+        draw->AddRectFilled(ImVec2(mid - half, pos.y), ImVec2(mid + half, pos.y + height),
+                            ImGui::GetColorU32(ImGuiCol_FrameBgHovered));
+    }
+    draw->AddLine(ImVec2(mid, pos.y), ImVec2(mid, pos.y + height),
+                  ImGui::GetColorU32(ImGuiCol_TextDisabled));
+
+    // Whole pixels, so stick noise does not flicker the marker's edges.
+    const float value  = std::clamp(static_cast<float>(raw) / 32767.0f, -1.0f, 1.0f);
+    const float x      = std::round(mid + width * 0.5f * value);
+    const bool  inside = std::abs(value) <= dead;
+    draw->AddRectFilled(ImVec2(x - 2.0f, pos.y), ImVec2(x + 2.0f, pos.y + height),
+                        ImGui::GetColorU32(inside ? ImGuiCol_TextDisabled
+                                                  : ImGuiCol_SliderGrabActive));
 }
 
 /// `msgid` translated and word-wrapped to the available width. Right-to-left
@@ -1125,6 +1158,23 @@ void Gui::draw_wheel_tab(Config& config, Input* input)
                    "so half each side of centre). Lower is more sensitive."));
     }
 
+    int wheel_dead = static_cast<int>(config.wheel_steer_deadzone);
+    if (ImGui::SliderInt(tr_id("Centre deadzone"), &wheel_dead, 0, 20, "%d%%")) {
+        config.wheel_steer_deadzone = static_cast<u32>(std::clamp(wheel_dead, 0, 20));
+    }
+    ImGui::SameLine();
+    ImGui::TextDisabled("(?)");
+    if (ImGui::IsItemHovered()) {
+        tooltip(tr("Wheel travel about centre that reads as centre. Most wheels\n"
+                   "want none; a little covers one whose centre wanders. The bar\n"
+                   "shows the wheel now against the shaded zone."));
+    }
+    centre_bar("wheel_centre", connected ? input->wheel_steer_raw() : 0,
+               config.wheel_steer_deadzone);
+    ImGui::SameLine(0.0f, ImGui::GetStyle().ItemInnerSpacing.x);
+    ImGui::AlignTextToFramePadding();
+    ImGui::TextUnformatted(tr("Wheel position"));
+
     // -- axis calibration ---------------------------------------------------
     ImGui::Separator();
     ImGui::TextUnformatted(tr("Axes"));
@@ -1452,7 +1502,12 @@ void Gui::draw_gamepad_tab(Config& config, Input* input)
     const float         slot_w = 196.0f * s;
     const float         slot_h = 28.0f * s;
     const float         gap    = 26.0f * s;
-    const float         img_w  = std::clamp(avail - 2.0f * (slot_w + gap), 240.0f * s, 620.0f * s);
+    // Size the picture as if the scrollbar were always there: its height sets
+    // the tab's, so sizing it from the live width oscillates the scrollbar.
+    const ImGuiStyle&   style  = ImGui::GetStyle();
+    const float         fixed  = ImGui::GetWindowWidth() - 2.0f * style.WindowPadding.x
+                               - style.ScrollbarSize;
+    const float         img_w  = std::clamp(fixed - 2.0f * (slot_w + gap), 240.0f * s, 620.0f * s);
     const float         img_h  = img_w * (art != nullptr ? art->h / art->w : 0.65f);
     const ImVec2        img0(origin.x + (avail - img_w) * 0.5f, origin.y + 40.0f * s);
     const ImVec2        img1(img0.x + img_w, img0.y + img_h);
@@ -1669,6 +1724,23 @@ void Gui::draw_gamepad_tab(Config& config, Input* input)
 
     // -- sticks and rumble ---------------------------------------------------
     ImGui::Separator();
+    int deadzone = static_cast<int>(config.pad_stick_deadzone);
+    if (ImGui::SliderInt(tr_id("Stick deadzone"), &deadzone, 0, 40, "%d%%")) {
+        config.pad_stick_deadzone = static_cast<u32>(std::clamp(deadzone, 0, 40));
+    }
+    ImGui::SameLine();
+    ImGui::TextDisabled("(?)");
+    if (ImGui::IsItemHovered()) {
+        tooltip(tr("Stick travel about centre that reads as centre. The bar shows\n"
+                   "the stick now: let go of it and raise this until the marker\n"
+                   "sits inside the shaded zone. Also applies to stick aiming."));
+    }
+    centre_bar("stick_centre", input != nullptr ? input->pad_steer_raw(static_cast<u32>(edit)) : 0,
+               config.pad_stick_deadzone);
+    ImGui::SameLine(0.0f, ImGui::GetStyle().ItemInnerSpacing.x);
+    ImGui::AlignTextToFramePadding();
+    ImGui::TextUnformatted(tr("Stick position"));
+
     int sensitivity = static_cast<int>(config.pad_stick_sensitivity);
     if (ImGui::SliderInt(tr_id("Stick sensitivity"), &sensitivity, 25, 300, "%d%%")) {
         sensitivity = ((sensitivity + 2) / 5) * 5;

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -620,7 +620,8 @@ msgstr "stb_image - penyahkodan imej seni kotak (Sean Barrett)"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Gamepad picture - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
-msgstr "Gambar pad permainan - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
+msgstr ""
+"Gambar pad permainan - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -789,13 +790,32 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Axes"
 msgstr "Paksi"
 
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Auto-detected. Recalibrate if steering or a pedal is wrong."
-msgstr "Dikesan secara automatik. Tentukur semula jika stereng atau pedal salah."
+msgstr ""
+"Dikesan secara automatik. Tentukur semula jika stereng atau pedal salah."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1040,7 +1060,28 @@ msgstr ""
 msgid ""
 "The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
 "is Virtual On's. Test and Service are Guide+Start and Guide+Back."
-msgstr "Batang kiri juga menggerakkan; butang bahu juga bertindak sebagai Butang 3/4. Tuil Kanan ialah untuk Virtual On. Ujian dan Servis ialah Guide+Start dan Guide+Back."
+msgstr ""
+"Batang kiri juga menggerakkan; butang bahu juga bertindak sebagai Butang "
+"3/4. Tuil Kanan ialah untuk Virtual On. Ujian dan Servis ialah Guide+Start "
+"dan Guide+Back."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1179,7 +1220,9 @@ msgstr ""
 msgid ""
 "Player 1 aims with the mouse; the left button fires and the right button "
 "reloads (shoot off screen)."
-msgstr "Pemain 1 membidik dengan tetikus; butang kiri menembak dan butang kanan mengisi semula (tembak di luar skrin)."
+msgstr ""
+"Pemain 1 membidik dengan tetikus; butang kiri menembak dan butang kanan "
+"mengisi semula (tembak di luar skrin)."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1224,7 +1267,11 @@ msgid ""
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
 "independent per-player aiming."
-msgstr "Tiada senapang cahaya khusus dikesan. Pemain 1 membidik dengan tetikus; butang kiri menembak dan butang kanan mengisi semula (tembak di luar skrin). Pasang senapang dalam mod tetikus mutlak (GUN4IR, Sinden, AimTrak) sebelum melancarkan untuk bidikan bebas setiap pemain."
+msgstr ""
+"Tiada senapang cahaya khusus dikesan. Pemain 1 membidik dengan tetikus; "
+"butang kiri menembak dan butang kanan mengisi semula (tembak di luar skrin). "
+"Pasang senapang dalam mod tetikus mutlak (GUN4IR, Sinden, AimTrak) sebelum "
+"melancarkan untuk bidikan bebas setiap pemain."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1232,7 +1279,10 @@ msgid ""
 "No dedicated light guns detected. Player 1 aims with the mouse; the left "
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "tagged ID_INPUT_GUN for independent per-player aiming."
-msgstr "Tiada senapang cahaya khusus dikesan. Pemain 1 membidik dengan tetikus; butang kiri menembak dan butang kanan mengisi semula (tembak di luar skrin). Pasang senapang bertanda ID_INPUT_GUN untuk bidikan bebas setiap pemain."
+msgstr ""
+"Tiada senapang cahaya khusus dikesan. Pemain 1 membidik dengan tetikus; "
+"butang kiri menembak dan butang kanan mengisi semula (tembak di luar skrin). "
+"Pasang senapang bertanda ID_INPUT_GUN untuk bidikan bebas setiap pemain."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1324,7 +1374,8 @@ msgid ""
 msgstr ""
 "Berlumba secara terpaut dengan mesin lain dalam LAN yang sama menjalankan\n"
 "judul yang sama (Sega Rally, Daytona, Super GT 24h, Indy 500, ...). Mati\n"
-"mengekalkan kabinet ini berdiri sendiri. Berkuat kuasa pada pelancaran seterusnya."
+"mengekalkan kabinet ini berdiri sendiri. Berkuat kuasa pada pelancaran "
+"seterusnya."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1332,7 +1383,11 @@ msgid ""
 "The comms board is a ring: each cabinet listens on its own address and sends "
 "to the next cabinet. For two machines, point each at the other. The master/"
 "slave role is chosen in the game's own test menu, not here."
-msgstr "Papan komunikasi ialah gelang: setiap kabinet mendengar pada alamatnya sendiri dan menghantar ke kabinet seterusnya. Untuk dua mesin, halakan setiap satu kepada yang lain. Peranan master/slave dipilih dalam menu ujian permainan itu sendiri, bukan di sini."
+msgstr ""
+"Papan komunikasi ialah gelang: setiap kabinet mendengar pada alamatnya "
+"sendiri dan menghantar ke kabinet seterusnya. Untuk dua mesin, halakan "
+"setiap satu kepada yang lain. Peranan master/slave dipilih dalam menu ujian "
+"permainan itu sendiri, bukan di sini."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1457,7 +1512,9 @@ msgstr "Muatkan permainan untuk menyimpan dan memulihkan keadaannya."
 msgid ""
 "Save the whole machine to a slot and restore it later. Quick-save is F6, "
 "quick-load is F7."
-msgstr "Simpan seluruh mesin ke slot dan pulihkannya kemudian. Simpan pantas ialah F6, muat pantas ialah F7."
+msgstr ""
+"Simpan seluruh mesin ke slot dan pulihkannya kemudian. Simpan pantas ialah "
+"F6, muat pantas ialah F7."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1502,7 +1559,9 @@ msgstr "Segar semula"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Cannot list this directory (permission denied, or it doesn't exist)."
-msgstr "Tidak dapat menyenaraikan direktori ini (kebenaran ditolak, atau ia tidak wujud)."
+msgstr ""
+"Tidak dapat menyenaraikan direktori ini (kebenaran ditolak, atau ia tidak "
+"wujud)."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1534,7 +1593,9 @@ msgstr "Enter: lancar   F10: tetapan   F9: keluar"
 msgid ""
 "No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
 "(F1) > Paths, then relaunch."
-msgstr "Tiada arkib ROM Model 2 ditemui dalam direktori ROM. Tetapkannya dalam Tetapan (F1) > Laluan, kemudian lancar semula."
+msgstr ""
+"Tiada arkib ROM Model 2 ditemui dalam direktori ROM. Tetapkannya dalam "
+"Tetapan (F1) > Laluan, kemudian lancar semula."
 
 #: src/osd/gui.cpp
 #, no-c-format

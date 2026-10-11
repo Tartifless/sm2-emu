@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 12:00+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: German\n"
@@ -745,7 +745,8 @@ msgid ""
 "from the game. Turn it off to feel only the game's force feedback."
 msgstr ""
 "Eine zusätzliche Vibration, die mit dem Gas zunimmt. Sie\n"
-"stammt nicht vom Spiel. Ausschalten, um nur das Force Feedback des Spiels zu spüren."
+"stammt nicht vom Spiel. Ausschalten, um nur das Force Feedback des Spiels zu "
+"spüren."
 
 #: src/osd/gui.cpp
 #, c-format
@@ -789,13 +790,32 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Axes"
 msgstr "Achsen"
 
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Auto-detected. Recalibrate if steering or a pedal is wrong."
-msgstr "Automatisch erkannt. Neu kalibrieren, wenn Lenkung oder Pedal falsch ist."
+msgstr ""
+"Automatisch erkannt. Neu kalibrieren, wenn Lenkung oder Pedal falsch ist."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1041,7 +1061,28 @@ msgstr ""
 msgid ""
 "The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
 "is Virtual On's. Test and Service are Guide+Start and Guide+Back."
-msgstr "Der linke Stick bewegt ebenfalls; die Schultertasten wirken auch als Taste 3/4. Der rechte Hebel ist der von Virtual On. Test und Service sind Guide+Start und Guide+Back."
+msgstr ""
+"Der linke Stick bewegt ebenfalls; die Schultertasten wirken auch als Taste "
+"3/4. Der rechte Hebel ist der von Virtual On. Test und Service sind "
+"Guide+Start und Guide+Back."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1080,7 +1121,8 @@ msgid ""
 "from the game. Turn it off to feel only the game's force feedback."
 msgstr ""
 "Eine zusätzliche Vibration, die beim Lenken zunimmt. Sie\n"
-"stammt nicht vom Spiel. Ausschalten, um nur das Force Feedback des Spiels zu spüren."
+"stammt nicht vom Spiel. Ausschalten, um nur das Force Feedback des Spiels zu "
+"spüren."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1181,7 +1223,9 @@ msgstr ""
 msgid ""
 "Player 1 aims with the mouse; the left button fires and the right button "
 "reloads (shoot off screen)."
-msgstr "Spieler 1 zielt mit der Maus; links schießt, rechts lädt nach (neben den Bildschirm schießen)."
+msgstr ""
+"Spieler 1 zielt mit der Maus; links schießt, rechts lädt nach (neben den "
+"Bildschirm schießen)."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1226,7 +1270,11 @@ msgid ""
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
 "independent per-player aiming."
-msgstr "Keine eigenen Lightguns erkannt. Spieler 1 zielt mit der Maus; links schießt, rechts lädt nach (neben den Bildschirm schießen). Guns im absoluten Mausmodus (GUN4IR, Sinden, AimTrak) vor dem Start anschließen, damit jeder Spieler unabhängig zielt."
+msgstr ""
+"Keine eigenen Lightguns erkannt. Spieler 1 zielt mit der Maus; links "
+"schießt, rechts lädt nach (neben den Bildschirm schießen). Guns im absoluten "
+"Mausmodus (GUN4IR, Sinden, AimTrak) vor dem Start anschließen, damit jeder "
+"Spieler unabhängig zielt."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1234,7 +1282,10 @@ msgid ""
 "No dedicated light guns detected. Player 1 aims with the mouse; the left "
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "tagged ID_INPUT_GUN for independent per-player aiming."
-msgstr "Keine eigenen Lightguns erkannt. Spieler 1 zielt mit der Maus; links schießt, rechts lädt nach (neben den Bildschirm schießen). Mit ID_INPUT_GUN markierte Guns anschließen, damit jeder Spieler unabhängig zielt."
+msgstr ""
+"Keine eigenen Lightguns erkannt. Spieler 1 zielt mit der Maus; links "
+"schießt, rechts lädt nach (neben den Bildschirm schießen). Mit ID_INPUT_GUN "
+"markierte Guns anschließen, damit jeder Spieler unabhängig zielt."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1334,7 +1385,11 @@ msgid ""
 "The comms board is a ring: each cabinet listens on its own address and sends "
 "to the next cabinet. For two machines, point each at the other. The master/"
 "slave role is chosen in the game's own test menu, not here."
-msgstr "Die Kommunikationsplatine bildet einen Ring: Jeder Automat lauscht auf seiner eigenen Adresse und sendet an den nächsten. Bei zwei Rechnern zeigt jeder auf den anderen. Die Master/Slave-Rolle wird im Testmenü des Spiels gewählt, nicht hier."
+msgstr ""
+"Die Kommunikationsplatine bildet einen Ring: Jeder Automat lauscht auf "
+"seiner eigenen Adresse und sendet an den nächsten. Bei zwei Rechnern zeigt "
+"jeder auf den anderen. Die Master/Slave-Rolle wird im Testmenü des Spiels "
+"gewählt, nicht hier."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1452,14 +1507,17 @@ msgstr "Schnittstellen dieses Rechners:"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Load a game to save and restore its state."
-msgstr "Ein Spiel laden, um seinen Zustand zu speichern und wiederherzustellen."
+msgstr ""
+"Ein Spiel laden, um seinen Zustand zu speichern und wiederherzustellen."
 
 #: src/osd/gui.cpp
 #, no-c-format
 msgid ""
 "Save the whole machine to a slot and restore it later. Quick-save is F6, "
 "quick-load is F7."
-msgstr "Die ganze Maschine in einem Slot speichern und später wiederherstellen. Schnellspeichern ist F6, Schnellladen ist F7."
+msgstr ""
+"Die ganze Maschine in einem Slot speichern und später wiederherstellen. "
+"Schnellspeichern ist F6, Schnellladen ist F7."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1504,7 +1562,9 @@ msgstr "Aktualisieren"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Cannot list this directory (permission denied, or it doesn't exist)."
-msgstr "Dieser Ordner kann nicht gelesen werden (Zugriff verweigert oder nicht vorhanden)."
+msgstr ""
+"Dieser Ordner kann nicht gelesen werden (Zugriff verweigert oder nicht "
+"vorhanden)."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1536,7 +1596,9 @@ msgstr "Enter: starten   F10: Einstellungen   F9: beenden"
 msgid ""
 "No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
 "(F1) > Paths, then relaunch."
-msgstr "Im ROM-Ordner wurden keine Model 2 ROM-Archive gefunden. Unter Einstellungen (F1) > Pfade festlegen und neu starten."
+msgstr ""
+"Im ROM-Ordner wurden keine Model 2 ROM-Archive gefunden. Unter Einstellungen "
+"(F1) > Pfade festlegen und neu starten."
 
 #: src/osd/gui.cpp
 #, no-c-format

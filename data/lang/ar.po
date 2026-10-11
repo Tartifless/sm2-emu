@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -11,7 +11,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 "X-Language-Name: العربية\n"
 "X-Language-Name-English: Arabic\n"
 
@@ -789,6 +790,24 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Axes"
 msgstr "المحاور"
 
@@ -1046,7 +1065,26 @@ msgid ""
 "The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
 "is Virtual On's. Test and Service are Guide+Start and Guide+Back."
 msgstr ""
-"العصا اليسرى تحرّك أيضًا؛ وأزرار الكتف تعمل أيضًا كالزر 3/4. الذراع الأيمن خاص بـ Virtual On. الاختبار والخدمة هما Guide+Start و Guide+Back."
+"العصا اليسرى تحرّك أيضًا؛ وأزرار الكتف تعمل أيضًا كالزر 3/4. الذراع الأيمن خاص "
+"بـ Virtual On. الاختبار والخدمة هما Guide+Start و Guide+Back."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1186,7 +1224,8 @@ msgid ""
 "Player 1 aims with the mouse; the left button fires and the right button "
 "reloads (shoot off screen)."
 msgstr ""
-"اللاعب 1 يصوّب بالفأرة؛ الزر الأيسر يطلق والزر الأيمن يعيد التلقيم (أطلق خارج الشاشة)."
+"اللاعب 1 يصوّب بالفأرة؛ الزر الأيسر يطلق والزر الأيمن يعيد التلقيم (أطلق خارج "
+"الشاشة)."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1232,7 +1271,9 @@ msgid ""
 "in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
 "independent per-player aiming."
 msgstr ""
-"لم يُكتشف أي مسدس ضوئي مخصص. اللاعب 1 يصوّب بالفأرة؛ الزر الأيسر يطلق والزر الأيمن يعيد التلقيم (أطلق خارج الشاشة). وصّل المسدسات في وضع الفأرة المطلق (GUN4IR و Sinden و AimTrak) قبل التشغيل لتصويب مستقل لكل لاعب."
+"لم يُكتشف أي مسدس ضوئي مخصص. اللاعب 1 يصوّب بالفأرة؛ الزر الأيسر يطلق والزر "
+"الأيمن يعيد التلقيم (أطلق خارج الشاشة). وصّل المسدسات في وضع الفأرة المطلق "
+"(GUN4IR و Sinden و AimTrak) قبل التشغيل لتصويب مستقل لكل لاعب."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1241,7 +1282,9 @@ msgid ""
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "tagged ID_INPUT_GUN for independent per-player aiming."
 msgstr ""
-"لم يُكتشف أي مسدس ضوئي مخصص. اللاعب 1 يصوّب بالفأرة؛ الزر الأيسر يطلق والزر الأيمن يعيد التلقيم (أطلق خارج الشاشة). وصّل مسدسات موسومة بـ ID_INPUT_GUN لتصويب مستقل لكل لاعب."
+"لم يُكتشف أي مسدس ضوئي مخصص. اللاعب 1 يصوّب بالفأرة؛ الزر الأيسر يطلق والزر "
+"الأيمن يعيد التلقيم (أطلق خارج الشاشة). وصّل مسدسات موسومة بـ ID_INPUT_GUN "
+"لتصويب مستقل لكل لاعب."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1342,7 +1385,9 @@ msgid ""
 "to the next cabinet. For two machines, point each at the other. The master/"
 "slave role is chosen in the game's own test menu, not here."
 msgstr ""
-"لوحة الاتصالات حلقة: كل خزانة تستمع على عنوانها الخاص وترسل إلى الخزانة التالية. لجهازين، وجّه كلًا منهما إلى الآخر. يُختار دور الرئيسي/التابع في قائمة اختبار اللعبة نفسها، لا هنا."
+"لوحة الاتصالات حلقة: كل خزانة تستمع على عنوانها الخاص وترسل إلى الخزانة "
+"التالية. لجهازين، وجّه كلًا منهما إلى الآخر. يُختار دور الرئيسي/التابع في قائمة "
+"اختبار اللعبة نفسها، لا هنا."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1468,7 +1513,8 @@ msgid ""
 "Save the whole machine to a slot and restore it later. Quick-save is F6, "
 "quick-load is F7."
 msgstr ""
-"احفظ الجهاز بالكامل في خانة واستعده لاحقًا. الحفظ السريع F6، والتحميل السريع F7."
+"احفظ الجهاز بالكامل في خانة واستعده لاحقًا. الحفظ السريع F6، والتحميل السريع "
+"F7."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1546,7 +1592,8 @@ msgid ""
 "No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
 "(F1) > Paths, then relaunch."
 msgstr ""
-"لم يُعثر على أرشيفات ROM لـ Model 2 في مجلد ROM. اضبطه من الإعدادات (F1) > المسارات، ثم أعد التشغيل."
+"لم يُعثر على أرشيفات ROM لـ Model 2 في مجلد ROM. اضبطه من الإعدادات (F1) > "
+"المسارات، ثم أعد التشغيل."
 
 #: src/osd/gui.cpp
 #, no-c-format

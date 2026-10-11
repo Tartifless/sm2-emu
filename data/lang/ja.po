@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 12:00+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -558,7 +558,8 @@ msgstr "BSD 3条項ライセンス。LICENSE を参照してください。"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "sm2-emu exists because of open source shared with the community."
-msgstr "sm2-emu は、コミュニティで共有されたオープンソースのおかげで存在します。"
+msgstr ""
+"sm2-emu は、コミュニティで共有されたオープンソースのおかげで存在します。"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -623,7 +624,8 @@ msgstr "stb_image - ボックスアート画像のデコード（Sean Barrett）
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Gamepad picture - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
-msgstr "ゲームパッド画像 - Xelu's Free Controller Prompts（Nicolae Berbece）、CC0"
+msgstr ""
+"ゲームパッド画像 - Xelu's Free Controller Prompts（Nicolae Berbece）、CC0"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -792,13 +794,33 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Axes"
 msgstr "軸"
 
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Auto-detected. Recalibrate if steering or a pedal is wrong."
-msgstr "自動検出済み。ステアリングやペダルがおかしい場合は再キャリブレーションしてください。"
+msgstr ""
+"自動検出済み。ステアリングやペダルがおかしい場合は再キャリブレーションしてく"
+"ださい。"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -853,7 +875,8 @@ msgstr "ボタン"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Press Bind, then press the wheel button for that control."
-msgstr "「割り当て」を押してから、その操作に使うハンドルのボタンを押してください。"
+msgstr ""
+"「割り当て」を押してから、その操作に使うハンドルのボタンを押してください。"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1043,7 +1066,27 @@ msgstr ""
 msgid ""
 "The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
 "is Virtual On's. Test and Service are Guide+Start and Guide+Back."
-msgstr "左スティックでも移動でき、ショルダーはボタン 3/4 としても機能します。右レバーは Virtual On 用です。テストとサービスは Guide+Start と Guide+Back です。"
+msgstr ""
+"左スティックでも移動でき、ショルダーはボタン 3/4 としても機能します。右レバー"
+"は Virtual On 用です。テストとサービスは Guide+Start と Guide+Back です。"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1182,7 +1225,9 @@ msgstr ""
 msgid ""
 "Player 1 aims with the mouse; the left button fires and the right button "
 "reloads (shoot off screen)."
-msgstr "プレイヤー1はマウスで狙います。左ボタンで射撃、右ボタンでリロード（画面外を撃つ）。"
+msgstr ""
+"プレイヤー1はマウスで狙います。左ボタンで射撃、右ボタンでリロード（画面外を撃"
+"つ）。"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1227,7 +1272,11 @@ msgid ""
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
 "independent per-player aiming."
-msgstr "専用のライトガンが検出されません。プレイヤー1はマウスで狙います。左ボタンで射撃、右ボタンでリロード（画面外を撃つ）。プレイヤーごとに独立して狙うには、起動前にアブソリュートマウスモードのガン（GUN4IR、Sinden、AimTrak）を接続してください。"
+msgstr ""
+"専用のライトガンが検出されません。プレイヤー1はマウスで狙います。左ボタンで射"
+"撃、右ボタンでリロード（画面外を撃つ）。プレイヤーごとに独立して狙うには、起"
+"動前にアブソリュートマウスモードのガン（GUN4IR、Sinden、AimTrak）を接続してく"
+"ださい。"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1235,7 +1284,10 @@ msgid ""
 "No dedicated light guns detected. Player 1 aims with the mouse; the left "
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "tagged ID_INPUT_GUN for independent per-player aiming."
-msgstr "専用のライトガンが検出されません。プレイヤー1はマウスで狙います。左ボタンで射撃、右ボタンでリロード（画面外を撃つ）。プレイヤーごとに独立して狙うには、ID_INPUT_GUN タグ付きのガンを接続してください。"
+msgstr ""
+"専用のライトガンが検出されません。プレイヤー1はマウスで狙います。左ボタンで射"
+"撃、右ボタンでリロード（画面外を撃つ）。プレイヤーごとに独立して狙うには、"
+"ID_INPUT_GUN タグ付きのガンを接続してください。"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1245,7 +1297,8 @@ msgstr "ガンのボタン"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Press Bind, then press the button on that player's gun."
-msgstr "「割り当て」を押してから、そのプレイヤーのガンのボタンを押してください。"
+msgstr ""
+"「割り当て」を押してから、そのプレイヤーのガンのボタンを押してください。"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1335,7 +1388,10 @@ msgid ""
 "The comms board is a ring: each cabinet listens on its own address and sends "
 "to the next cabinet. For two machines, point each at the other. The master/"
 "slave role is chosen in the game's own test menu, not here."
-msgstr "通信ボードはリング構成です。各筐体は自分のアドレスで待ち受け、次の筐体へ送信します。2台の場合は互いを指定してください。マスター/スレーブの役割はここではなく、ゲーム自身のテストメニューで選択します。"
+msgstr ""
+"通信ボードはリング構成です。各筐体は自分のアドレスで待ち受け、次の筐体へ送信"
+"します。2台の場合は互いを指定してください。マスター/スレーブの役割はここでは"
+"なく、ゲーム自身のテストメニューで選択します。"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1460,7 +1516,9 @@ msgstr "ゲームを読み込むと、ステートの保存と復元ができま
 msgid ""
 "Save the whole machine to a slot and restore it later. Quick-save is F6, "
 "quick-load is F7."
-msgstr "マシン全体をスロットに保存し、後で復元します。クイックセーブは F6、クイックロードは F7 です。"
+msgstr ""
+"マシン全体をスロットに保存し、後で復元します。クイックセーブは F6、クイック"
+"ロードは F7 です。"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1537,7 +1595,9 @@ msgstr "Enter: 起動   F10: 設定   F9: 終了"
 msgid ""
 "No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
 "(F1) > Paths, then relaunch."
-msgstr "ROM ディレクトリに Model 2 の ROM アーカイブが見つかりません。設定（F1）> パス で指定してから再起動してください。"
+msgstr ""
+"ROM ディレクトリに Model 2 の ROM アーカイブが見つかりません。設定（F1）> パ"
+"ス で指定してから再起動してください。"
 
 #: src/osd/gui.cpp
 #, no-c-format

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -794,13 +794,32 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Axes"
 msgstr "அச்சுகள்"
 
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Auto-detected. Recalibrate if steering or a pedal is wrong."
-msgstr "தானாகக் கண்டறியப்பட்டது. ஸ்டீயரிங் அல்லது பெடல் தவறாக இருந்தால் மீண்டும் அளவீடு செய்யவும்."
+msgstr ""
+"தானாகக் கண்டறியப்பட்டது. ஸ்டீயரிங் அல்லது பெடல் தவறாக இருந்தால் மீண்டும் அளவீடு செய்யவும்."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1046,7 +1065,27 @@ msgstr ""
 msgid ""
 "The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
 "is Virtual On's. Test and Service are Guide+Start and Guide+Back."
-msgstr "இடது ஸ்டிக்கும் நகர்த்தும்; ஷோல்டர்களும் பொத்தான் 3/4 ஆகச் செயல்படும். வலது லீவர் Virtual On க்கானது. சோதனை, சர்வீஸ் என்பவை Guide+Start, Guide+Back."
+msgstr ""
+"இடது ஸ்டிக்கும் நகர்த்தும்; ஷோல்டர்களும் பொத்தான் 3/4 ஆகச் செயல்படும். வலது லீவர் Virtual On "
+"க்கானது. சோதனை, சர்வீஸ் என்பவை Guide+Start, Guide+Back."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1185,7 +1224,9 @@ msgstr ""
 msgid ""
 "Player 1 aims with the mouse; the left button fires and the right button "
 "reloads (shoot off screen)."
-msgstr "வீரர் 1 மவுஸால் குறிவைக்கிறார்; இடது பொத்தான் சுடும், வலது பொத்தான் மீண்டும் நிரப்பும் (திரைக்கு வெளியே சுடுதல்)."
+msgstr ""
+"வீரர் 1 மவுஸால் குறிவைக்கிறார்; இடது பொத்தான் சுடும், வலது பொத்தான் மீண்டும் நிரப்பும் "
+"(திரைக்கு வெளியே சுடுதல்)."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1230,7 +1271,11 @@ msgid ""
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
 "independent per-player aiming."
-msgstr "பிரத்யேக லைட் கன்கள் கண்டறியப்படவில்லை. வீரர் 1 மவுஸால் குறிவைக்கிறார்; இடது பொத்தான் சுடும், வலது பொத்தான் மீண்டும் நிரப்பும் (திரைக்கு வெளியே சுடுதல்). ஒவ்வொரு வீரரும் தனித்தனியாகக் குறிவைக்க, துவக்கும் முன் கன்களை absolute mouse பயன்முறையில் (GUN4IR, Sinden, AimTrak) இணைக்கவும்."
+msgstr ""
+"பிரத்யேக லைட் கன்கள் கண்டறியப்படவில்லை. வீரர் 1 மவுஸால் குறிவைக்கிறார்; இடது பொத்தான் "
+"சுடும், வலது பொத்தான் மீண்டும் நிரப்பும் (திரைக்கு வெளியே சுடுதல்). ஒவ்வொரு வீரரும் "
+"தனித்தனியாகக் குறிவைக்க, துவக்கும் முன் கன்களை absolute mouse பயன்முறையில் (GUN4IR, "
+"Sinden, AimTrak) இணைக்கவும்."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1238,7 +1283,10 @@ msgid ""
 "No dedicated light guns detected. Player 1 aims with the mouse; the left "
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "tagged ID_INPUT_GUN for independent per-player aiming."
-msgstr "பிரத்யேக லைட் கன்கள் கண்டறியப்படவில்லை. வீரர் 1 மவுஸால் குறிவைக்கிறார்; இடது பொத்தான் சுடும், வலது பொத்தான் மீண்டும் நிரப்பும் (திரைக்கு வெளியே சுடுதல்). ஒவ்வொரு வீரரும் தனித்தனியாகக் குறிவைக்க, ID_INPUT_GUN எனக் குறிக்கப்பட்ட கன்களை இணைக்கவும்."
+msgstr ""
+"பிரத்யேக லைட் கன்கள் கண்டறியப்படவில்லை. வீரர் 1 மவுஸால் குறிவைக்கிறார்; இடது பொத்தான் "
+"சுடும், வலது பொத்தான் மீண்டும் நிரப்பும் (திரைக்கு வெளியே சுடுதல்). ஒவ்வொரு வீரரும் "
+"தனித்தனியாகக் குறிவைக்க, ID_INPUT_GUN எனக் குறிக்கப்பட்ட கன்களை இணைக்கவும்."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1338,7 +1386,11 @@ msgid ""
 "The comms board is a ring: each cabinet listens on its own address and sends "
 "to the next cabinet. For two machines, point each at the other. The master/"
 "slave role is chosen in the game's own test menu, not here."
-msgstr "கம்யூனிகேஷன் போர்டு ஒரு வளையம்: ஒவ்வொரு கேபினெட்டும் தன் சொந்த முகவரியில் கேட்டு, அடுத்த கேபினெட்டுக்கு அனுப்பும். இரண்டு இயந்திரங்களுக்கு, ஒவ்வொன்றையும் மற்றொன்றை நோக்கி அமைக்கவும். மாஸ்டர்/ஸ்லேவ் பங்கு கேமின் சொந்தச் சோதனை மெனுவில் தேர்ந்தெடுக்கப்படும், இங்கே அல்ல."
+msgstr ""
+"கம்யூனிகேஷன் போர்டு ஒரு வளையம்: ஒவ்வொரு கேபினெட்டும் தன் சொந்த முகவரியில் கேட்டு, அடுத்த "
+"கேபினெட்டுக்கு அனுப்பும். இரண்டு இயந்திரங்களுக்கு, ஒவ்வொன்றையும் மற்றொன்றை நோக்கி "
+"அமைக்கவும். மாஸ்டர்/ஸ்லேவ் பங்கு கேமின் சொந்தச் சோதனை மெனுவில் தேர்ந்தெடுக்கப்படும், இங்கே "
+"அல்ல."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1463,7 +1515,9 @@ msgstr "நிலையைச் சேமிக்கவும் மீட்�
 msgid ""
 "Save the whole machine to a slot and restore it later. Quick-save is F6, "
 "quick-load is F7."
-msgstr "முழு இயந்திரத்தையும் ஒரு ஸ்லாட்டில் சேமித்து பின்னர் மீட்கவும். விரைவு-சேமிப்பு F6, விரைவு-ஏற்றம் F7."
+msgstr ""
+"முழு இயந்திரத்தையும் ஒரு ஸ்லாட்டில் சேமித்து பின்னர் மீட்கவும். விரைவு-சேமிப்பு F6, "
+"விரைவு-ஏற்றம் F7."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1540,7 +1594,9 @@ msgstr "Enter: துவக்கு   F10: அமைப்புகள்   F9:
 msgid ""
 "No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
 "(F1) > Paths, then relaunch."
-msgstr "ROM அடைவில் Model 2 ROM காப்பகங்கள் எதுவும் கிடைக்கவில்லை. அமைப்புகள் (F1) > பாதைகள் இல் அதை அமைத்து, மீண்டும் துவக்கவும்."
+msgstr ""
+"ROM அடைவில் Model 2 ROM காப்பகங்கள் எதுவும் கிடைக்கவில்லை. அமைப்புகள் (F1) > பாதைகள் "
+"இல் அதை அமைத்து, மீண்டும் துவக்கவும்."
 
 #: src/osd/gui.cpp
 #, no-c-format

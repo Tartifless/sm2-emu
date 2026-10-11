@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -11,7 +11,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2);\n"
 "X-Language-Name: Română\n"
 "X-Language-Name-English: Romanian\n"
 
@@ -620,7 +621,8 @@ msgstr "stb_image - decodare imagini coperți (Sean Barrett)"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Gamepad picture - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
-msgstr "Imagine gamepad - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
+msgstr ""
+"Imagine gamepad - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -635,7 +637,8 @@ msgstr "HarfBuzz - modelarea textului pentru traduceri"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "SheenBidi - right-to-left text layout (Muhammad Tayyab Akram)"
-msgstr "SheenBidi - aranjare text de la dreapta la stânga (Muhammad Tayyab Akram)"
+msgstr ""
+"SheenBidi - aranjare text de la dreapta la stânga (Muhammad Tayyab Akram)"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -786,6 +789,24 @@ msgid ""
 msgstr ""
 "Cât să rotiți fizic pentru blocarea completă în joc (total,\n"
 "deci jumătate pe fiecare parte). Mai mic = mai sensibil."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1039,8 +1060,31 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "The left stick also moves; the shoulders also act as Button 3/4. Right Lever is Virtual On's. Test and Service are Guide+Start and Guide+Back."
-msgstr "Stick-ul stâng mișcă și el; butoanele de umăr acționează și ca Buton 3/4. Maneta dreapta este pentru Virtual On. Test și Service sunt Guide+Start și Guide+Back."
+msgid ""
+"The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
+"is Virtual On's. Test and Service are Guide+Start and Guide+Back."
+msgstr ""
+"Stick-ul stâng mișcă și el; butoanele de umăr acționează și ca Buton 3/4. "
+"Maneta dreapta este pentru Virtual On. Test și Service sunt Guide+Start și "
+"Guide+Back."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1176,8 +1220,12 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "Player 1 aims with the mouse; the left button fires and the right button reloads (shoot off screen)."
-msgstr "Jucătorul 1 țintește cu mouse-ul; butonul stâng trage, iar cel drept reîncarcă (foc în afara ecranului)."
+msgid ""
+"Player 1 aims with the mouse; the left button fires and the right button "
+"reloads (shoot off screen)."
+msgstr ""
+"Jucătorul 1 țintește cu mouse-ul; butonul stâng trage, iar cel drept "
+"reîncarcă (foc în afara ecranului)."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1217,13 +1265,28 @@ msgstr "Pistol %zu (jucător %zu): %s"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "No dedicated light guns detected. Player 1 aims with the mouse; the left button fires and the right button reloads (shoot off screen). Plug in guns in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for independent per-player aiming."
-msgstr "Nu s-au detectat pistoale optice dedicate. Jucătorul 1 țintește cu mouse-ul; butonul stâng trage, iar cel drept reîncarcă (foc în afara ecranului). Conectați pistoale în mod mouse absolut (GUN4IR, Sinden, AimTrak) înainte de pornire pentru țintire independentă per jucător."
+msgid ""
+"No dedicated light guns detected. Player 1 aims with the mouse; the left "
+"button fires and the right button reloads (shoot off screen). Plug in guns "
+"in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
+"independent per-player aiming."
+msgstr ""
+"Nu s-au detectat pistoale optice dedicate. Jucătorul 1 țintește cu mouse-ul; "
+"butonul stâng trage, iar cel drept reîncarcă (foc în afara ecranului). "
+"Conectați pistoale în mod mouse absolut (GUN4IR, Sinden, AimTrak) înainte de "
+"pornire pentru țintire independentă per jucător."
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "No dedicated light guns detected. Player 1 aims with the mouse; the left button fires and the right button reloads (shoot off screen). Plug in guns tagged ID_INPUT_GUN for independent per-player aiming."
-msgstr "Nu s-au detectat pistoale optice dedicate. Jucătorul 1 țintește cu mouse-ul; butonul stâng trage, iar cel drept reîncarcă (foc în afara ecranului). Conectați pistoale marcate ID_INPUT_GUN pentru țintire independentă per jucător."
+msgid ""
+"No dedicated light guns detected. Player 1 aims with the mouse; the left "
+"button fires and the right button reloads (shoot off screen). Plug in guns "
+"tagged ID_INPUT_GUN for independent per-player aiming."
+msgstr ""
+"Nu s-au detectat pistoale optice dedicate. Jucătorul 1 țintește cu mouse-ul; "
+"butonul stâng trage, iar cel drept reîncarcă (foc în afara ecranului). "
+"Conectați pistoale marcate ID_INPUT_GUN pentru țintire independentă per "
+"jucător."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1319,8 +1382,15 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "The comms board is a ring: each cabinet listens on its own address and sends to the next cabinet. For two machines, point each at the other. The master/slave role is chosen in the game's own test menu, not here."
-msgstr "Placa de comunicații formează un inel: fiecare automat ascultă pe propria adresă și trimite către următorul. Pentru două mașini, îndreptați-le una spre cealaltă. Rolul master/slave se alege din meniul de test al jocului, nu aici."
+msgid ""
+"The comms board is a ring: each cabinet listens on its own address and sends "
+"to the next cabinet. For two machines, point each at the other. The master/"
+"slave role is chosen in the game's own test menu, not here."
+msgstr ""
+"Placa de comunicații formează un inel: fiecare automat ascultă pe propria "
+"adresă și trimite către următorul. Pentru două mașini, îndreptați-le una "
+"spre cealaltă. Rolul master/slave se alege din meniul de test al jocului, nu "
+"aici."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1442,8 +1512,12 @@ msgstr "Încărcați un joc pentru a-i salva și restaura starea."
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "Save the whole machine to a slot and restore it later. Quick-save is F6, quick-load is F7."
-msgstr "Salvează întreaga mașină într-un slot și restaureaz-o mai târziu. Salvare rapidă cu F6, încărcare rapidă cu F7."
+msgid ""
+"Save the whole machine to a slot and restore it later. Quick-save is F6, "
+"quick-load is F7."
+msgstr ""
+"Salvează întreaga mașină într-un slot și restaureaz-o mai târziu. Salvare "
+"rapidă cu F6, încărcare rapidă cu F7."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1517,8 +1591,12 @@ msgstr "Enter: pornește   F10: setări   F9: ieșire"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "No Model 2 ROM archives were found in the ROM directory. Set it in Settings (F1) > Paths, then relaunch."
-msgstr "Nu s-au găsit arhive ROM Model 2 în directorul ROM. Setați-l în Setări (F1) > Căi, apoi reporniți."
+msgid ""
+"No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
+"(F1) > Paths, then relaunch."
+msgstr ""
+"Nu s-au găsit arhive ROM Model 2 în directorul ROM. Setați-l în Setări (F1) "
+"> Căi, apoi reporniți."
 
 #: src/osd/gui.cpp
 #, no-c-format

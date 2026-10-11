@@ -119,6 +119,7 @@ enum class GraphicsBackendChoice {
     w.ffb_invert      = c.wheel_ffb_invert;
     w.steer_degrees   = c.wheel_steer_degrees;
     w.lock_degrees    = c.wheel_lock_degrees;
+    w.steer_deadzone  = c.wheel_steer_deadzone;
     w.rumble          = c.wheel_rumble;
     w.rumble_strength = c.wheel_rumble_strength;
     w.rumble_engine   = c.wheel_rumble_engine;
@@ -2321,6 +2322,7 @@ int main(int argc, char** argv)
                 input.set_pad_axes(options.config.pad_axes, options.config.pad_axis_invert,
                                    options.config.pad_axis_buttons);
                 input.set_pad_stick_sensitivity(options.config.pad_stick_sensitivity);
+                input.set_pad_stick_deadzone(options.config.pad_stick_deadzone);
                 input.set_pad_rumble(options.config.pad_rumble,
                                      options.config.pad_rumble_strength,
                                      options.config.pad_rumble_cornering);

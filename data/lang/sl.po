@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -13,7 +13,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3);\n"
 "X-Language-Name: Slovenščina\n"
 "X-Language-Name-English: Slovenian\n"
 
@@ -622,7 +623,9 @@ msgstr "stb_image - dekodiranje slik škatel (Sean Barrett)"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Gamepad picture - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
-msgstr "Slika igralnega ploščka - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
+msgstr ""
+"Slika igralnega ploščka - Xelu's Free Controller Prompts (Nicolae Berbece), "
+"CC0"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -637,7 +640,8 @@ msgstr "HarfBuzz - oblikovanje besedila za prevode"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "SheenBidi - right-to-left text layout (Muhammad Tayyab Akram)"
-msgstr "SheenBidi - postavitev besedila od desne proti levi (Muhammad Tayyab Akram)"
+msgstr ""
+"SheenBidi - postavitev besedila od desne proti levi (Muhammad Tayyab Akram)"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -791,13 +795,33 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Axes"
 msgstr "Osi"
 
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Auto-detected. Recalibrate if steering or a pedal is wrong."
-msgstr "Samodejno zaznano. Ponovno umerite, če krmiljenje ali pedal ne deluje pravilno."
+msgstr ""
+"Samodejno zaznano. Ponovno umerite, če krmiljenje ali pedal ne deluje "
+"pravilno."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1045,7 +1069,27 @@ msgstr ""
 msgid ""
 "The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
 "is Virtual On's. Test and Service are Guide+Start and Guide+Back."
-msgstr "Leva palica prav tako premika; ramenska gumba delujeta tudi kot Gumb 3/4. Desna ročica je za Virtual On. Test in Servis sta Guide+Start in Guide+Back."
+msgstr ""
+"Leva palica prav tako premika; ramenska gumba delujeta tudi kot Gumb 3/4. "
+"Desna ročica je za Virtual On. Test in Servis sta Guide+Start in Guide+Back."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1184,7 +1228,9 @@ msgstr ""
 msgid ""
 "Player 1 aims with the mouse; the left button fires and the right button "
 "reloads (shoot off screen)."
-msgstr "Igralec 1 meri z miško; levi gumb strelja, desni ponovno nabije (streljajte izven zaslona)."
+msgstr ""
+"Igralec 1 meri z miško; levi gumb strelja, desni ponovno nabije (streljajte "
+"izven zaslona)."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1229,7 +1275,11 @@ msgid ""
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
 "independent per-player aiming."
-msgstr "Namenske svetlobne pištole niso zaznane. Igralec 1 meri z miško; levi gumb strelja, desni ponovno nabije (streljajte izven zaslona). Pred zagonom priključite pištole v načinu absolutne miške (GUN4IR, Sinden, AimTrak) za neodvisno merjenje vsakega igralca."
+msgstr ""
+"Namenske svetlobne pištole niso zaznane. Igralec 1 meri z miško; levi gumb "
+"strelja, desni ponovno nabije (streljajte izven zaslona). Pred zagonom "
+"priključite pištole v načinu absolutne miške (GUN4IR, Sinden, AimTrak) za "
+"neodvisno merjenje vsakega igralca."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1237,7 +1287,10 @@ msgid ""
 "No dedicated light guns detected. Player 1 aims with the mouse; the left "
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "tagged ID_INPUT_GUN for independent per-player aiming."
-msgstr "Namenske svetlobne pištole niso zaznane. Igralec 1 meri z miško; levi gumb strelja, desni ponovno nabije (streljajte izven zaslona). Priključite pištole z oznako ID_INPUT_GUN za neodvisno merjenje vsakega igralca."
+msgstr ""
+"Namenske svetlobne pištole niso zaznane. Igralec 1 meri z miško; levi gumb "
+"strelja, desni ponovno nabije (streljajte izven zaslona). Priključite "
+"pištole z oznako ID_INPUT_GUN za neodvisno merjenje vsakega igralca."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1337,7 +1390,10 @@ msgid ""
 "The comms board is a ring: each cabinet listens on its own address and sends "
 "to the next cabinet. For two machines, point each at the other. The master/"
 "slave role is chosen in the game's own test menu, not here."
-msgstr "Komunikacijska plošča je obroč: vsak avtomat posluša na svojem naslovu in pošilja naslednjemu avtomatu. Pri dveh računalnikih usmerite vsakega na drugega. Vloga glavni/podrejeni se izbere v testnem meniju igre, ne tukaj."
+msgstr ""
+"Komunikacijska plošča je obroč: vsak avtomat posluša na svojem naslovu in "
+"pošilja naslednjemu avtomatu. Pri dveh računalnikih usmerite vsakega na "
+"drugega. Vloga glavni/podrejeni se izbere v testnem meniju igre, ne tukaj."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1462,7 +1518,9 @@ msgstr "Naložite igro, da shranite in obnovite njeno stanje."
 msgid ""
 "Save the whole machine to a slot and restore it later. Quick-save is F6, "
 "quick-load is F7."
-msgstr "Shranite celoten stroj v režo in ga pozneje obnovite. Hitro shranjevanje je F6, hitro nalaganje F7."
+msgstr ""
+"Shranite celoten stroj v režo in ga pozneje obnovite. Hitro shranjevanje je "
+"F6, hitro nalaganje F7."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1539,7 +1597,9 @@ msgstr "Enter: zaženi   F10: nastavitve   F9: izhod"
 msgid ""
 "No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
 "(F1) > Paths, then relaunch."
-msgstr "V mapi ROM ni bilo najdenih arhivov ROM za Model 2. Nastavite jo v Nastavitve (F1) > Poti in znova zaženite."
+msgstr ""
+"V mapi ROM ni bilo najdenih arhivov ROM za Model 2. Nastavite jo v "
+"Nastavitve (F1) > Poti in znova zaženite."
 
 #: src/osd/gui.cpp
 #, no-c-format

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -796,6 +796,24 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Axes"
 msgstr "Άξονες"
 
@@ -1052,7 +1070,27 @@ msgid ""
 "The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
 "is Virtual On's. Test and Service are Guide+Start and Guide+Back."
 msgstr ""
-"Ο αριστερός μοχλίσκος κινεί επίσης· τα κουμπιά ώμων λειτουργούν και ως Κουμπί 3/4. Ο δεξής μοχλός είναι για το Virtual On. Δοκιμή και Σέρβις είναι Guide+Start και Guide+Back."
+"Ο αριστερός μοχλίσκος κινεί επίσης· τα κουμπιά ώμων λειτουργούν και ως "
+"Κουμπί 3/4. Ο δεξής μοχλός είναι για το Virtual On. Δοκιμή και Σέρβις είναι "
+"Guide+Start και Guide+Back."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1192,7 +1230,8 @@ msgid ""
 "Player 1 aims with the mouse; the left button fires and the right button "
 "reloads (shoot off screen)."
 msgstr ""
-"Ο Παίκτης 1 σκοπεύει με το ποντίκι· το αριστερό κουμπί πυροβολεί και το δεξί γεμίζει (βολή εκτός οθόνης)."
+"Ο Παίκτης 1 σκοπεύει με το ποντίκι· το αριστερό κουμπί πυροβολεί και το δεξί "
+"γεμίζει (βολή εκτός οθόνης)."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1238,7 +1277,10 @@ msgid ""
 "in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
 "independent per-player aiming."
 msgstr ""
-"Δεν εντοπίστηκαν ειδικά όπλα φωτός. Ο Παίκτης 1 σκοπεύει με το ποντίκι· το αριστερό κουμπί πυροβολεί και το δεξί γεμίζει (βολή εκτός οθόνης). Συνδέστε όπλα σε λειτουργία απόλυτου ποντικιού (GUN4IR, Sinden, AimTrak) πριν την εκκίνηση για ανεξάρτητη σκόπευση ανά παίκτη."
+"Δεν εντοπίστηκαν ειδικά όπλα φωτός. Ο Παίκτης 1 σκοπεύει με το ποντίκι· το "
+"αριστερό κουμπί πυροβολεί και το δεξί γεμίζει (βολή εκτός οθόνης). Συνδέστε "
+"όπλα σε λειτουργία απόλυτου ποντικιού (GUN4IR, Sinden, AimTrak) πριν την "
+"εκκίνηση για ανεξάρτητη σκόπευση ανά παίκτη."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1247,7 +1289,9 @@ msgid ""
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "tagged ID_INPUT_GUN for independent per-player aiming."
 msgstr ""
-"Δεν εντοπίστηκαν ειδικά όπλα φωτός. Ο Παίκτης 1 σκοπεύει με το ποντίκι· το αριστερό κουμπί πυροβολεί και το δεξί γεμίζει (βολή εκτός οθόνης). Συνδέστε όπλα με ετικέτα ID_INPUT_GUN για ανεξάρτητη σκόπευση ανά παίκτη."
+"Δεν εντοπίστηκαν ειδικά όπλα φωτός. Ο Παίκτης 1 σκοπεύει με το ποντίκι· το "
+"αριστερό κουμπί πυροβολεί και το δεξί γεμίζει (βολή εκτός οθόνης). Συνδέστε "
+"όπλα με ετικέτα ID_INPUT_GUN για ανεξάρτητη σκόπευση ανά παίκτη."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1348,7 +1392,10 @@ msgid ""
 "to the next cabinet. For two machines, point each at the other. The master/"
 "slave role is chosen in the game's own test menu, not here."
 msgstr ""
-"Η πλακέτα επικοινωνίας είναι δακτύλιος: κάθε καμπίνα ακούει στη δική της διεύθυνση και στέλνει στην επόμενη. Για δύο μηχανήματα, δείξτε το καθένα στο άλλο. Ο ρόλος master/slave επιλέγεται στο μενού δοκιμών του παιχνιδιού, όχι εδώ."
+"Η πλακέτα επικοινωνίας είναι δακτύλιος: κάθε καμπίνα ακούει στη δική της "
+"διεύθυνση και στέλνει στην επόμενη. Για δύο μηχανήματα, δείξτε το καθένα στο "
+"άλλο. Ο ρόλος master/slave επιλέγεται στο μενού δοκιμών του παιχνιδιού, όχι "
+"εδώ."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1467,7 +1514,8 @@ msgstr "Διεπαφές αυτού του μηχανήματος:"
 #, no-c-format
 msgid "Load a game to save and restore its state."
 msgstr ""
-"Φορτώστε ένα παιχνίδι για να αποθηκεύσετε και να επαναφέρετε την κατάστασή του."
+"Φορτώστε ένα παιχνίδι για να αποθηκεύσετε και να επαναφέρετε την κατάστασή "
+"του."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1475,7 +1523,8 @@ msgid ""
 "Save the whole machine to a slot and restore it later. Quick-save is F6, "
 "quick-load is F7."
 msgstr ""
-"Αποθηκεύστε ολόκληρο το μηχάνημα σε μια θέση και επαναφέρετέ το αργότερα. Γρήγορη αποθήκευση με F6, γρήγορη φόρτωση με F7."
+"Αποθηκεύστε ολόκληρο το μηχάνημα σε μια θέση και επαναφέρετέ το αργότερα. "
+"Γρήγορη αποθήκευση με F6, γρήγορη φόρτωση με F7."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1554,7 +1603,8 @@ msgid ""
 "No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
 "(F1) > Paths, then relaunch."
 msgstr ""
-"Δεν βρέθηκαν αρχεία ROM του Model 2 στον φάκελο ROM. Ορίστε τον στις Ρυθμίσεις (F1) > Διαδρομές και επανεκκινήστε."
+"Δεν βρέθηκαν αρχεία ROM του Model 2 στον φάκελο ROM. Ορίστε τον στις "
+"Ρυθμίσεις (F1) > Διαδρομές και επανεκκινήστε."
 
 #: src/osd/gui.cpp
 #, no-c-format

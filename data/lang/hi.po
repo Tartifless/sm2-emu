@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -794,6 +794,24 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Axes"
 msgstr "अक्ष"
 
@@ -1046,7 +1064,27 @@ msgstr ""
 msgid ""
 "The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
 "is Virtual On's. Test and Service are Guide+Start and Guide+Back."
-msgstr "बायाँ स्टिक भी चलाता है; शोल्डर बटन बटन 3/4 का काम भी करते हैं। दायाँ लीवर Virtual On के लिए है। टेस्ट और सर्विस Guide+Start और Guide+Back हैं।"
+msgstr ""
+"बायाँ स्टिक भी चलाता है; शोल्डर बटन बटन 3/4 का काम भी करते हैं। दायाँ लीवर Virtual "
+"On के लिए है। टेस्ट और सर्विस Guide+Start और Guide+Back हैं।"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1185,7 +1223,9 @@ msgstr ""
 msgid ""
 "Player 1 aims with the mouse; the left button fires and the right button "
 "reloads (shoot off screen)."
-msgstr "खिलाड़ी 1 माउस से निशाना लगाता है; बायाँ बटन गोली चलाता है और दायाँ बटन रीलोड करता है (स्क्रीन के बाहर शूट)।"
+msgstr ""
+"खिलाड़ी 1 माउस से निशाना लगाता है; बायाँ बटन गोली चलाता है और दायाँ बटन रीलोड करता "
+"है (स्क्रीन के बाहर शूट)।"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1230,7 +1270,10 @@ msgid ""
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
 "independent per-player aiming."
-msgstr "कोई समर्पित लाइट गन नहीं मिली। खिलाड़ी 1 माउस से निशाना लगाता है; बायाँ बटन गोली चलाता है और दायाँ बटन रीलोड करता है (स्क्रीन के बाहर शूट)। हर खिलाड़ी के अलग निशाने के लिए चलाने से पहले गन को absolute mouse मोड (GUN4IR, Sinden, AimTrak) में लगाएँ।"
+msgstr ""
+"कोई समर्पित लाइट गन नहीं मिली। खिलाड़ी 1 माउस से निशाना लगाता है; बायाँ बटन गोली "
+"चलाता है और दायाँ बटन रीलोड करता है (स्क्रीन के बाहर शूट)। हर खिलाड़ी के अलग निशाने के "
+"लिए चलाने से पहले गन को absolute mouse मोड (GUN4IR, Sinden, AimTrak) में लगाएँ।"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1238,7 +1281,10 @@ msgid ""
 "No dedicated light guns detected. Player 1 aims with the mouse; the left "
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "tagged ID_INPUT_GUN for independent per-player aiming."
-msgstr "कोई समर्पित लाइट गन नहीं मिली। खिलाड़ी 1 माउस से निशाना लगाता है; बायाँ बटन गोली चलाता है और दायाँ बटन रीलोड करता है (स्क्रीन के बाहर शूट)। हर खिलाड़ी के अलग निशाने के लिए ID_INPUT_GUN टैग वाली गन लगाएँ।"
+msgstr ""
+"कोई समर्पित लाइट गन नहीं मिली। खिलाड़ी 1 माउस से निशाना लगाता है; बायाँ बटन गोली "
+"चलाता है और दायाँ बटन रीलोड करता है (स्क्रीन के बाहर शूट)। हर खिलाड़ी के अलग निशाने के "
+"लिए ID_INPUT_GUN टैग वाली गन लगाएँ।"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1338,7 +1384,10 @@ msgid ""
 "The comms board is a ring: each cabinet listens on its own address and sends "
 "to the next cabinet. For two machines, point each at the other. The master/"
 "slave role is chosen in the game's own test menu, not here."
-msgstr "कम्युनिकेशन बोर्ड एक रिंग है: हर कैबिनेट अपने पते पर सुनता है और अगले कैबिनेट को भेजता है। दो मशीनों के लिए, हर एक को दूसरी की ओर सेट करें। मास्टर/स्लेव भूमिका गेम के अपने टेस्ट मेनू में चुनी जाती है, यहाँ नहीं।"
+msgstr ""
+"कम्युनिकेशन बोर्ड एक रिंग है: हर कैबिनेट अपने पते पर सुनता है और अगले कैबिनेट को भेजता है। दो "
+"मशीनों के लिए, हर एक को दूसरी की ओर सेट करें। मास्टर/स्लेव भूमिका गेम के अपने टेस्ट मेनू में "
+"चुनी जाती है, यहाँ नहीं।"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1463,7 +1512,8 @@ msgstr "स्टेट सहेजने और बहाल करने क�
 msgid ""
 "Save the whole machine to a slot and restore it later. Quick-save is F6, "
 "quick-load is F7."
-msgstr "पूरी मशीन को एक स्लॉट में सहेजें और बाद में बहाल करें। त्वरित सेव F6 है, त्वरित लोड F7 है।"
+msgstr ""
+"पूरी मशीन को एक स्लॉट में सहेजें और बाद में बहाल करें। त्वरित सेव F6 है, त्वरित लोड F7 है।"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1540,7 +1590,9 @@ msgstr "Enter: चलाएँ   F10: सेटिंग्स   F9: बाह�
 msgid ""
 "No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
 "(F1) > Paths, then relaunch."
-msgstr "ROM डायरेक्टरी में कोई Model 2 ROM आर्काइव नहीं मिला। इसे सेटिंग्स (F1) > पाथ में सेट करें, फिर दोबारा चलाएँ।"
+msgstr ""
+"ROM डायरेक्टरी में कोई Model 2 ROM आर्काइव नहीं मिला। इसे सेटिंग्स (F1) > पाथ में सेट करें, "
+"फिर दोबारा चलाएँ।"
 
 #: src/osd/gui.cpp
 #, no-c-format

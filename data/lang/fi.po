@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -798,6 +798,24 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Axes"
 msgstr "Akselit"
 
@@ -805,7 +823,8 @@ msgstr "Akselit"
 #, no-c-format
 msgid "Auto-detected. Recalibrate if steering or a pedal is wrong."
 msgstr ""
-"Tunnistettu automaattisesti. Kalibroi uudelleen, jos ohjaus tai poljin on väärin."
+"Tunnistettu automaattisesti. Kalibroi uudelleen, jos ohjaus tai poljin on "
+"väärin."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1053,7 +1072,27 @@ msgid ""
 "The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
 "is Virtual On's. Test and Service are Guide+Start and Guide+Back."
 msgstr ""
-"Vasen tikku myös liikuttaa; olkapainikkeet toimivat myös painikkeina 3/4. Oikea vipu on Virtual Onia varten. Testi ja Huolto ovat Guide+Start ja Guide+Back."
+"Vasen tikku myös liikuttaa; olkapainikkeet toimivat myös painikkeina 3/4. "
+"Oikea vipu on Virtual Onia varten. Testi ja Huolto ovat Guide+Start ja "
+"Guide+Back."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1193,7 +1232,8 @@ msgid ""
 "Player 1 aims with the mouse; the left button fires and the right button "
 "reloads (shoot off screen)."
 msgstr ""
-"Pelaaja 1 tähtää hiirellä; vasen painike ampuu ja oikea painike lataa (ammu ruudun ulkopuolelle)."
+"Pelaaja 1 tähtää hiirellä; vasen painike ampuu ja oikea painike lataa (ammu "
+"ruudun ulkopuolelle)."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1239,7 +1279,10 @@ msgid ""
 "in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
 "independent per-player aiming."
 msgstr ""
-"Erillisiä valoaseita ei havaittu. Pelaaja 1 tähtää hiirellä; vasen painike ampuu ja oikea painike lataa (ammu ruudun ulkopuolelle). Kytke aseet absoluuttisessa hiiritilassa (GUN4IR, Sinden, AimTrak) ennen käynnistystä, niin jokainen pelaaja tähtää erikseen."
+"Erillisiä valoaseita ei havaittu. Pelaaja 1 tähtää hiirellä; vasen painike "
+"ampuu ja oikea painike lataa (ammu ruudun ulkopuolelle). Kytke aseet "
+"absoluuttisessa hiiritilassa (GUN4IR, Sinden, AimTrak) ennen käynnistystä, "
+"niin jokainen pelaaja tähtää erikseen."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1248,7 +1291,9 @@ msgid ""
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "tagged ID_INPUT_GUN for independent per-player aiming."
 msgstr ""
-"Erillisiä valoaseita ei havaittu. Pelaaja 1 tähtää hiirellä; vasen painike ampuu ja oikea painike lataa (ammu ruudun ulkopuolelle). Kytke ID_INPUT_GUN-merkityt aseet, niin jokainen pelaaja tähtää erikseen."
+"Erillisiä valoaseita ei havaittu. Pelaaja 1 tähtää hiirellä; vasen painike "
+"ampuu ja oikea painike lataa (ammu ruudun ulkopuolelle). Kytke ID_INPUT_GUN-"
+"merkityt aseet, niin jokainen pelaaja tähtää erikseen."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1349,7 +1394,9 @@ msgid ""
 "to the next cabinet. For two machines, point each at the other. The master/"
 "slave role is chosen in the game's own test menu, not here."
 msgstr ""
-"Tiedonsiirtokortti on rengas: jokainen kaappi kuuntelee omaa osoitettaan ja lähettää seuraavalle kaapille. Kahdella koneella kumpikin osoittaa toiseen. Master/slave-rooli valitaan pelin omassa testivalikossa, ei tässä."
+"Tiedonsiirtokortti on rengas: jokainen kaappi kuuntelee omaa osoitettaan ja "
+"lähettää seuraavalle kaapille. Kahdella koneella kumpikin osoittaa toiseen. "
+"Master/slave-rooli valitaan pelin omassa testivalikossa, ei tässä."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1475,7 +1522,8 @@ msgid ""
 "Save the whole machine to a slot and restore it later. Quick-save is F6, "
 "quick-load is F7."
 msgstr ""
-"Tallenna koko kone paikkaan ja palauta se myöhemmin. Pikatallennus on F6, pikalataus on F7."
+"Tallenna koko kone paikkaan ja palauta se myöhemmin. Pikatallennus on F6, "
+"pikalataus on F7."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1553,7 +1601,8 @@ msgid ""
 "No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
 "(F1) > Paths, then relaunch."
 msgstr ""
-"ROM-kansiosta ei löytynyt Model 2 -ROM-arkistoja. Aseta se kohdassa Asetukset (F1) > Polut ja käynnistä uudelleen."
+"ROM-kansiosta ei löytynyt Model 2 -ROM-arkistoja. Aseta se kohdassa "
+"Asetukset (F1) > Polut ja käynnistä uudelleen."
 
 #: src/osd/gui.cpp
 #, no-c-format

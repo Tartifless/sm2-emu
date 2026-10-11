@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -555,7 +555,8 @@ msgstr "BSD 3-Clause licenc. Lásd: LICENSE."
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "sm2-emu exists because of open source shared with the community."
-msgstr "Az sm2-emu a közösséggel megosztott nyílt forráskódnak köszönhetően létezik."
+msgstr ""
+"Az sm2-emu a közösséggel megosztott nyílt forráskódnak köszönhetően létezik."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -620,7 +621,8 @@ msgstr "stb_image - borítóképek dekódolása (Sean Barrett)"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Gamepad picture - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
-msgstr "Játékvezérlő képe - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
+msgstr ""
+"Játékvezérlő képe - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -675,7 +677,8 @@ msgstr "Kormány csatlakoztatva."
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "No wheel connected. Settings still apply once one is."
-msgstr "Nincs kormány csatlakoztatva. A beállítások csatlakoztatáskor érvényesek."
+msgstr ""
+"Nincs kormány csatlakoztatva. A beállítások csatlakoztatáskor érvényesek."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -789,13 +792,33 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Axes"
 msgstr "Tengelyek"
 
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Auto-detected. Recalibrate if steering or a pedal is wrong."
-msgstr "Automatikusan felismerve. Kalibráljon újra, ha a kormányzás vagy egy pedál hibás."
+msgstr ""
+"Automatikusan felismerve. Kalibráljon újra, ha a kormányzás vagy egy pedál "
+"hibás."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -850,7 +873,8 @@ msgstr "Gombok"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Press Bind, then press the wheel button for that control."
-msgstr "Nyomja meg a Hozzárendelést, majd a kormány gombját az adott funkcióhoz."
+msgstr ""
+"Nyomja meg a Hozzárendelést, majd a kormány gombját az adott funkcióhoz."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -942,7 +966,9 @@ msgstr[1] "%d játékvezérlő csatlakoztatva."
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "No gamepad connected. Settings still apply once one is."
-msgstr "Nincs játékvezérlő csatlakoztatva. A beállítások csatlakoztatáskor érvényesek."
+msgstr ""
+"Nincs játékvezérlő csatlakoztatva. A beállítások csatlakoztatáskor "
+"érvényesek."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1038,8 +1064,31 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "The left stick also moves; the shoulders also act as Button 3/4. Right Lever is Virtual On's. Test and Service are Guide+Start and Guide+Back."
-msgstr "A bal analóg kar is mozgat; a vállgombok 3./4. gombként is működnek. A jobb oldali kar a Virtual On-hoz való. A Teszt és a Szerviz: Guide+Start és Guide+Back."
+msgid ""
+"The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
+"is Virtual On's. Test and Service are Guide+Start and Guide+Back."
+msgstr ""
+"A bal analóg kar is mozgat; a vállgombok 3./4. gombként is működnek. A jobb "
+"oldali kar a Virtual On-hoz való. A Teszt és a Szerviz: Guide+Start és "
+"Guide+Back."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1175,8 +1224,12 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "Player 1 aims with the mouse; the left button fires and the right button reloads (shoot off screen)."
-msgstr "Az 1. játékos egérrel céloz; a bal gomb lő, a jobb gomb újratölt (lövés a képernyőn kívülre)."
+msgid ""
+"Player 1 aims with the mouse; the left button fires and the right button "
+"reloads (shoot off screen)."
+msgstr ""
+"Az 1. játékos egérrel céloz; a bal gomb lő, a jobb gomb újratölt (lövés a "
+"képernyőn kívülre)."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1216,13 +1269,27 @@ msgstr "%zu. pisztoly (%zu. játékos): %s"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "No dedicated light guns detected. Player 1 aims with the mouse; the left button fires and the right button reloads (shoot off screen). Plug in guns in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for independent per-player aiming."
-msgstr "Nem található külön fénypisztoly. Az 1. játékos egérrel céloz; a bal gomb lő, a jobb gomb újratölt (lövés a képernyőn kívülre). A játékosonként független célzáshoz indítás előtt csatlakoztasson abszolút egér módú pisztolyokat (GUN4IR, Sinden, AimTrak)."
+msgid ""
+"No dedicated light guns detected. Player 1 aims with the mouse; the left "
+"button fires and the right button reloads (shoot off screen). Plug in guns "
+"in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
+"independent per-player aiming."
+msgstr ""
+"Nem található külön fénypisztoly. Az 1. játékos egérrel céloz; a bal gomb "
+"lő, a jobb gomb újratölt (lövés a képernyőn kívülre). A játékosonként "
+"független célzáshoz indítás előtt csatlakoztasson abszolút egér módú "
+"pisztolyokat (GUN4IR, Sinden, AimTrak)."
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "No dedicated light guns detected. Player 1 aims with the mouse; the left button fires and the right button reloads (shoot off screen). Plug in guns tagged ID_INPUT_GUN for independent per-player aiming."
-msgstr "Nem található külön fénypisztoly. Az 1. játékos egérrel céloz; a bal gomb lő, a jobb gomb újratölt (lövés a képernyőn kívülre). A játékosonként független célzáshoz csatlakoztasson ID_INPUT_GUN címkéjű pisztolyokat."
+msgid ""
+"No dedicated light guns detected. Player 1 aims with the mouse; the left "
+"button fires and the right button reloads (shoot off screen). Plug in guns "
+"tagged ID_INPUT_GUN for independent per-player aiming."
+msgstr ""
+"Nem található külön fénypisztoly. Az 1. játékos egérrel céloz; a bal gomb "
+"lő, a jobb gomb újratölt (lövés a képernyőn kívülre). A játékosonként "
+"független célzáshoz csatlakoztasson ID_INPUT_GUN címkéjű pisztolyokat."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1232,7 +1299,8 @@ msgstr "Pisztolygombok"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Press Bind, then press the button on that player's gun."
-msgstr "Nyomja meg a Hozzárendelést, majd a gombot az adott játékos pisztolyán."
+msgstr ""
+"Nyomja meg a Hozzárendelést, majd a gombot az adott játékos pisztolyán."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1313,13 +1381,20 @@ msgid ""
 "this cabinet standalone. Takes effect on the next game launch."
 msgstr ""
 "Összekapcsolt verseny ugyanazon a LAN-on lévő, ugyanazt a\n"
-"játékot futtató gépekkel (Sega Rally, Daytona, Super GT 24h, Indy 500, ...).\n"
+"játékot futtató gépekkel (Sega Rally, Daytona, Super GT 24h, Indy "
+"500, ...).\n"
 "Kikapcsolva önálló. A következő játékindításkor érvényes."
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "The comms board is a ring: each cabinet listens on its own address and sends to the next cabinet. For two machines, point each at the other. The master/slave role is chosen in the game's own test menu, not here."
-msgstr "A kommunikációs panel gyűrűt alkot: minden gép a saját címén figyel, és a következő gépnek küld. Két gépnél mindegyiket a másikra irányítsa. A master/slave szerepet a játék saját tesztmenüjében kell választani, nem itt."
+msgid ""
+"The comms board is a ring: each cabinet listens on its own address and sends "
+"to the next cabinet. For two machines, point each at the other. The master/"
+"slave role is chosen in the game's own test menu, not here."
+msgstr ""
+"A kommunikációs panel gyűrűt alkot: minden gép a saját címén figyel, és a "
+"következő gépnek küld. Két gépnél mindegyiket a másikra irányítsa. A master/"
+"slave szerepet a játék saját tesztmenüjében kell választani, nem itt."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1441,8 +1516,12 @@ msgstr "Töltsön be egy játékot az állapot mentéséhez és visszaállítás
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "Save the whole machine to a slot and restore it later. Quick-save is F6, quick-load is F7."
-msgstr "Az egész gép mentése egy helyre és későbbi visszaállítása. Gyorsmentés: F6, gyorsbetöltés: F7."
+msgid ""
+"Save the whole machine to a slot and restore it later. Quick-save is F6, "
+"quick-load is F7."
+msgstr ""
+"Az egész gép mentése egy helyre és későbbi visszaállítása. Gyorsmentés: F6, "
+"gyorsbetöltés: F7."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1516,8 +1595,12 @@ msgstr "Enter: indítás   F10: beállítások   F9: kilépés"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "No Model 2 ROM archives were found in the ROM directory. Set it in Settings (F1) > Paths, then relaunch."
-msgstr "Nem található Model 2 ROM-archívum a ROM-mappában. Állítsa be: Beállítások (F1) > Útvonalak, majd indítsa újra."
+msgid ""
+"No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
+"(F1) > Paths, then relaunch."
+msgstr ""
+"Nem található Model 2 ROM-archívum a ROM-mappában. Állítsa be: Beállítások "
+"(F1) > Útvonalak, majd indítsa újra."
 
 #: src/osd/gui.cpp
 #, no-c-format

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -16,7 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Language-Name: Српски\n"
 "X-Language-Name-English: Serbian\n"
 
@@ -794,6 +795,24 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Axes"
 msgstr "Осе"
 
@@ -1048,7 +1067,26 @@ msgid ""
 "The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
 "is Virtual On's. Test and Service are Guide+Start and Guide+Back."
 msgstr ""
-"Леви штапић такође помера; рамена дугмад раде и као Дугме 3/4. Десна полуга је за Virtual On. Тест и Сервис су Guide+Start и Guide+Back."
+"Леви штапић такође помера; рамена дугмад раде и као Дугме 3/4. Десна полуга "
+"је за Virtual On. Тест и Сервис су Guide+Start и Guide+Back."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1188,7 +1226,8 @@ msgid ""
 "Player 1 aims with the mouse; the left button fires and the right button "
 "reloads (shoot off screen)."
 msgstr ""
-"Играч 1 нишани мишем; лево дугме пуца, а десно поново пуни (пуцањ ван екрана)."
+"Играч 1 нишани мишем; лево дугме пуца, а десно поново пуни (пуцањ ван "
+"екрана)."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1234,7 +1273,10 @@ msgid ""
 "in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
 "independent per-player aiming."
 msgstr ""
-"Нису откривени посебни светлосни пиштољи. Играч 1 нишани мишем; лево дугме пуца, а десно поново пуни (пуцањ ван екрана). Прикључите пиштоље у режиму апсолутног миша (GUN4IR, Sinden, AimTrak) пре покретања за независно нишањење сваког играча."
+"Нису откривени посебни светлосни пиштољи. Играч 1 нишани мишем; лево дугме "
+"пуца, а десно поново пуни (пуцањ ван екрана). Прикључите пиштоље у режиму "
+"апсолутног миша (GUN4IR, Sinden, AimTrak) пре покретања за независно "
+"нишањење сваког играча."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1243,7 +1285,9 @@ msgid ""
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "tagged ID_INPUT_GUN for independent per-player aiming."
 msgstr ""
-"Нису откривени посебни светлосни пиштољи. Играч 1 нишани мишем; лево дугме пуца, а десно поново пуни (пуцањ ван екрана). Прикључите пиштоље означене са ID_INPUT_GUN за независно нишањење сваког играча."
+"Нису откривени посебни светлосни пиштољи. Играч 1 нишани мишем; лево дугме "
+"пуца, а десно поново пуни (пуцањ ван екрана). Прикључите пиштоље означене са "
+"ID_INPUT_GUN за независно нишањење сваког играча."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1344,7 +1388,9 @@ msgid ""
 "to the next cabinet. For two machines, point each at the other. The master/"
 "slave role is chosen in the game's own test menu, not here."
 msgstr ""
-"Комуникациона плоча је прстен: сваки аутомат слуша на својој адреси и шаље следећем. За две машине усмерите сваку ка другој. Улога master/slave бира се у тест менију саме игре, не овде."
+"Комуникациона плоча је прстен: сваки аутомат слуша на својој адреси и шаље "
+"следећем. За две машине усмерите сваку ка другој. Улога master/slave бира се "
+"у тест менију саме игре, не овде."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1470,7 +1516,8 @@ msgid ""
 "Save the whole machine to a slot and restore it later. Quick-save is F6, "
 "quick-load is F7."
 msgstr ""
-"Сачувајте целу машину у слот и вратите је касније. Брзо чување је F6, брзо учитавање F7."
+"Сачувајте целу машину у слот и вратите је касније. Брзо чување је F6, брзо "
+"учитавање F7."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1548,7 +1595,8 @@ msgid ""
 "No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
 "(F1) > Paths, then relaunch."
 msgstr ""
-"У фасцикли ROM-ова нису пронађене ROM архиве за Model 2. Подесите је у Подешавања (F1) > Путање, па поново покрените."
+"У фасцикли ROM-ова нису пронађене ROM архиве за Model 2. Подесите је у "
+"Подешавања (F1) > Путање, па поново покрените."
 
 #: src/osd/gui.cpp
 #, no-c-format

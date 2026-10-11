@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -789,6 +789,24 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Axes"
 msgstr "Sumbu"
 
@@ -1040,7 +1058,28 @@ msgstr ""
 msgid ""
 "The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
 "is Virtual On's. Test and Service are Guide+Start and Guide+Back."
-msgstr "Stik kiri juga menggerakkan; tombol bahu juga berfungsi sebagai Tombol 3/4. Tuas Kanan adalah milik Virtual On. Tes dan Servis adalah Guide+Start dan Guide+Back."
+msgstr ""
+"Stik kiri juga menggerakkan; tombol bahu juga berfungsi sebagai Tombol 3/4. "
+"Tuas Kanan adalah milik Virtual On. Tes dan Servis adalah Guide+Start dan "
+"Guide+Back."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1179,7 +1218,9 @@ msgstr ""
 msgid ""
 "Player 1 aims with the mouse; the left button fires and the right button "
 "reloads (shoot off screen)."
-msgstr "Pemain 1 membidik dengan mouse; tombol kiri menembak dan tombol kanan mengisi ulang (tembak ke luar layar)."
+msgstr ""
+"Pemain 1 membidik dengan mouse; tombol kiri menembak dan tombol kanan "
+"mengisi ulang (tembak ke luar layar)."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1224,7 +1265,11 @@ msgid ""
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
 "independent per-player aiming."
-msgstr "Tidak ada light gun khusus terdeteksi. Pemain 1 membidik dengan mouse; tombol kiri menembak dan tombol kanan mengisi ulang (tembak ke luar layar). Colokkan senjata dalam mode mouse absolut (GUN4IR, Sinden, AimTrak) sebelum meluncurkan untuk bidikan terpisah per pemain."
+msgstr ""
+"Tidak ada light gun khusus terdeteksi. Pemain 1 membidik dengan mouse; "
+"tombol kiri menembak dan tombol kanan mengisi ulang (tembak ke luar layar). "
+"Colokkan senjata dalam mode mouse absolut (GUN4IR, Sinden, AimTrak) sebelum "
+"meluncurkan untuk bidikan terpisah per pemain."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1232,7 +1277,10 @@ msgid ""
 "No dedicated light guns detected. Player 1 aims with the mouse; the left "
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "tagged ID_INPUT_GUN for independent per-player aiming."
-msgstr "Tidak ada light gun khusus terdeteksi. Pemain 1 membidik dengan mouse; tombol kiri menembak dan tombol kanan mengisi ulang (tembak ke luar layar). Colokkan senjata bertanda ID_INPUT_GUN untuk bidikan terpisah per pemain."
+msgstr ""
+"Tidak ada light gun khusus terdeteksi. Pemain 1 membidik dengan mouse; "
+"tombol kiri menembak dan tombol kanan mengisi ulang (tembak ke luar layar). "
+"Colokkan senjata bertanda ID_INPUT_GUN untuk bidikan terpisah per pemain."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1332,7 +1380,11 @@ msgid ""
 "The comms board is a ring: each cabinet listens on its own address and sends "
 "to the next cabinet. For two machines, point each at the other. The master/"
 "slave role is chosen in the game's own test menu, not here."
-msgstr "Papan komunikasi berbentuk cincin: setiap kabinet mendengarkan di alamatnya sendiri dan mengirim ke kabinet berikutnya. Untuk dua mesin, arahkan masing-masing ke yang lain. Peran master/slave dipilih di menu tes milik game, bukan di sini."
+msgstr ""
+"Papan komunikasi berbentuk cincin: setiap kabinet mendengarkan di alamatnya "
+"sendiri dan mengirim ke kabinet berikutnya. Untuk dua mesin, arahkan masing-"
+"masing ke yang lain. Peran master/slave dipilih di menu tes milik game, "
+"bukan di sini."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1457,7 +1509,9 @@ msgstr "Muat game untuk menyimpan dan memulihkan state-nya."
 msgid ""
 "Save the whole machine to a slot and restore it later. Quick-save is F6, "
 "quick-load is F7."
-msgstr "Simpan seluruh mesin ke slot dan pulihkan nanti. Simpan cepat adalah F6, muat cepat adalah F7."
+msgstr ""
+"Simpan seluruh mesin ke slot dan pulihkan nanti. Simpan cepat adalah F6, "
+"muat cepat adalah F7."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1534,7 +1588,9 @@ msgstr "Enter: luncurkan   F10: pengaturan   F9: keluar"
 msgid ""
 "No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
 "(F1) > Paths, then relaunch."
-msgstr "Tidak ada arsip ROM Model 2 di direktori ROM. Atur di Pengaturan (F1) > Jalur, lalu buka ulang."
+msgstr ""
+"Tidak ada arsip ROM Model 2 di direktori ROM. Atur di Pengaturan (F1) > "
+"Jalur, lalu buka ulang."
 
 #: src/osd/gui.cpp
 #, no-c-format

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -795,6 +795,24 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Axes"
 msgstr "অক্ষ"
 
@@ -1047,7 +1065,27 @@ msgstr ""
 msgid ""
 "The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
 "is Virtual On's. Test and Service are Guide+Start and Guide+Back."
-msgstr "বাম স্টিক দিয়েও চলাচল করা যায়; শোল্ডার বোতামগুলো বোতাম 3/4 হিসেবেও কাজ করে। ডান লিভার Virtual On-এর জন্য। টেস্ট ও সার্ভিস হলো Guide+Start ও Guide+Back।"
+msgstr ""
+"বাম স্টিক দিয়েও চলাচল করা যায়; শোল্ডার বোতামগুলো বোতাম 3/4 হিসেবেও কাজ করে। ডান "
+"লিভার Virtual On-এর জন্য। টেস্ট ও সার্ভিস হলো Guide+Start ও Guide+Back।"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1186,7 +1224,9 @@ msgstr ""
 msgid ""
 "Player 1 aims with the mouse; the left button fires and the right button "
 "reloads (shoot off screen)."
-msgstr "খেলোয়াড় 1 মাউস দিয়ে লক্ষ্য করে; বাম বোতামে গুলি ও ডান বোতামে রিলোড (স্ক্রিনের বাইরে গুলি)।"
+msgstr ""
+"খেলোয়াড় 1 মাউস দিয়ে লক্ষ্য করে; বাম বোতামে গুলি ও ডান বোতামে রিলোড (স্ক্রিনের "
+"বাইরে গুলি)।"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1231,7 +1271,10 @@ msgid ""
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
 "independent per-player aiming."
-msgstr "কোনো নির্দিষ্ট লাইট গান পাওয়া যায়নি। খেলোয়াড় 1 মাউস দিয়ে লক্ষ্য করে; বাম বোতামে গুলি ও ডান বোতামে রিলোড (স্ক্রিনের বাইরে গুলি)। প্রতি খেলোয়াড়ের আলাদা লক্ষ্যের জন্য চালু করার আগে অ্যাবসলিউট মাউস মোডে গান (GUN4IR, Sinden, AimTrak) লাগান।"
+msgstr ""
+"কোনো নির্দিষ্ট লাইট গান পাওয়া যায়নি। খেলোয়াড় 1 মাউস দিয়ে লক্ষ্য করে; বাম বোতামে "
+"গুলি ও ডান বোতামে রিলোড (স্ক্রিনের বাইরে গুলি)। প্রতি খেলোয়াড়ের আলাদা লক্ষ্যের জন্য "
+"চালু করার আগে অ্যাবসলিউট মাউস মোডে গান (GUN4IR, Sinden, AimTrak) লাগান।"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1239,7 +1282,10 @@ msgid ""
 "No dedicated light guns detected. Player 1 aims with the mouse; the left "
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "tagged ID_INPUT_GUN for independent per-player aiming."
-msgstr "কোনো নির্দিষ্ট লাইট গান পাওয়া যায়নি। খেলোয়াড় 1 মাউস দিয়ে লক্ষ্য করে; বাম বোতামে গুলি ও ডান বোতামে রিলোড (স্ক্রিনের বাইরে গুলি)। প্রতি খেলোয়াড়ের আলাদা লক্ষ্যের জন্য ID_INPUT_GUN ট্যাগযুক্ত গান লাগান।"
+msgstr ""
+"কোনো নির্দিষ্ট লাইট গান পাওয়া যায়নি। খেলোয়াড় 1 মাউস দিয়ে লক্ষ্য করে; বাম বোতামে "
+"গুলি ও ডান বোতামে রিলোড (স্ক্রিনের বাইরে গুলি)। প্রতি খেলোয়াড়ের আলাদা লক্ষ্যের জন্য "
+"ID_INPUT_GUN ট্যাগযুক্ত গান লাগান।"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1339,7 +1385,10 @@ msgid ""
 "The comms board is a ring: each cabinet listens on its own address and sends "
 "to the next cabinet. For two machines, point each at the other. The master/"
 "slave role is chosen in the game's own test menu, not here."
-msgstr "কমস বোর্ড একটি রিং: প্রতিটি ক্যাবিনেট নিজের ঠিকানায় শোনে এবং পরের ক্যাবিনেটে পাঠায়। দুটি মেশিনের ক্ষেত্রে, প্রত্যেকটিকে অন্যটির দিকে নির্দেশ করুন। মাস্টার/স্লেভ ভূমিকা গেমের নিজস্ব টেস্ট মেনুতে বেছে নেওয়া হয়, এখানে নয়।"
+msgstr ""
+"কমস বোর্ড একটি রিং: প্রতিটি ক্যাবিনেট নিজের ঠিকানায় শোনে এবং পরের ক্যাবিনেটে "
+"পাঠায়। দুটি মেশিনের ক্ষেত্রে, প্রত্যেকটিকে অন্যটির দিকে নির্দেশ করুন। মাস্টার/স্লেভ "
+"ভূমিকা গেমের নিজস্ব টেস্ট মেনুতে বেছে নেওয়া হয়, এখানে নয়।"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1464,7 +1513,8 @@ msgstr "স্টেট সংরক্ষণ ও পুনরুদ্ধার
 msgid ""
 "Save the whole machine to a slot and restore it later. Quick-save is F6, "
 "quick-load is F7."
-msgstr "পুরো মেশিন একটি স্লটে সংরক্ষণ করুন ও পরে পুনরুদ্ধার করুন। দ্রুত-সংরক্ষণ F6, দ্রুত-লোড F7।"
+msgstr ""
+"পুরো মেশিন একটি স্লটে সংরক্ষণ করুন ও পরে পুনরুদ্ধার করুন। দ্রুত-সংরক্ষণ F6, দ্রুত-লোড F7।"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1541,7 +1591,9 @@ msgstr "Enter: চালু   F10: সেটিংস   F9: প্রস্থ�
 msgid ""
 "No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
 "(F1) > Paths, then relaunch."
-msgstr "ROM ফোল্ডারে কোনো Model 2 ROM আর্কাইভ পাওয়া যায়নি। সেটিংস (F1) > পাথ-এ এটি সেট করুন, তারপর আবার চালু করুন।"
+msgstr ""
+"ROM ফোল্ডারে কোনো Model 2 ROM আর্কাইভ পাওয়া যায়নি। সেটিংস (F1) > পাথ-এ এটি সেট "
+"করুন, তারপর আবার চালু করুন।"
 
 #: src/osd/gui.cpp
 #, no-c-format

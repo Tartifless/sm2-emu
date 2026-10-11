@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -13,7 +13,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
 "X-Language-Name: Latviešu\n"
 "X-Language-Name-English: Latvian\n"
 
@@ -622,7 +623,8 @@ msgstr "stb_image - vāku attēlu dekodēšana (Sean Barrett)"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Gamepad picture - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
-msgstr "Spēļu pults attēls - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
+msgstr ""
+"Spēļu pults attēls - Xelu's Free Controller Prompts (Nicolae Berbece), CC0"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -637,7 +639,8 @@ msgstr "HarfBuzz - teksta veidošana tulkojumiem"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "SheenBidi - right-to-left text layout (Muhammad Tayyab Akram)"
-msgstr "SheenBidi - teksta izkārtojums no labās uz kreiso (Muhammad Tayyab Akram)"
+msgstr ""
+"SheenBidi - teksta izkārtojums no labās uz kreiso (Muhammad Tayyab Akram)"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -791,13 +794,33 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Axes"
 msgstr "Asis"
 
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Auto-detected. Recalibrate if steering or a pedal is wrong."
-msgstr "Noteikts automātiski. Kalibrējiet atkārtoti, ja stūre vai pedālis darbojas nepareizi."
+msgstr ""
+"Noteikts automātiski. Kalibrējiet atkārtoti, ja stūre vai pedālis darbojas "
+"nepareizi."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1044,7 +1067,27 @@ msgstr ""
 msgid ""
 "The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
 "is Virtual On's. Test and Service are Guide+Start and Guide+Back."
-msgstr "Kreisā kursorsvira arī pārvieto; plecu pogas darbojas arī kā Poga 3/4. Labā svira ir Virtual On spēlei. Tests un Serviss ir Guide+Start un Guide+Back."
+msgstr ""
+"Kreisā kursorsvira arī pārvieto; plecu pogas darbojas arī kā Poga 3/4. Labā "
+"svira ir Virtual On spēlei. Tests un Serviss ir Guide+Start un Guide+Back."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1183,7 +1226,9 @@ msgstr ""
 msgid ""
 "Player 1 aims with the mouse; the left button fires and the right button "
 "reloads (shoot off screen)."
-msgstr "1. spēlētājs tēmē ar peli; kreisā poga šauj, labā pārlādē (šaujiet ārpus ekrāna)."
+msgstr ""
+"1. spēlētājs tēmē ar peli; kreisā poga šauj, labā pārlādē (šaujiet ārpus "
+"ekrāna)."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1228,7 +1273,11 @@ msgid ""
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
 "independent per-player aiming."
-msgstr "Īpašas gaismas pistoles nav atrastas. 1. spēlētājs tēmē ar peli; kreisā poga šauj, labā pārlādē (šaujiet ārpus ekrāna). Pirms palaišanas pievienojiet pistoles absolūtā peles režīmā (GUN4IR, Sinden, AimTrak), lai katrs spēlētājs tēmētu neatkarīgi."
+msgstr ""
+"Īpašas gaismas pistoles nav atrastas. 1. spēlētājs tēmē ar peli; kreisā poga "
+"šauj, labā pārlādē (šaujiet ārpus ekrāna). Pirms palaišanas pievienojiet "
+"pistoles absolūtā peles režīmā (GUN4IR, Sinden, AimTrak), lai katrs "
+"spēlētājs tēmētu neatkarīgi."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1236,7 +1285,10 @@ msgid ""
 "No dedicated light guns detected. Player 1 aims with the mouse; the left "
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "tagged ID_INPUT_GUN for independent per-player aiming."
-msgstr "Īpašas gaismas pistoles nav atrastas. 1. spēlētājs tēmē ar peli; kreisā poga šauj, labā pārlādē (šaujiet ārpus ekrāna). Pievienojiet pistoles ar ID_INPUT_GUN atzīmi, lai katrs spēlētājs tēmētu neatkarīgi."
+msgstr ""
+"Īpašas gaismas pistoles nav atrastas. 1. spēlētājs tēmē ar peli; kreisā poga "
+"šauj, labā pārlādē (šaujiet ārpus ekrāna). Pievienojiet pistoles ar "
+"ID_INPUT_GUN atzīmi, lai katrs spēlētājs tēmētu neatkarīgi."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1336,7 +1388,10 @@ msgid ""
 "The comms board is a ring: each cabinet listens on its own address and sends "
 "to the next cabinet. For two machines, point each at the other. The master/"
 "slave role is chosen in the game's own test menu, not here."
-msgstr "Sakaru plate ir gredzens: katrs automāts klausās savā adresē un sūta nākamajam automātam. Divām mašīnām norādiet vienu uz otru. Galvenā/pakārtotā loma tiek izvēlēta pašas spēles testa izvēlnē, nevis šeit."
+msgstr ""
+"Sakaru plate ir gredzens: katrs automāts klausās savā adresē un sūta "
+"nākamajam automātam. Divām mašīnām norādiet vienu uz otru. Galvenā/pakārtotā "
+"loma tiek izvēlēta pašas spēles testa izvēlnē, nevis šeit."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1461,7 +1516,9 @@ msgstr "Ielādējiet spēli, lai saglabātu un atjaunotu tās stāvokli."
 msgid ""
 "Save the whole machine to a slot and restore it later. Quick-save is F6, "
 "quick-load is F7."
-msgstr "Saglabājiet visu mašīnu slotā un atjaunojiet vēlāk. Ātrā saglabāšana - F6, ātrā ielāde - F7."
+msgstr ""
+"Saglabājiet visu mašīnu slotā un atjaunojiet vēlāk. Ātrā saglabāšana - F6, "
+"ātrā ielāde - F7."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1538,7 +1595,9 @@ msgstr "Enter: palaist   F10: iestatījumi   F9: iziet"
 msgid ""
 "No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
 "(F1) > Paths, then relaunch."
-msgstr "ROM mapē netika atrasts neviens Model 2 ROM arhīvs. Iestatiet to sadaļā Iestatījumi (F1) > Ceļi un palaidiet no jauna."
+msgstr ""
+"ROM mapē netika atrasts neviens Model 2 ROM arhīvs. Iestatiet to sadaļā "
+"Iestatījumi (F1) > Ceļi un palaidiet no jauna."
 
 #: src/osd/gui.cpp
 #, no-c-format

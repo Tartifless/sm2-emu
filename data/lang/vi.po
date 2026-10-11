@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-09 00:35+1000\n"
+"POT-Creation-Date: 2026-10-11 16:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -789,6 +789,24 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Centre deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheel travel about centre that reads as centre. Most wheels\n"
+"want none; a little covers one whose centre wanders. The bar\n"
+"shows the wheel now against the shaded zone."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Wheel position"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Axes"
 msgstr "Trục"
 
@@ -1040,7 +1058,27 @@ msgstr ""
 msgid ""
 "The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
 "is Virtual On's. Test and Service are Guide+Start and Guide+Back."
-msgstr "Cần analog trái cũng di chuyển; các nút vai cũng là Nút 3/4. Cần phải dành cho Virtual On. Kiểm tra và Dịch vụ là Guide+Start và Guide+Back."
+msgstr ""
+"Cần analog trái cũng di chuyển; các nút vai cũng là Nút 3/4. Cần phải dành "
+"cho Virtual On. Kiểm tra và Dịch vụ là Guide+Start và Guide+Back."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick deadzone"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Stick travel about centre that reads as centre. The bar shows\n"
+"the stick now: let go of it and raise this until the marker\n"
+"sits inside the shaded zone. Also applies to stick aiming."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Stick position"
+msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1179,7 +1217,9 @@ msgstr ""
 msgid ""
 "Player 1 aims with the mouse; the left button fires and the right button "
 "reloads (shoot off screen)."
-msgstr "Người chơi 1 ngắm bằng chuột; nút trái để bắn và nút phải để nạp đạn (bắn ra ngoài màn hình)."
+msgstr ""
+"Người chơi 1 ngắm bằng chuột; nút trái để bắn và nút phải để nạp đạn (bắn ra "
+"ngoài màn hình)."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1224,7 +1264,11 @@ msgid ""
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "in absolute mouse mode (GUN4IR, Sinden, AimTrak) before launching for "
 "independent per-player aiming."
-msgstr "Không phát hiện súng ánh sáng chuyên dụng. Người chơi 1 ngắm bằng chuột; nút trái để bắn và nút phải để nạp đạn (bắn ra ngoài màn hình). Cắm súng ở chế độ chuột tuyệt đối (GUN4IR, Sinden, AimTrak) trước khi khởi chạy để ngắm độc lập cho từng người chơi."
+msgstr ""
+"Không phát hiện súng ánh sáng chuyên dụng. Người chơi 1 ngắm bằng chuột; nút "
+"trái để bắn và nút phải để nạp đạn (bắn ra ngoài màn hình). Cắm súng ở chế "
+"độ chuột tuyệt đối (GUN4IR, Sinden, AimTrak) trước khi khởi chạy để ngắm độc "
+"lập cho từng người chơi."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1232,7 +1276,10 @@ msgid ""
 "No dedicated light guns detected. Player 1 aims with the mouse; the left "
 "button fires and the right button reloads (shoot off screen). Plug in guns "
 "tagged ID_INPUT_GUN for independent per-player aiming."
-msgstr "Không phát hiện súng ánh sáng chuyên dụng. Người chơi 1 ngắm bằng chuột; nút trái để bắn và nút phải để nạp đạn (bắn ra ngoài màn hình). Cắm súng được gắn thẻ ID_INPUT_GUN để ngắm độc lập cho từng người chơi."
+msgstr ""
+"Không phát hiện súng ánh sáng chuyên dụng. Người chơi 1 ngắm bằng chuột; nút "
+"trái để bắn và nút phải để nạp đạn (bắn ra ngoài màn hình). Cắm súng được "
+"gắn thẻ ID_INPUT_GUN để ngắm độc lập cho từng người chơi."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1332,7 +1379,10 @@ msgid ""
 "The comms board is a ring: each cabinet listens on its own address and sends "
 "to the next cabinet. For two machines, point each at the other. The master/"
 "slave role is chosen in the game's own test menu, not here."
-msgstr "Bo mạch liên lạc là một vòng: mỗi máy lắng nghe trên địa chỉ riêng và gửi tới máy kế tiếp. Với hai máy, trỏ mỗi máy tới máy kia. Vai trò master/slave được chọn trong menu kiểm tra của chính trò chơi, không phải ở đây."
+msgstr ""
+"Bo mạch liên lạc là một vòng: mỗi máy lắng nghe trên địa chỉ riêng và gửi "
+"tới máy kế tiếp. Với hai máy, trỏ mỗi máy tới máy kia. Vai trò master/slave "
+"được chọn trong menu kiểm tra của chính trò chơi, không phải ở đây."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1457,7 +1507,9 @@ msgstr "Tải một trò chơi để lưu và khôi phục trạng thái."
 msgid ""
 "Save the whole machine to a slot and restore it later. Quick-save is F6, "
 "quick-load is F7."
-msgstr "Lưu toàn bộ máy vào một khe và khôi phục sau. Lưu nhanh là F6, tải nhanh là F7."
+msgstr ""
+"Lưu toàn bộ máy vào một khe và khôi phục sau. Lưu nhanh là F6, tải nhanh là "
+"F7."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1534,7 +1586,9 @@ msgstr "Enter: khởi chạy   F10: cài đặt   F9: thoát"
 msgid ""
 "No Model 2 ROM archives were found in the ROM directory. Set it in Settings "
 "(F1) > Paths, then relaunch."
-msgstr "Không tìm thấy tệp nén ROM Model 2 nào trong thư mục ROM. Đặt nó trong Cài đặt (F1) > Đường dẫn, rồi khởi chạy lại."
+msgstr ""
+"Không tìm thấy tệp nén ROM Model 2 nào trong thư mục ROM. Đặt nó trong Cài "
+"đặt (F1) > Đường dẫn, rồi khởi chạy lại."
 
 #: src/osd/gui.cpp
 #, no-c-format

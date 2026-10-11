@@ -105,6 +105,7 @@ public:
         bool ffb_invert    = false;
         u32  steer_degrees = 270;
         u32  lock_degrees  = 240;  ///< physical rotation for full game lock.
+        u32  steer_deadzone = 0;   ///< percent of travel about centre read as centre.
 
         /// Rumble in place of force feedback: the game's impacts, and with
         /// `rumble_engine` an engine hum from the throttle (Daytona streams no
@@ -176,6 +177,10 @@ public:
     /// for the calibration UI to record a resting baseline before the user
     /// operates a control.
     void wheel_axis_baseline(s16* out, int count) const;
+
+    /// The raw reading of the wheel's steering axis, for the deadzone display.
+    /// 0 without a wheel.
+    [[nodiscard]] s16 wheel_steer_raw() const;
 
     /// The axis that has moved furthest from `baseline`, once past a threshold,
     /// or -1 if none has moved enough yet. `positive` is set to whether it moved
@@ -255,6 +260,12 @@ public:
         m_pad_stick_response = static_cast<float>(percent) / 100.0f;
     }
 
+    /// Stick deadzone as a percentage of full deflection, pushed each frame.
+    void set_pad_stick_deadzone(u32 percent)
+    {
+        m_pad_stick_dead = 32767.0f * static_cast<float>(percent) / 100.0f;
+    }
+
     /// Per-player gun button bindings: the evdev key code for each GunRole,
     /// pushed from the config each frame. Sized [2 players][kGunRoles].
     static constexpr usize kGunRoles = 8;
@@ -299,6 +310,10 @@ public:
 
     /// Every axis on `player`'s pad, SDL_GAMEPAD_AXIS_COUNT of them, into `out`.
     void pad_axis_baseline(u32 player, s16* out) const;
+
+    /// The raw reading of `player`'s steering/aim stick axis, with its invert
+    /// applied, for the deadzone display. 0 without a pad.
+    [[nodiscard]] s16 pad_steer_raw(u32 player) const;
 
     /// The name of an SDL gamepad axis, for the settings UI. Empty if unknown.
     [[nodiscard]] static std::string pad_axis_name(s32 axis);
@@ -426,9 +441,8 @@ private:
     [[nodiscard]] bool pad_role_held(u32 player, Config::PadRole role) const;
 
     /// Sample one logical control and scale it into an analogue channel's own
-    /// calibrated range, with centre_dead and curve shaping a stick axis.
-    [[nodiscard]] u8 sample_channel(const rom::AnalogChannel& channel,
-                                    float centre_dead, float curve) const;
+    /// calibrated range, with the stick deadzone and curve shaping a stick axis.
+    [[nodiscard]] u8 sample_channel(const rom::AnalogChannel& channel, float curve) const;
 
     void gather_lightguns(hw::Inputs* inputs, const rom::GameSpec& game) const;
 
@@ -513,6 +527,7 @@ private:
     std::array<std::array<s32, kPadRoles>, 2> m_pad_buttons =
         Config{}.pad_bindings;
     float m_pad_stick_response = 1.0f;
+    float m_pad_stick_dead     = 32767.0f * 0.05f;
 
     /// Axis overrides per player and role, with invert flags and pedal buttons.
     std::array<std::array<s32, kPadAxes>, 2>  m_pad_axes        = Config{}.pad_axes;
