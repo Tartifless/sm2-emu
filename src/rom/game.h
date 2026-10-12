@@ -147,6 +147,57 @@ struct LightgunSpec {
     LightgunAxis p2x;
 };
 
+/// One piece of game state published as a cabinet output (see osd/outputs.h).
+///
+/// The lamp latch says what the cabinet lit. It does not say that a shot was
+/// fired or a life lost, which is what a recoil solenoid or a rumble motor
+/// wants: a Model 2 gun cabinet has no recoil of its own to latch. Those live
+/// in the program's own variables, so a title lists where they are and the
+/// names to publish them under -- the ones DemulShooter established for these
+/// games, which the game files of MAMEHooker and Hook Of The Reaper expect.
+///
+/// The addresses are the program's, inside work RAM, and belong to one
+/// revision: a clone does not inherit its parent's outputs.
+struct OutputSpec {
+    enum class Kind : u8 {
+        Lamp,   ///< One bit of the lamp latch, under another name.
+        Value,  ///< A number read from work RAM.
+        Flag,   ///< 1 while `source` is above zero.
+        Pulse,  ///< 1 for `frames` frames each time `source` falls (or rises).
+    };
+
+    enum class Type : u8 { U8, U16, S16, U32, Float };
+
+    std::string name;
+    Kind        kind = Kind::Value;
+
+    u8 bit = 0;  ///< Lamp: the latch bit.
+
+    /// Value: where it is and how wide. Little-endian, as the i960 stores it.
+    /// A signed or floating-point value below zero is published as zero.
+    u32  address = 0;
+    Type type    = Type::U8;
+
+    /// A condition on a Value, for a variable that only means something while
+    /// its player is in the game. The byte at `address`, masked, must equal
+    /// `value` -- or, with `any`, be anything but zero.
+    struct When {
+        u32  address = 0;
+        u32  mask    = 0xff;
+        u32  value   = 0;
+        bool any     = false;
+    };
+
+    /// Value: every one of these must hold. While one does not, the value is
+    /// published as zero and no pulse fires from it.
+    std::vector<When> when;
+
+    /// Flag and Pulse: index of the Value they follow, earlier in the list.
+    u32  source = 0;
+    bool rising = false;  ///< Pulse: fire when the source goes up, not down.
+    u32  frames = 3;      ///< Pulse: how long it stays at 1.
+};
+
 /// A protection chip a title's main board needs. One value per chip/mode
 /// combination rather than a child element, since so far every title needing
 /// one needs exactly one fixed configuration of it apart from the 315-5881's
@@ -305,6 +356,9 @@ struct GameSpec {
 
     /// The serial lightgun interface board, when the cabinet has one.
     LightgunSpec lightgun;
+
+    /// Game state published as outputs next to the lamps; empty for most titles.
+    std::vector<OutputSpec> outputs;
 
     /// True when IN1 bits 0x70 read a gear selector rather than buttons, as
     /// Sega Rally's and Daytona's do through MAME's daytona_gearbox_r.
