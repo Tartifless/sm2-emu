@@ -122,7 +122,7 @@ private:
 namespace state {
 
 inline constexpr char     kMagic[8]      = {'S', 'M', '2', 'S', 'T', 'A', 'T', 'E'};
-inline constexpr u32      kFormatVersion = 1;
+inline constexpr u32      kFormatVersion = 2;
 
 /// Header fields, in file order. The game name and board are supplied by the
 /// caller so this stays free of the rom layer.

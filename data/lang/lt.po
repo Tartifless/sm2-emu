@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-11 16:39+1000\n"
+"POT-Creation-Date: 2026-10-13 22:26+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -387,6 +387,22 @@ msgstr ""
 "Įranga piešia permatomus paviršius (šviesas, stiklą,\n"
 "šešėlius) kaip šachmatų lentą. „Sulietas“ piešia 50%\n"
 "permatomą paviršių, kurio siekiama. Įsigalioja iškart."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Extended draw distance"
+msgstr "Išplėstas piešimo atstumas"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Draw the scenery to the edge of the course instead of\n"
+"the arcade's short range, so it no longer pops in.\n"
+"Daytona USA only. Applies live."
+msgstr ""
+"Piešia vaizdą iki trasos krašto, o ne tik\n"
+"trumpu automato atstumu, todėl jis nebeišnyra staiga.\n"
+"Tik Daytona USA. Įsigalioja iškart."
 
 #: src/osd/gui.cpp
 #, no-c-format

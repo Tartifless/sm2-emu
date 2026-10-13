@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-11 16:39+1000\n"
+"POT-Creation-Date: 2026-10-13 22:26+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -390,6 +390,22 @@ msgstr ""
 "হার্ডওয়্যার স্বচ্ছ তল (আলো, কাচ, ছায়া) দাবার\n"
 "ছকের মতো আঁকে। মিশ্রিত সেই 50% স্বচ্ছ তলটি আঁকে\n"
 "যা আসলে উদ্দেশ্য ছিল। সঙ্গে সঙ্গে প্রযোজ্য।"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Extended draw distance"
+msgstr "বর্ধিত ড্র দূরত্ব"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Draw the scenery to the edge of the course instead of\n"
+"the arcade's short range, so it no longer pops in.\n"
+"Daytona USA only. Applies live."
+msgstr ""
+"আর্কেডের স্বল্প পরিসরের বদলে ট্র্যাকের শেষ প্রান্ত\n"
+"পর্যন্ত দৃশ্য আঁকে, তাই আর হঠাৎ করে দেখা দেয় না।\n"
+"শুধু Daytona USA। সঙ্গে সঙ্গে প্রযোজ্য।"
 
 #: src/osd/gui.cpp
 #, no-c-format

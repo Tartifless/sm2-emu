@@ -149,6 +149,32 @@ void Geometrizer::serialize(Archive& ar)
     u32 unused = 0;
     ar.raw(unused);
     ar.raw(unused);
+
+    // State the display list sets once and never repeats: lighting, texture
+    // parameters, polygon RAM and the raster's texture and log tables.
+    RasterState& raster = *m_raster;
+    ar.raw(raster.viewport);
+    ar.raw(raster.center);
+    ar.raw(raster.center_sel);
+    ar.raw(raster.reverse);
+    ar.raw(raster.z_adjust);
+    ar.raw(raster.master_z_clip);
+    ar.raw(raster.cur_window);
+    ar.raw(raster.clip_plane);
+    ar.bytes(raster.texture_ram.data(), raster.texture_ram.size());
+    ar.bytes(raster.log_ram.data(), raster.log_ram.size());
+
+    GeoState& geo = *m_geo;
+    ar.raw(geo.mode);
+    ar.raw(geo.matrix);
+    ar.raw(geo.matrix2);
+    ar.raw(geo.focus);
+    ar.raw(geo.light);
+    ar.raw(geo.lod);
+    ar.raw(geo.coef_table);
+    ar.raw(geo.texture_parameters);
+    ar.bytes(geo.polygon_ram0.data(), geo.polygon_ram0.size());
+    ar.bytes(geo.polygon_ram1.data(), geo.polygon_ram1.size());
 }
 
 void Geometrizer::set_z_clip(u8 value)

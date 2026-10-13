@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-11 16:39+1000\n"
+"POT-Creation-Date: 2026-10-13 22:26+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -390,6 +390,22 @@ msgstr ""
 "Laitteisto piirtää läpinäkyvät pinnat (valot, lasi,\n"
 "varjot) shakkiruutukuviona. Sekoitettu piirtää sen\n"
 "50% läpinäkyvän pinnan, jota tavoitellaan. Tulee voimaan heti."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Extended draw distance"
+msgstr "Pidennetty piirtoetäisyys"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Draw the scenery to the edge of the course instead of\n"
+"the arcade's short range, so it no longer pops in.\n"
+"Daytona USA only. Applies live."
+msgstr ""
+"Piirtää maiseman radan reunaan asti eikä vain\n"
+"pelikoneen lyhyellä etäisyydellä, joten se ei enää ponnahda esiin.\n"
+"Vain Daytona USA. Tulee voimaan heti."
 
 #: src/osd/gui.cpp
 #, no-c-format

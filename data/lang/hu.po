@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-11 16:39+1000\n"
+"POT-Creation-Date: 2026-10-13 22:26+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -384,6 +384,22 @@ msgstr ""
 "A hardver az áttetsző felületeket (fények, üveg, árnyékok)\n"
 "sakktáblaként rajzolja. A Kevert a megcélzott 50%-os\n"
 "áttetsző felületet rajzolja. Azonnal érvényes."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Extended draw distance"
+msgstr "Kiterjesztett rajzolási távolság"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Draw the scenery to the edge of the course instead of\n"
+"the arcade's short range, so it no longer pops in.\n"
+"Daytona USA only. Applies live."
+msgstr ""
+"A tájat a pálya széléig rajzolja ki a játékgép\n"
+"rövid hatótávja helyett, így már nem ugrik elő hirtelen.\n"
+"Csak Daytona USA. Azonnal érvényes."
 
 #: src/osd/gui.cpp
 #, no-c-format

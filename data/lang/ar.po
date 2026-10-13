@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-11 16:39+1000\n"
+"POT-Creation-Date: 2026-10-13 22:26+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -385,6 +385,22 @@ msgstr ""
 "يرسم العتاد الأسطح الشفافة (الأضواء والزجاج\n"
 "والظلال) كرقعة شطرنج. الممزوج يرسم السطح الشفاف بنسبة 50%\n"
 "الذي يحاول العتاد تحقيقه. يُطبَّق فورًا."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Extended draw distance"
+msgstr "مسافة رسم ممتدة"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Draw the scenery to the edge of the course instead of\n"
+"the arcade's short range, so it no longer pops in.\n"
+"Daytona USA only. Applies live."
+msgstr ""
+"ارسم المشهد حتى حافة الحلبة بدلًا من\n"
+"المدى القصير للآلة الأصلية، فلا يظهر فجأة بعد الآن.\n"
+"Daytona USA فقط. يُطبَّق مباشرةً."
 
 #: src/osd/gui.cpp
 #, no-c-format

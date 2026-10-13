@@ -646,6 +646,10 @@ void I960::do_call(u32 adr, int type, u32 stack)
 	int i;
 	u32 FP;
 
+	if (m_call_hook != nullptr && adr == m_call_target) {
+		m_call_hook(m_call_context);
+	}
+
 	// call and callx take 9 cycles base
 	m_icount -= 9;
 

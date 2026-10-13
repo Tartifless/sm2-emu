@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-11 16:39+1000\n"
+"POT-Creation-Date: 2026-10-13 22:26+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -389,6 +389,22 @@ msgstr ""
 "ฮาร์ดแวร์วาดพื้นผิวโปร่งแสง (ไฟ, กระจก,\n"
 "เงา) เป็นลายตารางหมากรุก ผสมสีจะวาดพื้นผิวโปร่งแสง 50%\n"
 "ตามที่ตั้งใจไว้ มีผลทันที"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Extended draw distance"
+msgstr "ระยะการวาดแบบขยาย"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Draw the scenery to the edge of the course instead of\n"
+"the arcade's short range, so it no longer pops in.\n"
+"Daytona USA only. Applies live."
+msgstr ""
+"วาดฉากไปจนถึงขอบสนามแทนที่จะเป็น\n"
+"ระยะสั้นของตู้เกม จึงไม่โผล่ขึ้นมากะทันหันอีก\n"
+"เฉพาะ Daytona USA มีผลทันที"
 
 #: src/osd/gui.cpp
 #, no-c-format

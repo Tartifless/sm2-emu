@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-11 16:39+1000\n"
+"POT-Creation-Date: 2026-10-13 22:26+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -390,6 +390,22 @@ msgstr ""
 "De hardware tekent doorzichtige vlakken (lichten, glas,\n"
 "schaduwen) als een dambordpatroon. Gemengd tekent het\n"
 "50% doorzichtige vlak dat bedoeld is. Geldt direct."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Extended draw distance"
+msgstr "Uitgebreide tekenafstand"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Draw the scenery to the edge of the course instead of\n"
+"the arcade's short range, so it no longer pops in.\n"
+"Daytona USA only. Applies live."
+msgstr ""
+"Tekent het landschap tot aan de rand van het circuit in plaats van\n"
+"het korte bereik van de kast, zodat het niet meer opeens verschijnt.\n"
+"Alleen Daytona USA. Werkt meteen."
 
 #: src/osd/gui.cpp
 #, no-c-format

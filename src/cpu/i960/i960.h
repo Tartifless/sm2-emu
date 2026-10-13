@@ -163,6 +163,15 @@ public:
         m_trace_context = context;
     }
 
+    /// Called on a call or callx to `target`, before the new frame is set up.
+    using CallHook = void (*)(void* context);
+    void set_call_hook(u32 target, CallHook hook, void* context)
+    {
+        m_call_target  = target;
+        m_call_hook    = hook;
+        m_call_context = context;
+    }
+
     /// Save/restore the whole register/execution state. The bus and trace hook
     /// are excluded (re-bound by construction / left null).
     void serialize(Archive& ar);
@@ -239,6 +248,10 @@ private:
 
     TraceHook m_trace_hook    = nullptr;
     void*     m_trace_context = nullptr;
+
+    u32      m_call_target  = 0;
+    CallHook m_call_hook    = nullptr;
+    void*    m_call_context = nullptr;
 
     // -- memory helpers ---------------------------------------------------
 

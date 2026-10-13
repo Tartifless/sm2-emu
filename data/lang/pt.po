@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-11 16:39+1000\n"
+"POT-Creation-Date: 2026-10-13 22:26+1000\n"
 "PO-Revision-Date: 2026-10-09 12:00+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: Portuguese\n"
@@ -384,6 +384,22 @@ msgstr ""
 "O hardware desenha superfícies translúcidas (luzes, vidro,\n"
 "sombras) como um padrão xadrez. Misturado desenha a superfície\n"
 "50% translúcida pretendida. Aplica-se de imediato."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Extended draw distance"
+msgstr "Distância de desenho alargada"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Draw the scenery to the edge of the course instead of\n"
+"the arcade's short range, so it no longer pops in.\n"
+"Daytona USA only. Applies live."
+msgstr ""
+"Desenha o cenário até ao limite do circuito em vez do\n"
+"curto alcance da máquina, para que deixe de surgir de repente.\n"
+"Apenas Daytona USA. Aplica-se de imediato."
 
 #: src/osd/gui.cpp
 #, no-c-format

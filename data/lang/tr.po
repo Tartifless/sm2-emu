@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-11 16:39+1000\n"
+"POT-Creation-Date: 2026-10-13 22:26+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -384,6 +384,22 @@ msgstr ""
 "Donanım, saydam yüzeyleri (ışıklar, cam, gölgeler)\n"
 "dama tahtası deseni olarak çizer. Harmanlanmış, ulaşılmak\n"
 "istenen %50 saydam yüzeyi çizer. Anında uygulanır."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Extended draw distance"
+msgstr "Genişletilmiş çizim mesafesi"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Draw the scenery to the edge of the course instead of\n"
+"the arcade's short range, so it no longer pops in.\n"
+"Daytona USA only. Applies live."
+msgstr ""
+"Manzarayı salon makinesinin kısa menzili yerine\n"
+"pistin kenarına kadar çizer, böylece artık aniden belirmez.\n"
+"Yalnızca Daytona USA. Hemen uygulanır."
 
 #: src/osd/gui.cpp
 #, no-c-format

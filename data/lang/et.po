@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-11 16:39+1000\n"
+"POT-Creation-Date: 2026-10-13 22:26+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -386,6 +386,22 @@ msgstr ""
 "Riistvara joonistab läbipaistvad pinnad (tuled, klaas,\n"
 "varjud) malelauamustrina. „Segatud“ joonistab 50%\n"
 "läbipaistva pinna, mida taotletakse. Rakendub kohe."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Extended draw distance"
+msgstr "Laiendatud joonistuskaugus"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Draw the scenery to the edge of the course instead of\n"
+"the arcade's short range, so it no longer pops in.\n"
+"Daytona USA only. Applies live."
+msgstr ""
+"Joonistab maastiku raja servani, mitte ainult\n"
+"mänguautomaadi lühikeses ulatuses, nii et see ei ilmu enam järsku.\n"
+"Ainult Daytona USA. Rakendub kohe."
 
 #: src/osd/gui.cpp
 #, no-c-format

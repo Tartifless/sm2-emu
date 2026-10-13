@@ -32,6 +32,7 @@
 #include <unordered_map>
 #include <bit>
 #include <cstdio>
+#include <cstdlib>
 #include <cstring>
 #include <filesystem>
 #include <type_traits>
@@ -1679,6 +1680,128 @@ bool Model2Original::load_state(const std::string& path)
     m_palette_dirty = true;
     m_render_list.clear();
     return true;
+}
+
+namespace {
+
+// Daytona USA. The frame code builds a list of track cells around the camera, a
+// 5x5 block of a 16x16 grid (row * 16 + column), then calls the track draw,
+// which starts `lda kDaytonaCellList, r7` and draws the cells listed there. The
+// code moves between revisions; the RAM layout does not.
+constexpr u32 kLdaR7               = 0x8c383000;
+constexpr u32 kDaytonaCellList     = 0x5016c0;
+constexpr u32 kDaytonaCellListMax  = 63;
+constexpr u32 kDaytonaVisibleCells = 0x501520;
+constexpr u32 kDaytonaPolyBudget   = 0x5010f4;
+constexpr u32 kDaytonaBudget       = 5000;
+constexpr u32 kDaytonaWideBudget   = 50000;
+// Unused work RAM. The draw reads its list from here instead, which holds the
+// whole grid.
+constexpr u32 kWideCellList        = 0x501b00;
+constexpr u32 kWideCellListMax     = 255;
+
+u32 rom_word(std::span<const u8> rom, u32 address)
+{
+    u32 value = 0;
+    if (address + 4 <= rom.size()) {
+        std::memcpy(&value, rom.data() + address, 4);
+    }
+    return value;
+}
+
+}  // namespace
+
+void Model2Original::set_draw_distance(bool extended)
+{
+    if (extended == m_draw_distance) {
+        return;
+    }
+    if (m_track_draw == 0) {
+        if (m_game.name.rfind("daytona", 0) != 0) {
+            return;
+        }
+        for (u32 address = 0; address + 8 <= std::min<usize>(m_rom_maincpu.size(), 0x40000); address += 4) {
+            if (rom_word(m_rom_maincpu, address) == kLdaR7
+                && rom_word(m_rom_maincpu, address + 4) == kDaytonaCellList) {
+                m_track_draw = address;
+                break;
+            }
+        }
+        if (m_track_draw == 0) {
+            return;
+        }
+    }
+    m_draw_distance = extended;
+    const u32 address = extended ? kWideCellList : kDaytonaCellList;
+    std::memcpy(const_cast<u8*>(m_rom_maincpu.data()) + m_track_draw + 4, &address, 4);
+    if (extended) {
+        m_cpu.set_call_hook(m_track_draw, [](void* self) {
+            static_cast<Model2Original*>(self)->extend_track_cells();
+        }, this);
+    } else {
+        m_cpu.set_call_hook(0, nullptr, nullptr);
+        std::memcpy(m_work_ram.data() + (kDaytonaPolyBudget - kWorkRam), &kDaytonaBudget, 4);
+    }
+}
+
+// Copies the game's cell list and adds every cell in front of the camera, so
+// the track and the objects in it (cars, stands, props) draw to the edge of the
+// course instead of two cells out.
+void Model2Original::extend_track_cells()
+{
+    const u8* game = m_work_ram.data() + (kDaytonaCellList - kWorkRam);
+    u8*       list = m_work_ram.data() + (kWideCellList - kWorkRam);
+    const u32 count = std::min<u32>(game[0], kDaytonaCellListMax);
+    std::memcpy(list, game, count + 1);
+
+    const u32 camera = m_cpu.reg(29);  // g13
+    if (camera < kWorkRam || camera - kWorkRam + 0x30 > m_work_ram.size()) {
+        return;
+    }
+    u16 centre = 0;
+    std::memcpy(&centre, m_work_ram.data() + (camera - kWorkRam) + 0x2e, 2);
+    const int cx = centre & 15;
+    const int cy = (centre >> 4) & 15;
+
+    // The game keeps only the cells in front of the camera; their offsets point
+    // the way it faces.
+    bool present[256] = {};
+    int  dir_x = 0;
+    int  dir_y = 0;
+    for (u32 i = 0; i < count; ++i) {
+        const u8 cell = list[1 + i];
+        present[cell] = true;
+        dir_x += (cell & 15) - cx;
+        dir_y += (cell >> 4) - cy;
+    }
+    if (dir_x == 0 && dir_y == 0) {
+        return;
+    }
+
+    u32 visible[8];
+    std::memcpy(visible, m_work_ram.data() + (kDaytonaVisibleCells - kWorkRam), sizeof(visible));
+    u32 total = count;
+    for (int ring = 3; ring <= 15; ++ring) {
+        for (int dy = -ring; dy <= ring; ++dy) {
+            for (int dx = -ring; dx <= ring; ++dx) {
+                if (std::max(std::abs(dx), std::abs(dy)) != ring || dx * dir_x + dy * dir_y < 0) {
+                    continue;
+                }
+                const int x = cx + dx;
+                const int y = cy + dy;
+                if (x < 0 || x > 15 || y < 0 || y > 15 || present[y * 16 + x]
+                    || total == kWideCellListMax) {
+                    continue;
+                }
+                const u32 cell = static_cast<u32>(y * 16 + x);
+                list[1 + total++] = static_cast<u8>(cell);
+                visible[cell >> 5] |= 1u << (cell & 31);
+            }
+        }
+    }
+    list[0] = static_cast<u8>(total);
+    std::memcpy(m_work_ram.data() + (kDaytonaVisibleCells - kWorkRam), visible, sizeof(visible));
+    std::memcpy(m_work_ram.data() + (kDaytonaPolyBudget - kWorkRam), &kDaytonaWideBudget, 4);
 }
 
 }  // namespace sm2::hw

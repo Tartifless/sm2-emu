@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-11 16:39+1000\n"
+"POT-Creation-Date: 2026-10-13 22:26+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -389,6 +389,22 @@ msgstr ""
 "हार्डवेयर पारदर्शी सतहों (रोशनी, काँच,\n"
 "परछाइयाँ) को चेकरबोर्ड की तरह बनाता है। मिश्रित वही 50%\n"
 "पारदर्शी सतह बनाता है जो वह दिखाना चाहता है। तुरंत लागू।"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Extended draw distance"
+msgstr "विस्तारित ड्रॉ दूरी"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Draw the scenery to the edge of the course instead of\n"
+"the arcade's short range, so it no longer pops in.\n"
+"Daytona USA only. Applies live."
+msgstr ""
+"आर्केड की छोटी सीमा के बजाय ट्रैक के किनारे तक\n"
+"दृश्य बनाता है, ताकि वह अचानक न उभरे।\n"
+"केवल Daytona USA। तुरंत लागू होता है।"
 
 #: src/osd/gui.cpp
 #, no-c-format

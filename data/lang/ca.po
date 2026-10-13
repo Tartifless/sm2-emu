@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-11 16:39+1000\n"
+"POT-Creation-Date: 2026-10-13 22:26+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -384,6 +384,22 @@ msgstr ""
 "El maquinari dibuixa les superfícies transparents (llums, vidre,\n"
 "ombres) com un tauler d'escacs. Barrejat dibuixa la superfície\n"
 "50% transparent que intenta aconseguir. S'aplica a l'instant."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Extended draw distance"
+msgstr "Distància de dibuix ampliada"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Draw the scenery to the edge of the course instead of\n"
+"the arcade's short range, so it no longer pops in.\n"
+"Daytona USA only. Applies live."
+msgstr ""
+"Dibuixa l'escenari fins a la vora del circuit en lloc de\n"
+"l'abast curt de la recreativa, perquè ja no aparegui de cop.\n"
+"Només Daytona USA. S'aplica a l'instant."
 
 #: src/osd/gui.cpp
 #, no-c-format

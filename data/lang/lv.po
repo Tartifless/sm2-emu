@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-11 16:39+1000\n"
+"POT-Creation-Date: 2026-10-13 22:26+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -387,6 +387,22 @@ msgstr ""
 "Aparatūra zīmē caurspīdīgas virsmas (gaismas, stiklu,\n"
 "ēnas) kā šaha galdiņu. „Sapludināts” zīmē 50%\n"
 "caurspīdīgu virsmu, ko tā cenšas panākt. Stājas spēkā uzreiz."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Extended draw distance"
+msgstr "Paplašināts zīmēšanas attālums"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Draw the scenery to the edge of the course instead of\n"
+"the arcade's short range, so it no longer pops in.\n"
+"Daytona USA only. Applies live."
+msgstr ""
+"Zīmē ainavu līdz trases malai, nevis tikai\n"
+"automāta īsajā diapazonā, tāpēc tā vairs neuzrodas pēkšņi.\n"
+"Tikai Daytona USA. Darbojas uzreiz."
 
 #: src/osd/gui.cpp
 #, no-c-format

@@ -199,6 +199,9 @@ public:
     /// measured separately from the main CPU's instruction time (see Geometrizer).
     [[nodiscard]] virtual u64 geometry_stage_nanoseconds() const = 0;
 
+    /// Draw the scenery to the edge of the course, where a game supports it.
+    virtual void set_draw_distance(bool /*extended*/) {}
+
     // -- per-core timing, for --profile --------------------------------------
     //
     // run_frame() interleaves the i960, coprocessor and sound board, so main.cpp

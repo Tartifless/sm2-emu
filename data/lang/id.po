@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-11 16:39+1000\n"
+"POT-Creation-Date: 2026-10-13 22:26+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -384,6 +384,22 @@ msgstr ""
 "Perangkat keras menggambar permukaan tembus pandang (lampu,\n"
 "kaca, bayangan) sebagai pola papan catur. Dicampur menggambar\n"
 "permukaan 50% tembus pandang yang dituju. Berlaku langsung."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Extended draw distance"
+msgstr "Jarak gambar diperluas"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Draw the scenery to the edge of the course instead of\n"
+"the arcade's short range, so it no longer pops in.\n"
+"Daytona USA only. Applies live."
+msgstr ""
+"Menggambar pemandangan sampai tepi lintasan, bukan\n"
+"hanya jangkauan pendek mesin arkade, jadi tidak muncul tiba-tiba lagi.\n"
+"Hanya Daytona USA. Langsung berlaku."
 
 #: src/osd/gui.cpp
 #, no-c-format

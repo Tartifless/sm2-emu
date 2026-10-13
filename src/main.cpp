@@ -861,6 +861,7 @@ int main(int argc, char** argv)
     options.config.anisotropy     = from_file.anisotropy;
     options.config.upscale_2d     = from_file.upscale_2d;
     options.config.translucency   = from_file.translucency;
+    options.config.extended_draw_distance = from_file.extended_draw_distance;
     options.config.custom_textures = from_file.custom_textures;
     options.config.dump_textures   = from_file.dump_textures;
 
@@ -1396,6 +1397,7 @@ int main(int argc, char** argv)
                 machine_iface->inputs().in0 = static_cast<u8>(0xff & ~press.in0);
                 machine_iface->inputs().in1 = static_cast<u8>(0xff & ~press.in1);
             }
+            machine_iface->set_draw_distance(options.config.extended_draw_distance);
             machine_iface->run_frame();
             if (loaded->game.lightgun.present) {
                 machine_iface->video().filter_gun_flash(options.config.lightgun_hide_flash,
@@ -2346,6 +2348,7 @@ int main(int argc, char** argv)
                     machine_iface->inputs().in1 &= static_cast<u8>(~press.in1);
                 }
 
+                machine_iface->set_draw_distance(options.config.extended_draw_distance);
                 {
                     auto scope = core::maybe_scope(stage_run_frame, profile_sample);
                     machine_iface->run_frame();

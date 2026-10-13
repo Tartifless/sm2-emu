@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-11 16:39+1000\n"
+"POT-Creation-Date: 2026-10-13 22:26+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -390,6 +390,22 @@ msgstr ""
 "Hardwaren tegner gennemsigtige flader (lys, glas,\n"
 "skygger) som et ternet mønster. Blandet tegner den\n"
 "50% gennemsigtige flade, der tilsigtes. Gælder straks."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Extended draw distance"
+msgstr "Udvidet tegneafstand"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Draw the scenery to the edge of the course instead of\n"
+"the arcade's short range, so it no longer pops in.\n"
+"Daytona USA only. Applies live."
+msgstr ""
+"Tegner omgivelserne helt ud til banens kant i stedet for\n"
+"arkademaskinens korte rækkevidde, så de ikke længere popper frem.\n"
+"Kun Daytona USA. Virker med det samme."
 
 #: src/osd/gui.cpp
 #, no-c-format

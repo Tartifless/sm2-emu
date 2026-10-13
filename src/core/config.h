@@ -159,6 +159,10 @@ struct Config {
     Upscale2D     upscale_2d     = Upscale2D::Faithful;
     Translucency  translucency   = Translucency::Stipple;
 
+    /// Draw the scenery to the edge of the course instead of the arcade's
+    /// short range, in the games that support it (Daytona USA). Live.
+    bool extended_draw_distance = false;
+
     /// Replacement textures from <saves>/textures/<game>/load, and dumping
     /// every texture the 3D draws to <saves>/textures/<game>/dump.
     bool custom_textures = true;

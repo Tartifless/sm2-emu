@@ -250,10 +250,8 @@ public:
     /// instruction time (run_frame() interleaves the two).
     [[nodiscard]] u64 last_run_nanoseconds() const { return m_last_run_ns; }
 
-    /// Save/restore only the durable scalars (read-start address, CRTC offsets,
-    /// double-sided ROM range). The per-frame working set (m_raster / m_geo and
-    /// their intrusive poly pools) is excluded and re-derived from the
-    /// display-list buffer next vblank.
+    /// Save/restore the registers, tables and polygon RAM the display list
+    /// sets. The per-frame polygon pools are excluded and rebuilt next vblank.
     void serialize(Archive& ar);
 
 private:

@@ -168,6 +168,7 @@ public:
 
     [[nodiscard]] const RenderList& render_list() const override { return m_render_list; }
 
+    void set_draw_distance(bool extended) override;
     [[nodiscard]] u64 geometry_stage_nanoseconds() const override
     {
         return m_geometry.last_run_nanoseconds();
@@ -252,6 +253,9 @@ public:
     u16 write32_flags(u32 address, u32 value) override;
 
 private:
+    void extend_track_cells();
+    bool m_draw_distance = false;
+    u32  m_track_draw    = 0;
     enum class Notify : u8 { None, Palette, TileRam, CharRam };
 
     struct Window {

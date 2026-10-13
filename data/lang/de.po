@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-11 16:39+1000\n"
+"POT-Creation-Date: 2026-10-13 22:26+1000\n"
 "PO-Revision-Date: 2026-10-09 12:00+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: German\n"
@@ -384,6 +384,22 @@ msgstr ""
 "Die Hardware zeichnet durchsichtige Flächen (Lichter, Glas,\n"
 "Schatten) als Schachbrettmuster. Überblendet zeichnet die\n"
 "50% durchsichtige Fläche, die gemeint ist. Wirkt sofort."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Extended draw distance"
+msgstr "Erweiterte Sichtweite"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Draw the scenery to the edge of the course instead of\n"
+"the arcade's short range, so it no longer pops in.\n"
+"Daytona USA only. Applies live."
+msgstr ""
+"Zeichnet die Umgebung bis zum Rand der Strecke statt\n"
+"nur in der kurzen Reichweite des Automaten, damit sie nicht mehr aufploppt.\n"
+"Nur Daytona USA. Wirkt sofort."
 
 #: src/osd/gui.cpp
 #, no-c-format

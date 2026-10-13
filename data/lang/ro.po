@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-11 16:39+1000\n"
+"POT-Creation-Date: 2026-10-13 22:26+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -385,6 +385,22 @@ msgstr ""
 "Hardware-ul desenează suprafețele transparente (lumini,\n"
 "sticlă, umbre) ca tablă de șah. Amestecat desenează\n"
 "suprafața 50% transparentă urmărită. Se aplică imediat."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Extended draw distance"
+msgstr "Distanță de desenare extinsă"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Draw the scenery to the edge of the course instead of\n"
+"the arcade's short range, so it no longer pops in.\n"
+"Daytona USA only. Applies live."
+msgstr ""
+"Desenează peisajul până la marginea circuitului în loc de\n"
+"raza scurtă a aparatului, ca să nu mai apară brusc.\n"
+"Doar Daytona USA. Se aplică imediat."
 
 #: src/osd/gui.cpp
 #, no-c-format

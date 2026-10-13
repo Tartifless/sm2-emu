@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-11 16:39+1000\n"
+"POT-Creation-Date: 2026-10-13 22:26+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -389,6 +389,22 @@ msgstr ""
 "வன்பொருள் ஊடுருவும் பரப்புகளை (விளக்குகள், கண்ணாடி,\n"
 "நிழல்கள்) சதுரங்கப் பலகையாக வரைகிறது. கலந்தது, அது அடைய முயலும்\n"
 "50% ஊடுருவும் பரப்பை வரையும். உடனே பொருந்தும்."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Extended draw distance"
+msgstr "நீட்டிக்கப்பட்ட வரைதல் தொலைவு"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Draw the scenery to the edge of the course instead of\n"
+"the arcade's short range, so it no longer pops in.\n"
+"Daytona USA only. Applies live."
+msgstr ""
+"ஆர்கேடின் குறுகிய வரம்பிற்குப் பதிலாக பாதையின் விளிம்பு வரை\n"
+"காட்சியை வரைகிறது, அதனால் அது திடீரென்று தோன்றாது.\n"
+"Daytona USA மட்டும். உடனே பொருந்தும்."
 
 #: src/osd/gui.cpp
 #, no-c-format

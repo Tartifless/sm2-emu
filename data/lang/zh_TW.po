@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-11 16:39+1000\n"
+"POT-Creation-Date: 2026-10-13 22:26+1000\n"
 "PO-Revision-Date: 2026-10-09 12:00+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -387,6 +387,22 @@ msgstr ""
 "硬體將半透明表面（燈光、玻璃、陰影）\n"
 "繪製為棋盤格。混合模式則繪製其想呈現的\n"
 "50% 半透明表面。即時生效。"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Extended draw distance"
+msgstr "擴展繪製距離"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Draw the scenery to the edge of the course instead of\n"
+"the arcade's short range, so it no longer pops in.\n"
+"Daytona USA only. Applies live."
+msgstr ""
+"將場景繪製到賽道邊緣，而不是\n"
+"街機原本的短距離，因此不再突然出現。\n"
+"僅限 Daytona USA。即時生效。"
 
 #: src/osd/gui.cpp
 #, no-c-format

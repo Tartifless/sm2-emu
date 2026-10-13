@@ -837,6 +837,15 @@ void Gui::draw_settings(Config& config, const std::vector<std::string>& gpu_name
                                "see-through surface it's trying to achieve. Applies live."));
                 }
 
+                ImGui::Checkbox(tr_id("Extended draw distance"), &config.extended_draw_distance);
+                ImGui::SameLine();
+                ImGui::TextDisabled("(?)");
+                if (ImGui::IsItemHovered()) {
+                    tooltip(tr("Draw the scenery to the edge of the course instead of\n"
+                               "the arcade's short range, so it no longer pops in.\n"
+                               "Daytona USA only. Applies live."));
+                }
+
                 ImGui::Checkbox(tr_id("Custom textures"), &config.custom_textures);
                 ImGui::SameLine();
                 ImGui::TextDisabled("(?)");

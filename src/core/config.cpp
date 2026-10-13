@@ -515,6 +515,10 @@ bool load_config(const std::string& path, Config* out, std::vector<std::string>*
             if (!parse_translucency(value, &out->translucency)) {
                 bad_value();
             }
+        } else if (key == "extended_draw_distance") {
+            if (!parse_bool(value, &out->extended_draw_distance)) {
+                bad_value();
+            }
         } else if (key == "custom_textures") {
             if (!parse_bool(value, &out->custom_textures)) {
                 bad_value();
@@ -893,10 +897,13 @@ bool save_config(const std::string& path, const Config& config)
         << "# translucency: stipple (the hardware's checkerboard) or blended\n"
         << "# (the 50% see-through it's trying to achieve: lights, glass,\n"
         << "# shadows).\n"
+        << "# extended_draw_distance: draw the scenery to the edge of the\n"
+        << "# course instead of the arcade's short range (Daytona USA).\n"
         << "texture_filter = " << texture_filter_name(config.texture_filter) << "\n"
         << "anisotropy = " << config.anisotropy << "\n"
         << "upscale_2d = " << upscale_2d_name(config.upscale_2d) << "\n"
         << "translucency = " << translucency_name(config.translucency) << "\n"
+        << "extended_draw_distance = " << bool_text(config.extended_draw_distance) << "\n"
         << "\n"
         << "# Custom textures: images in <saves>/textures/<game>/load named as\n"
         << "# dumped replace the game's own, at any whole multiple of the size.\n"

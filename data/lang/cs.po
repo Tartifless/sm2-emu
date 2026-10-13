@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-11 16:39+1000\n"
+"POT-Creation-Date: 2026-10-13 22:26+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -384,6 +384,22 @@ msgstr ""
 "Hardware kreslí průhledné plochy (světla, sklo, stíny)\n"
 "jako šachovnici. Prolnuté kreslí 50% průhlednou\n"
 "plochu, o kterou se snaží. Projeví se ihned."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Extended draw distance"
+msgstr "Rozšířená vzdálenost vykreslování"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Draw the scenery to the edge of the course instead of\n"
+"the arcade's short range, so it no longer pops in.\n"
+"Daytona USA only. Applies live."
+msgstr ""
+"Vykresluje scenérii až k okraji trati místo\n"
+"krátkého dosahu automatu, takže už nevyskakuje.\n"
+"Jen Daytona USA. Projeví se ihned."
 
 #: src/osd/gui.cpp
 #, no-c-format
