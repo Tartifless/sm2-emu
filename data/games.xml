@@ -19,6 +19,12 @@
       </channel>
     </analog>
     <lightgun> <axis name= min= max= rest=/> ... </lightgun>
+    <outputs>
+      <lamp name= bit=/>
+      <value name= address= type=> <when address= mask= equals=/> ... </value>
+      <flag name= source=/>
+      <pulse name= source= edge= frames=/>
+    </outputs>
     <roms>
       <region name= size= stride= chunk= byte_swap= fill= required=>
         <file name= offset= crc=/>
@@ -86,6 +92,34 @@
   its axes are declared separately and each title carries its own calibration.
   Axis order is the board's own mux order, P1 Y, P1 X, P2 Y, P2 X.
 
+  Game outputs
+  ============
+  Every title publishes its lamp latch as cabinet outputs (see osd/outputs.h).
+  `<outputs>` adds state the cabinet never latched but a peripheral wants: a
+  Model 2 gun cabinet has no recoil, so nothing on the board says that a shot
+  was fired. The program knows, and these read it from its work RAM
+  (0x00500000-0x005fffff), once a frame.
+
+  `<lamp>` names one bit of the lamp latch. `<value>` is a number at `address`;
+  `type` is "u8" (the default), "u16", "s16", "u32" or "float", little-endian,
+  and anything below zero is published as zero. Its `<when>` children are
+  conditions that must all hold -- the byte at `address`, masked with `mask`
+  (default 0xff), equal to `equals`, or with no `equals` anything but zero --
+  for variables that only mean something while a player is in the game. While
+  one fails the value is zero.
+
+  `<flag>` is 1 while the `<value>` named by `source` is above zero. `<pulse>`
+  is 1 for `frames` frames (default 3) each time that value falls, or with
+  edge="rise" rises, from one frame to the next while its conditions hold. A
+  source has to be declared before what follows it.
+
+  The names are the ones DemulShooter established for these games (P1_Ammo,
+  P1_Clip, P1_CtmRecoil, P1_Life, P1_Damaged, P1_LmpStart, P1_GunMotor,
+  Credits), which is what the game files of MAMEHooker and Hook Of The Reaper
+  listen for. The fighting games add P1_Wins and P2_Wins, the rounds each side
+  has taken in the current match, for a scoreboard. The addresses belong to one
+  revision of a program, so a clone does not inherit its parent's `<outputs>`.
+
   `gearbox="true"` marks a title whose IN1 bits 0x70 read a gear selector
   rather than buttons (MAME's daytona_gearbox_r). `drive_board="true"` marks
   one that latches force-feedback commands on port E. `drive_protocol` says how
@@ -123,6 +157,14 @@
       <input type="joystick2"/>
       <input type="buttons3"/>
     </inputs>
+
+    <!-- Game state published as outputs. The addresses are this revision's. The wins are the
+         rounds each side has taken in the match being fought, back to zero when it ends. -->
+    <outputs>
+      <value name="P1_Wins" address="0x0050019b"/>
+      <value name="P2_Wins" address="0x0050019d"/>
+      <value name="Credits" address="0x00515b54"/>
+    </outputs>
 
     <roms>
       <!-- i960KB program. Four 128 KB EPROMs in two interleaved pairs. -->
@@ -286,6 +328,11 @@
       <channel index="2" control="stickx" rest="0x80" reverse="true"/>
     </analog>
 
+    <!-- Game state published as outputs. The address is this revision's. -->
+    <outputs>
+      <value name="Credits" address="0x00517c48"/>
+    </outputs>
+
     <roms>
       <region name="maincpu" size="0x200000" stride="4" chunk="2">
         <file name="epr-18406.12" offset="0x000000" crc="0xfde9c00a"/>
@@ -391,6 +438,37 @@
       <axis name="p2x" min="0x086" max="0x273" rest="0x17c"/>
     </lightgun>
 
+    <!-- Game state published as outputs. The addresses are this revision's. The players' state bytes
+         stay set through the attract mode, so the game's own state (1 while a game is in progress)
+         is asked as well. -->
+    <outputs>
+      <lamp name="P1_LmpStart" bit="2"/>
+      <lamp name="P2_LmpStart" bit="3"/>
+      <value name="P1_Life" address="0x00502090">
+        <when address="0x0050003d" equals="1"/>
+        <when address="0x00502088" equals="1"/>
+      </value>
+      <value name="P1_Ammo" address="0x00507260">
+        <when address="0x0050003d" equals="1"/>
+        <when address="0x00502088" equals="1"/>
+      </value>
+      <flag name="P1_Clip" source="P1_Ammo"/>
+      <pulse name="P1_CtmRecoil" source="P1_Ammo" edge="fall"/>
+      <pulse name="P1_Damaged" source="P1_Life" edge="fall"/>
+      <value name="P2_Life" address="0x00502094">
+        <when address="0x0050003d" equals="1"/>
+        <when address="0x0050208c" equals="1"/>
+      </value>
+      <value name="P2_Ammo" address="0x00507264">
+        <when address="0x0050003d" equals="1"/>
+        <when address="0x0050208c" equals="1"/>
+      </value>
+      <flag name="P2_Clip" source="P2_Ammo"/>
+      <pulse name="P2_CtmRecoil" source="P2_Ammo" edge="fall"/>
+      <pulse name="P2_Damaged" source="P2_Life" edge="fall"/>
+      <value name="Credits" address="0x005d05c0"/>
+    </outputs>
+
     <roms>
       <region name="maincpu" size="0x200000" stride="4" chunk="2">
         <file name="epr-18524.12" offset="0x000000" crc="0x1858988b"/>
@@ -474,6 +552,11 @@
       <input type="joystick2"/>
       <input type="buttons3"/>
     </inputs>
+
+    <!-- Game state published as outputs. The address is this revision's. -->
+    <outputs>
+      <value name="Credits" address="0x00502210"/>
+    </outputs>
 
     <roms>
       <region name="maincpu" size="0x200000" stride="4" chunk="2">
@@ -564,6 +647,14 @@
       <input type="joystick2"/>
       <input type="buttons3"/>
     </inputs>
+
+    <!-- Game state published as outputs. The addresses are this revision's. The wins are the
+         rounds each side has taken in the match being fought, back to zero when it ends. -->
+    <outputs>
+      <value name="P1_Wins" address="0x0054fbe3"/>
+      <value name="P2_Wins" address="0x0054fc3b"/>
+      <value name="Credits" address="0x0054fcc4"/>
+    </outputs>
 
     <roms>
       <region name="maincpu" size="0x200000" stride="4" chunk="2">
@@ -841,6 +932,23 @@
         <point at="0.9565" value="0x00"/>
       </channel>
     </analog>
+
+    <!-- Game state published as outputs. The addresses are this revision's. No lamps: this cabinet's
+         latch is wired differently and its bits are not identified. The game keeps these variables
+         for both players throughout, so there is no condition. -->
+    <outputs>
+      <value name="P1_Life" address="0x005b4996" type="u16"/>
+      <value name="P1_Ammo" address="0x005b4954" type="s16"/>
+      <flag name="P1_Clip" source="P1_Ammo"/>
+      <pulse name="P1_CtmRecoil" source="P1_Ammo" edge="fall"/>
+      <pulse name="P1_Damaged" source="P1_Life" edge="fall"/>
+      <value name="P2_Life" address="0x005b4a1e" type="u16"/>
+      <value name="P2_Ammo" address="0x005b49d8" type="s16"/>
+      <flag name="P2_Clip" source="P2_Ammo"/>
+      <pulse name="P2_CtmRecoil" source="P2_Ammo" edge="fall"/>
+      <pulse name="P2_Damaged" source="P2_Life" edge="fall"/>
+      <value name="Credits" address="0x005a87f0"/>
+    </outputs>
 
     <roms>
       <region name="maincpu" size="0x200000" stride="4" chunk="2">
@@ -1337,6 +1445,11 @@
 
     <!-- Model 1 I/O board Z80 firmware: in the game's archive, or in
          model1io.zip for a split set. -->
+    <!-- Game state published as outputs. The address is this revision's. -->
+    <outputs>
+      <value name="Credits" address="0x00520973"/>
+    </outputs>
+
     <roms>
       <region name="ioboard" size="0x10000">
         <file name="epr-14869c.25" offset="0x000000" crc="0x24b68e64"/>
@@ -1710,6 +1823,11 @@
       <input type="buttons3"/>
     </inputs>
 
+    <!-- Game state published as outputs. The address is this revision's. -->
+    <outputs>
+      <value name="Credits" address="0x00513ab0"/>
+    </outputs>
+
     <roms>
       <region name="maincpu" size="0x200000" stride="4" chunk="2">
         <file name="epr-20930.12" offset="0x000000" crc="0xb8fc8ff7"/>
@@ -2030,6 +2148,14 @@
       <input type="buttons3"/>
     </inputs>
 
+    <!-- Game state published as outputs. The addresses are this revision's. The wins are the
+         rounds each side has taken in the match being fought, back to zero when it ends. -->
+    <outputs>
+      <value name="P1_Wins" address="0x0050004f"/>
+      <value name="P2_Wins" address="0x00500051"/>
+      <value name="Credits" address="0x00515cc0"/>
+    </outputs>
+
     <roms>
       <region name="maincpu" size="0x200000" stride="4" chunk="2">
         <file name="epr-18606d.15" offset="0x000000" crc="0x7334de7d"/>
@@ -2262,6 +2388,33 @@
       <channel index="3" control="p2y" min="0x11" max="0xae" rest="0x5f"/>
     </analog>
 
+    <!-- Game state published as outputs. The addresses are this revision's. There is no magazine: the
+         gun is a machine gun with a motor of its own on the lamp latch, and the game counts the
+         shots fired instead. Bits 0 and 1 of the state byte are the players in the game. -->
+    <outputs>
+      <lamp name="P1_LmpStart" bit="2"/>
+      <lamp name="P2_LmpStart" bit="3"/>
+      <lamp name="P1_GunMotor" bit="4"/>
+      <lamp name="P2_GunMotor" bit="5"/>
+      <value name="P1_Life" address="0x00540114">
+        <when address="0x0053ffc0" mask="0x01"/>
+      </value>
+      <value name="P1_Shots" address="0x00540104" type="float">
+        <when address="0x0053ffc0" mask="0x01"/>
+      </value>
+      <pulse name="P1_CtmRecoil" source="P1_Shots" edge="rise"/>
+      <pulse name="P1_Damaged" source="P1_Life" edge="fall"/>
+      <value name="P2_Life" address="0x00540154">
+        <when address="0x0053ffc0" mask="0x02"/>
+      </value>
+      <value name="P2_Shots" address="0x00540144" type="float">
+        <when address="0x0053ffc0" mask="0x02"/>
+      </value>
+      <pulse name="P2_CtmRecoil" source="P2_Shots" edge="rise"/>
+      <pulse name="P2_Damaged" source="P2_Life" edge="fall"/>
+      <value name="Credits" address="0x0053ffb2"/>
+    </outputs>
+
     <roms>
       <region name="maincpu" size="0x200000" stride="4" chunk="2">
         <file name="epr-18988a.15" offset="0x000000" crc="0xf63f1ad2"/>
@@ -2317,6 +2470,32 @@
       <axis name="p2y" min="0x057" max="0x17c" rest="0x0e9"/>
       <axis name="p2x" min="0x0a3" max="0x254" rest="0x17b"/>
     </lightgun>
+
+    <!-- Game state published as outputs. The addresses are this revision's. A player's state byte is
+         5 while that player is in the game. -->
+    <outputs>
+      <lamp name="P1_LmpStart" bit="2"/>
+      <lamp name="P2_LmpStart" bit="3"/>
+      <value name="P1_Life" address="0x0051f290">
+        <when address="0x0051f284" equals="5"/>
+      </value>
+      <value name="P1_Ammo" address="0x0051f2c1">
+        <when address="0x0051f284" equals="5"/>
+      </value>
+      <flag name="P1_Clip" source="P1_Ammo"/>
+      <pulse name="P1_CtmRecoil" source="P1_Ammo" edge="fall"/>
+      <pulse name="P1_Damaged" source="P1_Life" edge="fall"/>
+      <value name="P2_Life" address="0x0051f35c">
+        <when address="0x0051f350" equals="5"/>
+      </value>
+      <value name="P2_Ammo" address="0x0051f38d">
+        <when address="0x0051f350" equals="5"/>
+      </value>
+      <flag name="P2_Clip" source="P2_Ammo"/>
+      <pulse name="P2_CtmRecoil" source="P2_Ammo" edge="fall"/>
+      <pulse name="P2_Damaged" source="P2_Life" edge="fall"/>
+      <value name="Credits" address="0x0051f4b8"/>
+    </outputs>
 
     <roms>
       <region name="maincpu" size="0x200000" stride="4" chunk="2">
@@ -2612,6 +2791,11 @@
       <channel index="2" control="brake" rest="0x00"/>
     </analog>
 
+    <!-- Game state published as outputs. The address is this revision's. -->
+    <outputs>
+      <value name="Credits" address="0x0053c440"/>
+    </outputs>
+
     <roms>
       <region name="maincpu" size="0x200000" stride="4" chunk="2">
         <file name="epr-18598a.15" offset="0x000000" crc="0x3cdcac0f"/>
@@ -2825,6 +3009,14 @@
       <input type="joystick2"/>
       <input type="buttons3"/>
     </inputs>
+
+    <!-- Game state published as outputs. The addresses are this revision's. The wins are the
+         rounds each side has taken in the match being fought, back to zero when it ends. -->
+    <outputs>
+      <value name="P1_Wins" address="0x0056bc18"/>
+      <value name="P2_Wins" address="0x0056bc1c"/>
+      <value name="Credits" address="0x0056ced0"/>
+    </outputs>
 
     <roms>
       <region name="maincpu" size="0x200000" stride="4" chunk="2">
@@ -3399,6 +3591,11 @@
       <channel index="2" control="brake" rest="0x00" reverse="true"/>
     </analog>
 
+    <!-- Game state published as outputs. The address is this revision's. -->
+    <outputs>
+      <value name="Credits" address="0x00592704"/>
+    </outputs>
+
     <roms>
       <region name="maincpu" size="0x200000" stride="4" chunk="2">
         <file name="epr-20124a.15" offset="0x000000" crc="0x74beb8d7"/>
@@ -3600,6 +3797,11 @@
       <input type="joystick2"/>
       <input type="buttons3"/>
     </inputs>
+
+    <!-- Game state published as outputs. The address is this revision's. -->
+    <outputs>
+      <value name="Credits" address="0x005092a0"/>
+    </outputs>
 
     <roms>
       <region name="maincpu" size="0x200000" stride="4" chunk="2">
@@ -3873,6 +4075,21 @@
       </channel>
     </analog>
 
+    <!-- Game state published as outputs. The addresses are this revision's. Bits 0 and 1 of the state
+         byte are the players in the game. -->
+    <outputs>
+      <lamp name="P1_LmpStart" bit="2"/>
+      <lamp name="P2_LmpStart" bit="3"/>
+      <value name="P1_Life" address="0x00501e70">
+        <when address="0x00501d88" mask="0x01"/>
+      </value>
+      <pulse name="P1_Damaged" source="P1_Life" edge="fall"/>
+      <value name="P2_Life" address="0x00501e72">
+        <when address="0x00501d88" mask="0x02"/>
+      </value>
+      <pulse name="P2_Damaged" source="P2_Life" edge="fall"/>
+    </outputs>
+
     <roms>
       <region name="maincpu" size="0x200000" stride="4" chunk="2">
         <file name="epr-18045a.15" offset="0x000000" crc="0xbfca0314"/>
@@ -4005,6 +4222,14 @@
       <input type="joystick2"/>
       <input type="buttons3"/>
     </inputs>
+
+    <!-- Game state published as outputs. The addresses are this revision's. The wins are the
+         rounds each side has taken in the match being fought, back to zero when it ends. -->
+    <outputs>
+      <value name="P1_Wins" address="0x0050004f"/>
+      <value name="P2_Wins" address="0x00500051"/>
+      <value name="Credits" address="0x0051a5c0"/>
+    </outputs>
 
     <roms>
       <region name="maincpu" size="0x200000" stride="4" chunk="2">
@@ -4224,6 +4449,11 @@
       <channel index="2" control="brake" rest="0x00" reverse="true"/>
     </analog>
 
+    <!-- Game state published as outputs. The address is this revision's. -->
+    <outputs>
+      <value name="Credits" address="0x00510df0"/>
+    </outputs>
+
     <roms>
       <region name="maincpu" size="0x200000" stride="4" chunk="2">
         <file name="epr-19155.15" offset="0x000000" crc="0x593952fd"/>
@@ -4273,6 +4503,11 @@
       <channel index="0" control="inclining" rest="0x80"/>
       <channel index="1" control="swing" rest="0x80" reverse="true"/>
     </analog>
+
+    <!-- Game state published as outputs. The address is this revision's. -->
+    <outputs>
+      <value name="Credits" address="0x00511080"/>
+    </outputs>
 
     <roms>
       <region name="maincpu" size="0x200000" stride="4" chunk="2">
@@ -5059,6 +5294,11 @@
       <channel index="1" control="slide" rest="0x80"/>
     </analog>
 
+    <!-- Game state published as outputs. The address is this revision's. -->
+    <outputs>
+      <value name="Credits" address="0x005dcf62"/>
+    </outputs>
+
     <roms>
       <region name="maincpu" size="0x200000" stride="4" chunk="2">
         <file name="epr-19755a.15" offset="0x000000" crc="0xb80633b9"/>
@@ -5306,6 +5546,32 @@
 
     <!-- Model 1 I/O board (type 2) Z80 firmware: in the game's archive, or
          in model1io2.zip for a split set. -->
+    <!-- Game state published as outputs. The addresses are this revision's. A player's state byte is
+         1 while that player is in the game. -->
+    <outputs>
+      <lamp name="P1_LmpStart" bit="2"/>
+      <lamp name="P2_LmpStart" bit="3"/>
+      <value name="P1_Life" address="0x0050ee70">
+        <when address="0x0050ee30" equals="1"/>
+      </value>
+      <value name="P1_Ammo" address="0x0050ee38">
+        <when address="0x0050ee30" equals="1"/>
+      </value>
+      <flag name="P1_Clip" source="P1_Ammo"/>
+      <pulse name="P1_CtmRecoil" source="P1_Ammo" edge="fall"/>
+      <pulse name="P1_Damaged" source="P1_Life" edge="fall"/>
+      <value name="P2_Life" address="0x0050ee74">
+        <when address="0x0050ee34" equals="1"/>
+      </value>
+      <value name="P2_Ammo" address="0x0050ee3c">
+        <when address="0x0050ee34" equals="1"/>
+      </value>
+      <flag name="P2_Clip" source="P2_Ammo"/>
+      <pulse name="P2_CtmRecoil" source="P2_Ammo" edge="fall"/>
+      <pulse name="P2_Damaged" source="P2_Life" edge="fall"/>
+      <value name="Credits" address="0x00559270"/>
+    </outputs>
+
     <roms>
       <region name="ioboard" size="0x10000">
         <file name="epr-17181.6" offset="0x000000" crc="0x1add2b82"/>
@@ -5650,6 +5916,11 @@
       <input type="joystick2"/>
       <input type="buttons3"/>
     </inputs>
+
+    <!-- Game state published as outputs. The address is this revision's. -->
+    <outputs>
+      <value name="Credits" address="0x005d40a0"/>
+    </outputs>
 
     <roms>
       <region name="maincpu" size="0x200000" stride="4" chunk="2">

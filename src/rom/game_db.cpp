@@ -24,6 +24,7 @@
 #include <filesystem>
 #include <string>
 #include <unordered_map>
+#include <utility>
 
 #if defined(__APPLE__)
 #include <mach-o/dyld.h>
@@ -81,6 +82,132 @@ namespace {
                   attribute.value());
         return false;
     }
+    return true;
+}
+
+/// Work RAM, where every output a title publishes from its own state lives.
+constexpr u32 kWorkRamBase = 0x00500000;
+constexpr u32 kWorkRamSize = 0x00100000;
+
+[[nodiscard]] bool in_work_ram(u32 address, u32 width)
+{
+    return address >= kWorkRamBase && address - kWorkRamBase <= kWorkRamSize - width;
+}
+
+/// One child of <outputs>: <lamp>, <value>, <flag> or <pulse>. See OutputSpec.
+[[nodiscard]] bool parse_output(const pugi::xml_node&    node,
+                                std::vector<OutputSpec>* outputs,
+                                const char*              context)
+{
+    OutputSpec output;
+    output.name = node.attribute("name").value();
+    if (output.name.empty()) {
+        SM2_ERROR("%s: an output has no name attribute", context);
+        return false;
+    }
+    for (const OutputSpec& other : *outputs) {
+        if (other.name == output.name) {
+            SM2_ERROR("%s: output '%s' is defined twice", context, output.name.c_str());
+            return false;
+        }
+    }
+
+    const std::string_view kind = node.name();
+    if (kind == "lamp") {
+        u32 bit = 0;
+        if (!attribute_integer(node, "bit", 8, &bit, context)) {
+            return false;
+        }
+        if (bit > 7) {
+            SM2_ERROR("%s: output '%s' needs a bit from 0 to 7", context, output.name.c_str());
+            return false;
+        }
+        output.kind = OutputSpec::Kind::Lamp;
+        output.bit  = static_cast<u8>(bit);
+    } else if (kind == "value") {
+        output.kind = OutputSpec::Kind::Value;
+
+        const std::string_view type  = node.attribute("type").as_string("u8");
+        u32                    width = 1;
+        if (type == "u8")         { output.type = OutputSpec::Type::U8; }
+        else if (type == "u16")   { output.type = OutputSpec::Type::U16;   width = 2; }
+        else if (type == "s16")   { output.type = OutputSpec::Type::S16;   width = 2; }
+        else if (type == "u32")   { output.type = OutputSpec::Type::U32;   width = 4; }
+        else if (type == "float") { output.type = OutputSpec::Type::Float; width = 4; }
+        else {
+            SM2_ERROR("%s: output '%s' has an unrecognised type '%s' (expected u8, u16, "
+                      "s16, u32 or float)", context, output.name.c_str(),
+                      node.attribute("type").value());
+            return false;
+        }
+
+        if (!attribute_integer(node, "address", 0, &output.address, context)) {
+            return false;
+        }
+        if (!in_work_ram(output.address, width)) {
+            SM2_ERROR("%s: output '%s' is not inside work RAM (0x%08x-0x%08x)", context,
+                      output.name.c_str(), kWorkRamBase, kWorkRamBase + kWorkRamSize - 1);
+            return false;
+        }
+
+        for (const pugi::xml_node when_node : node.children("when")) {
+            OutputSpec::When when;
+            when.any = !when_node.attribute("equals");
+            if (!attribute_integer(when_node, "address", 0, &when.address, context)
+                || !attribute_integer(when_node, "mask", 0xff, &when.mask, context)
+                || !attribute_integer(when_node, "equals", 0, &when.value, context)) {
+                return false;
+            }
+            if (!in_work_ram(when.address, 1)) {
+                SM2_ERROR("%s: output '%s' has a condition outside work RAM", context,
+                          output.name.c_str());
+                return false;
+            }
+            output.when.push_back(when);
+        }
+    } else if (kind == "flag" || kind == "pulse") {
+        output.kind = kind == "flag" ? OutputSpec::Kind::Flag : OutputSpec::Kind::Pulse;
+
+        const std::string_view source = node.attribute("source").value();
+        bool                   found  = false;
+        for (usize i = 0; i < outputs->size(); ++i) {
+            if ((*outputs)[i].kind == OutputSpec::Kind::Value && (*outputs)[i].name == source) {
+                output.source = static_cast<u32>(i);
+                found         = true;
+            }
+        }
+        if (!found) {
+            SM2_ERROR("%s: output '%s' follows '%s', which is not a <value> defined "
+                      "before it", context, output.name.c_str(),
+                      node.attribute("source").value());
+            return false;
+        }
+
+        if (output.kind == OutputSpec::Kind::Pulse) {
+            const std::string_view edge = node.attribute("edge").as_string("fall");
+            if (edge != "fall" && edge != "rise") {
+                SM2_ERROR("%s: output '%s' has an unrecognised edge '%s' (expected fall "
+                          "or rise)", context, output.name.c_str(),
+                          node.attribute("edge").value());
+                return false;
+            }
+            output.rising = edge == "rise";
+            if (!attribute_integer(node, "frames", 3, &output.frames, context)) {
+                return false;
+            }
+            if (output.frames == 0 || output.frames > 600) {
+                SM2_ERROR("%s: output '%s' needs a length of 1 to 600 frames", context,
+                          output.name.c_str());
+                return false;
+            }
+        }
+    } else {
+        SM2_ERROR("%s: unrecognised output element <%s> (expected lamp, value, flag or "
+                  "pulse)", context, node.name());
+        return false;
+    }
+
+    outputs->push_back(std::move(output));
     return true;
 }
 
@@ -541,6 +668,15 @@ bool GameDatabase::load(const std::string& path)
             axis->maximum = static_cast<u16>(maximum);
             axis->rest    = static_cast<u16>(rest);
             game.lightgun.present = true;
+        }
+
+        for (const pugi::xml_node output_node : game_node.child("outputs").children()) {
+            if (output_node.type() != pugi::node_element) {
+                continue;
+            }
+            if (!parse_output(output_node, &game.outputs, context.c_str())) {
+                return false;
+            }
         }
 
         for (const pugi::xml_node region_node : game_node.child("roms").children("region")) {

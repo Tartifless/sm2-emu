@@ -2262,7 +2262,8 @@ int main(int argc, char** argv)
                               static_cast<u16>(options.config.outputs_network_port),
                               options.config.outputs_windows);
             if (machine_iface != nullptr && loaded.has_value()) {
-                outputs.set_game(loaded->game.name, loaded->game.parent);
+                outputs.set_game(loaded->game.name, loaded->game.parent,
+                                 loaded->game.outputs);
             } else {
                 outputs.set_game({}, {});
             }
@@ -2331,7 +2332,8 @@ int main(int argc, char** argv)
                 input.set_sinden_border(options.config.sinden_border);
                 const auto drive_writes = machine_iface->take_drive_board_writes();
                 input.update_drive_board(loaded->game, drive_writes.view());
-                outputs.update(machine_iface->lamp_latch(), drive_writes.view());
+                outputs.update(machine_iface->lamp_latch(), drive_writes.view(),
+                               machine_iface->work_ram());
                 input.update_force_feedback(loaded->game);
                 input.update_pad_rumble(loaded->game);
                 if (options.coin_at != 0) {

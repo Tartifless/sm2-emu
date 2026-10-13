@@ -20,6 +20,7 @@
 #include "core/log.h"
 #include "core/net.h"
 
+#include <algorithm>
 #include <cstring>
 #include <string_view>
 #include <utility>
@@ -48,8 +49,44 @@ namespace {
 // Lamp names
 // ---------------------------------------------------------------------------
 
-constexpr int kRawDrive = -1;
-constexpr int kRawLamps = -2;
+constexpr int kRawDrive   = -1;
+constexpr int kRawLamps   = -2;
+constexpr int kGameOutput = -3;  ///< One of the set's own, from games.xml.
+
+constexpr u32 kWorkRamBase = 0x00500000;
+
+/// The byte at a work RAM address, or zero when there is no such byte.
+u8 ram_byte(std::span<const u8> ram, u32 address)
+{
+    const u32 offset = address - kWorkRamBase;
+    return offset < ram.size() ? ram[offset] : 0;
+}
+
+/// The value of one of a set's own outputs. The i960 is little-endian.
+s32 ram_value(std::span<const u8> ram, const rom::OutputSpec& spec)
+{
+    u32 raw = 0;
+    for (u32 i = 0; i < 4; ++i) {
+        raw |= static_cast<u32>(ram_byte(ram, spec.address + i)) << (8 * i);
+    }
+    switch (spec.type) {
+    case rom::OutputSpec::Type::U8:
+        return static_cast<s32>(raw & 0xff);
+    case rom::OutputSpec::Type::U16:
+        return static_cast<s32>(raw & 0xffff);
+    case rom::OutputSpec::Type::S16:
+        return std::max<s32>(static_cast<s16>(raw & 0xffff), 0);
+    case rom::OutputSpec::Type::U32:
+        return static_cast<s32>(std::min<u32>(raw, 0x7fffffff));
+    case rom::OutputSpec::Type::Float: {
+        float value = 0.0f;
+        std::memcpy(&value, &raw, sizeof value);
+        // The comparison also turns a NaN into zero.
+        return value > 0.0f ? static_cast<s32>(std::min(value, 2147483520.0f)) : 0;
+    }
+    }
+    return 0;
+}
 
 struct NamedBit {
     const char* name;
@@ -383,7 +420,8 @@ void Outputs::configure(bool network, u16 port, bool windows)
 #endif
 }
 
-void Outputs::set_game(const std::string& name, const std::string& parent)
+void Outputs::set_game(const std::string& name, const std::string& parent,
+                       std::span<const rom::OutputSpec> game_outputs)
 {
     if (name == m_game) {
         return;
@@ -396,11 +434,18 @@ void Outputs::set_game(const std::string& name, const std::string& parent)
     m_game = name;
     m_items.clear();
     m_bits.clear();
+    m_game_outputs.clear();
     if (m_game.empty()) {
         poll();
         return;
     }
     build_items(parent.empty() ? name : parent);
+    m_first_game_item = m_items.size();
+    for (const rom::OutputSpec& spec : game_outputs) {
+        m_items.push_back({spec.name, 0, true});
+        m_bits.push_back(kGameOutput);
+        m_game_outputs.push_back({spec});
+    }
     for (Backend* backend : {m_network.get(), m_windows.get()}) {
         if (backend != nullptr) {
             backend->start(m_game, m_items);
@@ -441,22 +486,87 @@ void Outputs::set_paused(bool paused)
     }
 }
 
-void Outputs::update(u8 lamp_latch, std::span<const u8> drive_writes)
+void Outputs::update(u8 lamp_latch, std::span<const u8> drive_writes,
+                     std::span<const u8> work_ram)
 {
     if (m_game.empty() || (m_network == nullptr && m_windows == nullptr)) {
         return;
     }
+    update_game_outputs(lamp_latch, work_ram);
     for (usize i = 0; i < m_items.size(); ++i) {
         if (m_bits[i] >= 0) {
             set(i, (lamp_latch >> m_bits[i]) & 1);
         } else if (m_bits[i] == kRawLamps) {
             set(i, lamp_latch);
+        } else if (m_bits[i] == kGameOutput) {
+            set(i, m_game_outputs[i - m_first_game_item].value);
         } else {
             // Every byte in order: a force command can be followed by its
             // parameters within one frame.
             for (const u8 value : drive_writes) {
                 set(i, value);
             }
+        }
+    }
+}
+
+void Outputs::update_game_outputs(u8 lamp_latch, std::span<const u8> work_ram)
+{
+    using Kind = rom::OutputSpec::Kind;
+
+    for (GameOutput& output : m_game_outputs) {
+        const rom::OutputSpec& spec = output.spec;
+        output.previous = output.value;
+        output.was_live = output.live;
+
+        switch (spec.kind) {
+        case Kind::Lamp:
+            output.live  = true;
+            output.value = (lamp_latch >> spec.bit) & 1;
+            break;
+
+        case Kind::Value: {
+            output.live = !work_ram.empty();
+            for (const rom::OutputSpec::When& when : spec.when) {
+                const u32 byte = ram_byte(work_ram, when.address) & when.mask;
+                output.live    = output.live && (when.any ? byte != 0 : byte == when.value);
+            }
+            output.value = output.live ? ram_value(work_ram, spec) : 0;
+            break;
+        }
+
+        case Kind::Flag:
+            output.live  = true;
+            output.value = m_game_outputs[spec.source].value > 0 ? 1 : 0;
+            break;
+
+        case Kind::Pulse: {
+            // The source comes earlier in the list, so it already holds this
+            // frame's value. A value that appears or vanishes with its
+            // condition (a player joining, a game ending) is not an edge.
+            const GameOutput& source = m_game_outputs[spec.source];
+            if (source.live && source.was_live
+                && (spec.rising ? source.value > source.previous
+                                : source.value < source.previous)) {
+                output.pending = true;
+            }
+            // One frame at zero between two pulses, or a reader that only sees
+            // changes would take a burst for a single shot.
+            if (output.pending && output.on_frames == 0 && output.off_frames == 0) {
+                output.pending   = false;
+                output.on_frames = spec.frames;
+            }
+            output.live  = true;
+            output.value = output.on_frames > 0 ? 1 : 0;
+            if (output.on_frames > 0) {
+                if (--output.on_frames == 0) {
+                    output.off_frames = 1;
+                }
+            } else if (output.off_frames > 0) {
+                --output.off_frames;
+            }
+            break;
+        }
         }
     }
 }
