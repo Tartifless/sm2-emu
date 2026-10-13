@@ -943,7 +943,7 @@ bool Input::binding_held(SDL_Gamepad* pad, s32 binding)
 
 bool Input::pad_button_held(const Pad& pad, SDL_GamepadButton physical) const
 {
-    static const auto kDefaults = Config{}.pad_bindings[0];
+    static const auto kDefaults = Config::PadLayout{}.buttons[0];
     s32 button = physical;
     for (usize role = 0; role < kDefaults.size(); ++role) {
         if (kDefaults[role] == physical) {

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-14 20:39+1000\n"
+"POT-Creation-Date: 2026-10-14 21:16+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -1062,6 +1062,41 @@ msgstr "Spēļu pults nav pievienota. Iestatījumi stāsies spēkā, kad tā bū
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Default"
+msgstr "Noklusējums"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Game"
+msgstr "Spēle"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Filter games"
+msgstr "Filtrēt spēles"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "custom"
+msgstr "pielāgots"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Used by every game without its own layout."
+msgstr "To izmanto katra spēle bez sava izkārtojuma."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Uses the default layout until a binding is changed."
+msgstr "Izmanto noklusējuma izkārtojumu, līdz tiek mainīta kāda piesaiste."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "This game has its own layout."
+msgstr "Šai spēlei ir savs izkārtojums."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Player"
 msgstr "Spēlētājs"
 
@@ -1069,6 +1104,11 @@ msgstr "Spēlētājs"
 #, no-c-format
 msgid "Reset to SDL defaults"
 msgstr "Atjaunot SDL noklusējumus"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Use Default Layout"
+msgstr "Izmantot noklusējuma izkārtojumu"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1252,18 +1292,8 @@ msgstr "Tagad skan: %s"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "Filter games"
-msgstr "Filtrēt spēles"
-
-#: src/osd/gui.cpp
-#, no-c-format
 msgid "Reset all"
 msgstr "Atiestatīt visu"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Game"
-msgstr "Spēle"
 
 #: src/osd/gui.cpp
 #, no-c-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-14 20:39+1000\n"
+"POT-Creation-Date: 2026-10-14 21:16+1000\n"
 "PO-Revision-Date: 2026-10-09 12:00+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -1057,6 +1057,41 @@ msgstr "연결된 게임패드가 없습니다. 연결되면 설정이 적용됩
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Default"
+msgstr "기본값"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Game"
+msgstr "게임"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Filter games"
+msgstr "게임 검색"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "custom"
+msgstr "사용자 지정"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Used by every game without its own layout."
+msgstr "자체 배치가 없는 모든 게임에서 사용됩니다."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Uses the default layout until a binding is changed."
+msgstr "버튼 할당을 바꾸기 전까지 기본 배치를 사용합니다."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "This game has its own layout."
+msgstr "이 게임에는 자체 배치가 있습니다."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Player"
 msgstr "플레이어"
 
@@ -1064,6 +1099,11 @@ msgstr "플레이어"
 #, no-c-format
 msgid "Reset to SDL defaults"
 msgstr "SDL 기본값으로 초기화"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Use Default Layout"
+msgstr "기본 배치 사용"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1247,18 +1287,8 @@ msgstr "재생 중: %s"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "Filter games"
-msgstr "게임 검색"
-
-#: src/osd/gui.cpp
-#, no-c-format
 msgid "Reset all"
 msgstr "모두 초기화"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Game"
-msgstr "게임"
 
 #: src/osd/gui.cpp
 #, no-c-format

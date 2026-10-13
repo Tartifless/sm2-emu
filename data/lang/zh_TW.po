@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-14 20:39+1000\n"
+"POT-Creation-Date: 2026-10-14 21:16+1000\n"
 "PO-Revision-Date: 2026-10-09 12:00+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -1056,6 +1056,41 @@ msgstr "未連接遊戲手把。連接後設定仍會生效。"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Default"
+msgstr "預設"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Game"
+msgstr "遊戲"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Filter games"
+msgstr "篩選遊戲"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "custom"
+msgstr "自訂"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Used by every game without its own layout."
+msgstr "所有沒有專屬配置的遊戲都使用此配置。"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Uses the default layout until a binding is changed."
+msgstr "在變更任一按鍵綁定前使用預設配置。"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "This game has its own layout."
+msgstr "此遊戲有專屬配置。"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Player"
 msgstr "玩家"
 
@@ -1063,6 +1098,11 @@ msgstr "玩家"
 #, no-c-format
 msgid "Reset to SDL defaults"
 msgstr "重設為 SDL 預設值"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Use Default Layout"
+msgstr "使用預設配置"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1246,18 +1286,8 @@ msgstr "正在播放：%s"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "Filter games"
-msgstr "篩選遊戲"
-
-#: src/osd/gui.cpp
-#, no-c-format
 msgid "Reset all"
 msgstr "全部重設"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Game"
-msgstr "遊戲"
 
 #: src/osd/gui.cpp
 #, no-c-format

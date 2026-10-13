@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-14 20:39+1000\n"
+"POT-Creation-Date: 2026-10-14 21:16+1000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -991,12 +991,52 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Default"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Game"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Filter games"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "custom"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Used by every game without its own layout."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Uses the default layout until a binding is changed."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "This game has its own layout."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Player"
 msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Reset to SDL defaults"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Use Default Layout"
 msgstr ""
 
 #: src/osd/gui.cpp
@@ -1160,17 +1200,7 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "Filter games"
-msgstr ""
-
-#: src/osd/gui.cpp
-#, no-c-format
 msgid "Reset all"
-msgstr ""
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Game"
 msgstr ""
 
 #: src/osd/gui.cpp

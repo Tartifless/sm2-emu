@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-14 20:39+1000\n"
+"POT-Creation-Date: 2026-10-14 21:16+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -1058,6 +1058,41 @@ msgstr "Nie je pripojený žiadny gamepad. Nastavenia platia, keď bude."
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Default"
+msgstr "Predvolené"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Game"
+msgstr "Hra"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Filter games"
+msgstr "Filtrovať hry"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "custom"
+msgstr "vlastné"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Used by every game without its own layout."
+msgstr "Používa ho každá hra bez vlastného rozloženia."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Uses the default layout until a binding is changed."
+msgstr "Používa predvolené rozloženie, kým sa nezmení niektoré priradenie."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "This game has its own layout."
+msgstr "Táto hra má vlastné rozloženie."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Player"
 msgstr "Hráč"
 
@@ -1065,6 +1100,11 @@ msgstr "Hráč"
 #, no-c-format
 msgid "Reset to SDL defaults"
 msgstr "Obnoviť predvolené SDL"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Use Default Layout"
+msgstr "Použiť predvolené rozloženie"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1248,18 +1288,8 @@ msgstr "Teraz hrá: %s"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "Filter games"
-msgstr "Filtrovať hry"
-
-#: src/osd/gui.cpp
-#, no-c-format
 msgid "Reset all"
 msgstr "Obnoviť všetko"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Game"
-msgstr "Hra"
 
 #: src/osd/gui.cpp
 #, no-c-format

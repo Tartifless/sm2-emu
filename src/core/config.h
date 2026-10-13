@@ -320,17 +320,6 @@ struct Config {
     static constexpr s32 kPadAxisPlus  = 100;
     static constexpr s32 kPadAxisMinus = 200;
 
-    /// The SDL_GamepadButton bound to each role, per player, or -1. The defaults
-    /// are SDL's positional layout: South 0, East 1, West 2, North 3, Back 4,
-    /// Start 6, LeftShoulder 9, RightShoulder 10, DpadUp 11, DpadDown 12,
-    /// DpadLeft 13, DpadRight 14. The shoulders doubling as Button 3/4 lives in
-    /// the input layer, outside these bindings.
-    std::array<std::array<s32, kPadRoleCount>, 2> pad_bindings = {{
-        // B1  B2  B3  B4  Up  Dn  Lf  Rt  Start Coin GearUp GearDown
-        {  0,  1,  2,  3, 11, 12, 13, 14,  6,   4,   10,    9 },
-        {  0,  1,  2,  3, 11, 12, 13, 14,  6,   4,   10,    9 },
-    }};
-
     /// The pad's analogue controls: the aim stick (steering, bank, flight
     /// stick), the two pedals and Virtual On's right lever, in X/Y pairs for
     /// the sticks. Which game channel each feeds is the ROM's business. Keep
@@ -338,23 +327,54 @@ struct Config {
     enum class PadAxisRole : u32 { AimX, AimY, Accel, Brake, LeverX, LeverY, kCount };
     static constexpr u32 kPadAxisCount = static_cast<u32>(PadAxisRole::kCount);
 
-    /// The SDL_GamepadAxis bound to each analogue role, per player, and whether
-    /// it reads inverted. -1 keeps the default: aim on the left stick, accel on
-    /// the right trigger, brake on the left trigger, the lever on the right
-    /// stick. LeftX 0, LeftY 1, RightX 2, RightY 3, LeftTrigger 4, RightTrigger 5.
-    std::array<std::array<s32, kPadAxisCount>, 2> pad_axes = {{
-        { -1, -1, -1, -1, -1, -1 },
-        { -1, -1, -1, -1, -1, -1 },
-    }};
-    std::array<std::array<bool, kPadAxisCount>, 2> pad_axis_invert = {{
-        { false, false, false, false, false, false },
-        { false, false, false, false, false, false },
-    }};
-    /// A binding that floors the pedal while held, or -1.
-    std::array<std::array<s32, kPadAxisCount>, 2> pad_axis_buttons = {{
-        { -1, -1, -1, -1, -1, -1 },
-        { -1, -1, -1, -1, -1, -1 },
-    }};
+    /// A gamepad layout: the bindings for both players.
+    struct PadLayout {
+        /// The SDL_GamepadButton bound to each role, per player, or -1. The
+        /// defaults are SDL's positional layout: South 0, East 1, West 2,
+        /// North 3, Back 4, Start 6, LeftShoulder 9, RightShoulder 10, DpadUp 11,
+        /// DpadDown 12, DpadLeft 13, DpadRight 14. The shoulders doubling as
+        /// Button 3/4 lives in the input layer, outside these bindings.
+        std::array<std::array<s32, kPadRoleCount>, 2> buttons = {{
+            // B1  B2  B3  B4  Up  Dn  Lf  Rt  Start Coin GearUp GearDown
+            {  0,  1,  2,  3, 11, 12, 13, 14,  6,   4,   10,    9 },
+            {  0,  1,  2,  3, 11, 12, 13, 14,  6,   4,   10,    9 },
+        }};
+
+        /// The SDL_GamepadAxis bound to each analogue role, per player, and
+        /// whether it reads inverted. -1 keeps the default: aim on the left
+        /// stick, accel on the right trigger, brake on the left trigger, the
+        /// lever on the right stick. LeftX 0, LeftY 1, RightX 2, RightY 3,
+        /// LeftTrigger 4, RightTrigger 5.
+        std::array<std::array<s32, kPadAxisCount>, 2> axes = {{
+            { -1, -1, -1, -1, -1, -1 },
+            { -1, -1, -1, -1, -1, -1 },
+        }};
+        std::array<std::array<bool, kPadAxisCount>, 2> axis_invert = {{
+            { false, false, false, false, false, false },
+            { false, false, false, false, false, false },
+        }};
+        /// A binding that floors the pedal while held, or -1.
+        std::array<std::array<s32, kPadAxisCount>, 2> axis_buttons = {{
+            { -1, -1, -1, -1, -1, -1 },
+            { -1, -1, -1, -1, -1, -1 },
+        }};
+
+        bool operator==(const PadLayout&) const = default;
+    };
+
+    /// The default layout, used by every game without its own.
+    PadLayout pad;
+
+    /// Per-game layouts, keyed by family (parent set name). Written as
+    /// [family] sections at the end of the ini.
+    std::map<std::string, PadLayout> pad_layouts;
+
+    /// The layout to apply to `family` now.
+    [[nodiscard]] const PadLayout& pad_layout_for(const std::string& family) const
+    {
+        const auto found = pad_layouts.find(family);
+        return found != pad_layouts.end() ? found->second : pad;
+    }
 
     // -- cabinet outputs ---------------------------------------------------
 

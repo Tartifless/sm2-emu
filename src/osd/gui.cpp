@@ -1478,6 +1478,83 @@ void Gui::draw_gamepad_tab(Config& config, Input* input)
         ImGui::TextDisabled("%s", tr("No gamepad connected. Settings still apply once one is."));
     }
 
+    // -- which game's layout ------------------------------------------------
+    // Follow the running game, but keep a choice made since it started.
+    if (m_current_family != m_pad_family_followed) {
+        m_pad_family_followed = m_current_family;
+        m_pad_family          = m_current_family;
+    }
+    const auto family_title = [&](const std::string& key) -> std::string {
+        for (const GameFamily& family : m_families) {
+            if (family.key == key) {
+                return family.title;
+            }
+        }
+        return key.empty() ? std::string(tr("Default")) : key;
+    };
+    const auto select_family = [&](const std::string& key) {
+        m_pad_family              = key;
+        m_pad_capture_player      = -1;
+        m_pad_axis_capture_player = -1;
+    };
+    ImGui::AlignTextToFramePadding();
+    ImGui::TextUnformatted(tr("Game"));
+    ImGui::SameLine();
+    ImGui::SetNextItemWidth(320.0f * (m_ui_scale > 0.0f ? m_ui_scale : 1.0f));
+    if (ImGui::BeginCombo("##pad_family", family_title(m_pad_family).c_str(),
+                          ImGuiComboFlags_HeightLarge)) {
+        if (ImGui::IsWindowAppearing()) {
+            m_pad_family_filter[0] = '\0';
+            ImGui::SetKeyboardFocusHere();
+        }
+        ImGui::SetNextItemWidth(-1.0f);
+        ImGui::InputTextWithHint("##pad_family_filter", tr("Filter games"), m_pad_family_filter,
+                                 sizeof(m_pad_family_filter));
+        std::string filter = m_pad_family_filter;
+        std::transform(filter.begin(), filter.end(), filter.begin(),
+                       [](unsigned char c) { return static_cast<char>(std::tolower(c)); });
+        if (filter.empty() && ImGui::Selectable(tr("Default"), m_pad_family.empty())) {
+            select_family({});
+        }
+        for (const GameFamily& family : m_families) {
+            if (!filter.empty()) {
+                std::string haystack = family.title + " " + family.key;
+                std::transform(haystack.begin(), haystack.end(), haystack.begin(),
+                               [](unsigned char c) { return static_cast<char>(std::tolower(c)); });
+                if (haystack.find(filter) == std::string::npos) {
+                    continue;
+                }
+            }
+            ImGui::PushID(family.key.c_str());
+            if (ImGui::Selectable(family.title.c_str(), m_pad_family == family.key)) {
+                select_family(family.key);
+            }
+            if (config.pad_layouts.count(family.key) != 0) {
+                ImGui::SameLine();
+                ImGui::TextDisabled("%s", tr("custom"));
+            }
+            ImGui::PopID();
+        }
+        ImGui::EndCombo();
+    }
+
+    // A game without its own layout is edited as a copy of the default, kept once changed.
+    Config::PadLayout  scratch;
+    Config::PadLayout* binds = &config.pad;
+    if (!m_pad_family.empty()) {
+        const auto found = config.pad_layouts.find(m_pad_family);
+        if (found != config.pad_layouts.end()) {
+            binds = &found->second;
+        } else {
+            scratch = config.pad;
+            binds   = &scratch;
+        }
+    }
+    ImGui::SameLine();
+    ImGui::TextDisabled("%s", m_pad_family.empty() ? tr("Used by every game without its own layout.")
+                              : binds == &scratch  ? tr("Uses the default layout until a binding is changed.")
+                                                   : tr("This game has its own layout."));
+
     int&       edit = m_pad_edit_player;
     const auto p    = static_cast<usize>(edit);
     ImGui::AlignTextToFramePadding();
@@ -1487,13 +1564,26 @@ void Gui::draw_gamepad_tab(Config& config, Input* input)
     ImGui::SameLine();
     if (ImGui::RadioButton("2", edit == 1)) { edit = 1; m_pad_capture_player = -1; m_pad_axis_capture_player = -1; }
     ImGui::SameLine(0.0f, 24.0f);
-    if (ImGui::Button(tr_id("Reset to SDL defaults"))) {
-        config.pad_bindings[p]    = Config{}.pad_bindings[p];
-        config.pad_axes[p]         = Config{}.pad_axes[p];
-        config.pad_axis_invert[p]  = Config{}.pad_axis_invert[p];
-        config.pad_axis_buttons[p] = Config{}.pad_axis_buttons[p];
-        m_pad_capture_player       = -1;
-        m_pad_axis_capture_player  = -1;
+    if (m_pad_family.empty()) {
+        if (ImGui::Button(tr_id("Reset to SDL defaults"))) {
+            const Config::PadLayout defaults;
+            binds->buttons[p]         = defaults.buttons[p];
+            binds->axes[p]            = defaults.axes[p];
+            binds->axis_invert[p]     = defaults.axis_invert[p];
+            binds->axis_buttons[p]    = defaults.axis_buttons[p];
+            m_pad_capture_player      = -1;
+            m_pad_axis_capture_player = -1;
+        }
+    } else {
+        ImGui::BeginDisabled(binds == &scratch);
+        if (ImGui::Button(tr_id("Use Default Layout"))) {
+            config.pad_layouts.erase(m_pad_family);
+            scratch                   = config.pad;
+            binds                     = &scratch;
+            m_pad_capture_player      = -1;
+            m_pad_axis_capture_player = -1;
+        }
+        ImGui::EndDisabled();
     }
 
     // -- the picture, with a slot for every control around it ---------------
@@ -1590,14 +1680,14 @@ void Gui::draw_gamepad_tab(Config& config, Input* input)
         ImU32       colour = IM_COL32(150, 185, 235, 255);
         bool        capturing;
         if (!is_axis) {
-            const s32 bound = config.pad_bindings[p][slot.role];
+            const s32 bound = binds->buttons[p][slot.role];
             value           = bound < 0 ? tr("unbound") : Input::pad_button_name(bound);
             target          = art_binding_point(layout, bound);
             colour          = button_colour(bound);
             capturing       = m_pad_capture_player == edit && m_pad_capture_role == slot.role;
         } else {
             const auto role  = static_cast<Config::PadAxisRole>(slot.role);
-            const s32  bound = config.pad_axes[p][slot.role];
+            const s32  bound = binds->axes[p][slot.role];
             const s32  shown = bound >= 0 ? bound : default_pad_axis(role);
             if (slot.kind == Kind::Stick) {
                 value = shown == SDL_GAMEPAD_AXIS_RIGHTX || shown == SDL_GAMEPAD_AXIS_RIGHTY
@@ -1607,12 +1697,12 @@ void Gui::draw_gamepad_tab(Config& config, Input* input)
                                     : Input::pad_axis_name(shown);
             } else {
                 value = Input::pad_axis_name(shown);
-                if (config.pad_axis_invert[p][slot.role]) {
+                if (binds->axis_invert[p][slot.role]) {
                     value = trf("%s (inverted)", value.c_str());
                 }
             }
             target = art_axis_point(layout, shown);
-            if (const s32 button = config.pad_axis_buttons[p][slot.role];
+            if (const s32 button = binds->axis_buttons[p][slot.role];
                 slot.kind == Kind::Pedal && button >= 0) {
                 value  = Input::pad_button_name(button);
                 target = art_binding_point(layout, button);
@@ -1657,15 +1747,15 @@ void Gui::draw_gamepad_tab(Config& config, Input* input)
         if (ImGui::IsItemClicked(ImGuiMouseButton_Right)) {
             if (slot.kind == Kind::Stick) {
                 for (const u32 axis : {slot.role, slot.role + 1}) {
-                    config.pad_axes[p][axis]        = -1;
-                    config.pad_axis_invert[p][axis] = false;
+                    binds->axes[p][axis]        = -1;
+                    binds->axis_invert[p][axis] = false;
                 }
             } else if (is_axis) {
-                config.pad_axes[p][slot.role]         = -1;
-                config.pad_axis_invert[p][slot.role]  = false;
-                config.pad_axis_buttons[p][slot.role] = -1;
+                binds->axes[p][slot.role]         = -1;
+                binds->axis_invert[p][slot.role]  = false;
+                binds->axis_buttons[p][slot.role] = -1;
             } else {
-                config.pad_bindings[p][slot.role] = -1;
+                binds->buttons[p][slot.role] = -1;
             }
         }
 
@@ -1711,10 +1801,10 @@ void Gui::draw_gamepad_tab(Config& config, Input* input)
                 if (left || right) {
                     const u32 x = slot.role;
                     const u32 y = slot.role + 1;
-                    config.pad_axes[p][x]        = right ? SDL_GAMEPAD_AXIS_RIGHTX : SDL_GAMEPAD_AXIS_LEFTX;
-                    config.pad_axes[p][y]        = right ? SDL_GAMEPAD_AXIS_RIGHTY : SDL_GAMEPAD_AXIS_LEFTY;
-                    config.pad_axis_invert[p][x] = false;
-                    config.pad_axis_invert[p][y] = false;
+                    binds->axes[p][x]        = right ? SDL_GAMEPAD_AXIS_RIGHTX : SDL_GAMEPAD_AXIS_LEFTX;
+                    binds->axes[p][y]        = right ? SDL_GAMEPAD_AXIS_RIGHTY : SDL_GAMEPAD_AXIS_LEFTY;
+                    binds->axis_invert[p][x] = false;
+                    binds->axis_invert[p][y] = false;
                     m_pad_axis_capture_player    = -1;
                 }
             } else if (is_axis) {
@@ -1723,12 +1813,12 @@ void Gui::draw_gamepad_tab(Config& config, Input* input)
                     static_cast<u32>(edit), m_pad_axis_baseline.data(), &positive);
                 const s32 button = input->pressed_pad_button(static_cast<u32>(edit));
                 if (got >= 0) {
-                    config.pad_axes[p][slot.role]         = got;
-                    config.pad_axis_invert[p][slot.role]  = !positive;
-                    config.pad_axis_buttons[p][slot.role] = -1;
+                    binds->axes[p][slot.role]         = got;
+                    binds->axis_invert[p][slot.role]  = !positive;
+                    binds->axis_buttons[p][slot.role] = -1;
                     m_pad_axis_capture_player             = -1;
                 } else if (button >= 0) {
-                    config.pad_axis_buttons[p][slot.role] = button;
+                    binds->axis_buttons[p][slot.role] = button;
                     m_pad_axis_capture_player             = -1;
                 }
             } else {
@@ -1742,12 +1832,15 @@ void Gui::draw_gamepad_tab(Config& config, Input* input)
                     }
                 }
                 if (got >= 0) {
-                    config.pad_bindings[p][slot.role] = got;
+                    binds->buttons[p][slot.role] = got;
                     m_pad_capture_player              = -1;
                 }
             }
         }
         ImGui::PopID();
+    }
+    if (binds == &scratch && scratch != config.pad) {
+        config.pad_layouts[m_pad_family] = scratch;
     }
     ImGui::SetCursorScreenPos(ImVec2(origin.x, below_y + slot_h + 10.0f * s));
     ImGui::TextDisabled("%s", tr("The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
@@ -1813,7 +1906,7 @@ void Gui::draw_gamepad_tab(Config& config, Input* input)
 // Audio tab
 // ---------------------------------------------------------------------------
 
-bool Gui::draw_volume_slider(Config& config, const VolumeFamily& family)
+bool Gui::draw_volume_slider(Config& config, const GameFamily& family)
 {
     const auto found = config.game_volumes.find(family.key);
     const u32  current =
@@ -1868,9 +1961,9 @@ void Gui::draw_audio_tab(Config& config)
     ImGui::BeginDisabled(!config.game_volume);
 
     // The running game's slider first.
-    const VolumeFamily* playing = nullptr;
-    for (const VolumeFamily& family : m_volume_families) {
-        if (family.key == m_current_volume_family) {
+    const GameFamily* playing = nullptr;
+    for (const GameFamily& family : m_families) {
+        if (family.key == m_current_family) {
             playing = &family;
             break;
         }
@@ -1913,7 +2006,7 @@ void Gui::draw_audio_tab(Config& config)
         ImGui::TableSetupColumn(tr("Volume"), ImGuiTableColumnFlags_WidthStretch, 0.55f);
         ImGui::TableHeadersRow();
 
-        for (const VolumeFamily& family : m_volume_families) {
+        for (const GameFamily& family : m_families) {
             if (!filter.empty()) {
                 std::string haystack = family.title + " " + family.key;
                 std::transform(haystack.begin(), haystack.end(), haystack.begin(),

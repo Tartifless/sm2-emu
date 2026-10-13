@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-14 20:39+1000\n"
+"POT-Creation-Date: 2026-10-14 21:16+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -1066,6 +1066,41 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Default"
+msgstr "Oletus"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Game"
+msgstr "Peli"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Filter games"
+msgstr "Suodata pelejä"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "custom"
+msgstr "oma"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Used by every game without its own layout."
+msgstr "Käytössä kaikissa peleissä, joilla ei ole omaa asettelua."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Uses the default layout until a binding is changed."
+msgstr "Käyttää oletusasettelua, kunnes jotain määritystä muutetaan."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "This game has its own layout."
+msgstr "Tällä pelillä on oma asettelu."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Player"
 msgstr "Pelaaja"
 
@@ -1073,6 +1108,11 @@ msgstr "Pelaaja"
 #, no-c-format
 msgid "Reset to SDL defaults"
 msgstr "Palauta SDL-oletukset"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Use Default Layout"
+msgstr "Käytä oletusasettelua"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1257,18 +1297,8 @@ msgstr "Nyt pelissä: %s"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "Filter games"
-msgstr "Suodata pelejä"
-
-#: src/osd/gui.cpp
-#, no-c-format
 msgid "Reset all"
 msgstr "Palauta kaikki"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Game"
-msgstr "Peli"
 
 #: src/osd/gui.cpp
 #, no-c-format

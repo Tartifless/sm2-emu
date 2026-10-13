@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-14 20:39+1000\n"
+"POT-Creation-Date: 2026-10-14 21:16+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -1054,6 +1054,41 @@ msgstr "אין בקר מחובר. ההגדרות יחולו כשיחובר."
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Default"
+msgstr "ברירת מחדל"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Game"
+msgstr "משחק"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Filter games"
+msgstr "סינון משחקים"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "custom"
+msgstr "מותאם"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Used by every game without its own layout."
+msgstr "משמש כל משחק שאין לו פריסה משלו."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Uses the default layout until a binding is changed."
+msgstr "משתמש בפריסת ברירת המחדל עד ששיוך כלשהו משתנה."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "This game has its own layout."
+msgstr "למשחק הזה יש פריסה משלו."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Player"
 msgstr "שחקן"
 
@@ -1061,6 +1096,11 @@ msgstr "שחקן"
 #, no-c-format
 msgid "Reset to SDL defaults"
 msgstr "איפוס לברירות המחדל של SDL"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Use Default Layout"
+msgstr "שימוש בפריסת ברירת המחדל"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1244,18 +1284,8 @@ msgstr "מתנגן כעת: %s"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "Filter games"
-msgstr "סינון משחקים"
-
-#: src/osd/gui.cpp
-#, no-c-format
 msgid "Reset all"
 msgstr "איפוס הכול"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Game"
-msgstr "משחק"
 
 #: src/osd/gui.cpp
 #, no-c-format

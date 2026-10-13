@@ -618,8 +618,8 @@ void print_usage()
 /// concrete downcasts are kept because the boot-test diagnostics and copro
 /// self-test need a specific board's registers. Audio is not opened here: the
 /// boot-test path needs a machine but no audio, so the caller opens it.
-/// The key a game's volume is stored under, shared by every revision.
-[[nodiscard]] std::string volume_family(const sm2::rom::GameSpec& game)
+/// The key a game's per-game settings are stored under, shared by every revision.
+[[nodiscard]] std::string game_family(const sm2::rom::GameSpec& game)
 {
     // Separate parents that share one slider.
     static const std::map<std::string, std::string> kSharedFamily = {
@@ -962,6 +962,13 @@ int main(int argc, char** argv)
     options.config.pad_rumble           = from_file.pad_rumble;
     options.config.pad_rumble_strength  = from_file.pad_rumble_strength;
     options.config.pad_rumble_cornering = from_file.pad_rumble_cornering;
+    options.config.pad_stick_sensitivity = from_file.pad_stick_sensitivity;
+    options.config.pad_stick_deadzone    = from_file.pad_stick_deadzone;
+    options.config.pad                   = from_file.pad;
+    options.config.pad_layouts           = from_file.pad_layouts;
+    options.config.wheel_steer_deadzone  = from_file.wheel_steer_deadzone;
+    options.config.game_volume           = from_file.game_volume;
+    options.config.game_volumes          = from_file.game_volumes;
     options.config.outputs_network      = from_file.outputs_network;
     options.config.outputs_network_port = from_file.outputs_network_port;
     options.config.outputs_windows      = from_file.outputs_windows;
@@ -1903,12 +1910,13 @@ int main(int argc, char** argv)
             gui.set_available_renderers(std::move(renderers));
         }
         {
-            // One Audio-tab row per family, titled after its parent set.
-            // Families that do not run (`preliminary` includes DOA, which does).
+            // One row per family, titled after its parent set, for the Audio
+            // tab's volumes and the Gamepad tab's layouts. Families that do not
+            // run (`preliminary` includes DOA, which does).
             static const std::set<std::string> kNoVolume = {"rascot2"};
             std::map<std::string, std::string> titles;
             for (const rom::GameSpec& game : database.games()) {
-                const std::string family = volume_family(game);
+                const std::string family = game_family(game);
                 if (kNoVolume.count(family) != 0) {
                     continue;
                 }
@@ -1916,16 +1924,34 @@ int main(int argc, char** argv)
                     titles[family] = game.title;
                 }
             }
-            std::vector<osd::Gui::VolumeFamily> families;
+            std::vector<osd::Gui::GameFamily> families;
             for (auto& [key, title] : titles) {
                 const std::string shown = game_title_without_cabinet(title);
                 families.push_back({key, shown.empty() ? key : shown});
             }
             std::sort(families.begin(), families.end(),
-                      [](const osd::Gui::VolumeFamily& a, const osd::Gui::VolumeFamily& b) {
+                      [](const osd::Gui::GameFamily& a, const osd::Gui::GameFamily& b) {
                           return a.title < b.title;
                       });
-            gui.set_volume_families(std::move(families));
+            gui.set_game_families(std::move(families));
+
+            // A section named after a clone belongs to its family; any other
+            // unknown name is dropped so it is not saved back.
+            auto& layouts = options.config.pad_layouts;
+            for (auto it = layouts.begin(); it != layouts.end();) {
+                if (titles.count(it->first) != 0) {
+                    ++it;
+                    continue;
+                }
+                const rom::GameSpec* clone = database.find(it->first);
+                if (clone != nullptr && titles.count(game_family(*clone)) != 0) {
+                    layouts.try_emplace(game_family(*clone), it->second);
+                } else {
+                    SM2_WARN("sm2-emu.ini: no game family '%s'; its gamepad layout is ignored",
+                             it->first.c_str());
+                }
+                it = layouts.erase(it);
+            }
         }
         if (!gui.init(window.handle(), options.config.language)) {
             SM2_ERROR("could not initialise the GUI overlay");
@@ -2382,9 +2408,7 @@ int main(int argc, char** argv)
                 input.set_recoil(options.config.lightgun_recoil,
                                  options.config.lightgun_recoil_strength);
                 input.set_gun_buttons(options.config.gun_buttons);
-                input.set_pad_buttons(options.config.pad_bindings);
-                input.set_pad_axes(options.config.pad_axes, options.config.pad_axis_invert,
-                                   options.config.pad_axis_buttons);
+                input.set_pad_layout(options.config.pad_layout_for(game_family(loaded->game)));
                 input.set_pad_stick_sensitivity(options.config.pad_stick_sensitivity);
                 input.set_pad_stick_deadzone(options.config.pad_stick_deadzone);
                 input.set_pad_rumble(options.config.pad_rumble,
@@ -2449,7 +2473,7 @@ int main(int argc, char** argv)
                 // board is not emulated.
                 if (sound_board != nullptr) {
                     const std::span<const s16> produced = sound_board->pending_samples();
-                    const u32 volume = options.config.volume_for(volume_family(loaded->game));
+                    const u32 volume = options.config.volume_for(game_family(loaded->game));
                     if (volume == Config::kDefaultGameVolume) {
                         audio.submit(produced);
                     } else {
@@ -2738,8 +2762,8 @@ int main(int argc, char** argv)
             } else {
                 gui.set_state_slots(machine_iface != nullptr, {});
             }
-            gui.set_current_volume_family(loaded.has_value() ? volume_family(loaded->game)
-                                                             : std::string());
+            gui.set_current_family(loaded.has_value() ? game_family(loaded->game)
+                                                      : std::string());
             const bool gui_active =
                 gui.draw(options.config, gpu_names, pacer.measured_hz(),
                         use_software_renderer ? "Software" : gpu_backend_name, &input);

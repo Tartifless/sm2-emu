@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-14 20:39+1000\n"
+"POT-Creation-Date: 2026-10-14 21:16+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -1059,6 +1059,41 @@ msgstr "कोई गेमपैड नहीं जुड़ा। गेम�
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Default"
+msgstr "डिफ़ॉल्ट"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Game"
+msgstr "गेम"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Filter games"
+msgstr "गेम फ़िल्टर करें"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "custom"
+msgstr "कस्टम"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Used by every game without its own layout."
+msgstr "बिना अपने लेआउट वाले हर गेम में इस्तेमाल होता है।"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Uses the default layout until a binding is changed."
+msgstr "कोई बाइंडिंग बदलने तक डिफ़ॉल्ट लेआउट इस्तेमाल करता है।"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "This game has its own layout."
+msgstr "इस गेम का अपना लेआउट है।"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Player"
 msgstr "खिलाड़ी"
 
@@ -1066,6 +1101,11 @@ msgstr "खिलाड़ी"
 #, no-c-format
 msgid "Reset to SDL defaults"
 msgstr "SDL डिफ़ॉल्ट पर रीसेट करें"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Use Default Layout"
+msgstr "डिफ़ॉल्ट लेआउट इस्तेमाल करें"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1249,18 +1289,8 @@ msgstr "अभी चल रहा है: %s"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "Filter games"
-msgstr "गेम फ़िल्टर करें"
-
-#: src/osd/gui.cpp
-#, no-c-format
 msgid "Reset all"
 msgstr "सभी रीसेट करें"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Game"
-msgstr "गेम"
 
 #: src/osd/gui.cpp
 #, no-c-format

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-14 20:39+1000\n"
+"POT-Creation-Date: 2026-10-14 21:16+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -1060,6 +1060,41 @@ msgstr "কোনো গেমপ্যাড সংযুক্ত নেই।
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Default"
+msgstr "ডিফল্ট"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Game"
+msgstr "গেম"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Filter games"
+msgstr "গেম ফিল্টার"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "custom"
+msgstr "কাস্টম"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Used by every game without its own layout."
+msgstr "নিজস্ব লেআউট নেই এমন প্রতিটি গেম এটি ব্যবহার করে।"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Uses the default layout until a binding is changed."
+msgstr "কোনো বাইন্ডিং বদলানো পর্যন্ত ডিফল্ট লেআউট ব্যবহার করে।"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "This game has its own layout."
+msgstr "এই গেমের নিজস্ব লেআউট আছে।"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Player"
 msgstr "খেলোয়াড়"
 
@@ -1067,6 +1102,11 @@ msgstr "খেলোয়াড়"
 #, no-c-format
 msgid "Reset to SDL defaults"
 msgstr "SDL ডিফল্টে রিসেট"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Use Default Layout"
+msgstr "ডিফল্ট লেআউট ব্যবহার করুন"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1250,18 +1290,8 @@ msgstr "এখন বাজছে: %s"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "Filter games"
-msgstr "গেম ফিল্টার"
-
-#: src/osd/gui.cpp
-#, no-c-format
 msgid "Reset all"
 msgstr "সব রিসেট"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Game"
-msgstr "গেম"
 
 #: src/osd/gui.cpp
 #, no-c-format

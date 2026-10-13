@@ -293,12 +293,16 @@ public:
         m_gun_buttons = b;
     }
 
-    /// The binding for each Config::PadRole, per player, pushed from the config
-    /// each frame.
     static constexpr usize kPadRoles = Config::kPadRoleCount;
-    void set_pad_buttons(const std::array<std::array<s32, kPadRoles>, 2>& b)
+    static constexpr usize kPadAxes  = Config::kPadAxisCount;
+
+    /// The running game's gamepad layout, pushed from the config each frame.
+    void set_pad_layout(const Config::PadLayout& layout)
     {
-        m_pad_buttons = b;
+        m_pad_buttons      = layout.buttons;
+        m_pad_axes         = layout.axes;
+        m_pad_axis_invert  = layout.axis_invert;
+        m_pad_axis_buttons = layout.axis_buttons;
     }
 
     /// Whether the physical SDL `button` is down on `player`'s pad.
@@ -309,18 +313,6 @@ public:
 
     /// A binding's name for the settings UI; empty if unbound or unknown.
     [[nodiscard]] static std::string pad_button_name(s32 button);
-
-    /// The axis for each Config::PadAxisRole, per player, -1 for the default,
-    /// with its invert flag and pedal button; pushed from the config each frame.
-    static constexpr usize kPadAxes = Config::kPadAxisCount;
-    void set_pad_axes(const std::array<std::array<s32, kPadAxes>, 2>&  axes,
-                      const std::array<std::array<bool, kPadAxes>, 2>& invert,
-                      const std::array<std::array<s32, kPadAxes>, 2>&  buttons)
-    {
-        m_pad_axes         = axes;
-        m_pad_axis_invert  = invert;
-        m_pad_axis_buttons = buttons;
-    }
 
     /// The axis on `player`'s pad that has moved furthest from `baseline`, or
     /// -1; `positive` is its direction.
@@ -565,14 +557,14 @@ private:
 
     /// Bindings per player and role, SDL's layout until the config arrives.
     std::array<std::array<s32, kPadRoles>, 2> m_pad_buttons =
-        Config{}.pad_bindings;
+        Config::PadLayout{}.buttons;
     float m_pad_stick_response = 1.0f;
     float m_pad_stick_dead     = 32767.0f * 0.05f;
 
     /// Axis overrides per player and role, with invert flags and pedal buttons.
-    std::array<std::array<s32, kPadAxes>, 2>  m_pad_axes        = Config{}.pad_axes;
-    std::array<std::array<bool, kPadAxes>, 2> m_pad_axis_invert = Config{}.pad_axis_invert;
-    std::array<std::array<s32, kPadAxes>, 2>  m_pad_axis_buttons = Config{}.pad_axis_buttons;
+    std::array<std::array<s32, kPadAxes>, 2>  m_pad_axes        = Config::PadLayout{}.axes;
+    std::array<std::array<bool, kPadAxes>, 2> m_pad_axis_invert = Config::PadLayout{}.axis_invert;
+    std::array<std::array<s32, kPadAxes>, 2>  m_pad_axis_buttons = Config::PadLayout{}.axis_buttons;
     enum GunRoleIdx { GrTrigger, GrReload, GrCoin, GrStart,
                       GrHatUp, GrHatDown, GrHatLeft, GrHatRight };
 

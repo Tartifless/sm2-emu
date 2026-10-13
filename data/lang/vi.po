@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-14 20:39+1000\n"
+"POT-Creation-Date: 2026-10-14 21:16+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -1053,6 +1053,41 @@ msgstr "Chưa kết nối tay cầm. Cài đặt vẫn áp dụng khi có kết 
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Default"
+msgstr "Mặc định"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Game"
+msgstr "Trò chơi"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Filter games"
+msgstr "Lọc trò chơi"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "custom"
+msgstr "tùy chỉnh"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Used by every game without its own layout."
+msgstr "Dùng cho mọi trò chơi không có bố cục riêng."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Uses the default layout until a binding is changed."
+msgstr "Dùng bố cục mặc định cho đến khi đổi một gán phím."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "This game has its own layout."
+msgstr "Trò chơi này có bố cục riêng."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Player"
 msgstr "Người chơi"
 
@@ -1060,6 +1095,11 @@ msgstr "Người chơi"
 #, no-c-format
 msgid "Reset to SDL defaults"
 msgstr "Đặt lại mặc định SDL"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Use Default Layout"
+msgstr "Dùng bố cục mặc định"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1243,18 +1283,8 @@ msgstr "Đang phát: %s"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "Filter games"
-msgstr "Lọc trò chơi"
-
-#: src/osd/gui.cpp
-#, no-c-format
 msgid "Reset all"
 msgstr "Đặt lại tất cả"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Game"
-msgstr "Trò chơi"
 
 #: src/osd/gui.cpp
 #, no-c-format

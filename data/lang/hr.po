@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-14 20:39+1000\n"
+"POT-Creation-Date: 2026-10-14 21:16+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -1061,6 +1061,41 @@ msgstr "Nijedan kontroler nije povezan. Postavke vrijede kad se poveže."
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Default"
+msgstr "Zadano"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Game"
+msgstr "Igra"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Filter games"
+msgstr "Filtriraj igre"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "custom"
+msgstr "prilagođeno"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Used by every game without its own layout."
+msgstr "Koristi ga svaka igra bez vlastitog rasporeda."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Uses the default layout until a binding is changed."
+msgstr "Koristi zadani raspored dok se neka dodjela ne promijeni."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "This game has its own layout."
+msgstr "Ova igra ima vlastiti raspored."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Player"
 msgstr "Igrač"
 
@@ -1068,6 +1103,11 @@ msgstr "Igrač"
 #, no-c-format
 msgid "Reset to SDL defaults"
 msgstr "Vrati SDL zadane vrijednosti"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Use Default Layout"
+msgstr "Koristi zadani raspored"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1251,18 +1291,8 @@ msgstr "Sada svira: %s"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "Filter games"
-msgstr "Filtriraj igre"
-
-#: src/osd/gui.cpp
-#, no-c-format
 msgid "Reset all"
 msgstr "Vrati sve"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Game"
-msgstr "Igra"
 
 #: src/osd/gui.cpp
 #, no-c-format

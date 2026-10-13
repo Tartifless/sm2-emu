@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-14 20:39+1000\n"
+"POT-Creation-Date: 2026-10-14 21:16+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -1064,6 +1064,41 @@ msgstr "Pultelis neprijungtas. Nustatymai bus taikomi jį prijungus."
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Default"
+msgstr "Numatytasis"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Game"
+msgstr "Žaidimas"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Filter games"
+msgstr "Filtruoti žaidimus"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "custom"
+msgstr "savas"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Used by every game without its own layout."
+msgstr "Naudoja kiekvienas žaidimas, neturintis savo išdėstymo."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Uses the default layout until a binding is changed."
+msgstr "Naudoja numatytąjį išdėstymą, kol nepakeičiamas joks priskyrimas."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "This game has its own layout."
+msgstr "Šis žaidimas turi savo išdėstymą."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Player"
 msgstr "Žaidėjas"
 
@@ -1071,6 +1106,11 @@ msgstr "Žaidėjas"
 #, no-c-format
 msgid "Reset to SDL defaults"
 msgstr "Atkurti SDL numatytuosius"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Use Default Layout"
+msgstr "Naudoti numatytąjį išdėstymą"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1255,18 +1295,8 @@ msgstr "Dabar groja: %s"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "Filter games"
-msgstr "Filtruoti žaidimus"
-
-#: src/osd/gui.cpp
-#, no-c-format
 msgid "Reset all"
 msgstr "Atkurti viską"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Game"
-msgstr "Žaidimas"
 
 #: src/osd/gui.cpp
 #, no-c-format

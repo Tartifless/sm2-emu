@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-14 20:39+1000\n"
+"POT-Creation-Date: 2026-10-14 21:16+1000\n"
 "PO-Revision-Date: 2026-10-09 12:00+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: Italian\n"
@@ -1058,6 +1058,41 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Default"
+msgstr "Predefinita"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Game"
+msgstr "Gioco"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Filter games"
+msgstr "Filtra giochi"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "custom"
+msgstr "personalizzata"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Used by every game without its own layout."
+msgstr "Usata da ogni gioco senza una disposizione propria."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Uses the default layout until a binding is changed."
+msgstr "Usa la disposizione predefinita finché non si cambia un'assegnazione."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "This game has its own layout."
+msgstr "Questo gioco ha una disposizione propria."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Player"
 msgstr "Giocatore"
 
@@ -1065,6 +1100,11 @@ msgstr "Giocatore"
 #, no-c-format
 msgid "Reset to SDL defaults"
 msgstr "Ripristina predefiniti SDL"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Use Default Layout"
+msgstr "Usa disposizione predefinita"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1249,18 +1289,8 @@ msgstr "In riproduzione: %s"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "Filter games"
-msgstr "Filtra giochi"
-
-#: src/osd/gui.cpp
-#, no-c-format
 msgid "Reset all"
 msgstr "Ripristina tutto"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Game"
-msgstr "Gioco"
 
 #: src/osd/gui.cpp
 #, no-c-format
