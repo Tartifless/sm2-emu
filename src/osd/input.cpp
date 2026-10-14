@@ -2104,8 +2104,13 @@ void Input::poll(hw::Inputs* inputs, const rom::GameSpec& game) const
             rb_bound |= binds[role] == SDL_GAMEPAD_BUTTON_RIGHT_SHOULDER;
         }
 
-        // The shoulders also act as Button 3/4 unless bound to one of the
-        // roles above, so a shoulder never presses two buttons at once.
+        // The shoulders also act as Button 3/4 while those keep their default
+        // binding and the shoulder isn't bound to one of the roles above.
+        static const auto kDefaults = Config::PadLayout{}.buttons[0];
+        constexpr auto kB3 = static_cast<u32>(Config::PadRole::Button3);
+        constexpr auto kB4 = static_cast<u32>(Config::PadRole::Button4);
+        lb_bound |= binds[kB3] != kDefaults[kB3];
+        rb_bound |= binds[kB4] != kDefaults[kB4];
         if (!lb_bound && SDL_GetGamepadButton(pad.handle, SDL_GAMEPAD_BUTTON_LEFT_SHOULDER)) {
             port &= static_cast<u8>(~kButton3);
         }
