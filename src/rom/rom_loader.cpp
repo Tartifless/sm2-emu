@@ -35,6 +35,7 @@ extern "C" {
 #include <filesystem>
 #include <memory>
 #include <unordered_map>
+#include <unordered_set>
 
 namespace sm2::rom {
 namespace {
@@ -580,6 +581,42 @@ std::optional<std::vector<u8>> RomLoader::assemble_region(
 // ---------------------------------------------------------------------------
 // Loading
 // ---------------------------------------------------------------------------
+
+bool RomLoader::holds_clone(const GameDatabase& database, const std::string& archive_path,
+                            const std::string& clone_name)
+{
+    const GameSpec* clone  = database.find(clone_name);
+    const GameSpec* parent = clone != nullptr && !clone->parent.empty()
+                                 ? database.find(clone->parent)
+                                 : nullptr;
+    if (parent == nullptr) {
+        return false;
+    }
+    // The parent's chips, device ROMs included, come from wherever the parent
+    // does; only the clone's own have to be in this archive.
+    std::unordered_set<std::string> parents;
+    const auto key = [](const FileSpec& file) {
+        return file.has_crc ? "crc:" + std::to_string(file.crc32) : "name:" + file.name;
+    };
+    for (const RegionSpec& region : parent->regions) {
+        for (const FileSpec& file : region.files) {
+            parents.insert(key(file));
+        }
+    }
+    ArchiveSet archives;
+    if (!archives.open(archive_path)) {
+        return false;
+    }
+    for (const RegionSpec& region : clone->regions) {
+        for (const FileSpec& file : region.files) {
+            if (region.required && parents.count(key(file)) == 0
+                && archives.find(file) == nullptr) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
 
 std::optional<LoadResult> RomLoader::load(const GameDatabase& database,
                                           const std::string&  archive_path,

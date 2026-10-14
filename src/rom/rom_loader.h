@@ -53,6 +53,14 @@ public:
                                                         const std::string&  archive_path,
                                                         const std::string&  preferred_game = {});
 
+    /// Whether `archive_path` holds the chips clone `clone_name` does not share
+    /// with its parent: true of a merged archive, which keeps the clones beside
+    /// the parent, false of a split set's parent archive. Reads only the
+    /// archive's index, not its contents.
+    [[nodiscard]] static bool holds_clone(const GameDatabase& database,
+                                          const std::string&  archive_path,
+                                          const std::string&  clone_name);
+
     /// Assemble one region from already-extracted file contents.
     ///
     /// Exposed so the interleaving can be tested directly, without a zip: it is
