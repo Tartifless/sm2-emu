@@ -4443,6 +4443,9 @@
       <input type="vehicle"/>
     </inputs>
 
+    <!-- I/O TYPE (test menu, Game Assignments): A (the default) and B drive
+         the drive board, C does not. Model2B::analog_value adjusts the pedals
+         to it. -->
     <!-- Analogue mux wiring, from MAME's model2b_state::indy500. -->
     <analog>
       <channel index="0" control="steer" rest="0x80"/>

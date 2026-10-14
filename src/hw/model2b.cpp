@@ -134,6 +134,24 @@ constexpr u32 kFramebufferB    = 0x11680000;  // 512 KB
     return folded >= base && folded < base + size;
 }
 
+/// Super GT 24h's I/O TYPE is the backup RAM halfword at 0x0A. Only the test
+/// menu writes it, so a blank backup RAM leaves it at 0xFFFF, which breaks the
+/// pedals and the drive board. Set it to A (1), the test menu's default.
+void repair_sgt24h_io_type(std::span<u8> nvram)
+{
+    constexpr usize kIoType = 0x0a;
+    if (nvram.size() <= kIoType + 1) {
+        return;
+    }
+    const u32 io_type = static_cast<u32>(nvram[kIoType]) | (static_cast<u32>(nvram[kIoType + 1]) << 8);
+    if (io_type <= 4) {
+        return;
+    }
+    nvram[kIoType]     = 0x01;
+    nvram[kIoType + 1] = 0x00;
+    SM2_INFO("sgt24h: the I/O TYPE in the backup RAM was %04X, no type; set to A", io_type);
+}
+
 }  // namespace
 
 // ===========================================================================
@@ -491,7 +509,7 @@ void Model2B::reset()
     // an unconnected channel would otherwise read a false zero.
     for (u32 channel = 0; channel < Io315_5649::kAnalogCount; ++channel) {
         if (m_game.analog[channel].control != rom::AnalogControl::None) {
-            m_io.set_analog(channel, [this, channel] { return m_inputs.analog[channel]; });
+            m_io.set_analog(channel, [this, channel] { return analog_value(channel); });
         }
     }
 
@@ -747,6 +765,27 @@ void Model2B::io_port_a_write(u8 value)
 void Model2B::lamp_output_w(u8 value)
 {
     record_lamp_latch(value);
+}
+
+u8 Model2B::analog_value(u32 channel) const
+{
+    // Super GT 24h reads its pedals according to its I/O TYPE (backup RAM
+    // 0x0A: A = 1, B = 3, C = 0). C takes them as games.xml gives them,
+    // reversed. A and B use 256 minus the value, so they get them the other
+    // way round, never at 0x00. A backup RAM not set up yet counts as A.
+    const u8                 value   = m_inputs.analog[channel];
+    const rom::AnalogControl control = m_game.analog[channel].control;
+    if ((m_game.name != "sgt24h" && m_game.parent != "sgt24h")
+        || (control != rom::AnalogControl::Accel && control != rom::AnalogControl::Brake)
+        || m_nvram.size() < 0x0c) {
+        return value;
+    }
+    const bool set_up  = m_nvram[0x00] == 0x85 && m_nvram[0x01] == 0xad;
+    const u32  io_type = static_cast<u32>(m_nvram[0x0a]) | (static_cast<u32>(m_nvram[0x0b]) << 8);
+    if (set_up && io_type == 0) {
+        return value;
+    }
+    return std::max<u8>(static_cast<u8>(0xff - value), 0x01);
 }
 
 void Model2B::drive_board_write(u8 value)
@@ -1584,7 +1623,14 @@ void Model2B::seed_eeprom_from_rom()
 
 void Model2B::load_nvram()
 {
-    if (m_nvram_directory.empty() || m_game.name.empty()) return;
+    if (m_game.name.empty()) return;
+    const bool sgt24h = m_game.name == "sgt24h" || m_game.parent == "sgt24h";
+    if (m_nvram_directory.empty()) {
+        if (sgt24h) {
+            repair_sgt24h_io_type(m_nvram);
+        }
+        return;
+    }
     // A set can ship power-on images for both, and MAME applies those before it
     // reads any saved file. Do the same, so a saved image still wins.
     (void)apply_default_image(m_roms.region("backup1"), m_nvram);
@@ -1604,6 +1650,10 @@ void Model2B::load_nvram()
                      nvram_path.string().c_str());
             std::fill(m_nvram.begin(), m_nvram.end(), u8{0xff});
         }
+    }
+
+    if (sgt24h) {
+        repair_sgt24h_io_type(m_nvram);
     }
 
     (void)m_eeprom.load((base / (m_game.name + ".eeprom")).string());
