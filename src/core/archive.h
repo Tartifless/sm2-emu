@@ -81,6 +81,11 @@ public:
     /// check it once after the whole payload rather than per field.
     [[nodiscard]] bool failed() const { return m_failed; }
 
+    /// For a serialize() that finds the data unusable rather than short (a
+    /// value out of its range, a layout it does not know): fails the load the
+    /// same way, so the loader rolls the state back. The caller logs why.
+    void mark_failed() { m_failed = true; }
+
     /// Bytes written so far (Save) or consumed so far (Load).
     [[nodiscard]] usize position() const { return m_pos; }
 

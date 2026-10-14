@@ -2001,6 +2001,14 @@ int main(int argc, char** argv)
             SM2_WARN("gamepads are unavailable; the keyboard still works");
         }
 
+        // The force feedback's drive board goes into the save states with the
+        // machine (and takes the section of a --load-state loaded above), for
+        // as long as this Input lives.
+        hw::set_host_state([&input](Archive& ar) { input.serialize_drive_board(ar); });
+        struct HostStateGuard {
+            ~HostStateGuard() { hw::set_host_state({}); }
+        } host_state_guard;
+
         // A machine with no audio device still has to run, so a failure here is
         // reported by Audio::init and otherwise ignored. Opened at the machine's
         // own 44100 Hz and left to SDL to resample.

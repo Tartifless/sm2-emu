@@ -14,6 +14,8 @@
 //
 #include "osd/indy_board.h"
 
+#include "core/archive.h"
+
 #include <algorithm>
 #include <cstdlib>
 
@@ -182,6 +184,23 @@ IndyBoard::Output IndyBoard::step(int position, double nmis)
         }
     }
     return {std::min(up, kMaxPower), std::min(down, kMaxPower)};
+}
+
+void IndyBoard::serialize(Archive& ar)
+{
+    ar.raw(m_effect);
+    ar.raw(m_centre);
+    ar.raw(m_base);
+    ar.raw(m_vib_period);
+    ar.raw(m_vib_amp);
+    ar.raw(m_up);
+    ar.raw(m_down);
+    ar.raw(m_speed_down);
+    ar.raw(m_speed_up);
+    ar.raw(m_speed_ref);
+    ar.raw(m_speed_nmis);
+    ar.raw(m_nmi_acc);
+    ar.raw(m_nmis);
 }
 
 }  // namespace sm2::osd

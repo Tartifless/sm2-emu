@@ -16,6 +16,7 @@
 
 #include "core/config.h"
 #include "core/types.h"
+#include "osd/daytona_board.h"
 #include "osd/drive_command.h"
 #include "osd/indy_board.h"
 #include "rom/game.h"
@@ -27,6 +28,10 @@
 #include <span>
 #include <string>
 #include <vector>
+
+namespace sm2 {
+class Archive;
+}
 
 namespace sm2::hw {
 struct Inputs;
@@ -205,6 +210,12 @@ public:
     /// Decode the drive-board bytes written during the last frame. The last
     /// force command stays in effect until the game sends another.
     void update_drive_board(const rom::GameSpec& game, std::span<const u8> writes);
+
+    /// The drive board as the force feedback models it - the force command in
+    /// effect, Sega Rally's chopping, Daytona's and Indy 500's boards - for a
+    /// save state, both ways: it is the host's, not the machine's, but it
+    /// belongs to the moment the state was taken.
+    void serialize_drive_board(Archive& ar);
 
     /// Update the wheel's force from the drive board and the steering position.
     /// Call once per frame after update_drive_board(). Does nothing without a
@@ -535,9 +546,11 @@ private:
     DriveCommand                     m_drive_command;
     int                              m_drive_pulse = 0;
 
-    /// Indy 500's drive board (Touring Car, Over Rev, Super GT), which works
-    /// out its forces from the wheel: fed the game's bytes, it drives a
-    /// force-feedback wheel.
+    /// Daytona's drive board, which works out its forces from the wheel: fed
+    /// the game's bytes, it drives a force-feedback wheel.
+    DaytonaBoard                     m_daytona;
+
+    /// Indy 500's drive board (Touring Car, Over Rev, Super GT), the same way.
     IndyBoard                        m_indy;
 
     /// The Sega Rally board's interrupts counted since start, simulated: its
