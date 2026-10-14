@@ -700,6 +700,27 @@ msgstr "Stūre nav pievienota. Iestatījumi stāsies spēkā, kad tā būs."
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Read in the background"
+msgstr "Lasīt fonā"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheels and gamepads keep working while the emulator's\n"
+"window is not in front: a wheel or a panel driven from\n"
+"another program (a cabinet panel through vJoy, say) still\n"
+"steers the game, and its buttons and axes can be bound\n"
+"below without clicking back into this window. The\n"
+"keyboard and the mouse still need the window in front."
+msgstr ""
+"Stūres un spēļu pultis darbojas arī tad, kad emulatora logs\n"
+"nav priekšā: cita programma vadīta stūre vai panelis (piemēram,\n"
+"automāta panelis caur vJoy) joprojām vada spēli, un tā pogas un\n"
+"asis var piesaistīt zemāk, neklikšķinot atpakaļ šajā logā.\n"
+"Tastatūrai un pelei logam joprojām jābūt priekšā."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Force feedback"
 msgstr "Spēka atgriezeniskā saite"
 

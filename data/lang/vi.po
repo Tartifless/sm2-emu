@@ -695,6 +695,28 @@ msgstr "Chưa kết nối vô lăng. Cài đặt vẫn áp dụng khi có kết 
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Read in the background"
+msgstr "Đọc khi chạy nền"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheels and gamepads keep working while the emulator's\n"
+"window is not in front: a wheel or a panel driven from\n"
+"another program (a cabinet panel through vJoy, say) still\n"
+"steers the game, and its buttons and axes can be bound\n"
+"below without clicking back into this window. The\n"
+"keyboard and the mouse still need the window in front."
+msgstr ""
+"Vô lăng và tay cầm vẫn hoạt động khi cửa sổ trình giả lập không\n"
+"ở phía trước: vô lăng hoặc bảng điều khiển do chương trình khác\n"
+"điều khiển (ví dụ bảng máy arcade qua vJoy) vẫn lái được trò\n"
+"chơi, và có thể gán nút và trục của nó bên dưới mà không cần\n"
+"nhấp lại vào cửa sổ này. Bàn phím và chuột vẫn cần cửa sổ ở\n"
+"phía trước."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Force feedback"
 msgstr "Phản hồi lực"
 

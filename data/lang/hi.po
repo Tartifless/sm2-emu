@@ -700,6 +700,27 @@ msgstr "कोई व्हील नहीं जुड़ा। व्ही�
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Read in the background"
+msgstr "बैकग्राउंड में पढ़ें"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheels and gamepads keep working while the emulator's\n"
+"window is not in front: a wheel or a panel driven from\n"
+"another program (a cabinet panel through vJoy, say) still\n"
+"steers the game, and its buttons and axes can be bound\n"
+"below without clicking back into this window. The\n"
+"keyboard and the mouse still need the window in front."
+msgstr ""
+"एम्युलेटर की विंडो सामने न हो तब भी व्हील और गेमपैड काम\n"
+"करते हैं: किसी दूसरे प्रोग्राम से चलने वाला व्हील या पैनल (जैसे\n"
+"vJoy से कैबिनेट पैनल) फिर भी गेम चलाता है, और इस विंडो में\n"
+"वापस क्लिक किए बिना नीचे उसके बटन और अक्ष जोड़े जा सकते हैं।\n"
+"कीबोर्ड और माउस के लिए विंडो सामने होनी चाहिए।"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Force feedback"
 msgstr "फ़ोर्स फ़ीडबैक"
 

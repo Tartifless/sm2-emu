@@ -699,6 +699,27 @@ msgstr "연결된 핸들이 없습니다. 연결되면 설정이 적용됩니다
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Read in the background"
+msgstr "백그라운드에서 읽기"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheels and gamepads keep working while the emulator's\n"
+"window is not in front: a wheel or a panel driven from\n"
+"another program (a cabinet panel through vJoy, say) still\n"
+"steers the game, and its buttons and axes can be bound\n"
+"below without clicking back into this window. The\n"
+"keyboard and the mouse still need the window in front."
+msgstr ""
+"에뮬레이터 창이 앞에 있지 않아도 핸들과 게임패드가\n"
+"작동합니다: 다른 프로그램이 구동하는 핸들이나 패널(예: vJoy를\n"
+"통한 기체 패널)로도 계속 게임을 조작하고, 이 창을 다시\n"
+"클릭하지 않고 아래에서 버튼과 축을 지정할 수 있습니다.\n"
+"키보드와 마우스는 여전히 창이 앞에 있어야 합니다."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Force feedback"
 msgstr "포스 피드백"
 

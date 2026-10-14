@@ -702,6 +702,28 @@ msgstr "Няма свързан волан. Настройките ще важа
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Read in the background"
+msgstr "Четене във фонов режим"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheels and gamepads keep working while the emulator's\n"
+"window is not in front: a wheel or a panel driven from\n"
+"another program (a cabinet panel through vJoy, say) still\n"
+"steers the game, and its buttons and axes can be bound\n"
+"below without clicking back into this window. The\n"
+"keyboard and the mouse still need the window in front."
+msgstr ""
+"Воланите и геймпадовете работят и когато прозорецът на\n"
+"емулатора не е отпред: волан или панел, управлявани от друга\n"
+"програма (панел на автомат през vJoy, например), пак управляват\n"
+"играта, а бутоните и осите им могат да се зададат по-долу, без\n"
+"да се щраква обратно в този прозорец. Клавиатурата и мишката\n"
+"пак изискват прозорецът да е отпред."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Force feedback"
 msgstr "Обратна връзка със сила"
 

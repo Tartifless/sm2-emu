@@ -696,6 +696,27 @@ msgstr "Žádný volant není připojen. Nastavení platí, jakmile bude."
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Read in the background"
+msgstr "Číst na pozadí"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheels and gamepads keep working while the emulator's\n"
+"window is not in front: a wheel or a panel driven from\n"
+"another program (a cabinet panel through vJoy, say) still\n"
+"steers the game, and its buttons and axes can be bound\n"
+"below without clicking back into this window. The\n"
+"keyboard and the mouse still need the window in front."
+msgstr ""
+"Volanty a gamepady fungují, i když okno emulátoru není\n"
+"vpředu: volant nebo panel ovládaný jiným programem (třeba\n"
+"panel automatu přes vJoy) dál řídí hru a jeho tlačítka a osy\n"
+"lze přiřadit níže bez kliknutí zpět do tohoto okna.\n"
+"Klávesnice a myš stále potřebují okno vpředu."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Force feedback"
 msgstr "Force feedback"
 

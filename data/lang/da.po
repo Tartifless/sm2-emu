@@ -702,6 +702,27 @@ msgstr "Intet rat tilsluttet. Indstillingerne gælder, når et tilsluttes."
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Read in the background"
+msgstr "Læs i baggrunden"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheels and gamepads keep working while the emulator's\n"
+"window is not in front: a wheel or a panel driven from\n"
+"another program (a cabinet panel through vJoy, say) still\n"
+"steers the game, and its buttons and axes can be bound\n"
+"below without clicking back into this window. The\n"
+"keyboard and the mouse still need the window in front."
+msgstr ""
+"Rat og gamepads virker, selv når emulatorens vindue ikke er\n"
+"forrest: et rat eller panel, der styres af et andet program\n"
+"(et maskinpanel via vJoy, fx), styrer stadig spillet, og dets\n"
+"knapper og akser kan tildeles herunder uden at klikke tilbage\n"
+"i dette vindue. Tastatur og mus kræver stadig vinduet forrest."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Force feedback"
 msgstr "Force feedback"
 

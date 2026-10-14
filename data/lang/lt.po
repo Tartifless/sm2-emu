@@ -701,6 +701,27 @@ msgstr "Vairas neprijungtas. Nustatymai bus taikomi jį prijungus."
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Read in the background"
+msgstr "Skaityti fone"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheels and gamepads keep working while the emulator's\n"
+"window is not in front: a wheel or a panel driven from\n"
+"another program (a cabinet panel through vJoy, say) still\n"
+"steers the game, and its buttons and axes can be bound\n"
+"below without clicking back into this window. The\n"
+"keyboard and the mouse still need the window in front."
+msgstr ""
+"Vairai ir pulteliai veikia, net kai emuliatoriaus langas nėra\n"
+"priekyje: kitos programos valdomas vairas ar pultas (pvz.,\n"
+"automato pultas per vJoy) vis tiek valdo žaidimą, o jo mygtukus\n"
+"ir ašis galima priskirti žemiau, nespaudžiant atgal į šį langą.\n"
+"Klaviatūrai ir pelei langas vis tiek turi būti priekyje."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Force feedback"
 msgstr "Jėgos grįžtamasis ryšys"
 

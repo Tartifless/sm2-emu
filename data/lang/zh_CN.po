@@ -698,6 +698,26 @@ msgstr "未连接方向盘。连接后设置仍会生效。"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Read in the background"
+msgstr "后台读取"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheels and gamepads keep working while the emulator's\n"
+"window is not in front: a wheel or a panel driven from\n"
+"another program (a cabinet panel through vJoy, say) still\n"
+"steers the game, and its buttons and axes can be bound\n"
+"below without clicking back into this window. The\n"
+"keyboard and the mouse still need the window in front."
+msgstr ""
+"模拟器窗口不在前台时，方向盘和手柄仍然有效：由其他程序驱动\n"
+"的方向盘或面板（例如通过 vJoy 的街机面板）仍能操控游戏，\n"
+"其按键和轴也可在下方绑定，无需再点回此窗口。\n"
+"键盘和鼠标仍需窗口在前台。"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Force feedback"
 msgstr "力反馈"
 

@@ -696,6 +696,27 @@ msgstr "Brak kierownicy. Ustawienia zadziałają po jej podłączeniu."
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Read in the background"
+msgstr "Odczyt w tle"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheels and gamepads keep working while the emulator's\n"
+"window is not in front: a wheel or a panel driven from\n"
+"another program (a cabinet panel through vJoy, say) still\n"
+"steers the game, and its buttons and axes can be bound\n"
+"below without clicking back into this window. The\n"
+"keyboard and the mouse still need the window in front."
+msgstr ""
+"Kierownice i gamepady działają, nawet gdy okno emulatora nie\n"
+"jest na wierzchu: kierownica lub panel sterowany przez inny\n"
+"program (np. panel automatu przez vJoy) nadal steruje grą, a jego\n"
+"przyciski i osie można przypisać poniżej bez klikania z powrotem\n"
+"w to okno. Klawiatura i mysz nadal wymagają okna na wierzchu."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Force feedback"
 msgstr "Force feedback"
 
