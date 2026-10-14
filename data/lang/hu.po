@@ -698,6 +698,28 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Read in the background"
+msgstr "Olvasás a háttérben"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheels and gamepads keep working while the emulator's\n"
+"window is not in front: a wheel or a panel driven from\n"
+"another program (a cabinet panel through vJoy, say) still\n"
+"steers the game, and its buttons and axes can be bound\n"
+"below without clicking back into this window. The\n"
+"keyboard and the mouse still need the window in front."
+msgstr ""
+"A kormányok és játékvezérlők akkor is működnek, ha az emulátor\n"
+"ablaka nincs elöl: egy másik program által vezérelt kormány vagy\n"
+"panel (például egy játékgép panelje vJoyon át) továbbra is\n"
+"irányítja a játékot, gombjai és tengelyei pedig lent\n"
+"hozzárendelhetők anélkül, hogy visszakattintana ebbe az ablakba.\n"
+"A billentyűzethez és az egérhez továbbra is elöl kell lennie az ablaknak."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Force feedback"
 msgstr "Erő-visszacsatolás"
 

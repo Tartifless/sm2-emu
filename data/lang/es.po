@@ -696,6 +696,28 @@ msgstr "No hay volante conectado. Los ajustes se aplicarán al conectarlo."
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Read in the background"
+msgstr "Leer en segundo plano"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheels and gamepads keep working while the emulator's\n"
+"window is not in front: a wheel or a panel driven from\n"
+"another program (a cabinet panel through vJoy, say) still\n"
+"steers the game, and its buttons and axes can be bound\n"
+"below without clicking back into this window. The\n"
+"keyboard and the mouse still need the window in front."
+msgstr ""
+"Los volantes y mandos siguen funcionando aunque la ventana del\n"
+"emulador no esté delante: un volante o panel manejado por otro\n"
+"programa (un panel de recreativa mediante vJoy, por ejemplo)\n"
+"sigue conduciendo el juego, y sus botones y ejes se pueden\n"
+"asignar abajo sin volver a hacer clic en esta ventana. El\n"
+"teclado y el ratón siguen necesitando la ventana delante."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Force feedback"
 msgstr "Force feedback"
 

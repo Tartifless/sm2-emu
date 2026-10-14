@@ -698,6 +698,28 @@ msgstr "Nenhum volante ligado. As definições aplicam-se quando houver um."
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Read in the background"
+msgstr "Ler em segundo plano"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheels and gamepads keep working while the emulator's\n"
+"window is not in front: a wheel or a panel driven from\n"
+"another program (a cabinet panel through vJoy, say) still\n"
+"steers the game, and its buttons and axes can be bound\n"
+"below without clicking back into this window. The\n"
+"keyboard and the mouse still need the window in front."
+msgstr ""
+"Volantes e comandos continuam a funcionar quando a janela do\n"
+"emulador não está à frente: um volante ou painel controlado por\n"
+"outro programa (um painel de máquina via vJoy, por exemplo)\n"
+"continua a conduzir o jogo, e os seus botões e eixos podem ser\n"
+"atribuídos abaixo sem voltar a clicar nesta janela. O teclado e\n"
+"o rato continuam a precisar da janela à frente."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Force feedback"
 msgstr "Force feedback"
 

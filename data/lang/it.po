@@ -698,6 +698,28 @@ msgstr ""
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Read in the background"
+msgstr "Leggi in background"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheels and gamepads keep working while the emulator's\n"
+"window is not in front: a wheel or a panel driven from\n"
+"another program (a cabinet panel through vJoy, say) still\n"
+"steers the game, and its buttons and axes can be bound\n"
+"below without clicking back into this window. The\n"
+"keyboard and the mouse still need the window in front."
+msgstr ""
+"Volanti e gamepad continuano a funzionare quando la finestra\n"
+"dell'emulatore non è in primo piano: un volante o un pannello\n"
+"pilotato da un altro programma (un pannello di cabinato via vJoy,\n"
+"ad esempio) guida ancora il gioco, e i suoi pulsanti e assi si\n"
+"assegnano qui sotto senza tornare a cliccare in questa finestra.\n"
+"Tastiera e mouse richiedono ancora la finestra in primo piano."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Force feedback"
 msgstr "Force feedback"
 

@@ -701,6 +701,28 @@ msgstr "Ingen ratt tilkoblet. Innstillingene gjelder når et kobles til."
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Read in the background"
+msgstr "Les i bakgrunnen"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheels and gamepads keep working while the emulator's\n"
+"window is not in front: a wheel or a panel driven from\n"
+"another program (a cabinet panel through vJoy, say) still\n"
+"steers the game, and its buttons and axes can be bound\n"
+"below without clicking back into this window. The\n"
+"keyboard and the mouse still need the window in front."
+msgstr ""
+"Ratt og spillkontrollere virker også når emulatorvinduet ikke\n"
+"er foran: et ratt eller panel som styres av et annet program\n"
+"(et maskinpanel via vJoy, for eksempel) styrer fortsatt spillet,\n"
+"og knappene og aksene kan tilordnes nedenfor uten å klikke\n"
+"tilbake i dette vinduet. Tastatur og mus krever fortsatt\n"
+"vinduet foran."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Force feedback"
 msgstr "Force feedback"
 

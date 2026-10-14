@@ -700,6 +700,28 @@ msgstr "ハンドルが接続されていません。接続後に設定が適用
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Read in the background"
+msgstr "バックグラウンドで読み取る"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheels and gamepads keep working while the emulator's\n"
+"window is not in front: a wheel or a panel driven from\n"
+"another program (a cabinet panel through vJoy, say) still\n"
+"steers the game, and its buttons and axes can be bound\n"
+"below without clicking back into this window. The\n"
+"keyboard and the mouse still need the window in front."
+msgstr ""
+"エミュレーターのウィンドウが前面になくても、ハンドルと\n"
+"ゲームパッドは動作します: 別のプログラムが動かすハンドルや\n"
+"パネル（たとえば vJoy 経由の筐体パネル）でもゲームを操作でき、\n"
+"このウィンドウをクリックし直さずに下でボタンや軸を割り当て\n"
+"られます。キーボードとマウスはウィンドウが前面にある必要が\n"
+"あります。"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Force feedback"
 msgstr "フォースフィードバック"
 

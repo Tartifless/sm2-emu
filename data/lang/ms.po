@@ -696,6 +696,28 @@ msgstr "Tiada stereng disambungkan. Tetapan tetap terpakai apabila ada."
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Read in the background"
+msgstr "Baca di latar belakang"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheels and gamepads keep working while the emulator's\n"
+"window is not in front: a wheel or a panel driven from\n"
+"another program (a cabinet panel through vJoy, say) still\n"
+"steers the game, and its buttons and axes can be bound\n"
+"below without clicking back into this window. The\n"
+"keyboard and the mouse still need the window in front."
+msgstr ""
+"Stereng dan pad permainan terus berfungsi apabila tetingkap\n"
+"emulator tidak di hadapan: stereng atau panel yang dipacu\n"
+"program lain (panel mesin arked melalui vJoy, contohnya) masih\n"
+"memandu permainan, dan butang serta paksinya boleh diikat di\n"
+"bawah tanpa mengklik semula tetingkap ini. Papan kekunci dan\n"
+"tetikus masih memerlukan tetingkap di hadapan."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Force feedback"
 msgstr "Force feedback"
 

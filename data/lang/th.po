@@ -700,6 +700,27 @@ msgstr "ไม่มีพวงมาลัยเชื่อมต่อ ก�
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Read in the background"
+msgstr "อ่านในพื้นหลัง"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheels and gamepads keep working while the emulator's\n"
+"window is not in front: a wheel or a panel driven from\n"
+"another program (a cabinet panel through vJoy, say) still\n"
+"steers the game, and its buttons and axes can be bound\n"
+"below without clicking back into this window. The\n"
+"keyboard and the mouse still need the window in front."
+msgstr ""
+"พวงมาลัยและเกมแพดยังทำงานแม้หน้าต่างอีมูเลเตอร์ไม่ได้อยู่\n"
+"ด้านหน้า: พวงมาลัยหรือแผงที่โปรแกรมอื่นควบคุม (เช่น แผงตู้เกม\n"
+"ผ่าน vJoy) ยังบังคับเกมได้ และกำหนดปุ่มกับแกนของมันได้ด้านล่าง\n"
+"โดยไม่ต้องคลิกกลับมาที่หน้าต่างนี้ คีย์บอร์ดและเมาส์ยังต้องให้\n"
+"หน้าต่างอยู่ด้านหน้า"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Force feedback"
 msgstr "Force feedback"
 

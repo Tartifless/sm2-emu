@@ -701,6 +701,27 @@ msgstr "Нема повезаног волана. Подешавања важе 
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Read in the background"
+msgstr "Читање у позадини"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheels and gamepads keep working while the emulator's\n"
+"window is not in front: a wheel or a panel driven from\n"
+"another program (a cabinet panel through vJoy, say) still\n"
+"steers the game, and its buttons and axes can be bound\n"
+"below without clicking back into this window. The\n"
+"keyboard and the mouse still need the window in front."
+msgstr ""
+"Волани и гејмпедови раде и кад прозор емулатора није напред:\n"
+"волан или панел којим управља други програм (нпр. панел\n"
+"аутомата преко vJoy-а) и даље управља игром, а његови тастери\n"
+"и осе могу се доделити испод без кликања назад у овај прозор.\n"
+"Тастатура и миш и даље траже прозор напред."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Force feedback"
 msgstr "Повратна сила"
 
