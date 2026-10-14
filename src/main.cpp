@@ -665,6 +665,39 @@ struct LoadedMachine {
     const sm2::hw::I8251* sound_link  = nullptr;
 };
 
+/// The archive in `dir` that set `name` loads from: its own <name>.zip or .7z,
+/// else, for a clone, its parent's when that holds the clone as well, the way
+/// a merged romset keeps every revision in the parent's archive.
+[[nodiscard]] std::optional<std::filesystem::path> find_set_archive(
+    const sm2::rom::GameDatabase& database, const std::filesystem::path& dir,
+    const std::string& name)
+{
+    const auto archive_named = [&dir](const std::string& stem)
+        -> std::optional<std::filesystem::path> {
+        for (const char* ext : {".zip", ".7z"}) {
+            const std::filesystem::path candidate = dir / (stem + ext);
+            std::error_code error;
+            if (std::filesystem::exists(candidate, error) && !error) {
+                return candidate;
+            }
+        }
+        return std::nullopt;
+    };
+    if (std::optional<std::filesystem::path> own = archive_named(name)) {
+        return own;
+    }
+    const sm2::rom::GameSpec* game = database.find(name);
+    if (game == nullptr || game->parent.empty()) {
+        return std::nullopt;
+    }
+    std::optional<std::filesystem::path> parent = archive_named(game->parent);
+    if (parent.has_value()
+        && sm2::rom::RomLoader::holds_clone(database, parent->string(), name)) {
+        return parent;
+    }
+    return std::nullopt;
+}
+
 /// Load, build, wire, point at NVRAM and reset a machine. The one path both a
 /// --game/positional launch and the picker use, so a picked game boots exactly
 /// like a directly-launched one. nullopt (logged) on failure.
@@ -1022,25 +1055,11 @@ int main(int argc, char** argv)
         return started ? 0 : 1;
     }
 
-    // --game with no path: resolve <rom_dir>/<name>.{zip,7z}. A positional path wins.
-    if (options.rom_path.empty() && !options.game.empty()
-        && !options.config.rom_dir.empty()) {
-        const std::filesystem::path dir(options.config.rom_dir);
-        for (const char* ext : {".zip", ".7z"}) {
-            const std::filesystem::path candidate = dir / (options.game + ext);
-            std::error_code error;
-            if (std::filesystem::exists(candidate, error)) {
-                options.rom_path = candidate.string();
-                break;
-            }
-        }
-        if (options.rom_path.empty()) {
-            SM2_ERROR("no archive for '%s' in rom_dir '%s' (looked for %s.zip and "
-                      "%s.7z)", options.game.c_str(), options.config.rom_dir.c_str(),
-                      options.game.c_str(), options.game.c_str());
-            return 1;
-        }
-    }
+    // --game with no path: the archive is found in rom_dir once the database
+    // says which parent a clone's merged archive is named after. A positional
+    // path wins.
+    const bool game_in_rom_dir = options.rom_path.empty() && !options.game.empty()
+                                 && !options.config.rom_dir.empty();
 
     // Show the picker when launched with no ROM but a rom_dir to browse, heading
     // for the windowed loop. The DB is then built unconditionally below.
@@ -1059,11 +1078,28 @@ int main(int argc, char** argv)
     // Loaded before anything graphical, so a bad ROM path fails immediately
     // instead of after a window has appeared.
     rom::GameDatabase database;
-    if (options.list_games || !options.rom_path.empty() || may_need_picker) {
+    if (options.list_games || !options.rom_path.empty() || game_in_rom_dir
+        || may_need_picker) {
         const std::optional<std::string> database_path = rom::GameDatabase::locate();
         if (!database_path.has_value() || !database.load(*database_path)) {
             return 1;
         }
+    }
+
+    if (game_in_rom_dir) {
+        const std::optional<std::filesystem::path> archive =
+            find_set_archive(database, options.config.rom_dir, options.game);
+        if (!archive.has_value()) {
+            const rom::GameSpec* game   = database.find(options.game);
+            const std::string    parent = game != nullptr && !game->parent.empty()
+                                              ? ", or " + game->parent + ".zip/.7z holding it"
+                                              : std::string();
+            SM2_ERROR("no archive for '%s' in rom_dir '%s' (looked for %s.zip and "
+                      "%s.7z%s)", options.game.c_str(), options.config.rom_dir.c_str(),
+                      options.game.c_str(), options.game.c_str(), parent.c_str());
+            return 1;
+        }
+        options.rom_path = archive->string();
     }
 
     if (options.list_games) {
@@ -1891,22 +1927,13 @@ int main(int argc, char** argv)
         // Build the picker's entry list from the launchable sets and turn it on.
         // Used at startup and when Esc unloads a game to return here.
         const auto show_picker = [&]() {
-            // A set is launchable when <name>.zip / .7z is present, the same
-            // resolution the loader uses.
+            // A set is launchable when it has an archive in rom_dir: its own
+            // <name>.zip / .7z, or, for a clone, its parent's merged one.
             const std::filesystem::path dir(options.config.rom_dir);
             std::vector<osd::Gui::PickerEntry> entries;
             std::vector<osd::Scraper::Entry>   scrape_list;
             for (const rom::GameSpec& game : database.games()) {
-                std::error_code error;
-                bool present = false;
-                for (const char* ext : {".zip", ".7z"}) {
-                    if (std::filesystem::exists(dir / (game.name + ext), error)
-                        && !error) {
-                        present = true;
-                        break;
-                    }
-                }
-                if (!present) {
+                if (!find_set_archive(database, dir, game.name).has_value()) {
                     continue;
                 }
                 osd::Gui::PickerEntry entry;
@@ -2756,17 +2783,11 @@ int main(int argc, char** argv)
                 gui.release_picker_textures();
                 backend->wait_idle();
 
-                std::optional<LoadedMachine> chosen =
-                    load_game(database, options.config.rom_dir + "/" + *pick + ".zip",
-                              *pick, options.config.nvram_dir, options.log_unmapped);
-                if (!chosen.has_value()) {
-                    for (const char* ext : {".7z", ".zip"}) {
-                        chosen = load_game(database,
-                                           options.config.rom_dir + "/" + *pick + ext,
-                                           *pick, options.config.nvram_dir,
-                                           options.log_unmapped);
-                        if (chosen.has_value()) break;
-                    }
+                std::optional<LoadedMachine> chosen;
+                if (const std::optional<std::filesystem::path> archive =
+                        find_set_archive(database, options.config.rom_dir, *pick)) {
+                    chosen = load_game(database, archive->string(), *pick,
+                                       options.config.nvram_dir, options.log_unmapped);
                 }
                 if (!chosen.has_value()) {
                     SM2_ERROR("picker: could not load '%s' from rom_dir", pick->c_str());
