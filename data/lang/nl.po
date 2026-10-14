@@ -936,6 +936,31 @@ msgstr "Terugschakelen"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Gear 1"
+msgstr "Versnelling 1"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 2"
+msgstr "Versnelling 2"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 3"
+msgstr "Versnelling 3"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 4"
+msgstr "Versnelling 4"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral"
+msgstr "Neutraal"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Test"
 msgstr "Test"
 
@@ -973,6 +998,34 @@ msgstr "Koppelen"
 #, no-c-format
 msgid "clear"
 msgstr "wissen"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear shifter"
+msgstr "Versnellingspook"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Daytona USA and Sega Rally Championship, all versions."
+msgstr "Daytona USA en Sega Rally Championship, alle versies."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral when no gear is engaged"
+msgstr "Neutraal als er geen versnelling is ingeschakeld"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"With an H shifter bound to Gear 1..4: its lever in none\n"
+"of the gears is in neutral, as on the cabinet. Off, the\n"
+"last gear stays engaged until another is selected or\n"
+"Neutral is pressed."
+msgstr ""
+"Met een H-pook gekoppeld aan Versnelling 1..4: staat de\n"
+"pook in geen enkele versnelling, dan staat hij in neutraal,\n"
+"zoals op de kast. Uit: de laatste versnelling blijft in tot\n"
+"een andere wordt gekozen of Neutraal wordt ingedrukt."
 
 #: src/osd/gui.cpp
 #, c-format

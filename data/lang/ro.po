@@ -931,6 +931,31 @@ msgstr "Treaptă jos"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Gear 1"
+msgstr "Treapta 1"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 2"
+msgstr "Treapta 2"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 3"
+msgstr "Treapta 3"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 4"
+msgstr "Treapta 4"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral"
+msgstr "Punct mort"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Test"
 msgstr "Test"
 
@@ -968,6 +993,34 @@ msgstr "Atribuie"
 #, no-c-format
 msgid "clear"
 msgstr "șterge"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear shifter"
+msgstr "Schimbător de viteze"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Daytona USA and Sega Rally Championship, all versions."
+msgstr "Daytona USA și Sega Rally Championship, toate versiunile."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral when no gear is engaged"
+msgstr "Punct mort când nicio treaptă nu e cuplată"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"With an H shifter bound to Gear 1..4: its lever in none\n"
+"of the gears is in neutral, as on the cabinet. Off, the\n"
+"last gear stays engaged until another is selected or\n"
+"Neutral is pressed."
+msgstr ""
+"Cu un schimbător în H atribuit la Treapta 1..4: maneta\n"
+"în afara oricărei trepte e în punct mort, ca la aparat.\n"
+"Dezactivat: ultima treaptă rămâne cuplată până se alege\n"
+"alta sau se apasă Punct mort."
 
 #: src/osd/gui.cpp
 #, c-format

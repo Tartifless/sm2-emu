@@ -928,6 +928,31 @@ msgstr "הורדת הילוך"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Gear 1"
+msgstr "הילוך 1"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 2"
+msgstr "הילוך 2"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 3"
+msgstr "הילוך 3"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 4"
+msgstr "הילוך 4"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral"
+msgstr "סרק"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Test"
 msgstr "בדיקה"
 
@@ -965,6 +990,34 @@ msgstr "שיוך"
 #, no-c-format
 msgid "clear"
 msgstr "ניקוי"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear shifter"
+msgstr "ידית הילוכים"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Daytona USA and Sega Rally Championship, all versions."
+msgstr "Daytona USA ו-Sega Rally Championship, כל הגרסאות."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral when no gear is engaged"
+msgstr "סרק כשאין הילוך משולב"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"With an H shifter bound to Gear 1..4: its lever in none\n"
+"of the gears is in neutral, as on the cabinet. Off, the\n"
+"last gear stays engaged until another is selected or\n"
+"Neutral is pressed."
+msgstr ""
+"עם ידית הילוכים H המשויכת להילוך 1..4: ידית שאינה\n"
+"באף הילוך נמצאת בסרק, כמו במכונה. כבוי: ההילוך האחרון\n"
+"נשאר משולב עד שנבחר הילוך אחר או\n"
+"נלחץ סרק."
 
 #: src/osd/gui.cpp
 #, c-format

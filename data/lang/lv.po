@@ -935,6 +935,31 @@ msgstr "Pārnesums lejup"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Gear 1"
+msgstr "Pārnesums 1"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 2"
+msgstr "Pārnesums 2"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 3"
+msgstr "Pārnesums 3"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 4"
+msgstr "Pārnesums 4"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral"
+msgstr "Neitrāls"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Test"
 msgstr "Tests"
 
@@ -972,6 +997,34 @@ msgstr "Piesaistīt"
 #, no-c-format
 msgid "clear"
 msgstr "notīrīt"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear shifter"
+msgstr "Pārnesumu svira"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Daytona USA and Sega Rally Championship, all versions."
+msgstr "Daytona USA un Sega Rally Championship, visas versijas."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral when no gear is engaged"
+msgstr "Neitrāls, ja nav ieslēgts neviens pārnesums"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"With an H shifter bound to Gear 1..4: its lever in none\n"
+"of the gears is in neutral, as on the cabinet. Off, the\n"
+"last gear stays engaged until another is selected or\n"
+"Neutral is pressed."
+msgstr ""
+"Ar H pārnesumu sviru, piesaistītu Pārnesums 1..4: svira,\n"
+"kas nav nevienā pārnesumā, ir neitrālā, kā automātā.\n"
+"Izslēgts: pēdējais pārnesums paliek ieslēgts, līdz tiek\n"
+"izvēlēts cits vai nospiests Neitrāls."
 
 #: src/osd/gui.cpp
 #, c-format

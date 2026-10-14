@@ -932,6 +932,31 @@ msgstr "Rapport inf."
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Gear 1"
+msgstr "Vitesse 1"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 2"
+msgstr "Vitesse 2"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 3"
+msgstr "Vitesse 3"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 4"
+msgstr "Vitesse 4"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral"
+msgstr "Point mort"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Test"
 msgstr "Test"
 
@@ -969,6 +994,34 @@ msgstr "Assigner"
 #, no-c-format
 msgid "clear"
 msgstr "effacer"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear shifter"
+msgstr "Levier de vitesses"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Daytona USA and Sega Rally Championship, all versions."
+msgstr "Daytona USA et Sega Rally Championship, toutes versions."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral when no gear is engaged"
+msgstr "Point mort quand aucune vitesse n'est engagée"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"With an H shifter bound to Gear 1..4: its lever in none\n"
+"of the gears is in neutral, as on the cabinet. Off, the\n"
+"last gear stays engaged until another is selected or\n"
+"Neutral is pressed."
+msgstr ""
+"Avec un levier en H associé à Vitesse 1..4 : son levier\n"
+"hors de toute vitesse est au point mort, comme sur la borne.\n"
+"Désactivé : la dernière vitesse reste engagée jusqu'à ce\n"
+"qu'une autre soit choisie ou que Point mort soit appuyé."
 
 #: src/osd/gui.cpp
 #, c-format

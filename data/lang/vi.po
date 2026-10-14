@@ -928,6 +928,31 @@ msgstr "Xuống số"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Gear 1"
+msgstr "Số 1"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 2"
+msgstr "Số 2"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 3"
+msgstr "Số 3"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 4"
+msgstr "Số 4"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral"
+msgstr "Số mo"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Test"
 msgstr "Kiểm tra"
 
@@ -965,6 +990,34 @@ msgstr "Gán"
 #, no-c-format
 msgid "clear"
 msgstr "xóa"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear shifter"
+msgstr "Cần số"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Daytona USA and Sega Rally Championship, all versions."
+msgstr "Daytona USA và Sega Rally Championship, mọi phiên bản."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral when no gear is engaged"
+msgstr "Về số mo khi không vào số nào"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"With an H shifter bound to Gear 1..4: its lever in none\n"
+"of the gears is in neutral, as on the cabinet. Off, the\n"
+"last gear stays engaged until another is selected or\n"
+"Neutral is pressed."
+msgstr ""
+"Với cần số chữ H gán cho Số 1..4: cần số không ở số nào\n"
+"thì ở số mo, như trên máy arcade. Tắt: số cuối cùng được\n"
+"giữ cho đến khi chọn số khác hoặc\n"
+"nhấn Số mo."
 
 #: src/osd/gui.cpp
 #, c-format

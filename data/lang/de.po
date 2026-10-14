@@ -930,6 +930,31 @@ msgstr "Runterschalten"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Gear 1"
+msgstr "Gang 1"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 2"
+msgstr "Gang 2"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 3"
+msgstr "Gang 3"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 4"
+msgstr "Gang 4"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral"
+msgstr "Leerlauf"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Test"
 msgstr "Test"
 
@@ -967,6 +992,34 @@ msgstr "Zuweisen"
 #, no-c-format
 msgid "clear"
 msgstr "löschen"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear shifter"
+msgstr "Schalthebel"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Daytona USA and Sega Rally Championship, all versions."
+msgstr "Daytona USA und Sega Rally Championship, alle Versionen."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral when no gear is engaged"
+msgstr "Leerlauf, wenn kein Gang eingelegt ist"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"With an H shifter bound to Gear 1..4: its lever in none\n"
+"of the gears is in neutral, as on the cabinet. Off, the\n"
+"last gear stays engaged until another is selected or\n"
+"Neutral is pressed."
+msgstr ""
+"Mit einer H-Schaltung auf Gang 1..4: Steht der Hebel in\n"
+"keinem Gang, ist Leerlauf, wie am Automaten. Aus: Der\n"
+"letzte Gang bleibt eingelegt, bis ein anderer gewählt\n"
+"oder Leerlauf gedrückt wird."
 
 #: src/osd/gui.cpp
 #, c-format

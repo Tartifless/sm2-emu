@@ -934,6 +934,31 @@ msgstr "Descer marcha"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Gear 1"
+msgstr "Marcha 1"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 2"
+msgstr "Marcha 2"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 3"
+msgstr "Marcha 3"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 4"
+msgstr "Marcha 4"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral"
+msgstr "Neutro"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Test"
 msgstr "Teste"
 
@@ -971,6 +996,34 @@ msgstr "Associar"
 #, no-c-format
 msgid "clear"
 msgstr "limpar"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear shifter"
+msgstr "Alavanca de câmbio"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Daytona USA and Sega Rally Championship, all versions."
+msgstr "Daytona USA e Sega Rally Championship, todas as versões."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral when no gear is engaged"
+msgstr "Neutro quando nenhuma marcha está engatada"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"With an H shifter bound to Gear 1..4: its lever in none\n"
+"of the gears is in neutral, as on the cabinet. Off, the\n"
+"last gear stays engaged until another is selected or\n"
+"Neutral is pressed."
+msgstr ""
+"Com uma alavanca em H atribuída a Marcha 1..4: a alavanca\n"
+"fora de qualquer marcha fica em neutro, como no fliperama.\n"
+"Desligado: a última marcha continua engatada até que outra\n"
+"seja escolhida ou Neutro seja pressionado."
 
 #: src/osd/gui.cpp
 #, c-format

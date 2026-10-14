@@ -934,6 +934,31 @@ msgstr "Передача вниз"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Gear 1"
+msgstr "Передача 1"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 2"
+msgstr "Передача 2"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 3"
+msgstr "Передача 3"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 4"
+msgstr "Передача 4"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral"
+msgstr "Нейтраль"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Test"
 msgstr "Тест"
 
@@ -971,6 +996,34 @@ msgstr "Призначити"
 #, no-c-format
 msgid "clear"
 msgstr "скинути"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear shifter"
+msgstr "Важіль КПП"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Daytona USA and Sega Rally Championship, all versions."
+msgstr "Daytona USA і Sega Rally Championship, усі версії."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral when no gear is engaged"
+msgstr "Нейтраль, коли передачу не ввімкнено"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"With an H shifter bound to Gear 1..4: its lever in none\n"
+"of the gears is in neutral, as on the cabinet. Off, the\n"
+"last gear stays engaged until another is selected or\n"
+"Neutral is pressed."
+msgstr ""
+"З H-важелем, призначеним на Передача 1..4: важіль поза\n"
+"передачами стоїть у нейтралі, як на автоматі. Вимк.:\n"
+"остання передача лишається ввімкненою, доки не вибрано\n"
+"іншу або не натиснуто Нейтраль."
 
 #: src/osd/gui.cpp
 #, c-format

@@ -936,6 +936,31 @@ msgstr "Prestava dol"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Gear 1"
+msgstr "Prestava 1"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 2"
+msgstr "Prestava 2"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 3"
+msgstr "Prestava 3"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 4"
+msgstr "Prestava 4"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral"
+msgstr "Prosti tek"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Test"
 msgstr "Test"
 
@@ -973,6 +998,34 @@ msgstr "Dodeli"
 #, no-c-format
 msgid "clear"
 msgstr "počisti"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear shifter"
+msgstr "Prestavna ročica"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Daytona USA and Sega Rally Championship, all versions."
+msgstr "Daytona USA in Sega Rally Championship, vse različice."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral when no gear is engaged"
+msgstr "Prosti tek, ko ni vklopljena nobena prestava"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"With an H shifter bound to Gear 1..4: its lever in none\n"
+"of the gears is in neutral, as on the cabinet. Off, the\n"
+"last gear stays engaged until another is selected or\n"
+"Neutral is pressed."
+msgstr ""
+"Z ročico H, dodeljeno gumbom Prestava 1..4: ročica zunaj\n"
+"vseh prestav je v prostem teku, kot na avtomatu.\n"
+"Izklopljeno: zadnja prestava ostane vklopljena, dokler ne\n"
+"izberete druge ali pritisnete Prosti tek."
 
 #: src/osd/gui.cpp
 #, c-format

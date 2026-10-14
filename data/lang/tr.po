@@ -929,6 +929,31 @@ msgstr "Vites düşür"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Gear 1"
+msgstr "Vites 1"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 2"
+msgstr "Vites 2"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 3"
+msgstr "Vites 3"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 4"
+msgstr "Vites 4"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral"
+msgstr "Boş"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Test"
 msgstr "Test"
 
@@ -966,6 +991,34 @@ msgstr "Ata"
 #, no-c-format
 msgid "clear"
 msgstr "temizle"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear shifter"
+msgstr "Vites kolu"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Daytona USA and Sega Rally Championship, all versions."
+msgstr "Daytona USA ve Sega Rally Championship, tüm sürümler."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral when no gear is engaged"
+msgstr "Hiçbir vites takılı değilken boş"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"With an H shifter bound to Gear 1..4: its lever in none\n"
+"of the gears is in neutral, as on the cabinet. Off, the\n"
+"last gear stays engaged until another is selected or\n"
+"Neutral is pressed."
+msgstr ""
+"Vites 1..4'e atanmış bir H vites koluyla: hiçbir viteste\n"
+"olmayan kol, kabindeki gibi boştadır. Kapalı: başka bir\n"
+"vites seçilene ya da Boş'a basılana kadar son vites\n"
+"takılı kalır."
 
 #: src/osd/gui.cpp
 #, c-format

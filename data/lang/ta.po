@@ -934,6 +934,31 @@ msgstr "கியர் கீழே"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Gear 1"
+msgstr "கியர் 1"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 2"
+msgstr "கியர் 2"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 3"
+msgstr "கியர் 3"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 4"
+msgstr "கியர் 4"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral"
+msgstr "நியூட்ரல்"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Test"
 msgstr "சோதனை"
 
@@ -971,6 +996,34 @@ msgstr "இணை"
 #, no-c-format
 msgid "clear"
 msgstr "அழி"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear shifter"
+msgstr "கியர் லீவர்"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Daytona USA and Sega Rally Championship, all versions."
+msgstr "Daytona USA மற்றும் Sega Rally Championship, அனைத்து பதிப்புகளும்."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral when no gear is engaged"
+msgstr "எந்த கியரும் இல்லாதபோது நியூட்ரல்"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"With an H shifter bound to Gear 1..4: its lever in none\n"
+"of the gears is in neutral, as on the cabinet. Off, the\n"
+"last gear stays engaged until another is selected or\n"
+"Neutral is pressed."
+msgstr ""
+"கியர் 1..4 உடன் இணைக்கப்பட்ட H ஷிஃப்டருடன்: லீவர் எந்த\n"
+"கியரிலும் இல்லையெனில், கேபினட்டில் போல நியூட்ரலில்\n"
+"இருக்கும். அணைத்தால்: வேறு கியர் தேர்ந்தெடுக்கும் வரை\n"
+"அல்லது நியூட்ரல் அழுத்தும் வரை கடைசி கியர் இருக்கும்."
 
 #: src/osd/gui.cpp
 #, c-format
