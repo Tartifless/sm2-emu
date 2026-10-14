@@ -356,6 +356,10 @@ private:
     void drive_board_write(u8 value);
 
 
+    /// An analogue channel's value, with Super GT 24h's pedals adjusted to its
+    /// I/O TYPE.
+    [[nodiscard]] u8 analog_value(u32 channel) const;
+
     /// The motion base's answer on port D, for a cabinet that has one.
     [[nodiscard]] u8 motion_base_read() const;
 
