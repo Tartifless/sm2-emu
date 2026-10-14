@@ -546,7 +546,7 @@ msgstr "State"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "Sistem"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1632,7 +1632,7 @@ msgstr "Bahasa"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "Input kontroler di latar belakang"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1641,6 +1641,9 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"Setir dan gamepad tetap berfungsi saat jendela\n"
+"tidak di depan. Keyboard dan mouse tetap\n"
+"memerlukan jendela di depan."
 
 #: src/osd/gui.cpp
 #, no-c-format

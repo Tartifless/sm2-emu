@@ -547,7 +547,7 @@ msgstr "الحالات"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "النظام"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1635,7 +1635,7 @@ msgstr "اللغة"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "إدخال وحدات التحكم في الخلفية"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1644,6 +1644,9 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"تبقى المقاود ويدا التحكم تعمل عندما لا تكون\n"
+"النافذة في المقدمة. تحتاج لوحة المفاتيح والفأرة\n"
+"إلى أن تكون النافذة في المقدمة."
 
 #: src/osd/gui.cpp
 #, no-c-format

@@ -546,7 +546,7 @@ msgstr "Estats"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "Sistema"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1644,7 +1644,7 @@ msgstr "Idioma"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "Entrada dels comandaments en segon pla"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1653,6 +1653,9 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"Els volants i els comandaments continuen funcionant quan\n"
+"la finestra no és al davant. El teclat i el ratolí\n"
+"encara necessiten la finestra al davant."
 
 #: src/osd/gui.cpp
 #, no-c-format

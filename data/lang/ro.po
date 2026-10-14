@@ -547,7 +547,7 @@ msgstr "Stări"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "Sistem"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1638,7 +1638,7 @@ msgstr "Limbă"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "Intrare de la controlere în fundal"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1647,6 +1647,9 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"Volanele și gamepadurile continuă să funcționeze când\n"
+"fereastra nu este în prim-plan. Tastatura și mouse-ul\n"
+"au în continuare nevoie de fereastră în prim-plan."
 
 #: src/osd/gui.cpp
 #, no-c-format

@@ -550,7 +550,7 @@ msgstr "Състояния"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "Система"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1638,7 +1638,7 @@ msgstr "Език"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "Входове от контролери във фонов режим"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1647,6 +1647,9 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"Воланите и геймпадовете продължават да работят, когато\n"
+"прозорецът не е отпред. Клавиатурата и мишката\n"
+"изискват прозорецът да е отпред."
 
 #: src/osd/gui.cpp
 #, no-c-format

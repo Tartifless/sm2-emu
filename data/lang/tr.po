@@ -546,7 +546,7 @@ msgstr "Durumlar"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "Sistem"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1633,7 +1633,7 @@ msgstr "Dil"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "Arka planda kumanda girişi"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1642,6 +1642,9 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"Direksiyonlar ve oyun kumandaları pencere önde değilken\n"
+"de çalışmaya devam eder. Klavye ve fare için\n"
+"pencerenin önde olması gerekir."
 
 #: src/osd/gui.cpp
 #, no-c-format

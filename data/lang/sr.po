@@ -552,7 +552,7 @@ msgstr "Стања"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "Систем"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1638,7 +1638,7 @@ msgstr "Језик"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "Унос са контролера у позадини"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1647,6 +1647,9 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"Волани и гејмпедови раде и када прозор није\n"
+"у првом плану. Тастатура и миш и даље\n"
+"захтевају прозор у првом плану."
 
 #: src/osd/gui.cpp
 #, no-c-format

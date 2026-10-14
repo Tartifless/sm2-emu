@@ -549,7 +549,7 @@ msgstr "Būsenos"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "Sistema"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1643,7 +1643,7 @@ msgstr "Kalba"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "Valdiklių įvestis fone"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1652,6 +1652,9 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"Vairai ir pulteliai veikia ir tada, kai langas\n"
+"nėra priekyje. Klaviatūrai ir pelei langas\n"
+"vis tiek turi būti priekyje."
 
 #: src/osd/gui.cpp
 #, no-c-format

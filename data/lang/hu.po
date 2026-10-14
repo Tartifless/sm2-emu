@@ -546,7 +546,7 @@ msgstr "Állapotok"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "Rendszer"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1643,7 +1643,7 @@ msgstr "Nyelv"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "Vezérlők a háttérben"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1652,6 +1652,9 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"A kormányok és a játékvezérlők akkor is működnek, ha\n"
+"az ablak nincs előtérben. A billentyűzethez és az\n"
+"egérhez továbbra is előtérben kell lennie az ablaknak."
 
 #: src/osd/gui.cpp
 #, no-c-format

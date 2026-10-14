@@ -547,7 +547,7 @@ msgstr "Stany"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "System"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1634,7 +1634,7 @@ msgstr "Język"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "Obsługa kontrolerów w tle"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1643,6 +1643,9 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"Kierownice i gamepady działają, nawet gdy okno nie jest\n"
+"na pierwszym planie. Klawiatura i mysz nadal wymagają\n"
+"okna na pierwszym planie."
 
 #: src/osd/gui.cpp
 #, no-c-format

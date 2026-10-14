@@ -549,7 +549,7 @@ msgstr "即时存档"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "系统"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1629,7 +1629,7 @@ msgstr "语言"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "后台控制器输入"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1638,6 +1638,8 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"窗口不在前台时，方向盘和手柄仍可使用。\n"
+"键盘和鼠标仍需窗口在前台。"
 
 #: src/osd/gui.cpp
 #, no-c-format

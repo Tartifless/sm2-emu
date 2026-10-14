@@ -552,7 +552,7 @@ msgstr "স্টেট"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "সিস্টেম"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1636,7 +1636,7 @@ msgstr "ভাষা"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "ব্যাকগ্রাউন্ডে কন্ট্রোলার ইনপুট"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1645,6 +1645,8 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"উইন্ডো সামনে না থাকলেও হুইল ও গেমপ্যাড কাজ করে।\n"
+"কিবোর্ড ও মাউসের জন্য উইন্ডোটি সামনে থাকতে হবে।"
 
 #: src/osd/gui.cpp
 #, no-c-format

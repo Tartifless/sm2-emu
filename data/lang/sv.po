@@ -552,7 +552,7 @@ msgstr "Lägen"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "System"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1639,7 +1639,7 @@ msgstr "Språk"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "Handkontroller i bakgrunden"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1648,6 +1648,9 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"Ratt och handkontroller fortsätter att fungera när fönstret\n"
+"inte är i förgrunden. Tangentbord och mus behöver\n"
+"fortfarande fönstret i förgrunden."
 
 #: src/osd/gui.cpp
 #, no-c-format

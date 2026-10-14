@@ -552,7 +552,7 @@ msgstr "Statussen"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "Systeem"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1642,7 +1642,7 @@ msgstr "Taal"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "Controllerinvoer op de achtergrond"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1651,6 +1651,9 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"Sturen en gamepads blijven werken als het venster\n"
+"niet op de voorgrond staat. Toetsenbord en muis\n"
+"hebben het venster nog steeds op de voorgrond nodig."
 
 #: src/osd/gui.cpp
 #, no-c-format

@@ -551,7 +551,7 @@ msgstr "நிலைகள்"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "கணினி"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1638,7 +1638,7 @@ msgstr "மொழி"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "பின்னணியில் கட்டுப்படுத்தி உள்ளீடு"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1647,6 +1647,9 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"சாளரம் முன்னால் இல்லாதபோதும் ஸ்டீயரிங் மற்றும் கேம்பேடுகள்\n"
+"வேலை செய்யும். விசைப்பலகை மற்றும் சுட்டிக்கு சாளரம்\n"
+"முன்னால் இருக்க வேண்டும்."
 
 #: src/osd/gui.cpp
 #, no-c-format

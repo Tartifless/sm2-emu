@@ -549,7 +549,7 @@ msgstr "상태 저장"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "시스템"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1634,7 +1634,7 @@ msgstr "언어"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "백그라운드 컨트롤러 입력"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1643,6 +1643,9 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"창이 앞에 있지 않아도 핸들과 게임패드는\n"
+"계속 작동합니다. 키보드와 마우스는 여전히\n"
+"창이 앞에 있어야 합니다."
 
 #: src/osd/gui.cpp
 #, no-c-format

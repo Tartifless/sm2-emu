@@ -549,7 +549,7 @@ msgstr "Stāvokļi"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "Sistēma"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1639,7 +1639,7 @@ msgstr "Valoda"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "Kontrolieru ievade fonā"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1648,6 +1648,9 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"Stūres un spēļu pultis darbojas arī tad, kad logs\n"
+"nav priekšplānā. Tastatūrai un pelei logam\n"
+"joprojām jābūt priekšplānā."
 
 #: src/osd/gui.cpp
 #, no-c-format

@@ -546,7 +546,7 @@ msgstr "حالتیں"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "سسٹم"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1633,7 +1633,7 @@ msgstr "زبان"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "پس منظر میں کنٹرولر ان پٹ"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1642,6 +1642,9 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"ونڈو سامنے نہ ہونے پر بھی اسٹیئرنگ وہیل اور گیم پیڈ\n"
+"کام کرتے رہتے ہیں۔ کی بورڈ اور ماؤس کے لیے\n"
+"ونڈو کا سامنے ہونا ضروری ہے۔"
 
 #: src/osd/gui.cpp
 #, no-c-format

@@ -546,7 +546,7 @@ msgstr "Trạng thái"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "Hệ thống"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1630,7 +1630,7 @@ msgstr "Ngôn ngữ"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "Nhận tay cầm khi chạy nền"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1639,6 +1639,9 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"Vô lăng và tay cầm vẫn hoạt động khi cửa sổ\n"
+"không ở phía trước. Bàn phím và chuột vẫn cần\n"
+"cửa sổ ở phía trước."
 
 #: src/osd/gui.cpp
 #, no-c-format

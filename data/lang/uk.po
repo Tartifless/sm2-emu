@@ -551,7 +551,7 @@ msgstr "Стани"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "Система"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1638,7 +1638,7 @@ msgstr "Мова"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "Введення з контролерів у фоні"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1647,6 +1647,9 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"Кермо та геймпади працюють, навіть коли вікно\n"
+"не на передньому плані. Клавіатурі та миші\n"
+"вікно все ще потрібне на передньому плані."
 
 #: src/osd/gui.cpp
 #, no-c-format

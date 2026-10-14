@@ -552,7 +552,7 @@ msgstr "Tilat"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "Järjestelmä"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1644,7 +1644,7 @@ msgstr "Kieli"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "Ohjainsyöte taustalla"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1653,6 +1653,9 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"Ratit ja peliohjaimet toimivat, vaikka ikkuna ei\n"
+"ole edustalla. Näppäimistö ja hiiri tarvitsevat\n"
+"yhä ikkunan edustalle."
 
 #: src/osd/gui.cpp
 #, no-c-format

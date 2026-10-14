@@ -550,7 +550,7 @@ msgstr "Καταστάσεις"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "Σύστημα"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1644,7 +1644,7 @@ msgstr "Γλώσσα"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "Είσοδος χειριστηρίων στο παρασκήνιο"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1653,6 +1653,9 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"Τα τιμόνια και τα χειριστήρια συνεχίζουν να λειτουργούν όταν\n"
+"το παράθυρο δεν είναι μπροστά. Το πληκτρολόγιο και το ποντίκι\n"
+"χρειάζονται το παράθυρο μπροστά."
 
 #: src/osd/gui.cpp
 #, no-c-format

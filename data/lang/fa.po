@@ -546,7 +546,7 @@ msgstr "وضعیت‌ها"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "سیستم"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1633,7 +1633,7 @@ msgstr "زبان"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "ورودی دسته‌ها در پس‌زمینه"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1642,6 +1642,9 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"فرمان‌ها و دسته‌های بازی وقتی پنجره در جلو نیست هم\n"
+"کار می‌کنند. صفحه‌کلید و ماوس همچنان به پنجره\n"
+"در جلو نیاز دارند."
 
 #: src/osd/gui.cpp
 #, no-c-format

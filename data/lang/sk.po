@@ -546,7 +546,7 @@ msgstr "Stavy"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "Systém"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1635,7 +1635,7 @@ msgstr "Jazyk"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "Vstup ovládačov na pozadí"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1644,6 +1644,9 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"Volanty a gamepady fungujú, aj keď okno nie je\n"
+"v popredí. Klávesnica a myš stále vyžadujú\n"
+"okno v popredí."
 
 #: src/osd/gui.cpp
 #, no-c-format

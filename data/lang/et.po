@@ -548,7 +548,7 @@ msgstr "Olekud"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "Süsteem"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1635,7 +1635,7 @@ msgstr "Keel"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "Kontrollerite sisend taustal"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1644,6 +1644,9 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"Roolid ja mängupuldid töötavad ka siis, kui aken\n"
+"pole esiplaanil. Klaviatuur ja hiir vajavad\n"
+"endiselt akent esiplaanil."
 
 #: src/osd/gui.cpp
 #, no-c-format

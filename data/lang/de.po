@@ -546,7 +546,7 @@ msgstr "Zustände"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "System"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1637,7 +1637,7 @@ msgstr "Sprache"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "Controller-Eingabe im Hintergrund"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1646,6 +1646,9 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"Lenkräder und Gamepads funktionieren weiter, wenn das\n"
+"Fenster nicht im Vordergrund ist. Tastatur und Maus\n"
+"brauchen weiterhin das Fenster im Vordergrund."
 
 #: src/osd/gui.cpp
 #, no-c-format

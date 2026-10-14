@@ -549,7 +549,7 @@ msgstr "ステート"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "システム"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1639,7 +1639,7 @@ msgstr "言語"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "バックグラウンドでのコントローラー入力"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1648,6 +1648,9 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"ウィンドウが前面にないときも、ハンドルと\n"
+"ゲームパッドは動作します。キーボードとマウスは\n"
+"ウィンドウが前面にある必要があります。"
 
 #: src/osd/gui.cpp
 #, no-c-format

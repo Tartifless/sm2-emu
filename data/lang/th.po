@@ -551,7 +551,7 @@ msgstr "สถานะ"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "ระบบ"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1630,7 +1630,7 @@ msgstr "ภาษา"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "อินพุตคอนโทรลเลอร์ในพื้นหลัง"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1639,6 +1639,9 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"พวงมาลัยและเกมแพดยังทำงานได้เมื่อหน้าต่าง\n"
+"ไม่ได้อยู่ด้านหน้า แป้นพิมพ์และเมาส์ยังต้องให้\n"
+"หน้าต่างอยู่ด้านหน้า"
 
 #: src/osd/gui.cpp
 #, no-c-format

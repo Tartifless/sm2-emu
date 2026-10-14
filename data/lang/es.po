@@ -546,7 +546,7 @@ msgstr "Estados"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "System"
-msgstr ""
+msgstr "Sistema"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1636,7 +1636,7 @@ msgstr "Idioma"
 #: src/osd/gui.cpp
 #, no-c-format
 msgid "Background controller input"
-msgstr ""
+msgstr "Entrada de mandos en segundo plano"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1645,6 +1645,9 @@ msgid ""
 "not in front. Keyboard and mouse still need the window\n"
 "in front."
 msgstr ""
+"Los volantes y los mandos siguen funcionando cuando la\n"
+"ventana no está en primer plano. El teclado y el ratón\n"
+"siguen necesitando la ventana en primer plano."
 
 #: src/osd/gui.cpp
 #, no-c-format
