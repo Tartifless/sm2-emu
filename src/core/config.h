@@ -194,6 +194,16 @@ struct Config {
     /// Centring resistance, 0..100 percent of the wheel's maximum torque.
     u32 wheel_ffb_strength = 30;
 
+    /// Indy 500, Touring Car, Over Rev and Super GT 24h: how their motor drive
+    /// board turns the drive board's power, 0..63 each way, into torque: none
+    /// up to the dead band, the wheel's full strength from the full power, a
+    /// straight line between. The drive board sends the two powers as 6 bits
+    /// each (CW 0-5, CCW 0-5) to the motor drive board 838-11966: in
+    /// proportion, 0 and 63, the defaults. Others only for a motor that is
+    /// known to answer otherwise.
+    u32 wheel_indy_deadband   = 0;
+    u32 wheel_indy_full_power = 63;
+
     /// Reverses the wheel's force, for a driver that pushes right on the
     /// positive force with which DirectInput, SDL and Linux push left.
     bool wheel_ffb_invert = false;
