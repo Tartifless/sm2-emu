@@ -370,6 +370,8 @@ private:
     [[nodiscard]] u8 lightgun_data_read(u8 offset) const;
     [[nodiscard]] u8 lightgun_offscreen_read(u8 offset) const;
     void             drive_board_write(u8 value);
+    /// The steering pot as the game reads it, for the drive board's answer.
+    [[nodiscard]] u8 steering_value() const;
     void io_port_a_write(u8 value);
     void lamp_output_w(u8 value);
 
