@@ -941,6 +941,31 @@ msgstr "降檔"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Gear 1"
+msgstr "1 檔"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 2"
+msgstr "2 檔"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 3"
+msgstr "3 檔"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 4"
+msgstr "4 檔"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral"
+msgstr "空檔"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Test"
 msgstr "測試"
 
@@ -978,6 +1003,34 @@ msgstr "綁定"
 #, no-c-format
 msgid "clear"
 msgstr "清除"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear shifter"
+msgstr "排檔桿"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Daytona USA and Sega Rally Championship, all versions."
+msgstr "Daytona USA 與 Sega Rally Championship，所有版本。"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral when no gear is engaged"
+msgstr "未入檔時為空檔"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"With an H shifter bound to Gear 1..4: its lever in none\n"
+"of the gears is in neutral, as on the cabinet. Off, the\n"
+"last gear stays engaged until another is selected or\n"
+"Neutral is pressed."
+msgstr ""
+"H 型排檔桿綁定到 1..4 檔時：排檔桿不在任何檔位\n"
+"即為空檔，與大型機台相同。關閉時：最後一個檔位\n"
+"會保持，直到選擇其他檔位\n"
+"或按下空檔。"
 
 #: src/osd/gui.cpp
 #, c-format

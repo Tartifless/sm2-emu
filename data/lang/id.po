@@ -938,6 +938,31 @@ msgstr "Turun gigi"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Gear 1"
+msgstr "Gigi 1"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 2"
+msgstr "Gigi 2"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 3"
+msgstr "Gigi 3"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 4"
+msgstr "Gigi 4"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral"
+msgstr "Netral"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Test"
 msgstr "Tes"
 
@@ -975,6 +1000,34 @@ msgstr "Tetapkan"
 #, no-c-format
 msgid "clear"
 msgstr "hapus"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear shifter"
+msgstr "Tuas persneling"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Daytona USA and Sega Rally Championship, all versions."
+msgstr "Daytona USA dan Sega Rally Championship, semua versi."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral when no gear is engaged"
+msgstr "Netral saat tidak ada gigi yang masuk"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"With an H shifter bound to Gear 1..4: its lever in none\n"
+"of the gears is in neutral, as on the cabinet. Off, the\n"
+"last gear stays engaged until another is selected or\n"
+"Neutral is pressed."
+msgstr ""
+"Dengan tuas H yang dipasang ke Gigi 1..4: tuas yang tidak\n"
+"berada di gigi mana pun ada di netral, seperti di mesin\n"
+"arkade. Mati: gigi terakhir tetap masuk sampai gigi lain\n"
+"dipilih atau Netral ditekan."
 
 #: src/osd/gui.cpp
 #, c-format

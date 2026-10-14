@@ -940,6 +940,31 @@ msgstr "گیئر نیچے"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Gear 1"
+msgstr "گیئر 1"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 2"
+msgstr "گیئر 2"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 3"
+msgstr "گیئر 3"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 4"
+msgstr "گیئر 4"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral"
+msgstr "نیوٹرل"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Test"
 msgstr "ٹیسٹ"
 
@@ -977,6 +1002,34 @@ msgstr "تفویض"
 #, no-c-format
 msgid "clear"
 msgstr "صاف"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear shifter"
+msgstr "گیئر لیور"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Daytona USA and Sega Rally Championship, all versions."
+msgstr "Daytona USA اور Sega Rally Championship، تمام ورژن۔"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral when no gear is engaged"
+msgstr "جب کوئی گیئر نہ لگا ہو تو نیوٹرل"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"With an H shifter bound to Gear 1..4: its lever in none\n"
+"of the gears is in neutral, as on the cabinet. Off, the\n"
+"last gear stays engaged until another is selected or\n"
+"Neutral is pressed."
+msgstr ""
+"گیئر 1..4 سے منسلک H شفٹر کے ساتھ: اگر لیور کسی\n"
+"گیئر میں نہ ہو تو وہ نیوٹرل میں ہوتا ہے، جیسے کیبنٹ پر۔\n"
+"بند ہو تو آخری گیئر اس وقت تک لگا رہتا ہے جب تک\n"
+"دوسرا نہ چنا جائے یا نیوٹرل نہ دبایا جائے۔"
 
 #: src/osd/gui.cpp
 #, c-format

@@ -947,6 +947,31 @@ msgstr "Pavara žemyn"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Gear 1"
+msgstr "Pavara 1"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 2"
+msgstr "Pavara 2"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 3"
+msgstr "Pavara 3"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 4"
+msgstr "Pavara 4"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral"
+msgstr "Neutrali"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Test"
 msgstr "Testas"
 
@@ -984,6 +1009,34 @@ msgstr "Priskirti"
 #, no-c-format
 msgid "clear"
 msgstr "išvalyti"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear shifter"
+msgstr "Pavarų svirtis"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Daytona USA and Sega Rally Championship, all versions."
+msgstr "Daytona USA ir Sega Rally Championship, visos versijos."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral when no gear is engaged"
+msgstr "Neutrali, kai neįjungta jokia pavara"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"With an H shifter bound to Gear 1..4: its lever in none\n"
+"of the gears is in neutral, as on the cabinet. Off, the\n"
+"last gear stays engaged until another is selected or\n"
+"Neutral is pressed."
+msgstr ""
+"Su H pavarų svirtimi, priskirta Pavara 1..4: svirtis, esanti\n"
+"ne jokioje pavaroje, yra neutralioje, kaip automate.\n"
+"Išjungta: paskutinė pavara lieka įjungta, kol pasirenkama\n"
+"kita arba paspaudžiama Neutrali."
 
 #: src/osd/gui.cpp
 #, c-format

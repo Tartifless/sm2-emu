@@ -939,6 +939,31 @@ msgstr "خفض الغيار"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Gear 1"
+msgstr "الغيار 1"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 2"
+msgstr "الغيار 2"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 3"
+msgstr "الغيار 3"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 4"
+msgstr "الغيار 4"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral"
+msgstr "محايد"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Test"
 msgstr "اختبار"
 
@@ -976,6 +1001,34 @@ msgstr "ربط"
 #, no-c-format
 msgid "clear"
 msgstr "مسح"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear shifter"
+msgstr "ذراع ناقل الحركة"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Daytona USA and Sega Rally Championship, all versions."
+msgstr "Daytona USA و Sega Rally Championship، جميع الإصدارات."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral when no gear is engaged"
+msgstr "محايد عند عدم تعشيق أي غيار"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"With an H shifter bound to Gear 1..4: its lever in none\n"
+"of the gears is in neutral, as on the cabinet. Off, the\n"
+"last gear stays engaged until another is selected or\n"
+"Neutral is pressed."
+msgstr ""
+"مع ذراع H مرتبط بـ الغيار 1..4: إذا لم يكن الذراع\n"
+"في أي غيار فهو في وضع محايد، كما في الكابينة. عند\n"
+"الإيقاف، يبقى آخر غيار معشقًا حتى يُختار غيره أو\n"
+"يُضغط محايد."
 
 #: src/osd/gui.cpp
 #, c-format

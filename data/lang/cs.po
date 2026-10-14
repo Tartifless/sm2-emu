@@ -941,6 +941,31 @@ msgstr "Řadit dolů"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Gear 1"
+msgstr "Rychlost 1"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 2"
+msgstr "Rychlost 2"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 3"
+msgstr "Rychlost 3"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 4"
+msgstr "Rychlost 4"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral"
+msgstr "Neutrál"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Test"
 msgstr "Test"
 
@@ -978,6 +1003,34 @@ msgstr "Přiřadit"
 #, no-c-format
 msgid "clear"
 msgstr "vymazat"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear shifter"
+msgstr "Řadicí páka"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Daytona USA and Sega Rally Championship, all versions."
+msgstr "Daytona USA a Sega Rally Championship, všechny verze."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral when no gear is engaged"
+msgstr "Neutrál, když není zařazena žádná rychlost"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"With an H shifter bound to Gear 1..4: its lever in none\n"
+"of the gears is in neutral, as on the cabinet. Off, the\n"
+"last gear stays engaged until another is selected or\n"
+"Neutral is pressed."
+msgstr ""
+"S řadicí pákou H přiřazenou k Rychlost 1..4: páka mimo\n"
+"všechny rychlosti je v neutrálu, jako na automatu.\n"
+"Vypnuto: poslední rychlost zůstane zařazená, dokud se\n"
+"nezvolí jiná nebo nestiskne Neutrál."
 
 #: src/osd/gui.cpp
 #, c-format

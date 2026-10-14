@@ -949,6 +949,31 @@ msgstr "Vaihde alas"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Gear 1"
+msgstr "Vaihde 1"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 2"
+msgstr "Vaihde 2"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 3"
+msgstr "Vaihde 3"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 4"
+msgstr "Vaihde 4"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral"
+msgstr "Vapaa"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Test"
 msgstr "Testi"
 
@@ -986,6 +1011,34 @@ msgstr "Määritä"
 #, no-c-format
 msgid "clear"
 msgstr "tyhjennä"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear shifter"
+msgstr "Vaihdekeppi"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Daytona USA and Sega Rally Championship, all versions."
+msgstr "Daytona USA ja Sega Rally Championship, kaikki versiot."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral when no gear is engaged"
+msgstr "Vapaa, kun mikään vaihde ei ole päällä"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"With an H shifter bound to Gear 1..4: its lever in none\n"
+"of the gears is in neutral, as on the cabinet. Off, the\n"
+"last gear stays engaged until another is selected or\n"
+"Neutral is pressed."
+msgstr ""
+"Kun H-vaihteisto on liitetty painikkeisiin Vaihde 1..4:\n"
+"keppi, joka ei ole millään vaihteella, on vapaalla, kuten\n"
+"koneessa. Pois: viimeinen vaihde pysyy päällä, kunnes\n"
+"valitaan toinen tai painetaan Vapaa."
 
 #: src/osd/gui.cpp
 #, c-format

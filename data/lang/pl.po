@@ -939,6 +939,31 @@ msgstr "Bieg w dół"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Gear 1"
+msgstr "Bieg 1"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 2"
+msgstr "Bieg 2"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 3"
+msgstr "Bieg 3"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 4"
+msgstr "Bieg 4"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral"
+msgstr "Luz"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Test"
 msgstr "Test"
 
@@ -976,6 +1001,34 @@ msgstr "Przypisz"
 #, no-c-format
 msgid "clear"
 msgstr "wyczyść"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear shifter"
+msgstr "Drążek zmiany biegów"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Daytona USA and Sega Rally Championship, all versions."
+msgstr "Daytona USA i Sega Rally Championship, wszystkie wersje."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral when no gear is engaged"
+msgstr "Luz, gdy żaden bieg nie jest wrzucony"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"With an H shifter bound to Gear 1..4: its lever in none\n"
+"of the gears is in neutral, as on the cabinet. Off, the\n"
+"last gear stays engaged until another is selected or\n"
+"Neutral is pressed."
+msgstr ""
+"Z drążkiem H przypisanym do Bieg 1..4: drążek poza\n"
+"wszystkimi biegami jest na luzie, jak w automacie.\n"
+"Wyłączone: ostatni bieg pozostaje wrzucony, dopóki nie\n"
+"zostanie wybrany inny lub naciśnięty Luz."
 
 #: src/osd/gui.cpp
 #, c-format

@@ -947,6 +947,31 @@ msgstr "Ταχύτητα κάτω"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Gear 1"
+msgstr "Ταχύτητα 1"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 2"
+msgstr "Ταχύτητα 2"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 3"
+msgstr "Ταχύτητα 3"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 4"
+msgstr "Ταχύτητα 4"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral"
+msgstr "Νεκρό"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Test"
 msgstr "Δοκιμή"
 
@@ -984,6 +1009,34 @@ msgstr "Αντιστοίχιση"
 #, no-c-format
 msgid "clear"
 msgstr "εκκαθάριση"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear shifter"
+msgstr "Λεβιές ταχυτήτων"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Daytona USA and Sega Rally Championship, all versions."
+msgstr "Daytona USA και Sega Rally Championship, όλες οι εκδόσεις."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral when no gear is engaged"
+msgstr "Νεκρό όταν δεν είναι επιλεγμένη ταχύτητα"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"With an H shifter bound to Gear 1..4: its lever in none\n"
+"of the gears is in neutral, as on the cabinet. Off, the\n"
+"last gear stays engaged until another is selected or\n"
+"Neutral is pressed."
+msgstr ""
+"Με λεβιέ H αντιστοιχισμένο στα Ταχύτητα 1..4: όταν ο\n"
+"λεβιές δεν είναι σε καμία ταχύτητα, είναι στο νεκρό, όπως\n"
+"στο μηχάνημα. Ανενεργό: η τελευταία ταχύτητα μένει μέχρι\n"
+"να επιλεγεί άλλη ή να πατηθεί το Νεκρό."
 
 #: src/osd/gui.cpp
 #, c-format

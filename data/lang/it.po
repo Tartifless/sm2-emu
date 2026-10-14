@@ -941,6 +941,31 @@ msgstr "Marcia giù"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Gear 1"
+msgstr "Marcia 1"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 2"
+msgstr "Marcia 2"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 3"
+msgstr "Marcia 3"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 4"
+msgstr "Marcia 4"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral"
+msgstr "Folle"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Test"
 msgstr "Test"
 
@@ -978,6 +1003,34 @@ msgstr "Assegna"
 #, no-c-format
 msgid "clear"
 msgstr "cancella"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear shifter"
+msgstr "Leva del cambio"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Daytona USA and Sega Rally Championship, all versions."
+msgstr "Daytona USA e Sega Rally Championship, tutte le versioni."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral when no gear is engaged"
+msgstr "Folle quando nessuna marcia è inserita"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"With an H shifter bound to Gear 1..4: its lever in none\n"
+"of the gears is in neutral, as on the cabinet. Off, the\n"
+"last gear stays engaged until another is selected or\n"
+"Neutral is pressed."
+msgstr ""
+"Con un cambio ad H assegnato a Marcia 1..4: la leva fuori\n"
+"da ogni marcia è in folle, come sul cabinato. Disattivato:\n"
+"l'ultima marcia resta inserita finché non se ne sceglie\n"
+"un'altra o si preme Folle."
 
 #: src/osd/gui.cpp
 #, c-format

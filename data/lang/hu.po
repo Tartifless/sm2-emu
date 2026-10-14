@@ -944,6 +944,31 @@ msgstr "Leváltás"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Gear 1"
+msgstr "1. fokozat"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 2"
+msgstr "2. fokozat"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 3"
+msgstr "3. fokozat"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 4"
+msgstr "4. fokozat"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral"
+msgstr "Üres"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Test"
 msgstr "Teszt"
 
@@ -981,6 +1006,34 @@ msgstr "Hozzárendelés"
 #, no-c-format
 msgid "clear"
 msgstr "törlés"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear shifter"
+msgstr "Váltókar"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Daytona USA and Sega Rally Championship, all versions."
+msgstr "Daytona USA és Sega Rally Championship, minden változat."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral when no gear is engaged"
+msgstr "Üres, ha nincs fokozat bekapcsolva"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"With an H shifter bound to Gear 1..4: its lever in none\n"
+"of the gears is in neutral, as on the cabinet. Off, the\n"
+"last gear stays engaged until another is selected or\n"
+"Neutral is pressed."
+msgstr ""
+"Az 1..4. fokozathoz rendelt H-váltóval: a fokozaton\n"
+"kívül álló kar üresben van, mint a játékgépen. Ki: az\n"
+"utolsó fokozat bekapcsolva marad, amíg másikat nem\n"
+"választanak, vagy meg nem nyomják az Üres gombot."
 
 #: src/osd/gui.cpp
 #, c-format

@@ -943,6 +943,31 @@ msgstr "ลดเกียร์"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Gear 1"
+msgstr "เกียร์ 1"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 2"
+msgstr "เกียร์ 2"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 3"
+msgstr "เกียร์ 3"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 4"
+msgstr "เกียร์ 4"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral"
+msgstr "เกียร์ว่าง"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Test"
 msgstr "ทดสอบ"
 
@@ -980,6 +1005,34 @@ msgstr "ผูก"
 #, no-c-format
 msgid "clear"
 msgstr "ล้าง"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear shifter"
+msgstr "คันเกียร์"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Daytona USA and Sega Rally Championship, all versions."
+msgstr "Daytona USA และ Sega Rally Championship ทุกเวอร์ชัน"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral when no gear is engaged"
+msgstr "เกียร์ว่างเมื่อไม่ได้เข้าเกียร์ใด"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"With an H shifter bound to Gear 1..4: its lever in none\n"
+"of the gears is in neutral, as on the cabinet. Off, the\n"
+"last gear stays engaged until another is selected or\n"
+"Neutral is pressed."
+msgstr ""
+"เมื่อผูกคันเกียร์ H กับ เกียร์ 1..4: ถ้าคันเกียร์ไม่ได้อยู่\n"
+"ในเกียร์ใดเลย จะเป็นเกียร์ว่าง เหมือนบนตู้เกม ปิด:\n"
+"เกียร์สุดท้ายจะค้างอยู่จนกว่าจะเลือกเกียร์อื่นหรือกด\n"
+"เกียร์ว่าง"
 
 #: src/osd/gui.cpp
 #, c-format

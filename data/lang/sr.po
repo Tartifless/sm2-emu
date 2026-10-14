@@ -944,6 +944,31 @@ msgstr "Брзина доле"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Gear 1"
+msgstr "Брзина 1"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 2"
+msgstr "Брзина 2"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 3"
+msgstr "Брзина 3"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear 4"
+msgstr "Брзина 4"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral"
+msgstr "Лер"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Test"
 msgstr "Тест"
 
@@ -981,6 +1006,34 @@ msgstr "Додели"
 #, no-c-format
 msgid "clear"
 msgstr "обриши"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Gear shifter"
+msgstr "Мењач"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Daytona USA and Sega Rally Championship, all versions."
+msgstr "Daytona USA и Sega Rally Championship, све верзије."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral when no gear is engaged"
+msgstr "Лер када ниједна брзина није убачена"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"With an H shifter bound to Gear 1..4: its lever in none\n"
+"of the gears is in neutral, as on the cabinet. Off, the\n"
+"last gear stays engaged until another is selected or\n"
+"Neutral is pressed."
+msgstr ""
+"Са H мењачем додељеним тастерима Брзина 1..4: ручица\n"
+"ван свих брзина је у леру, као на аутомату. Искључено:\n"
+"последња брзина остаје убачена док се не изабере друга\n"
+"или не притисне Лер."
 
 #: src/osd/gui.cpp
 #, c-format
