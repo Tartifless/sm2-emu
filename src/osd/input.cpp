@@ -2094,17 +2094,22 @@ void Input::poll(hw::Inputs* inputs, const rom::GameSpec& game) const
             kButton1, kButton2, kButton3, kButton4, kUp, kDown, kLeft, kRight,
         };
         const auto& binds = m_pad_buttons[pad.player];
+        bool lb_bound = false;
+        bool rb_bound = false;
         for (usize role = 0; role < std::size(kPadRoleBit); ++role) {
             if (binding_held(pad.handle, binds[role])) {
                 port &= static_cast<u8>(~kPadRoleBit[role]);
             }
+            lb_bound |= binds[role] == SDL_GAMEPAD_BUTTON_LEFT_SHOULDER;
+            rb_bound |= binds[role] == SDL_GAMEPAD_BUTTON_RIGHT_SHOULDER;
         }
 
-        // The shoulders also act as Button 3/4, outside the bindings.
-        if (SDL_GetGamepadButton(pad.handle, SDL_GAMEPAD_BUTTON_LEFT_SHOULDER)) {
+        // The shoulders also act as Button 3/4 unless bound to one of the
+        // roles above, so a shoulder never presses two buttons at once.
+        if (!lb_bound && SDL_GetGamepadButton(pad.handle, SDL_GAMEPAD_BUTTON_LEFT_SHOULDER)) {
             port &= static_cast<u8>(~kButton3);
         }
-        if (SDL_GetGamepadButton(pad.handle, SDL_GAMEPAD_BUTTON_RIGHT_SHOULDER)) {
+        if (!rb_bound && SDL_GetGamepadButton(pad.handle, SDL_GAMEPAD_BUTTON_RIGHT_SHOULDER)) {
             port &= static_cast<u8>(~kButton4);
         }
 
