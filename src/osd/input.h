@@ -17,6 +17,7 @@
 #include "core/config.h"
 #include "core/types.h"
 #include "osd/drive_command.h"
+#include "osd/indy_board.h"
 #include "rom/game.h"
 
 #include <SDL3/SDL.h>
@@ -100,6 +101,10 @@ public:
     struct WheelSettings {
         bool ffb           = true;
         u32  strength      = 50;
+        /// Indy 500's family: the drive board's power giving no torque yet, and
+        /// the one giving the full strength (see Config::wheel_indy_deadband).
+        u32  indy_deadband   = 0;
+        u32  indy_full_power = 63;
         /// Reverses the force, for a driver that pushes right on the positive
         /// force with which DirectInput, SDL and Linux push left.
         bool ffb_invert    = false;
@@ -529,6 +534,11 @@ private:
     /// outlives the torque commands until a $10 ends it, as on the board.
     DriveCommand                     m_drive_command;
     int                              m_drive_pulse = 0;
+
+    /// Indy 500's drive board (Touring Car, Over Rev, Super GT), which works
+    /// out its forces from the wheel: fed the game's bytes, it drives a
+    /// force-feedback wheel.
+    IndyBoard                        m_indy;
 
     /// The Sega Rally board's interrupts counted since start, simulated: its
     /// chopping flips on bits of this count.

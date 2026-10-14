@@ -134,6 +134,32 @@ constexpr u32 kFramebufferB    = 0x11680000;  // 512 KB
     return folded >= base && folded < base + size;
 }
 
+/// Indy 500 keeps the centre it sends its drive board at power-up ($9x $Cx)
+/// in its EEPROM, in both copies of its settings: VOLUME SETTING's SET & EXIT
+/// writes there the board's answer to $80, the wheel's position. A build that
+/// did not answer the game on the I/O board's port D stored $FF, and the
+/// board's springs then pull the wheel hard right at every power-up: such a
+/// centre goes back to the factory's $80. A blank EEPROM needs nothing, the
+/// game writes $80 itself, as it does until the wheel is first calibrated.
+void repair_indy_centre(std::span<u8> eeprom)
+{
+    constexpr usize kCentre[] = {0x2a, 0x4e};
+    if (eeprom.size() <= kCentre[1] || std::memcmp(eeprom.data(), "S32A", 4) != 0) {
+        return;
+    }
+    bool repaired = false;
+    for (const usize at : kCentre) {
+        if (eeprom[at] == 0xff) {
+            eeprom[at] = 0x80;
+            repaired   = true;
+        }
+    }
+    if (repaired) {
+        SM2_WARN("indy500: the drive board's centre in the EEPROM was $FF, "
+                 "calibrated without the board's answer; set back to $80");
+    }
+}
+
 }  // namespace
 
 // ===========================================================================
@@ -497,6 +523,12 @@ void Model2B::reset()
 
     if (m_game.drive_board) {
         m_io.set_output(4, [this](u8 value) { drive_board_write(value); });
+        // Indy 500's family of boards answers on port D, where other cabinets
+        // have IN2; the game reads it to calibrate the board's centre.
+        if (m_game.drive_protocol == rom::DriveProtocol::Indy) {
+            m_indy_reply = IndyDriveReply{};
+            m_io.set_input(3, [this] { return m_indy_reply.read(steering_value()); });
+        }
     }
 
     // Power Sled reads IN3 on port E, where other 2B cabinets have an output.
@@ -743,9 +775,20 @@ void Model2B::lamp_output_w(u8 value)
     record_lamp_latch(value);
 }
 
+u8 Model2B::steering_value() const
+{
+    for (usize channel = 0; channel < m_game.analog.size(); ++channel) {
+        if (m_game.analog[channel].control == rom::AnalogControl::Steer) {
+            return m_inputs.analog[channel];
+        }
+    }
+    return 0x80;
+}
+
 void Model2B::drive_board_write(u8 value)
 {
     m_drive_board_latch = value;
+    m_indy_reply.write(value);
     record_drive_board_write(value);
 }
 
@@ -1600,6 +1643,9 @@ void Model2B::load_nvram()
     }
 
     (void)m_eeprom.load((base / (m_game.name + ".eeprom")).string());
+    if (m_game.name == "indy500" || m_game.parent == "indy500") {
+        repair_indy_centre(m_eeprom.bytes());
+    }
 }
 
 void Model2B::save_nvram() const

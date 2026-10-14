@@ -513,6 +513,12 @@ void Model2C::reset()
 
     if (m_game.drive_board) {
         m_io.set_output(4, [this](u8 value) { drive_board_write(value); });
+        // Indy 500's family of boards answers on port D, where other cabinets
+        // have IN2; the game reads it to calibrate the board's centre.
+        if (m_game.drive_protocol == rom::DriveProtocol::Indy) {
+            m_indy_reply = IndyDriveReply{};
+            m_io.set_input(3, [this] { return m_indy_reply.read(steering_value()); });
+        }
     }
 
     // The lightgun interface board hangs off RS-422 channel 2 rather than any of
@@ -813,9 +819,20 @@ void Model2C::lightgun_mux_write(u8 value)
     m_lightgun_mux = value;
 }
 
+u8 Model2C::steering_value() const
+{
+    for (usize channel = 0; channel < m_game.analog.size(); ++channel) {
+        if (m_game.analog[channel].control == rom::AnalogControl::Steer) {
+            return m_inputs.analog[channel];
+        }
+    }
+    return 0x80;
+}
+
 void Model2C::drive_board_write(u8 value)
 {
     m_drive_board_latch = value;
+    m_indy_reply.write(value);
     record_drive_board_write(value);
 }
 

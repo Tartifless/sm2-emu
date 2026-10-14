@@ -235,6 +235,15 @@ constexpr int kPanelSpringPercent = 20;
 constexpr int kRallyCalibCountsRight = 30;
 constexpr int kRallyCalibCountsLeft  = 32;
 
+/// `deflection`, the wheel's axis, as a drive board's ADC counts off its centre
+/// (128 a side): the same share of the game's steering travel.
+int board_counts(int deflection, u32 steer_degrees, u32 lock_degrees)
+{
+    const long long steer = std::max(1u, steer_degrees);
+    const long long lock  = std::max(1u, lock_degrees);
+    return static_cast<int>(std::clamp(deflection * 128LL * steer / lock / 32767, -128LL, 128LL));
+}
+
 /// The wheel's axis `counts` off the drive board's centre, the board's ADC
 /// counting 128 a side over the game's steering travel.
 int board_deflection(int counts, u32 steer_degrees, u32 lock_degrees)
@@ -1151,16 +1160,14 @@ void Input::update_drive_board(const rom::GameSpec& game, std::span<const u8> wr
 {
     for (const u8 value : writes) {
         SM2_TRACE("drive board: %02X", value);
+        if (game.drive_protocol == rom::DriveProtocol::Indy) {
+            m_indy.command(value);
+        }
         const DriveCommand command = decode_drive_command(game.drive_protocol, value);
         if (command.pulse >= 0) {
             m_drive_pulse = command.pulse;
         }
         if (command.effect == DriveCommand::Effect::Other) {
-            continue;
-        }
-        // A one-off spring does not interrupt a streamed command.
-        if (command.effect == DriveCommand::Effect::Spring && !command.held
-            && m_drive_command.held) {
             continue;
         }
         m_drive_command = command;
@@ -1246,22 +1253,63 @@ void Input::update_force_feedback(const rom::GameSpec& game)
         };
 
         // The centring spring of Sega Rally's panel, which also centres the
-        // wheel in menus and attract mode: very light on a cabinet.
+        // wheel in menus and attract mode: very light on a cabinet. Indy 500's
+        // panel, and Touring Car's, Over Rev's and Super GT's, drive the wheel
+        // straight from the motor, with no spring.
         const bool panel_spring = game.drive_protocol == rom::DriveProtocol::Rally;
+        const bool no_spring    = game.drive_protocol == rom::DriveProtocol::Indy;
         const int  panel_full   = ceiling * kPanelSpringPercent / 100;
 
-        // The other games get a firmer one, so the wheel centres in menus and
-        // attract mode too, not only once the game sends its own centring.
-        // Dropped while the game's own spring is active, so that is what the
-        // player feels.
+        // The others get a firmer one, so the wheel centres in menus and attract
+        // mode too, not only once the game sends its own centring. Dropped while
+        // the game's own spring is active, so that is what the player feels.
         const bool game_centres = command.effect == DriveCommand::Effect::Spring;
         const int  baseline     = panel_spring  ? spring(panel_full)
-                                  : game_centres ? 0
-                                                 : spring(ceiling * 3 / 4);
+                                  : no_spring || game_centres ? 0
+                                                              : spring(ceiling * 3 / 4);
 
         // Positive levels push the wheel left, as WheelForce::set_force takes them.
         int game_force = 0;
-        if (command.is_push() && command.held) {
+        if (game.drive_protocol == rom::DriveProtocol::Indy) {
+            // Indy 500's board drives its direct-drive motor with two powers,
+            // one each way, worked out from the wheel; 63 is the motor's full
+            // duty, here the wheel's full strength. What the two have in
+            // common brakes the motor, against the turn. Its ADC reads the
+            // steering pot the game reads, so its position is the game's own
+            // steering value; "up" raises it, the way the game's steering
+            // grows: right, or left on a reversed channel.
+            int  position = 0x80 + board_counts(deflection, m_wheel_settings.steer_degrees,
+                                                m_wheel_settings.lock_degrees);
+            bool up_is_left = false;
+            for (const rom::AnalogChannel& channel : game.analog) {
+                if (u8 value = 0; channel.control == rom::AnalogControl::Steer
+                                  && sample_wheel_channel(channel, &value)) {
+                    position   = value;
+                    up_is_left = channel.reverse;
+                    break;
+                }
+            }
+            const IndyBoard::Output out = m_indy.step(position, IndyBoard::kNmiHz / kMachineHz);
+            // The motor drive board's torque for a power: in proportion, 63 the
+            // wheel's full strength, as the two 6-bit powers drive it (the dead
+            // band and the full power, settings, are 0 and 63 by default).
+            const int dead   = static_cast<int>(m_wheel_settings.indy_deadband);
+            const int full   = static_cast<int>(m_wheel_settings.indy_full_power);
+            const auto torque = [dead, full, ceiling](int power) {
+                const int span = std::max(1, full - dead);
+                return std::clamp(power - dead, 0, span) * ceiling / span;
+            };
+            constexpr int kFullSpeed = 1024;
+            const int up    = torque(out.up);
+            const int down  = torque(out.down);
+            const int brake = std::min(up, down);
+            const int push  = down - up;  // down is left
+            game_force = (up_is_left ? -push : push)
+                       + brake * std::clamp(velocity, -kFullSpeed, kFullSpeed) / kFullSpeed;
+            SM2_DEBUG("ffb indy: effect=%02X base=%d centre=%02X position=%d up=%d down=%d",
+                      m_indy.effect(), m_indy.base(), m_indy.centre(), position, out.up,
+                      out.down);
+        } else if (command.is_push() && command.held) {
             // A streamed torque is the game's own steering feel, centring
             // included; apply it as sent.
             m_wheel.constant_hold = 0;
