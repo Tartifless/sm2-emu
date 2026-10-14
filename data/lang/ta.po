@@ -859,6 +859,16 @@ msgstr "தானியங்கு"
 
 #: src/osd/gui.cpp
 #, c-format
+msgid "axis %d (half, +)"
+msgstr "அச்சு %d (பாதி, +)"
+
+#: src/osd/gui.cpp
+#, c-format
+msgid "axis %d (half, -)"
+msgstr "அச்சு %d (பாதி, -)"
+
+#: src/osd/gui.cpp
+#, c-format
 msgid "axis %d (inverted)"
 msgstr "அச்சு %d (தலைகீழ்)"
 

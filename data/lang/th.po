@@ -858,6 +858,16 @@ msgstr "อัตโนมัติ"
 
 #: src/osd/gui.cpp
 #, c-format
+msgid "axis %d (half, +)"
+msgstr "แกน %d (ครึ่ง, +)"
+
+#: src/osd/gui.cpp
+#, c-format
+msgid "axis %d (half, -)"
+msgstr "แกน %d (ครึ่ง, -)"
+
+#: src/osd/gui.cpp
+#, c-format
 msgid "axis %d (inverted)"
 msgstr "แกน %d (กลับทิศ)"
 
