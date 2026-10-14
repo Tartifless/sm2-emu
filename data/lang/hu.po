@@ -1026,6 +1026,22 @@ msgstr ""
 "választanak, vagy meg nem nyomják az Üres gombot."
 
 #: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral between gears"
+msgstr "Üres a fokozatok között"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Shift up / Shift down (and a gamepad's RB / LB) from one\n"
+"gear to another pass through neutral this long, as a\n"
+"lever crosses the gate's centre. 0 shifts straight."
+msgstr ""
+"A Felváltás / Leváltás (és a gamepad RB / LB gombja) egyik\n"
+"fokozatból a másikba ennyi ideig üresen halad át, ahogy a\n"
+"kar átmegy a kulissza közepén. 0: közvetlen váltás."
+
+#: src/osd/gui.cpp
 #, c-format
 msgid "%d gamepad connected."
 msgid_plural "%d gamepads connected."

@@ -1026,6 +1026,22 @@ msgstr ""
 "odabere druga ili pritisne Prazni hod."
 
 #: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral between gears"
+msgstr "Prazni hod između brzina"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Shift up / Shift down (and a gamepad's RB / LB) from one\n"
+"gear to another pass through neutral this long, as a\n"
+"lever crosses the gate's centre. 0 shifts straight."
+msgstr ""
+"Brzina gore / Brzina dolje (i RB / LB na gamepadu) iz jedne\n"
+"brzine u drugu prolaze kroz prazni hod ovoliko dugo, kao kad\n"
+"ručica prelazi sredinu kulise. 0 mijenja izravno."
+
+#: src/osd/gui.cpp
 #, c-format
 msgid "%d gamepad connected."
 msgid_plural "%d gamepads connected."

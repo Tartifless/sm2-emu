@@ -1026,6 +1026,22 @@ msgstr ""
 "или не притисне Лер."
 
 #: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral between gears"
+msgstr "Лер између брзина"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Shift up / Shift down (and a gamepad's RB / LB) from one\n"
+"gear to another pass through neutral this long, as a\n"
+"lever crosses the gate's centre. 0 shifts straight."
+msgstr ""
+"Брзина горе / Брзина доле (и RB / LB на гејмпеду) из једне\n"
+"брзине у другу пролазе кроз лер толико дуго, као када ручица\n"
+"прелази средину кулисе. 0 мења директно."
+
+#: src/osd/gui.cpp
 #, c-format
 msgid "%d gamepad connected."
 msgid_plural "%d gamepads connected."

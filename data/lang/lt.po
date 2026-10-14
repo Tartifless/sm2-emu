@@ -1029,6 +1029,22 @@ msgstr ""
 "kita arba paspaudžiama Neutrali."
 
 #: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral between gears"
+msgstr "Neutrali tarp pavarų"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Shift up / Shift down (and a gamepad's RB / LB) from one\n"
+"gear to another pass through neutral this long, as a\n"
+"lever crosses the gate's centre. 0 shifts straight."
+msgstr ""
+"Pavara aukštyn / Pavara žemyn (ir pulto RB / LB) iš vienos\n"
+"pavaros į kitą tiek laiko pereina per neutralią, kaip svirtis\n"
+"kerta kulisės vidurį. 0 perjungia tiesiai."
+
+#: src/osd/gui.cpp
 #, c-format
 msgid "%d gamepad connected."
 msgid_plural "%d gamepads connected."

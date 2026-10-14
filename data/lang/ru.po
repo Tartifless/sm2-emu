@@ -1027,6 +1027,22 @@ msgstr ""
 "другая или не нажата Нейтраль."
 
 #: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral between gears"
+msgstr "Нейтраль между передачами"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Shift up / Shift down (and a gamepad's RB / LB) from one\n"
+"gear to another pass through neutral this long, as a\n"
+"lever crosses the gate's centre. 0 shifts straight."
+msgstr ""
+"Передача вверх / Передача вниз (и RB / LB геймпада) с одной\n"
+"передачи на другую проходят через нейтраль столько времени,\n"
+"сколько рычаг пересекает центр кулисы. 0 — сразу."
+
+#: src/osd/gui.cpp
 #, c-format
 msgid "%d gamepad connected."
 msgid_plural "%d gamepads connected."

@@ -1020,6 +1020,22 @@ msgstr ""
 "dipilih atau Netral ditekan."
 
 #: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral between gears"
+msgstr "Netral di antara gigi"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Shift up / Shift down (and a gamepad's RB / LB) from one\n"
+"gear to another pass through neutral this long, as a\n"
+"lever crosses the gate's centre. 0 shifts straight."
+msgstr ""
+"Naik gigi / Turun gigi (dan RB / LB gamepad) dari satu gigi\n"
+"ke gigi lain melewati netral selama ini, seperti tuas yang\n"
+"melintasi tengah jalur. 0 berpindah langsung."
+
+#: src/osd/gui.cpp
 #, c-format
 msgid "%d gamepad connected."
 msgid_plural "%d gamepads connected."

@@ -1027,6 +1027,22 @@ msgstr ""
 "Fri trykkes."
 
 #: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral between gears"
+msgstr "Fri mellom girene"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Shift up / Shift down (and a gamepad's RB / LB) from one\n"
+"gear to another pass through neutral this long, as a\n"
+"lever crosses the gate's centre. 0 shifts straight."
+msgstr ""
+"Gir opp / Gir ned (og en spillkontrollers RB / LB) fra ett gir\n"
+"til et annet går gjennom fri så lenge, slik spaken krysser\n"
+"midten av kulissen. 0 skifter direkte."
+
+#: src/osd/gui.cpp
 #, c-format
 msgid "%d gamepad connected."
 msgid_plural "%d gamepads connected."

@@ -1024,6 +1024,22 @@ msgstr ""
 "유지됩니다."
 
 #: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral between gears"
+msgstr "기어 사이 중립"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Shift up / Shift down (and a gamepad's RB / LB) from one\n"
+"gear to another pass through neutral this long, as a\n"
+"lever crosses the gate's centre. 0 shifts straight."
+msgstr ""
+"기어 올림 / 기어 내림(과 게임패드의 RB / LB)으로 기어를\n"
+"바꿀 때, 레버가 게이트 중앙을 지나듯 이 시간 동안 중립을\n"
+"거칩니다. 0이면 바로 바꿉니다."
+
+#: src/osd/gui.cpp
 #, c-format
 msgid "%d gamepad connected."
 msgid_plural "%d gamepads connected."

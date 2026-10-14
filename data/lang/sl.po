@@ -1028,6 +1028,22 @@ msgstr ""
 "izberete druge ali pritisnete Prosti tek."
 
 #: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral between gears"
+msgstr "Prosti tek med prestavami"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Shift up / Shift down (and a gamepad's RB / LB) from one\n"
+"gear to another pass through neutral this long, as a\n"
+"lever crosses the gate's centre. 0 shifts straight."
+msgstr ""
+"Prestava gor / Prestava dol (in RB / LB igralnega ploščka) iz\n"
+"ene prestave v drugo gresta toliko časa skozi prosti tek, kot\n"
+"ročica prečka sredino kulise. 0 prestavi neposredno."
+
+#: src/osd/gui.cpp
 #, c-format
 msgid "%d gamepad connected."
 msgid_plural "%d gamepads connected."

@@ -1026,6 +1026,22 @@ msgstr ""
 "seja escolhida ou Neutro seja pressionado."
 
 #: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral between gears"
+msgstr "Neutro entre as marchas"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Shift up / Shift down (and a gamepad's RB / LB) from one\n"
+"gear to another pass through neutral this long, as a\n"
+"lever crosses the gate's centre. 0 shifts straight."
+msgstr ""
+"Subir marcha / Descer marcha (e RB / LB de um controle) de uma\n"
+"marcha para outra passam pelo neutro durante esse tempo, como a\n"
+"alavanca cruzando o centro da grade. 0 troca direto."
+
+#: src/osd/gui.cpp
 #, c-format
 msgid "%d gamepad connected."
 msgid_plural "%d gamepads connected."

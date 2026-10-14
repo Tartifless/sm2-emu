@@ -1028,6 +1028,22 @@ msgstr ""
 "Friläge trycks."
 
 #: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral between gears"
+msgstr "Friläge mellan växlarna"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Shift up / Shift down (and a gamepad's RB / LB) from one\n"
+"gear to another pass through neutral this long, as a\n"
+"lever crosses the gate's centre. 0 shifts straight."
+msgstr ""
+"Växla upp / Växla ner (och en handkontrolls RB / LB) från en\n"
+"växel till en annan går genom friläge så länge, som när spaken\n"
+"passerar mitten av växelgrinden. 0 växlar direkt."
+
+#: src/osd/gui.cpp
 #, c-format
 msgid "%d gamepad connected."
 msgid_plural "%d gamepads connected."

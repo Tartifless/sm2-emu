@@ -1026,6 +1026,22 @@ msgstr ""
 "tria una altra o es prem Punt mort."
 
 #: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral between gears"
+msgstr "Punt mort entre marxes"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Shift up / Shift down (and a gamepad's RB / LB) from one\n"
+"gear to another pass through neutral this long, as a\n"
+"lever crosses the gate's centre. 0 shifts straight."
+msgstr ""
+"Puja de marxa / Baixa de marxa (i RB / LB del comandament) d'una\n"
+"marxa a una altra passen per punt mort durant aquest temps, com\n"
+"la palanca travessa el centre de la reixa. 0 canvia directament."
+
+#: src/osd/gui.cpp
 #, c-format
 msgid "%d gamepad connected."
 msgid_plural "%d gamepads connected."
