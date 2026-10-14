@@ -12,6 +12,7 @@
 #include <algorithm>
 #include <chrono>
 #include <cmath>
+#include <cstring>
 
 namespace sm2::hw {
 namespace {
@@ -66,10 +67,31 @@ void Model2Video::attach(std::span<const u8>  tile_ram,
                          std::span<const u16> palette_ram,
                          std::span<const u16> colour_translate)
 {
-    m_tiles.attach(tile_ram, char_ram);
+    m_tile_ram_live = tile_ram;
+    m_tile_ram_shown.assign(tile_ram.begin(), tile_ram.end());
+    m_tiles.attach(m_tile_ram_shown, char_ram);
     m_palette_ram      = palette_ram;
     m_colour_translate = colour_translate;
     refresh_pens();
+}
+
+void Model2Video::latch_tile_ram()
+{
+    const usize size = std::min(m_tile_ram_live.size(), m_tile_ram_shown.size());
+    for (usize at = 0; at + 8 <= size; at += 8) {
+        u64 live, shown;
+        std::memcpy(&live, m_tile_ram_live.data() + at, 8);
+        std::memcpy(&shown, m_tile_ram_shown.data() + at, 8);
+        if (live == shown) {
+            continue;
+        }
+        for (usize word = at; word < at + 8; word += 2) {
+            if (std::memcmp(m_tile_ram_live.data() + word, m_tile_ram_shown.data() + word, 2) != 0) {
+                m_tiles.note_tile_write(static_cast<u32>(word), 2);
+            }
+        }
+        std::memcpy(m_tile_ram_shown.data() + at, &live, 8);
+    }
 }
 
 void Model2Video::reset()

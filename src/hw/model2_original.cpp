@@ -498,6 +498,7 @@ void Model2Original::service_timers()
 
 void Model2Original::on_vblank_start()
 {
+    m_video.latch_tile_ram();
     // Bit 0 of the video control register selects 30 Hz geometry, which every
     // original Model 2 title uses -- MAME's render_mode_w notes desert among
     // them -- so this runs on even frames only and the renderer shows the
@@ -1344,7 +1345,6 @@ void Model2Original::note_video_write(const Window& w, u32 width)
             ++m_table_generation;
             return;
         case Notify::TileRam:
-            m_video.tiles().note_tile_write(w.offset, width);
             ++m_tile_generation;
             return;
         case Notify::CharRam:
@@ -1621,6 +1621,9 @@ void Model2Original::serialize(Archive& ar)
     ar.bytes(m_scratch_ram.data(), m_scratch_ram.size());
     ar.bytes(m_buffer_ram.data(), m_buffer_ram.size());
     ar.bytes(m_tile_ram.data(), m_tile_ram.size());
+    if (ar.loading()) {
+        m_video.latch_tile_ram();
+    }
     ar.bytes(m_char_ram.data(), m_char_ram.size());
     ar.bytes(m_palette_ram.data(), m_palette_ram.size());
     ar.bytes(m_colorxlat.data(), m_colorxlat.size());

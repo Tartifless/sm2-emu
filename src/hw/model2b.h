@@ -247,7 +247,7 @@ public:
     void log_burst_summary() const override;
     void log_unmapped_summary() const override;
 
-    [[nodiscard]] std::span<const u8>  tile_ram() const override { return m_tile_ram; }
+    [[nodiscard]] std::span<const u8>  tile_ram() const override { return m_video.tile_ram_shown(); }
     [[nodiscard]] std::span<const u8>  char_ram() const override { return m_char_ram; }
     [[nodiscard]] std::span<const u16> palette_ram() const override { return m_palette_ram; }
     [[nodiscard]] std::span<const u16> colour_translate() const override { return m_colorxlat; }
