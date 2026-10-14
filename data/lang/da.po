@@ -1039,6 +1039,22 @@ msgstr ""
 "Frigear trykkes."
 
 #: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral between gears"
+msgstr "Frigear mellem gear"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Shift up / Shift down (and a gamepad's RB / LB) from one\n"
+"gear to another pass through neutral this long, as a\n"
+"lever crosses the gate's centre. 0 shifts straight."
+msgstr ""
+"Gear op / Gear ned (og en gamepads RB / LB) fra ét gear til\n"
+"et andet går gennem frigear så længe, som når stangen\n"
+"passerer midten af kulissen. 0 skifter direkte."
+
+#: src/osd/gui.cpp
 #, c-format
 msgid "%d gamepad connected."
 msgid_plural "%d gamepads connected."

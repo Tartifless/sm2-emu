@@ -1034,6 +1034,22 @@ msgstr ""
 "se escolher outra ou premir Ponto morto."
 
 #: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral between gears"
+msgstr "Ponto morto entre mudanças"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Shift up / Shift down (and a gamepad's RB / LB) from one\n"
+"gear to another pass through neutral this long, as a\n"
+"lever crosses the gate's centre. 0 shifts straight."
+msgstr ""
+"Subir mudança / Descer mudança (e RB / LB de um comando) de uma\n"
+"mudança para outra passam por ponto morto durante este tempo,\n"
+"como a alavanca a cruzar o centro da grelha. 0 muda logo."
+
+#: src/osd/gui.cpp
 #, c-format
 msgid "%d gamepad connected."
 msgid_plural "%d gamepads connected."

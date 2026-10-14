@@ -1035,6 +1035,22 @@ msgstr ""
 "เกียร์ว่าง"
 
 #: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral between gears"
+msgstr "เกียร์ว่างระหว่างเกียร์"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Shift up / Shift down (and a gamepad's RB / LB) from one\n"
+"gear to another pass through neutral this long, as a\n"
+"lever crosses the gate's centre. 0 shifts straight."
+msgstr ""
+"เพิ่มเกียร์ / ลดเกียร์ (และ RB / LB ของเกมแพด) จากเกียร์หนึ่ง\n"
+"ไปอีกเกียร์จะผ่านเกียร์ว่างนานเท่านี้ เหมือนคันเกียร์ผ่าน\n"
+"กลางช่องเกียร์ 0 คือเปลี่ยนทันที"
+
+#: src/osd/gui.cpp
 #, c-format
 msgid "%d gamepad connected."
 msgid_plural "%d gamepads connected."

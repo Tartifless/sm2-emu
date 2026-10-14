@@ -1035,6 +1035,22 @@ msgstr ""
 "दूसरा न चुना जाए या न्यूट्रल न दबाया जाए।"
 
 #: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral between gears"
+msgstr "गियरों के बीच न्यूट्रल"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Shift up / Shift down (and a gamepad's RB / LB) from one\n"
+"gear to another pass through neutral this long, as a\n"
+"lever crosses the gate's centre. 0 shifts straight."
+msgstr ""
+"गियर ऊपर / गियर नीचे (और गेमपैड के RB / LB) एक गियर से\n"
+"दूसरे में इतनी देर न्यूट्रल से गुजरते हैं, जैसे लीवर\n"
+"गेट का बीच पार करता है। 0 सीधे बदलता है।"
+
+#: src/osd/gui.cpp
 #, c-format
 msgid "%d gamepad connected."
 msgid_plural "%d gamepads connected."

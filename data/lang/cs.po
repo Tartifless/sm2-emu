@@ -1033,6 +1033,22 @@ msgstr ""
 "nezvolí jiná nebo nestiskne Neutrál."
 
 #: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral between gears"
+msgstr "Neutrál mezi rychlostmi"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Shift up / Shift down (and a gamepad's RB / LB) from one\n"
+"gear to another pass through neutral this long, as a\n"
+"lever crosses the gate's centre. 0 shifts straight."
+msgstr ""
+"Řadit nahoru / Řadit dolů (a RB / LB na gamepadu) z jedné\n"
+"rychlosti na druhou projdou neutrálem po tuto dobu, jako když\n"
+"páka míjí střed kulisy. 0 řadí přímo."
+
+#: src/osd/gui.cpp
 #, c-format
 msgid "%d gamepad connected."
 msgid_plural "%d gamepads connected."

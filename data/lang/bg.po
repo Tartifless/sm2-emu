@@ -1037,6 +1037,22 @@ msgstr ""
 "не се избере друга или не се натисне Неутрална."
 
 #: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral between gears"
+msgstr "Неутрална между предавките"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Shift up / Shift down (and a gamepad's RB / LB) from one\n"
+"gear to another pass through neutral this long, as a\n"
+"lever crosses the gate's centre. 0 shifts straight."
+msgstr ""
+"Предавка нагоре / Предавка надолу (и RB / LB на геймпада) от\n"
+"една предавка към друга минават през неутрална за толкова време,\n"
+"колкото лостът минава през средата. 0 сменя направо."
+
+#: src/osd/gui.cpp
 #, c-format
 msgid "%d gamepad connected."
 msgid_plural "%d gamepads connected."

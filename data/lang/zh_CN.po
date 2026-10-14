@@ -1033,6 +1033,22 @@ msgstr ""
 "或按下空挡。"
 
 #: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral between gears"
+msgstr "换挡间的空挡"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Shift up / Shift down (and a gamepad's RB / LB) from one\n"
+"gear to another pass through neutral this long, as a\n"
+"lever crosses the gate's centre. 0 shifts straight."
+msgstr ""
+"升挡 / 降挡（以及手柄的 RB / LB）从一个挡位换到另一个时，\n"
+"会像换挡杆经过挡位槽中央那样，在空挡停留这段时间。\n"
+"0 表示直接换挡。"
+
+#: src/osd/gui.cpp
 #, c-format
 msgid "%d gamepad connected."
 msgid_plural "%d gamepads connected."

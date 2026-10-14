@@ -1038,6 +1038,22 @@ msgstr ""
 "ギアが入ったままになります。"
 
 #: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral between gears"
+msgstr "ギア間のニュートラル"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Shift up / Shift down (and a gamepad's RB / LB) from one\n"
+"gear to another pass through neutral this long, as a\n"
+"lever crosses the gate's centre. 0 shifts straight."
+msgstr ""
+"シフトアップ / シフトダウン（とゲームパッドの RB / LB）で\n"
+"ギアを替えるとき、レバーがゲートの中央を通るように、\n"
+"この時間だけニュートラルを通ります。0 で直接切り替え。"
+
+#: src/osd/gui.cpp
 #, c-format
 msgid "%d gamepad connected."
 msgid_plural "%d gamepads connected."

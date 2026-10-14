@@ -1039,6 +1039,22 @@ msgstr ""
 "να επιλεγεί άλλη ή να πατηθεί το Νεκρό."
 
 #: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral between gears"
+msgstr "Νεκρό ανάμεσα στις ταχύτητες"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Shift up / Shift down (and a gamepad's RB / LB) from one\n"
+"gear to another pass through neutral this long, as a\n"
+"lever crosses the gate's centre. 0 shifts straight."
+msgstr ""
+"Ταχύτητα πάνω / Ταχύτητα κάτω (και RB / LB ενός χειριστηρίου)\n"
+"από μια ταχύτητα σε άλλη περνούν από το νεκρό τόσο, όσο\n"
+"ο λεβιές διασχίζει το κέντρο. 0 αλλάζει απευθείας."
+
+#: src/osd/gui.cpp
 #, c-format
 msgid "%d gamepad connected."
 msgid_plural "%d gamepads connected."

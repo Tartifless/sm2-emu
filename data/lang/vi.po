@@ -1030,6 +1030,22 @@ msgstr ""
 "nhấn Số mo."
 
 #: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral between gears"
+msgstr "Số mo giữa các số"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Shift up / Shift down (and a gamepad's RB / LB) from one\n"
+"gear to another pass through neutral this long, as a\n"
+"lever crosses the gate's centre. 0 shifts straight."
+msgstr ""
+"Lên số / Xuống số (và RB / LB của tay cầm) từ số này sang số\n"
+"khác sẽ qua số mo trong thời gian này, như cần số đi qua\n"
+"giữa rãnh số. 0 là chuyển thẳng."
+
+#: src/osd/gui.cpp
 #, c-format
 msgid "%d gamepad connected."
 msgid_plural "%d gamepads connected."

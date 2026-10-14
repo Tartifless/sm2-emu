@@ -1032,6 +1032,22 @@ msgstr ""
 "oder Leerlauf gedrückt wird."
 
 #: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral between gears"
+msgstr "Leerlauf zwischen den Gängen"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Shift up / Shift down (and a gamepad's RB / LB) from one\n"
+"gear to another pass through neutral this long, as a\n"
+"lever crosses the gate's centre. 0 shifts straight."
+msgstr ""
+"Hochschalten / Runterschalten (und RB / LB eines Gamepads)\n"
+"von einem Gang zum anderen gehen so lange durch den Leerlauf,\n"
+"wie der Hebel die Mitte der Kulisse quert. 0 schaltet direkt."
+
+#: src/osd/gui.cpp
 #, c-format
 msgid "%d gamepad connected."
 msgid_plural "%d gamepads connected."

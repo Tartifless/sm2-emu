@@ -1033,6 +1033,22 @@ msgstr ""
 "un'altra o si preme Folle."
 
 #: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral between gears"
+msgstr "Folle tra le marce"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Shift up / Shift down (and a gamepad's RB / LB) from one\n"
+"gear to another pass through neutral this long, as a\n"
+"lever crosses the gate's centre. 0 shifts straight."
+msgstr ""
+"Marcia su / Marcia giù (e RB / LB di un gamepad) da una marcia\n"
+"all'altra passano per la folle per questo tempo, come la leva\n"
+"che attraversa il centro della griglia. 0 cambia subito."
+
+#: src/osd/gui.cpp
 #, c-format
 msgid "%d gamepad connected."
 msgid_plural "%d gamepads connected."

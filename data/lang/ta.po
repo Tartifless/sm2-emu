@@ -1036,6 +1036,22 @@ msgstr ""
 "அல்லது நியூட்ரல் அழுத்தும் வரை கடைசி கியர் இருக்கும்."
 
 #: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral between gears"
+msgstr "கியர்களுக்கு இடையே நியூட்ரல்"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Shift up / Shift down (and a gamepad's RB / LB) from one\n"
+"gear to another pass through neutral this long, as a\n"
+"lever crosses the gate's centre. 0 shifts straight."
+msgstr ""
+"கியர் மேலே / கியர் கீழே (மற்றும் கேம்பேடின் RB / LB) ஒரு\n"
+"கியரிலிருந்து மற்றொன்றுக்கு இவ்வளவு நேரம் நியூட்ரல் வழியே\n"
+"செல்லும், லீவர் கேட்டின் நடுவைக் கடப்பது போல. 0 நேரடியாக மாற்றும்."
+
+#: src/osd/gui.cpp
 #, c-format
 msgid "%d gamepad connected."
 msgid_plural "%d gamepads connected."

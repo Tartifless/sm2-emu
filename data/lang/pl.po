@@ -1031,6 +1031,22 @@ msgstr ""
 "zostanie wybrany inny lub naciśnięty Luz."
 
 #: src/osd/gui.cpp
+#, no-c-format
+msgid "Neutral between gears"
+msgstr "Luz między biegami"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Shift up / Shift down (and a gamepad's RB / LB) from one\n"
+"gear to another pass through neutral this long, as a\n"
+"lever crosses the gate's centre. 0 shifts straight."
+msgstr ""
+"Bieg w górę / Bieg w dół (oraz RB / LB pada) z jednego biegu\n"
+"na inny przechodzą przez luz przez ten czas, tak jak drążek\n"
+"przechodzi przez środek bramki. 0 zmienia od razu."
+
+#: src/osd/gui.cpp
 #, c-format
 msgid "%d gamepad connected."
 msgid_plural "%d gamepads connected."
