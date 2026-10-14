@@ -345,6 +345,20 @@ void Model2::reset()
     // Daytona and the Indy 500 family; every other title leaves it unconnected.
     if (m_game.drive_board) {
         m_io.set_output(4, [this](u8 value) { drive_board_write(value); });
+        // Sega Rally's board (EPR-17891) answers on port D, where other
+        // cabinets have IN2: the command echoed, but for $01 the wheel's
+        // position, $02 $FF and $03 its DIP switches (all OFF). The game's
+        // DRIVE BD TEST waits for it.
+        if (m_game.drive_protocol == rom::DriveProtocol::Rally) {
+            m_io.set_input(3, [this] {
+                switch (m_drive_board_latch) {
+                    case 0x01: return steering_value();
+                    case 0x02:
+                    case 0x03: return u8{0xff};
+                    default:   return m_drive_board_latch;
+                }
+            });
+        }
     }
 
     // The lightgun interface board hangs off RS-422 channel 2 rather than the
@@ -708,6 +722,16 @@ u8 Model2::lightgun_mux_read()
 void Model2::lightgun_mux_write(u8 value)
 {
     m_lightgun_mux = value;
+}
+
+u8 Model2::steering_value() const
+{
+    for (usize channel = 0; channel < m_game.analog.size(); ++channel) {
+        if (m_game.analog[channel].control == rom::AnalogControl::Steer) {
+            return m_inputs.analog[channel];
+        }
+    }
+    return 0x80;
 }
 
 void Model2::drive_board_write(u8 value)
