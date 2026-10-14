@@ -859,6 +859,16 @@ msgstr "স্বয়ংক্রিয়"
 
 #: src/osd/gui.cpp
 #, c-format
+msgid "axis %d (half, +)"
+msgstr "অক্ষ %d (অর্ধেক, +)"
+
+#: src/osd/gui.cpp
+#, c-format
+msgid "axis %d (half, -)"
+msgstr "অক্ষ %d (অর্ধেক, -)"
+
+#: src/osd/gui.cpp
+#, c-format
 msgid "axis %d (inverted)"
 msgstr "অক্ষ %d (উল্টানো)"
 

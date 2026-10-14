@@ -853,6 +853,16 @@ msgstr "tự động"
 
 #: src/osd/gui.cpp
 #, c-format
+msgid "axis %d (half, +)"
+msgstr "trục %d (một nửa, +)"
+
+#: src/osd/gui.cpp
+#, c-format
+msgid "axis %d (half, -)"
+msgstr "trục %d (một nửa, -)"
+
+#: src/osd/gui.cpp
+#, c-format
 msgid "axis %d (inverted)"
 msgstr "trục %d (đảo ngược)"
 

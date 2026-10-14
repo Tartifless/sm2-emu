@@ -856,6 +856,16 @@ msgstr "自動"
 
 #: src/osd/gui.cpp
 #, c-format
+msgid "axis %d (half, +)"
+msgstr "軸 %d（半軸，+）"
+
+#: src/osd/gui.cpp
+#, c-format
+msgid "axis %d (half, -)"
+msgstr "軸 %d（半軸，-）"
+
+#: src/osd/gui.cpp
+#, c-format
 msgid "axis %d (inverted)"
 msgstr "軸 %d（反轉）"
 

@@ -856,6 +856,16 @@ msgstr "auto"
 
 #: src/osd/gui.cpp
 #, c-format
+msgid "axis %d (half, +)"
+msgstr "asse %d (metà, +)"
+
+#: src/osd/gui.cpp
+#, c-format
+msgid "axis %d (half, -)"
+msgstr "asse %d (metà, -)"
+
+#: src/osd/gui.cpp
+#, c-format
 msgid "axis %d (inverted)"
 msgstr "asse %d (invertito)"
 

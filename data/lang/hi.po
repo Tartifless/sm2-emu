@@ -858,6 +858,16 @@ msgstr "स्वतः"
 
 #: src/osd/gui.cpp
 #, c-format
+msgid "axis %d (half, +)"
+msgstr "अक्ष %d (आधा, +)"
+
+#: src/osd/gui.cpp
+#, c-format
+msgid "axis %d (half, -)"
+msgstr "अक्ष %d (आधा, -)"
+
+#: src/osd/gui.cpp
+#, c-format
 msgid "axis %d (inverted)"
 msgstr "अक्ष %d (उलटा)"
 

@@ -1189,11 +1189,12 @@ void Gui::draw_wheel_tab(Config& config, Input* input)
     ImGui::TextUnformatted(tr("Axes"));
     ImGui::TextDisabled("%s", tr("Auto-detected. Recalibrate if steering or a pedal is wrong."));
 
-    struct AxisRow { const char* name; s32* axis; bool* invert; };
+    struct AxisRow { const char* name; s32* axis; bool* invert; bool* half; };
     const AxisRow axis_rows[] = {
-        {N_("Steering"), &config.wheel_steer_axis, nullptr},
-        {N_("Accelerator"), &config.wheel_accel_axis, &config.wheel_accel_invert},
-        {N_("Brake"), &config.wheel_brake_axis, &config.wheel_brake_invert},
+        {N_("Steering"), &config.wheel_steer_axis, nullptr, nullptr},
+        {N_("Accelerator"), &config.wheel_accel_axis, &config.wheel_accel_invert,
+         &config.wheel_accel_half},
+        {N_("Brake"), &config.wheel_brake_axis, &config.wheel_brake_invert, &config.wheel_brake_half},
     };
     const float axis_column = value_column(axis_rows, [](const AxisRow& r) { return r.name; });
 
@@ -1205,6 +1206,11 @@ void Gui::draw_wheel_tab(Config& config, Input* input)
         ImGui::SameLine(axis_column);
         if (*r.axis < 0) {
             ImGui::TextUnformatted(tr("auto"));
+        } else if (r.half != nullptr && *r.half) {
+            // On half of its axis: pressed towards the high end, or the low one.
+            const bool low = r.invert != nullptr && *r.invert;
+            ImGui::TextUnformatted(
+                (low ? trf("axis %d (half, -)", *r.axis) : trf("axis %d (half, +)", *r.axis)).c_str());
         } else if (r.invert != nullptr && *r.invert) {
             ImGui::TextUnformatted(trf("axis %d (inverted)", *r.axis).c_str());
         } else {
@@ -1228,6 +1234,12 @@ void Gui::draw_wheel_tab(Config& config, Input* input)
                     if (r.invert != nullptr) {
                         *r.invert = !positive;
                     }
+                    // A pedal that rested at the centre of its axis, rather than
+                    // at an end, uses half of it: the half it moved into.
+                    if (r.half != nullptr) {
+                        *r.half = std::abs(static_cast<int>(m_axis_baseline[static_cast<usize>(got)]))
+                                  <= 16384;
+                    }
                     m_capture = Capture::None;
                 }
             }
@@ -1250,6 +1262,9 @@ void Gui::draw_wheel_tab(Config& config, Input* input)
             *r.axis = -1;
             if (r.invert != nullptr) {
                 *r.invert = false;
+            }
+            if (r.half != nullptr) {
+                *r.half = false;
             }
         }
         ImGui::PopID();
