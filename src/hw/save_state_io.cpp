@@ -21,9 +21,59 @@
 #include <cstdio>
 #include <ctime>
 #include <filesystem>
+#include <utility>
 #include <vector>
 
 namespace sm2::hw {
+namespace {
+
+/// "HOST", the tag of the host's section after the machine's payload.
+constexpr u32 kHostTag = 0x54534f48u;
+
+/// The host's serialize walk, when set.
+SerializeFn& host_state()
+{
+    static SerializeFn serialize;
+    return serialize;
+}
+
+/// A host section loaded while no host state was set, for when one is.
+std::vector<u8>& pending_host_section()
+{
+    static std::vector<u8> section;
+    return section;
+}
+
+/// Apply a host section; a section that does not read leaves the host state
+/// as it was.
+void apply_host_section(const std::vector<u8>& section)
+{
+    std::vector<u8> rollback;
+    {
+        Archive save_ar(rollback);
+        host_state()(save_ar);
+    }
+    Archive load_ar(section.data(), section.size());
+    host_state()(load_ar);
+    if (load_ar.failed()) {
+        SM2_WARN("save-state: the drive board's state does not read; it keeps its own");
+        Archive restore_ar(rollback.data(), rollback.size());
+        host_state()(restore_ar);
+        return;
+    }
+    SM2_DEBUG("save-state: the drive board's state restored (%zu bytes)", section.size());
+}
+
+}  // namespace
+
+void set_host_state(SerializeFn serialize)
+{
+    host_state() = std::move(serialize);
+    if (host_state() && !pending_host_section().empty()) {
+        apply_host_section(pending_host_section());
+    }
+    pending_host_section().clear();
+}
 
 bool save_state_to_file(const std::string& path, const std::string& game, u32 board,
                         bool in_frame, const SerializeFn& serialize)
@@ -40,6 +90,16 @@ bool save_state_to_file(const std::string& path, const std::string& game, u32 bo
     header.board = board;
     state::write_header(ar, header);
     serialize(ar);
+    if (host_state()) {
+        std::vector<u8> section;
+        {
+            Archive host_ar(section);
+            host_state()(host_ar);
+        }
+        u32 tag = kHostTag;
+        ar.raw(tag);
+        ar.vector_pod(section);
+    }
 
     // Create the parent directory (e.g. the states dir) on first use, the way
     // the screenshot path does; fopen("wb") will not make it.
@@ -127,6 +187,26 @@ bool load_state_from_file(const std::string& path, const std::string& game, u32 
         Archive restore_ar(rollback.data(), rollback.size());
         serialize(restore_ar);
         return false;
+    }
+
+    // The host's section, when the file has one.
+    pending_host_section().clear();
+    const usize payload_size = buffer.size() - payload_offset;
+    if (payload_size - load_ar.position() >= sizeof(u32)) {
+        u32 tag = 0;
+        load_ar.raw(tag);
+        std::vector<u8> section;
+        if (tag == kHostTag) {
+            load_ar.vector_pod(section);
+        }
+        if (tag != kHostTag || load_ar.failed()) {
+            SM2_WARN("save-state: '%s' ends with bytes that are no host section, ignored",
+                     path.c_str());
+        } else if (host_state()) {
+            apply_host_section(section);
+        } else {
+            pending_host_section() = std::move(section);
+        }
     }
 
     SM2_INFO("save-state: loaded '%s'", path.c_str());

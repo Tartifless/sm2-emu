@@ -22,6 +22,10 @@
 
 #include "core/types.h"
 
+namespace sm2 {
+class Archive;
+}
+
 namespace sm2::osd {
 
 class IndyBoard {
@@ -46,6 +50,10 @@ public:
     /// One frame: the wheel at `position` on the board's ADC (0..255), over
     /// `nmis` of its interrupts.
     [[nodiscard]] Output step(int position, double nmis);
+
+    /// Its state for a save state, both ways. The DIP strength is a setting
+    /// and stays out.
+    void serialize(Archive& ar);
 
     [[nodiscard]] u8 effect() const { return m_effect; }
     [[nodiscard]] u8 centre() const { return m_centre; }

@@ -14,6 +14,7 @@
 //
 #include "osd/input.h"
 
+#include "core/archive.h"
 #include "core/log.h"
 #include "hw/model2.h"
 #include "osd/drive_command.h"
@@ -234,6 +235,14 @@ constexpr int kPanelSpringPercent = 20;
 /// clutch and the gears, which a PC wheel does not have.
 constexpr int kRallyCalibCountsRight = 30;
 constexpr int kRallyCalibCountsLeft  = 32;
+
+/// Daytona's board does the same to 16 counts either way, and keeps the mean
+/// of the two powers less one.
+constexpr int kDaytonaCalibCounts = 16;
+
+/// The board's motor powers (0..63) are taken on the scale of Sega Rally's
+/// torques: 32, its strongest, is the wheel's full strength.
+constexpr int kBoardFullPower = 32;
 
 /// `deflection`, the wheel's axis, as a drive board's ADC counts off its centre
 /// (128 a side): the same share of the game's steering travel.
@@ -1160,7 +1169,9 @@ void Input::update_drive_board(const rom::GameSpec& game, std::span<const u8> wr
 {
     for (const u8 value : writes) {
         SM2_TRACE("drive board: %02X", value);
-        if (game.drive_protocol == rom::DriveProtocol::Indy) {
+        if (game.drive_protocol == rom::DriveProtocol::Daytona) {
+            m_daytona.command(value);
+        } else if (game.drive_protocol == rom::DriveProtocol::Indy) {
             m_indy.command(value);
         }
         const DriveCommand command = decode_drive_command(game.drive_protocol, value);
@@ -1172,6 +1183,38 @@ void Input::update_drive_board(const rom::GameSpec& game, std::span<const u8> wr
         }
         m_drive_command = command;
     }
+}
+
+void Input::serialize_drive_board(Archive& ar)
+{
+    // The layout of this section, for a later one to read this one.
+    u8 version = 1;
+    ar.raw(version);
+    if (ar.loading() && version != 1) {
+        ar.mark_failed();
+        return;
+    }
+
+    DriveCommand& command = m_drive_command;
+    u8 effect = static_cast<u8>(command.effect);
+    ar.raw(effect);
+    ar.raw(command.strength);
+    ar.raw(command.held);
+    ar.raw(command.deadzone);
+    ar.raw(command.ramp_from);
+    ar.raw(command.full_at);
+    ar.raw(command.pulse);
+    if (ar.loading()) {
+        if (effect > static_cast<u8>(DriveCommand::Effect::Kick)) {
+            ar.mark_failed();
+            return;
+        }
+        command.effect = static_cast<DriveCommand::Effect>(effect);
+    }
+    ar.raw(m_drive_pulse);
+    ar.raw(m_drive_ticks);
+    m_daytona.serialize(ar);
+    m_indy.serialize(ar);
 }
 
 bool Input::wheel_ffb_active(const rom::GameSpec& game) const
@@ -1252,25 +1295,47 @@ void Input::update_force_feedback(const rom::GameSpec& game)
             return stiction * std::clamp(velocity, -kFullSpeed, kFullSpeed) / kFullSpeed;
         };
 
-        // The centring spring of Sega Rally's panel, which also centres the
-        // wheel in menus and attract mode: very light on a cabinet. Indy 500's
-        // panel, and Touring Car's, Over Rev's and Super GT's, drive the wheel
-        // straight from the motor, with no spring.
-        const bool panel_spring = game.drive_protocol == rom::DriveProtocol::Rally;
-        const bool no_spring    = game.drive_protocol == rom::DriveProtocol::Indy;
+        // The centring spring of the panel Sega Rally and Daytona share, which
+        // also centres the wheel in menus and attract mode: very light on a
+        // cabinet. Indy 500's panel, and Touring Car's, Over Rev's and Super
+        // GT's, drive the wheel straight from the motor, with no spring.
+        const bool panel_spring = game.drive_protocol == rom::DriveProtocol::Rally
+                               || game.drive_protocol == rom::DriveProtocol::Daytona;
         const int  panel_full   = ceiling * kPanelSpringPercent / 100;
-
-        // The others get a firmer one, so the wheel centres in menus and attract
-        // mode too, not only once the game sends its own centring. Dropped while
-        // the game's own spring is active, so that is what the player feels.
-        const bool game_centres = command.effect == DriveCommand::Effect::Spring;
-        const int  baseline     = panel_spring  ? spring(panel_full)
-                                  : no_spring || game_centres ? 0
-                                                              : spring(ceiling * 3 / 4);
+        const int  baseline     = panel_spring ? spring(panel_full) : 0;
 
         // Positive levels push the wheel left, as WheelForce::set_force takes them.
         int game_force = 0;
-        if (game.drive_protocol == rom::DriveProtocol::Indy) {
+        if (game.drive_protocol == rom::DriveProtocol::Daytona) {
+            // Daytona's board works out its forces from the wheel itself. Its
+            // start-up calibration finds the power that holds the wheel 16
+            // counts off the centre against the panel's spring: here the
+            // simulated spring's force there.
+            const u32 steer       = m_wheel_settings.steer_degrees;
+            const u32 lock        = m_wheel_settings.lock_degrees;
+            const int unit        = std::max(1, ceiling / kBoardFullPower);
+            const int calib_force = centring_spring(
+                board_deflection(kDaytonaCalibCounts, steer, lock), panel_full);
+            const int breakaway = std::max(0, (calib_force + unit - 1) / unit - 1);
+            const DaytonaBoard::Output out =
+                m_daytona.step(board_counts(deflection, steer, lock), board_ticks, breakaway);
+            const int force = out.power * ceiling / kBoardFullPower;
+            switch (out.way) {
+                case DaytonaBoard::Way::Down: game_force = force; break;   // left
+                case DaytonaBoard::Way::Up:   game_force = -force; break;  // right
+                case DaytonaBoard::Way::None: {
+                    // A power with no way: the clutch holds the wheel to the
+                    // standing motor, a brake against the turn.
+                    constexpr int kFullSpeed = 1024;
+                    game_force = force * std::clamp(velocity, -kFullSpeed, kFullSpeed) / kFullSpeed;
+                    break;
+                }
+            }
+            SM2_DEBUG("ffb daytona: on=%d effect=%02X osc=%d way=%d power=%d breakaway=%d",
+                      m_daytona.forces_on() ? 1 : 0, m_daytona.effect(),
+                      m_daytona.oscillating() ? 1 : 0, static_cast<int>(out.way), out.power,
+                      breakaway);
+        } else if (game.drive_protocol == rom::DriveProtocol::Indy) {
             // Indy 500's board drives its direct-drive motor with two powers,
             // one each way, worked out from the wheel; 63 is the motor's full
             // duty, here the wheel's full strength. What the two have in
