@@ -353,6 +353,7 @@ Model2B::~Model2B() = default;
 bool Model2B::init(const rom::GameSpec& game, rom::RomSet roms)
 {
     m_game = game;
+    m_sgt24h = game.name == "sgt24h" || game.parent == "sgt24h";
     m_roms = std::move(roms);
 
     m_rom_maincpu   = m_roms.region("maincpu");
@@ -775,8 +776,7 @@ u8 Model2B::analog_value(u32 channel) const
     // way round, never at 0x00. A backup RAM not set up yet counts as A.
     const u8                 value   = m_inputs.analog[channel];
     const rom::AnalogControl control = m_game.analog[channel].control;
-    if ((m_game.name != "sgt24h" && m_game.parent != "sgt24h")
-        || (control != rom::AnalogControl::Accel && control != rom::AnalogControl::Brake)
+    if (!m_sgt24h || (control != rom::AnalogControl::Accel && control != rom::AnalogControl::Brake)
         || m_nvram.size() < 0x0c) {
         return value;
     }
@@ -1624,9 +1624,8 @@ void Model2B::seed_eeprom_from_rom()
 void Model2B::load_nvram()
 {
     if (m_game.name.empty()) return;
-    const bool sgt24h = m_game.name == "sgt24h" || m_game.parent == "sgt24h";
     if (m_nvram_directory.empty()) {
-        if (sgt24h) {
+        if (m_sgt24h) {
             repair_sgt24h_io_type(m_nvram);
         }
         return;
@@ -1652,7 +1651,7 @@ void Model2B::load_nvram()
         }
     }
 
-    if (sgt24h) {
+    if (m_sgt24h) {
         repair_sgt24h_io_type(m_nvram);
     }
 

@@ -448,6 +448,7 @@ private:
 
     u8  m_gear_selected      = 0;
     u8  m_drive_board_latch  = 0;
+    bool m_sgt24h            = false;  ///< Super GT 24h or a clone, for its I/O TYPE.
     IndyDriveReply m_indy_reply;
     u8  m_motion_command     = 0;
     bool m_doa_unk_toggle    = false;
