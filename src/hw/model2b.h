@@ -355,8 +355,6 @@ private:
     }
     void drive_board_write(u8 value);
 
-    /// The steering pot as the game reads it, for the drive board's answer.
-    [[nodiscard]] u8 steering_value() const;
 
     /// The motion base's answer on port D, for a cabinet that has one.
     [[nodiscard]] u8 motion_base_read() const;
@@ -446,7 +444,7 @@ private:
 
     u8  m_gear_selected      = 0;
     u8  m_drive_board_latch  = 0;
-    IndyDriveReply m_indy_reply;  ///< Not saved: the next command sets it again.
+    IndyDriveReply m_indy_reply;
     u8  m_motion_command     = 0;
     bool m_doa_unk_toggle    = false;
     bool m_palette_dirty     = true;

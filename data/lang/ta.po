@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-13 22:26+1000\n"
+"POT-Creation-Date: 2026-10-14 20:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -123,16 +123,6 @@ msgstr ""
 #, no-c-format
 msgid "Notifications"
 msgstr "அறிவிப்புகள்"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Automatic (system)"
-msgstr "தானியங்கு (கணினி)"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Language"
-msgstr "மொழி"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -560,6 +550,11 @@ msgstr "நிலைகள்"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "System"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "About"
 msgstr "பற்றி"
 
@@ -697,28 +692,6 @@ msgstr "ஸ்டீயரிங் இணைக்கப்பட்டது."
 #, no-c-format
 msgid "No wheel connected. Settings still apply once one is."
 msgstr "ஸ்டீயரிங் இணைக்கப்படவில்லை. இணைத்ததும் அமைப்புகள் பொருந்தும்."
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Read in the background"
-msgstr "பின்னணியில் படிக்கவும்"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid ""
-"Wheels and gamepads keep working while the emulator's\n"
-"window is not in front: a wheel or a panel driven from\n"
-"another program (a cabinet panel through vJoy, say) still\n"
-"steers the game, and its buttons and axes can be bound\n"
-"below without clicking back into this window. The\n"
-"keyboard and the mouse still need the window in front."
-msgstr ""
-"எமுலேட்டர் சாளரம் முன்னால் இல்லாதபோதும் ஸ்டீயரிங்கும்\n"
-"கேம்பேடுகளும் இயங்கும்: வேறு நிரல் இயக்கும் ஸ்டீயரிங் அல்லது\n"
-"பேனல் (உதா. vJoy வழியாக கேபினட் பேனல்) தொடர்ந்து விளையாட்டை\n"
-"இயக்கும்; இந்தச் சாளரத்தில் மீண்டும் கிளிக் செய்யாமல் கீழே\n"
-"அதன் பொத்தான்களையும் அச்சுகளையும் இணைக்கலாம். விசைப்பலகையும்\n"
-"சுட்டியும் சாளரம் முன்னால் இருக்க வேண்டும்."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1624,6 +1597,29 @@ msgstr "இந்த இயந்திரத்தின் இடைமுக�
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Automatic (system)"
+msgstr "தானியங்கு (கணினி)"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Language"
+msgstr "மொழி"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Background controller input"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheels and gamepads keep working while the window is\n"
+"not in front. Keyboard and mouse still need the window\n"
+"in front."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Load a game to save and restore its state."
 msgstr "நிலையைச் சேமிக்கவும் மீட்கவும் ஒரு கேமை ஏற்றவும்."
 
@@ -1724,3 +1720,23 @@ msgstr "விளக்கம் பெறப்படுகிறது..."
 #, no-c-format
 msgid "No description available."
 msgstr "விளக்கம் இல்லை."
+
+#, no-c-format
+#~ msgid "Read in the background"
+#~ msgstr "பின்னணியில் படிக்கவும்"
+
+#, no-c-format
+#~ msgid ""
+#~ "Wheels and gamepads keep working while the emulator's\n"
+#~ "window is not in front: a wheel or a panel driven from\n"
+#~ "another program (a cabinet panel through vJoy, say) still\n"
+#~ "steers the game, and its buttons and axes can be bound\n"
+#~ "below without clicking back into this window. The\n"
+#~ "keyboard and the mouse still need the window in front."
+#~ msgstr ""
+#~ "எமுலேட்டர் சாளரம் முன்னால் இல்லாதபோதும் ஸ்டீயரிங்கும்\n"
+#~ "கேம்பேடுகளும் இயங்கும்: வேறு நிரல் இயக்கும் ஸ்டீயரிங் அல்லது\n"
+#~ "பேனல் (உதா. vJoy வழியாக கேபினட் பேனல்) தொடர்ந்து விளையாட்டை\n"
+#~ "இயக்கும்; இந்தச் சாளரத்தில் மீண்டும் கிளிக் செய்யாமல் கீழே\n"
+#~ "அதன் பொத்தான்களையும் அச்சுகளையும் இணைக்கலாம். விசைப்பலகையும்\n"
+#~ "சுட்டியும் சாளரம் முன்னால் இருக்க வேண்டும்."

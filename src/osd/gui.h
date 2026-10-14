@@ -247,6 +247,7 @@ private:
     void draw_lightgun_tab(Config& config, class Input* input);
     void draw_network_tab(Config& config);
     void draw_states_tab();
+    void draw_system_tab(Config& config);
     void draw_audio_tab(Config& config);
     bool draw_volume_slider(Config& config, const VolumeFamily& family);
     void draw_dir_picker_popup(Config& config);

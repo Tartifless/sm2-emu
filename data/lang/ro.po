@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-13 22:26+1000\n"
+"POT-Creation-Date: 2026-10-14 20:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -119,16 +119,6 @@ msgstr ""
 #, no-c-format
 msgid "Notifications"
 msgstr "Notificări"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Automatic (system)"
-msgstr "Automat (sistem)"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Language"
-msgstr "Limbă"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -556,6 +546,11 @@ msgstr "Stări"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "System"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "About"
 msgstr "Despre"
 
@@ -695,28 +690,6 @@ msgstr "Volan conectat."
 #, no-c-format
 msgid "No wheel connected. Settings still apply once one is."
 msgstr "Niciun volan conectat. Setările se aplică după conectare."
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Read in the background"
-msgstr "Citire în fundal"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid ""
-"Wheels and gamepads keep working while the emulator's\n"
-"window is not in front: a wheel or a panel driven from\n"
-"another program (a cabinet panel through vJoy, say) still\n"
-"steers the game, and its buttons and axes can be bound\n"
-"below without clicking back into this window. The\n"
-"keyboard and the mouse still need the window in front."
-msgstr ""
-"Volanele și gamepadurile funcționează și când fereastra\n"
-"emulatorului nu e în față: un volan sau un panou condus de alt\n"
-"program (un panou de aparat prin vJoy, de exemplu) conduce în\n"
-"continuare jocul, iar butoanele și axele sale se pot atribui mai\n"
-"jos fără a da clic înapoi în această fereastră. Tastatura și\n"
-"mouse-ul au nevoie în continuare de fereastra în față."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1624,6 +1597,29 @@ msgstr "Interfețele acestei mașini:"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Automatic (system)"
+msgstr "Automat (sistem)"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Language"
+msgstr "Limbă"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Background controller input"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheels and gamepads keep working while the window is\n"
+"not in front. Keyboard and mouse still need the window\n"
+"in front."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Load a game to save and restore its state."
 msgstr "Încărcați un joc pentru a-i salva și restaura starea."
 
@@ -1724,3 +1720,23 @@ msgstr "Se descarcă descrierea..."
 #, no-c-format
 msgid "No description available."
 msgstr "Nicio descriere disponibilă."
+
+#, no-c-format
+#~ msgid "Read in the background"
+#~ msgstr "Citire în fundal"
+
+#, no-c-format
+#~ msgid ""
+#~ "Wheels and gamepads keep working while the emulator's\n"
+#~ "window is not in front: a wheel or a panel driven from\n"
+#~ "another program (a cabinet panel through vJoy, say) still\n"
+#~ "steers the game, and its buttons and axes can be bound\n"
+#~ "below without clicking back into this window. The\n"
+#~ "keyboard and the mouse still need the window in front."
+#~ msgstr ""
+#~ "Volanele și gamepadurile funcționează și când fereastra\n"
+#~ "emulatorului nu e în față: un volan sau un panou condus de alt\n"
+#~ "program (un panou de aparat prin vJoy, de exemplu) conduce în\n"
+#~ "continuare jocul, iar butoanele și axele sale se pot atribui mai\n"
+#~ "jos fără a da clic înapoi în această fereastră. Tastatura și\n"
+#~ "mouse-ul au nevoie în continuare de fereastra în față."

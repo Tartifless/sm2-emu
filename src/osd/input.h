@@ -132,12 +132,10 @@ public:
         /// An H shifter's lever in none of the gears is in neutral; and how
         /// long, in ms, a sequential shift between two gears shows neutral.
         bool shifter_neutral  = true;
-        u32  shift_neutral_ms = 100;
+        u32  shift_neutral_ms = 0;
 
-        /// Wheel axis per analogue control, or -1 to auto-detect. Invert flags
-        /// apply to a pedal that reads high released, low pressed. Half flags,
-        /// to a pedal on half of its axis, released at the centre and pressed
-        /// towards the high end, the low one when inverted.
+        /// Wheel axis per analogue control, or -1 to auto-detect. Invert marks
+        /// a pedal pressed towards the low end; half, a pedal on half its axis.
         s32  steer_axis   = -1;
         s32  accel_axis   = -1;
         s32  brake_axis   = -1;
@@ -170,9 +168,7 @@ public:
     /// analogue channel at zero.
     void poll(hw::Inputs* inputs) const;
 
-    /// Replace the wheel feel settings live, e.g. from a GUI slider. Cheap; the
-    /// steering range and FFB strength take effect on the next frame, a new
-    /// axis calibration at once.
+    /// Replace the wheel settings live, e.g. from a GUI slider.
     void set_wheel_settings(const WheelSettings& wheel);
 
     /// True when a wheel is connected, for the settings UI to show its controls.
@@ -211,10 +207,7 @@ public:
     /// force command stays in effect until the game sends another.
     void update_drive_board(const rom::GameSpec& game, std::span<const u8> writes);
 
-    /// The drive board as the force feedback models it - the force command in
-    /// effect, Sega Rally's chopping, Daytona's and Indy 500's boards - for a
-    /// save state, both ways: it is the host's, not the machine's, but it
-    /// belongs to the moment the state was taken.
+    /// Saves or restores the drive board model, for save states.
     void serialize_drive_board(Archive& ar);
 
     /// Update the wheel's force from the drive board and the steering position.
@@ -443,9 +436,7 @@ private:
 
     [[nodiscard]] s16 wheel_axis(int axis) const;
 
-    /// How far a pedal on `axis` is pressed, 0 released to 1 fully: over the
-    /// whole axis, or over half of it from the centre when `half`; `invert`
-    /// for a pedal pressed towards the low end.
+    /// How far a pedal is pressed, from 0 to 1.
     [[nodiscard]] float pedal_travel(int axis, bool invert, bool half) const;
 
 
@@ -541,8 +532,7 @@ private:
     u32                              m_recoil_strength = 60;
 
     /// The drive board's current force command, and Sega Rally's chop setting:
-    /// 0 is off, n chops the torque with a period of 2^(n+2) board ticks. It
-    /// outlives the torque commands until a $10 ends it, as on the board.
+    /// 0 is off, n chops the torque with a period of 2^(n+2) board ticks.
     DriveCommand                     m_drive_command;
     int                              m_drive_pulse = 0;
 

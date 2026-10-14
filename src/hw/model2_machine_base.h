@@ -373,6 +373,17 @@ protected:
 
     DriveBoardWrites m_drive_board_writes;
 
+    /// The steering pot as the game reads it, for a drive board's answer.
+    [[nodiscard]] u8 steering_value(const rom::GameSpec& game) const
+    {
+        for (usize channel = 0; channel < game.analog.size(); ++channel) {
+            if (game.analog[channel].control == rom::AnalogControl::Steer) {
+                return inputs().analog[channel];
+            }
+        }
+        return 0x80;
+    }
+
     /// Called by each board's lamp_output_w.
     void record_lamp_latch(u8 value) { m_lamp_latch = value; }
 

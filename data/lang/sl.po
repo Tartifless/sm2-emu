@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-13 22:26+1000\n"
+"POT-Creation-Date: 2026-10-14 20:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -121,16 +121,6 @@ msgstr ""
 #, no-c-format
 msgid "Notifications"
 msgstr "Obvestila"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Automatic (system)"
-msgstr "Samodejno (sistem)"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Language"
-msgstr "Jezik"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -558,6 +548,11 @@ msgstr "Stanja"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "System"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "About"
 msgstr "O programu"
 
@@ -698,27 +693,6 @@ msgstr "Volan povezan."
 #, no-c-format
 msgid "No wheel connected. Settings still apply once one is."
 msgstr "Volan ni povezan. Nastavitve bodo veljale, ko bo povezan."
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Read in the background"
-msgstr "Branje v ozadju"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid ""
-"Wheels and gamepads keep working while the emulator's\n"
-"window is not in front: a wheel or a panel driven from\n"
-"another program (a cabinet panel through vJoy, say) still\n"
-"steers the game, and its buttons and axes can be bound\n"
-"below without clicking back into this window. The\n"
-"keyboard and the mouse still need the window in front."
-msgstr ""
-"Volani in igralni ploščki delujejo, tudi ko okno emulatorja\n"
-"ni v ospredju: volan ali plošča, ki jo poganja drug program\n"
-"(npr. plošča avtomata prek vJoy), še vedno vodi igro, njene\n"
-"gumbe in osi pa lahko dodelite spodaj, ne da bi znova kliknili\n"
-"v to okno. Tipkovnica in miška še vedno potrebujeta okno v ospredju."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1626,6 +1600,29 @@ msgstr "Vmesniki tega računalnika:"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Automatic (system)"
+msgstr "Samodejno (sistem)"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Language"
+msgstr "Jezik"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Background controller input"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheels and gamepads keep working while the window is\n"
+"not in front. Keyboard and mouse still need the window\n"
+"in front."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Load a game to save and restore its state."
 msgstr "Naložite igro, da shranite in obnovite njeno stanje."
 
@@ -1726,3 +1723,22 @@ msgstr "Pridobivanje opisa..."
 #, no-c-format
 msgid "No description available."
 msgstr "Opis ni na voljo."
+
+#, no-c-format
+#~ msgid "Read in the background"
+#~ msgstr "Branje v ozadju"
+
+#, no-c-format
+#~ msgid ""
+#~ "Wheels and gamepads keep working while the emulator's\n"
+#~ "window is not in front: a wheel or a panel driven from\n"
+#~ "another program (a cabinet panel through vJoy, say) still\n"
+#~ "steers the game, and its buttons and axes can be bound\n"
+#~ "below without clicking back into this window. The\n"
+#~ "keyboard and the mouse still need the window in front."
+#~ msgstr ""
+#~ "Volani in igralni ploščki delujejo, tudi ko okno emulatorja\n"
+#~ "ni v ospredju: volan ali plošča, ki jo poganja drug program\n"
+#~ "(npr. plošča avtomata prek vJoy), še vedno vodi igro, njene\n"
+#~ "gumbe in osi pa lahko dodelite spodaj, ne da bi znova kliknili\n"
+#~ "v to okno. Tipkovnica in miška še vedno potrebujeta okno v ospredju."

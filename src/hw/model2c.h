@@ -368,8 +368,6 @@ private:
     void lamp_output_w(u8 value);
     void drive_board_write(u8 value);
 
-    /// The steering pot as the game reads it, for the drive board's answer.
-    [[nodiscard]] u8 steering_value() const;
 
     // -- lightgun interface board (837-12079) -------------------------------
     // Hangs off the I/O controller's RS-422 channel 2, exactly as on Model 2A.
@@ -462,7 +460,7 @@ private:
 
     u8  m_gear_selected      = 0;
     u8  m_drive_board_latch  = 0;
-    IndyDriveReply m_indy_reply;  ///< Not saved: the next command sets it again.
+    IndyDriveReply m_indy_reply;
     u8  m_lightgun_mux       = 0;
     bool m_palette_dirty     = true;
 

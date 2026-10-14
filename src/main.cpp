@@ -110,9 +110,8 @@ enum class GraphicsBackendChoice {
     return false;
 }
 
-/// Lets SDL deliver wheel and gamepad events while the window is not in front,
-/// or not. SDL takes the change at any time; an environment variable of the
-/// same name still has the last word.
+/// Lets SDL deliver joystick events while the window is not in front. The SDL
+/// environment variable still takes precedence.
 void apply_input_background(bool on)
 {
     SDL_SetHint(SDL_HINT_JOYSTICK_ALLOW_BACKGROUND_EVENTS, on ? "1" : "0");
@@ -2001,9 +2000,7 @@ int main(int argc, char** argv)
             SM2_WARN("gamepads are unavailable; the keyboard still works");
         }
 
-        // The force feedback's drive board goes into the save states with the
-        // machine (and takes the section of a --load-state loaded above), for
-        // as long as this Input lives.
+        // The drive board model goes into save states while this Input lives.
         hw::set_host_state([&input](Archive& ar) { input.serialize_drive_board(ar); });
         struct HostStateGuard {
             ~HostStateGuard() { hw::set_host_state({}); }
@@ -2269,9 +2266,8 @@ int main(int argc, char** argv)
                         }
                         break;
                     default:
-                        // Devices plugged in and axes seen moving, which the
-                        // overlay needs too: the wheel's calibration reads an
-                        // axis only once it has moved.
+                        // Hotplug and axis motion events are passed on even
+                        // with the overlay open, since its calibration needs them.
                         input.handle_event(event);
                         break;
                 }

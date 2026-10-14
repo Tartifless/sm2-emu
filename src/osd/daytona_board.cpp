@@ -68,10 +68,8 @@ int DaytonaBoard::spring_power(int off, int dead_zone, int full_at, int base) co
 
 void DaytonaBoard::track_swings(int side, int ticks)
 {
-    // Coming back to the centre after $31..$124 interrupts away is a swing;
-    // ten in a row and the centring springs let go. Staying at the centre $62
-    // interrupts, or away $125 ($5b9 while swinging), or a quicker return,
-    // clears it.
+    // After ten quick swings through the centre the springs let go, until the
+    // wheel settles at the centre or stays away from it.
     if (side != 0) {
         m_away += ticks;
         m_was_centred = false;

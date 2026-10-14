@@ -12,21 +12,21 @@
 // used to contribute to commercial projects or for monetary gain without the
 // express written permission of the author.
 //
-// The answer of the drive board of Indy 500, Touring Car, Over Rev and Super
-// GT 24h (EPR-18261), which the game reads on the I/O controller's port D. The
-// board replies to the command it was last sent: $80 and $83 with the wheel's
-// position on its ADC, $81 with $FF, $82 with its DIP switches 1, $84 with
-// its centre, and any other command by echoing it.
-//
-// Indy 500's VOLUME SETTING asks $80 when the operator saves the calibration
-// and keeps the answer as the board's centre, which it sends back as $9x/$Cx
-// at every boot: without this answer the centre became $FF, and the board's
-// springs pushed the wheel hard right.
+// The answer of the EPR-18261 drive board (Indy 500, Touring Car, Over Rev,
+// Super GT 24h) on the I/O controller's port D.
 #pragma once
 
 #include "core/types.h"
 
 namespace sm2::hw {
+
+/// The centre the board works from. A blank NVRAM, or one calibrated before the
+/// board's answer was emulated, sends $FF, which is full lock and never a real
+/// centre.
+[[nodiscard]] constexpr u8 indy_board_centre(u8 sent)
+{
+    return sent == 0xff ? u8{0x80} : sent;
+}
 
 struct IndyDriveReply {
     u8 command = 0x00;
@@ -43,8 +43,7 @@ struct IndyDriveReply {
         }
     }
 
-    /// The answer, the wheel on the board's ADC being `wheel`: the steering
-    /// pot the game reads too.
+    /// The board's answer, where `wheel` is the steering pot's value.
     [[nodiscard]] u8 read(u8 wheel) const
     {
         switch (command) {
@@ -52,7 +51,7 @@ struct IndyDriveReply {
             case 0x83: return wheel;
             case 0x81: return 0xff;
             case 0x82: return 0xff;  // DIP switches 1, all OFF
-            case 0x84: return centre;
+            case 0x84: return indy_board_centre(centre);
             default:   return command;
         }
     }

@@ -200,9 +200,8 @@ bool is_wheel_typed(SDL_JoystickID id)
     return SDL_GetJoystickTypeForID(id) == SDL_JOYSTICK_TYPE_WHEEL;
 }
 
-/// The synthesised centring spring standing in for the cabinet panel's: zero in
-/// a small deadzone, rising to `full` part way to lock. Signed like the
-/// deflection.
+/// A simulated panel spring: zero in a small deadzone, rising to `full` part
+/// way to lock. Signed like the deflection.
 int centring_spring(int deflection, int full)
 {
     constexpr int kDeadzone = 1500;
@@ -215,37 +214,29 @@ int centring_spring(int deflection, int full)
     return deflection < 0 ? -force : force;
 }
 
-// The drive board of Sega Rally and Daytona, one board with two programs,
-// EPR-17891 and EPR-16488A (docs: BackForceFeeder's docs/EPR-17891-SegaRally-
-// DriveBoard and docs/EPR-16488A-Daytona-DriveBoard). Their timings count the
-// board's interrupts, whose rate is not known: about 1250 cycles of work each
-// at 4 MHz cap it near 2-3 kHz, and 1 kHz (the 8 MHz crystal / 8192) is taken
-// until it is measured.
+// The Sega Rally / Daytona board's interrupt rate. It has not been measured,
+// so it is taken as the 8 MHz crystal divided by 8192.
 constexpr double kDriveBoardIrqHz = 1000.0;
 constexpr double kMachineHz       = 57.5245;
 
-/// The centring spring of the panel Sega Rally and Daytona share, as a share
-/// (%) of the wheel's force where it is strongest. Very light on a cabinet: it
-/// brings the wheel back, and is barely felt when held against.
+/// The Sega Rally / Daytona panel spring, as a percentage of the wheel's
+/// strength. It is very light on a cabinet.
 constexpr int kPanelSpringPercent = 20;
 
-/// At start-up Sega Rally's board raises its power until its own ADC reads this
-/// many counts of 128 off centre, one way and the other, and keeps that power:
-/// what it takes against the panel's spring, and against the drag of the
-/// clutch and the gears, which a PC wheel does not have.
+/// Sega Rally's start-up calibration finds the power that holds the wheel this
+/// many counts (out of 128) off centre each way, against the panel spring.
 constexpr int kRallyCalibCountsRight = 30;
 constexpr int kRallyCalibCountsLeft  = 32;
 
-/// Daytona's board does the same to 16 counts either way, and keeps the mean
-/// of the two powers less one.
+/// Daytona's calibration does the same at 16 counts each way, and keeps the
+/// mean of the two powers minus one.
 constexpr int kDaytonaCalibCounts = 16;
 
-/// The board's motor powers (0..63) are taken on the scale of Sega Rally's
-/// torques: 32, its strongest, is the wheel's full strength.
+/// The board power that maps to the wheel's full strength: Sega Rally's
+/// strongest push.
 constexpr int kBoardFullPower = 32;
 
-/// `deflection`, the wheel's axis, as a drive board's ADC counts off its centre
-/// (128 a side): the same share of the game's steering travel.
+/// Converts the wheel's axis to board ADC counts off centre, 128 a side.
 int board_counts(int deflection, u32 steer_degrees, u32 lock_degrees)
 {
     const long long steer = std::max(1u, steer_degrees);
@@ -253,8 +244,8 @@ int board_counts(int deflection, u32 steer_degrees, u32 lock_degrees)
     return static_cast<int>(std::clamp(deflection * 128LL * steer / lock / 32767, -128LL, 128LL));
 }
 
-/// The wheel's axis `counts` off the drive board's centre, the board's ADC
-/// counting 128 a side over the game's steering travel.
+/// Converts board ADC counts back to the wheel's axis: the inverse of
+/// board_counts.
 int board_deflection(int counts, u32 steer_degrees, u32 lock_degrees)
 {
     const long long steer = std::max(1u, steer_degrees);
@@ -625,50 +616,50 @@ void Input::set_wheel_settings(const WheelSettings& wheel)
 
 void Input::assign_wheel_axes()
 {
-    // Axis roles: use the calibrated values when set, else auto-detect. Steering
-    // self-centres (rests mid-travel) while a pedal rests hard at one end; axis 0
-    // is steering on every wheel that exists, so it anchors the search and the
-    // other axes resting at an extreme are pedals, taken in order accel then
-    // brake. A wheel whose layout defeats this is corrected in the GUI; so is a
-    // pedal on half of its axis, which rests at the centre like the steering.
+    // Each role takes its calibrated axis, else auto-detects: steering is axis 0,
+    // pedals are the other axes resting at an extreme, accel then brake.
     const int axes = SDL_GetNumJoystickAxes(m_wheel.handle);
-    m_wheel.steer_axis   = -1;
-    m_wheel.accel_axis   = -1;
-    m_wheel.brake_axis   = -1;
-    m_wheel.accel_invert = false;
-    m_wheel.brake_invert = false;
-    m_wheel.accel_half   = false;
-    m_wheel.brake_half   = false;
-    if (m_wheel_settings.steer_axis >= 0 || m_wheel_settings.accel_axis >= 0
-        || m_wheel_settings.brake_axis >= 0) {
-        m_wheel.steer_axis   = m_wheel_settings.steer_axis;
-        m_wheel.accel_axis   = m_wheel_settings.accel_axis;
-        m_wheel.brake_axis   = m_wheel_settings.brake_axis;
-        m_wheel.accel_invert = m_wheel_settings.accel_invert;
-        m_wheel.brake_invert = m_wheel_settings.brake_invert;
-        m_wheel.accel_half   = m_wheel_settings.accel_half;
-        m_wheel.brake_half   = m_wheel_settings.brake_half;
-    } else {
-        m_wheel.steer_axis = axes > 0 ? 0 : -1;
-        int assigned_pedals = 0;
-        for (int axis = 1; axis < axes; ++axis) {
-            const int rest = static_cast<int>(wheel_axis(axis));
-            const bool at_extreme = rest < -16384 || rest > 16384;
-            if (!at_extreme) {
-                continue;
-            }
-            if (assigned_pedals == 0) {
-                m_wheel.accel_axis   = axis;
-                m_wheel.accel_invert = rest > 0;
-            } else if (assigned_pedals == 1) {
-                m_wheel.brake_axis   = axis;
-                m_wheel.brake_invert = rest > 0;
-            }
-            ++assigned_pedals;
+    const WheelSettings& cal = m_wheel_settings;
+    m_wheel.steer_axis   = cal.steer_axis;
+    m_wheel.accel_axis   = cal.accel_axis;
+    m_wheel.brake_axis   = cal.brake_axis;
+    m_wheel.accel_invert = cal.accel_axis >= 0 && cal.accel_invert;
+    m_wheel.brake_invert = cal.brake_axis >= 0 && cal.brake_invert;
+    m_wheel.accel_half   = cal.accel_axis >= 0 && cal.accel_half;
+    m_wheel.brake_half   = cal.brake_axis >= 0 && cal.brake_half;
+
+    const auto taken = [&](int axis) {
+        return axis == cal.steer_axis || axis == cal.accel_axis || axis == cal.brake_axis;
+    };
+    if (m_wheel.steer_axis < 0 && axes > 0 && !taken(0)) {
+        m_wheel.steer_axis = 0;
+    }
+
+    // The pedals that are not calibrated, in order.
+    struct Pedal { int* axis; bool* invert; };
+    Pedal pedals[2];
+    int   wanted = 0;
+    if (m_wheel.accel_axis < 0) {
+        pedals[wanted++] = {&m_wheel.accel_axis, &m_wheel.accel_invert};
+    }
+    if (m_wheel.brake_axis < 0) {
+        pedals[wanted++] = {&m_wheel.brake_axis, &m_wheel.brake_invert};
+    }
+    int found = 0;
+    for (int axis = 1; axis < axes && found < wanted; ++axis) {
+        const int rest = static_cast<int>(wheel_axis(axis));
+        if (taken(axis) || axis == m_wheel.steer_axis || (rest >= -16384 && rest <= 16384)) {
+            continue;
         }
-        if (assigned_pedals == 0) {
-            m_wheel.accel_axis = axes > 1 ? 1 : -1;
-            m_wheel.brake_axis = axes > 2 ? 2 : -1;
+        *pedals[found].axis   = axis;
+        *pedals[found].invert = rest > 0;
+        ++found;
+    }
+    if (found == 0) {
+        for (int axis = 1; axis < axes && axis <= 2 && found < wanted; ++axis) {
+            if (!taken(axis) && axis != m_wheel.steer_axis) {
+                *pedals[found++].axis = axis;
+            }
         }
     }
 
@@ -793,9 +784,7 @@ bool Input::sample_wheel_channel(const rom::AnalogChannel& channel, u8* out) con
         return true;
     }
 
-    // A pedal. The physical pedal gives fraction 0 released, 1 pressed. A wheel
-    // whose pedal reads the other way is corrected by the user's invert flag;
-    // one on half of its axis, by the half flag.
+    // A pedal: 0 is released, 1 fully pressed.
     const bool brake = channel.control == rom::AnalogControl::Brake;
     fraction = pedal_travel(axis, brake ? m_wheel.brake_invert : m_wheel.accel_invert,
                             brake ? m_wheel.brake_half : m_wheel.accel_half);
@@ -1295,10 +1284,8 @@ void Input::update_force_feedback(const rom::GameSpec& game)
             return stiction * std::clamp(velocity, -kFullSpeed, kFullSpeed) / kFullSpeed;
         };
 
-        // The centring spring of the panel Sega Rally and Daytona share, which
-        // also centres the wheel in menus and attract mode: very light on a
-        // cabinet. Indy 500's panel, and Touring Car's, Over Rev's and Super
-        // GT's, drive the wheel straight from the motor, with no spring.
+        // The Sega Rally and Daytona panel has a light spring. The EPR-18261
+        // panels are direct drive and have none.
         const bool panel_spring = game.drive_protocol == rom::DriveProtocol::Rally
                                || game.drive_protocol == rom::DriveProtocol::Daytona;
         const int  panel_full   = ceiling * kPanelSpringPercent / 100;
@@ -1307,10 +1294,8 @@ void Input::update_force_feedback(const rom::GameSpec& game)
         // Positive levels push the wheel left, as WheelForce::set_force takes them.
         int game_force = 0;
         if (game.drive_protocol == rom::DriveProtocol::Daytona) {
-            // Daytona's board works out its forces from the wheel itself. Its
-            // start-up calibration finds the power that holds the wheel 16
-            // counts off the centre against the panel's spring: here the
-            // simulated spring's force there.
+            // The board's start-up calibration is run against the simulated
+            // spring.
             const u32 steer       = m_wheel_settings.steer_degrees;
             const u32 lock        = m_wheel_settings.lock_degrees;
             const int unit        = std::max(1, ceiling / kBoardFullPower);
@@ -1324,8 +1309,7 @@ void Input::update_force_feedback(const rom::GameSpec& game)
                 case DaytonaBoard::Way::Down: game_force = force; break;   // left
                 case DaytonaBoard::Way::Up:   game_force = -force; break;  // right
                 case DaytonaBoard::Way::None: {
-                    // A power with no way: the clutch holds the wheel to the
-                    // standing motor, a brake against the turn.
+                    // No way set: the clutch brakes against the turn.
                     constexpr int kFullSpeed = 1024;
                     game_force = force * std::clamp(velocity, -kFullSpeed, kFullSpeed) / kFullSpeed;
                     break;
@@ -1336,13 +1320,9 @@ void Input::update_force_feedback(const rom::GameSpec& game)
                       m_daytona.oscillating() ? 1 : 0, static_cast<int>(out.way), out.power,
                       breakaway);
         } else if (game.drive_protocol == rom::DriveProtocol::Indy) {
-            // Indy 500's board drives its direct-drive motor with two powers,
-            // one each way, worked out from the wheel; 63 is the motor's full
-            // duty, here the wheel's full strength. What the two have in
-            // common brakes the motor, against the turn. Its ADC reads the
-            // steering pot the game reads, so its position is the game's own
-            // steering value; "up" raises it, the way the game's steering
-            // grows: right, or left on a reversed channel.
+            // The board sends two powers, one each way, and what they have in
+            // common brakes the motor. It reads the game's own steering pot, so
+            // "up" follows the channel's direction.
             int  position = 0x80 + board_counts(deflection, m_wheel_settings.steer_degrees,
                                                 m_wheel_settings.lock_degrees);
             bool up_is_left = false;
@@ -1355,9 +1335,6 @@ void Input::update_force_feedback(const rom::GameSpec& game)
                 }
             }
             const IndyBoard::Output out = m_indy.step(position, IndyBoard::kNmiHz / kMachineHz);
-            // The motor drive board's torque for a power: in proportion, 63 the
-            // wheel's full strength, as the two 6-bit powers drive it (the dead
-            // band and the full power, settings, are 0 and 63 by default).
             const int dead   = static_cast<int>(m_wheel_settings.indy_deadband);
             const int full   = static_cast<int>(m_wheel_settings.indy_full_power);
             const auto torque = [dead, full, ceiling](int power) {
@@ -1382,15 +1359,8 @@ void Input::update_force_feedback(const rom::GameSpec& game)
             const int dir   = push_direction(command, pot);
             int       force = mag;
             if (game.drive_protocol == rom::DriveProtocol::Rally) {
-                // The Sega Rally board adds to a push that turns the wheel away
-                // from the centre the power its start-up calibration found
-                // against the panel's spring: here what the simulated spring
-                // pushes at the same point, its ADC counts taken as a share of
-                // the game's steering travel. Its centre test, the ADC against
-                // $7D, is three counts short of the centre: taken as the centre.
-                // Nearer the centre the board's power exceeds the spring and
-                // goes into the drag of the clutch and the gears; a PC wheel
-                // has none, so no more than the spring there is added.
+                // An outward push also gets the calibration power, capped at the
+                // spring's force at that point, since a PC wheel has no gear drag.
                 const bool outward = dir > 0 ? deflection < 0 : deflection >= 0;
                 if (outward) {
                     const int counts = dir > 0 ? kRallyCalibCountsLeft : kRallyCalibCountsRight;
@@ -1401,9 +1371,8 @@ void Input::update_force_feedback(const rom::GameSpec& game)
                     force += std::min(std::abs(spring(panel_full)), calib);
                 }
 
-                // While $11..$17 hold, the board chops its output: off half the
-                // time, a quarter stronger the other half, flipping every
-                // 2^(N+1) of its interrupts.
+                // $11..$17 chop the torque: off half the time, and a quarter
+                // stronger the other half.
                 if (m_drive_pulse != 0) {
                     const double flip = static_cast<double>(2u << m_drive_pulse);
                     if (flip >= 2.0 * board_ticks) {
@@ -2818,13 +2787,10 @@ void Input::poll(hw::Inputs* inputs, const rom::GameSpec& game) const
 
     gather_lightguns(inputs, game);
 
-    // Gear selector. The shifter's positions are exposed as one bit each and the
-    // machine turns them into the code its program expects. Nothing held means
-    // "hold the last gear", as MAME does between positions.
-    //
-    // F1 to F4 select gears 1 to 4 (GEARS bits 1..4) and F5 is neutral (bit 0),
-    // as do the wheel buttons of an H shifter (Gear1..4, GearNeutral). Paddles
-    // and RB/LB step through the gate instead.
+    // Gear selector, one bit per position. F1-F4 and an H shifter's buttons pick
+    // gears 1-4 (bits 1..4) and F5 picks neutral (bit 0); paddles and RB/LB step
+    // through the gears. With nothing held the last gear stays, or neutral for
+    // an H shifter.
     if (game.gearbox) {
         if (m_gear_game != game.name) {
             m_wheel_gear           = game.start_gear;
@@ -2882,11 +2848,8 @@ void Input::poll(hw::Inputs* inputs, const rom::GameSpec& game) const
             m_shift_neutral_frames = 0;  // a lever in a position needs no crossing
         }
 
-        // Paddles and the pad's gear buttons (RB/LB unless remapped) step through
-        // the gate, neutral included, edge-detected and sharing m_wheel_gear.
-        // Going from one gear to another crosses neutral for a moment, as a
-        // lever does through the gate's centre: shift_neutral_ms in frames of
-        // the machine's 57.5245 Hz.
+        // Paddles and RB/LB step through the gate, sharing m_wheel_gear. A shift
+        // between two gears can pass through neutral for shift_neutral_ms.
         constexpr double kFrameHz = 57.5245;
         const u32 crossing = static_cast<u32>(
             m_wheel_settings.shift_neutral_ms * kFrameHz / 1000.0 + 0.999);

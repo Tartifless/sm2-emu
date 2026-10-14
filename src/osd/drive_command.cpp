@@ -24,10 +24,8 @@ DriveCommand make(Effect effect, int steps, int full_steps, bool held = false)
     return {effect, steps * kDriveFull / full_steps, held};
 }
 
-// Daytona's bytes: effect in the high nibble, strength in the low one, decoded
-// the way its drive board's program (EPR-16488A) does. A force-feedback wheel
-// gets Daytona's board itself (DaytonaBoard); this reading is what pads and
-// plain rumble get of it.
+// Daytona's bytes (EPR-16488A), as read for pads and plain rumble. A
+// force-feedback wheel runs DaytonaBoard instead.
 //   0x1x  motor off
 //   0x2x  friction     0..7
 //   0x3x  centring     0..7; 8..15 are the same strengths with a wider deadzone
@@ -64,10 +62,8 @@ DriveCommand decode_daytona(u8 value)
     }
 }
 
-// Indy 500, Touring Car, Over Rev and Super GT 24h share a later board program
-// (EPR-18261) that keeps Daytona's layout but reads the low nibble differently.
-// A force-feedback wheel gets that board itself (IndyBoard); this reading is
-// what pads and plain rumble get of it:
+// EPR-18261's bytes (Indy 500, Touring Car, Over Rev, Super GT 24h), as read
+// for pads and plain rumble. A force-feedback wheel runs IndyBoard instead.
 //   0x1x  motor off
 //   0x2x  friction     0..7
 //   0x3x  centring     0..7; 8..15 repeat them
@@ -75,9 +71,7 @@ DriveCommand decode_daytona(u8 value)
 //   0x6x  push right   0..7, where 0 is no push
 // A push fades to nothing at step 0 (Indy 500 streams 0x54, 0x53 .. 0x50 as a
 // jolt dies away), so strengths run from zero. 0x0x is game state and 0x7x the
-// motor strength. 0x4x (a push away from the centre), 0x9x/0xcx (the wheel's
-// centre) and 0xax/0xbx (a vibration's period and amplitude) only IndyBoard
-// plays.
+// motor strength. Only IndyBoard plays 0x4x, 0x9x/0xcx and 0xax/0xbx.
 DriveCommand decode_indy(u8 value)
 {
     constexpr DriveCommand kOther{Effect::Other};
@@ -106,11 +100,9 @@ DriveCommand decode_indy(u8 value)
 // decoded the way its board's program (EPR-17891) does:
 //   0x80..0x9f  push right  1..32
 //   0xc0..0xdf  push left   1..32
-//   0x40..0x5f  brake       1..32 (a power with no direction; not sent by the game)
-//   0x10..0x17  chop the torque on and off, 0x10 stops; the game sends 0x15
-//               on shocks and rough ground
+//   0x40..0x5f  brake       1..32
+//   0x10..0x17  chop the torque on and off, 0x10 stops
 // Holding the wheel off-centre makes the game push it back. 0x00 releases.
-// Every other byte leaves the torque as it is: the board replays its last one.
 DriveCommand decode_rally(u8 value)
 {
     const int low = value & 0x1f;

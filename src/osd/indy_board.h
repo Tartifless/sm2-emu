@@ -12,15 +12,13 @@
 // used to contribute to commercial projects or for monetary gain without the
 // express written permission of the author.
 //
-// The drive board of Indy 500, Touring Car, Over Rev and Super GT 24h, as its
-// program (EPR-18261) behaves. The panel is direct drive, with no spring: the
-// board drives the motor with two powers, one each way, and works out its
-// springs from the wheel's position. The game picks an effect and its strength
-// and sets the strength's base, a vibration and the wheel's centre. Read in the
-// EPROM; see BackForceFeeder's docs/EPR-18261-Indy500-DriveBoard.
+// The EPR-18261 drive board (Indy 500, Touring Car, Over Rev, Super GT 24h).
+// A direct-drive panel with no spring: the board works out two motor powers,
+// one each way, from the game's effect and the wheel's position.
 #pragma once
 
 #include "core/types.h"
+#include "hw/indy_drive_reply.h"
 
 namespace sm2 {
 class Archive;
@@ -30,13 +28,12 @@ namespace sm2::osd {
 
 class IndyBoard {
 public:
-    /// The board's NMI rate, which every time of it counts: the CTC divides
-    /// the Z80's clock by 16000, and Supermodel runs that Z80 at 8 MHz.
+    /// The NMI rate: the CTC divides the Z80's 8 MHz clock by 16000.
     static constexpr double kNmiHz = 500.0;
 
     struct Output {
-        /// 0..63 each, the motor's power "up" (the way that raises the wheel
-        /// position: right) and "down". Both at once brake the motor.
+        /// Each 0..63. Up raises the wheel position (to the right); both at
+        /// once brake the motor.
         int up   = 0;
         int down = 0;
     };
@@ -47,16 +44,15 @@ public:
     /// A byte the game wrote to the board.
     void command(u8 value);
 
-    /// One frame: the wheel at `position` on the board's ADC (0..255), over
-    /// `nmis` of its interrupts.
+    /// Advances one frame, with the wheel at `position` (0..255), over `nmis`
+    /// interrupts.
     [[nodiscard]] Output step(int position, double nmis);
 
-    /// Its state for a save state, both ways. The DIP strength is a setting
-    /// and stays out.
+    /// Saves or restores the board's state, for save states.
     void serialize(Archive& ar);
 
     [[nodiscard]] u8 effect() const { return m_effect; }
-    [[nodiscard]] u8 centre() const { return m_centre; }
+    [[nodiscard]] u8 centre() const { return hw::indy_board_centre(m_centre); }
     [[nodiscard]] int base() const { return m_base; }
 
 private:
@@ -75,7 +71,8 @@ private:
     int m_up   = 0;
     int m_down = 0;
 
-    // The damping: how far the wheel went down or up in the last 17 NMIs.
+    // Damping: how far the wheel moved down or up during the last kSpeedNmis
+    // NMIs.
     int    m_speed_down = 0;
     int    m_speed_up   = 0;
     int    m_speed_ref  = 0x80;

@@ -70,16 +70,16 @@ int IndyBoard::strength() const
 
 void IndyBoard::spring(int position, int shift, bool damp_other_side_below)
 {
-    // Towards the centre: the sine of the distance, halved ($30) or quartered
-    // ($38), stopped at the strength, plus the damping on the way that brakes
-    // the movement. Exactly on the centre it leaves the powers as they were.
-    const int s = strength();
-    if (position < m_centre) {
-        const int curve = kSine[std::min((m_centre - position) >> shift, 127)];
+    // A push towards the centre, capped at the strength, plus damping. Exactly
+    // on the centre the powers stay as they were.
+    const int s      = strength();
+    const int centre = this->centre();
+    if (position < centre) {
+        const int curve = kSine[std::min((centre - position) >> shift, 127)];
         m_up   = std::min(curve, s) + m_speed_down;
         m_down = damp_other_side_below ? m_speed_up : 0;
-    } else if (position > m_centre) {
-        const int curve = kSine[std::min((position - m_centre) >> shift, 127)];
+    } else if (position > centre) {
+        const int curve = kSine[std::min((position - centre) >> shift, 127)];
         m_down = std::min(curve, s) + m_speed_up;
         m_up   = m_speed_down;
     }
@@ -124,7 +124,7 @@ void IndyBoard::run_effect(int position)
             }
             break;
         case 0x4:  // away from the centre
-            if (position < m_centre) {
+            if (position < centre()) {
                 m_down = strength();
                 m_up   = 0;
             } else {
@@ -174,7 +174,7 @@ IndyBoard::Output IndyBoard::step(int position, double nmis)
     int up   = m_up;
     int down = m_down;
     if (m_vib_period != 0 && m_vib_amp != 0) {
-        const int extra = m_vib_amp + std::abs(m_centre - position) / 8 + 1;
+        const int extra = m_vib_amp + std::abs(centre() - position) / 8 + 1;
         if (((m_nmis >> 4) / static_cast<u32>(m_vib_period)) % 2 != 0) {
             up += extra;
             down += m_speed_up;

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-13 22:26+1000\n"
+"POT-Creation-Date: 2026-10-14 20:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -123,16 +123,6 @@ msgstr ""
 #, no-c-format
 msgid "Notifications"
 msgstr "सूचनाएँ"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Automatic (system)"
-msgstr "स्वचालित (सिस्टम)"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Language"
-msgstr "भाषा"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -560,6 +550,11 @@ msgstr "स्टेट"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "System"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "About"
 msgstr "परिचय"
 
@@ -697,27 +692,6 @@ msgstr "व्हील जुड़ा है।"
 #, no-c-format
 msgid "No wheel connected. Settings still apply once one is."
 msgstr "कोई व्हील नहीं जुड़ा। व्हील जुड़ते ही सेटिंग्स लागू होंगी।"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Read in the background"
-msgstr "बैकग्राउंड में पढ़ें"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid ""
-"Wheels and gamepads keep working while the emulator's\n"
-"window is not in front: a wheel or a panel driven from\n"
-"another program (a cabinet panel through vJoy, say) still\n"
-"steers the game, and its buttons and axes can be bound\n"
-"below without clicking back into this window. The\n"
-"keyboard and the mouse still need the window in front."
-msgstr ""
-"एम्युलेटर की विंडो सामने न हो तब भी व्हील और गेमपैड काम\n"
-"करते हैं: किसी दूसरे प्रोग्राम से चलने वाला व्हील या पैनल (जैसे\n"
-"vJoy से कैबिनेट पैनल) फिर भी गेम चलाता है, और इस विंडो में\n"
-"वापस क्लिक किए बिना नीचे उसके बटन और अक्ष जोड़े जा सकते हैं।\n"
-"कीबोर्ड और माउस के लिए विंडो सामने होनी चाहिए।"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1620,6 +1594,29 @@ msgstr "इस मशीन के इंटरफ़ेस:"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Automatic (system)"
+msgstr "स्वचालित (सिस्टम)"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Language"
+msgstr "भाषा"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Background controller input"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheels and gamepads keep working while the window is\n"
+"not in front. Keyboard and mouse still need the window\n"
+"in front."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Load a game to save and restore its state."
 msgstr "स्टेट सहेजने और बहाल करने के लिए कोई गेम लोड करें।"
 
@@ -1719,3 +1716,22 @@ msgstr "विवरण लाया जा रहा है..."
 #, no-c-format
 msgid "No description available."
 msgstr "कोई विवरण उपलब्ध नहीं।"
+
+#, no-c-format
+#~ msgid "Read in the background"
+#~ msgstr "बैकग्राउंड में पढ़ें"
+
+#, no-c-format
+#~ msgid ""
+#~ "Wheels and gamepads keep working while the emulator's\n"
+#~ "window is not in front: a wheel or a panel driven from\n"
+#~ "another program (a cabinet panel through vJoy, say) still\n"
+#~ "steers the game, and its buttons and axes can be bound\n"
+#~ "below without clicking back into this window. The\n"
+#~ "keyboard and the mouse still need the window in front."
+#~ msgstr ""
+#~ "एम्युलेटर की विंडो सामने न हो तब भी व्हील और गेमपैड काम\n"
+#~ "करते हैं: किसी दूसरे प्रोग्राम से चलने वाला व्हील या पैनल (जैसे\n"
+#~ "vJoy से कैबिनेट पैनल) फिर भी गेम चलाता है, और इस विंडो में\n"
+#~ "वापस क्लिक किए बिना नीचे उसके बटन और अक्ष जोड़े जा सकते हैं।\n"
+#~ "कीबोर्ड और माउस के लिए विंडो सामने होनी चाहिए।"

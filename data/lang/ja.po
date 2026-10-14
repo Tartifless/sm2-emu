@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-13 22:26+1000\n"
+"POT-Creation-Date: 2026-10-14 20:39+1000\n"
 "PO-Revision-Date: 2026-10-09 12:00+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -121,16 +121,6 @@ msgstr ""
 #, no-c-format
 msgid "Notifications"
 msgstr "通知"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Automatic (system)"
-msgstr "自動（システム）"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Language"
-msgstr "言語"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -558,6 +548,11 @@ msgstr "ステート"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "System"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "About"
 msgstr "情報"
 
@@ -697,28 +692,6 @@ msgstr "ハンドルが接続されています。"
 #, no-c-format
 msgid "No wheel connected. Settings still apply once one is."
 msgstr "ハンドルが接続されていません。接続後に設定が適用されます。"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Read in the background"
-msgstr "バックグラウンドで読み取る"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid ""
-"Wheels and gamepads keep working while the emulator's\n"
-"window is not in front: a wheel or a panel driven from\n"
-"another program (a cabinet panel through vJoy, say) still\n"
-"steers the game, and its buttons and axes can be bound\n"
-"below without clicking back into this window. The\n"
-"keyboard and the mouse still need the window in front."
-msgstr ""
-"エミュレーターのウィンドウが前面になくても、ハンドルと\n"
-"ゲームパッドは動作します: 別のプログラムが動かすハンドルや\n"
-"パネル（たとえば vJoy 経由の筐体パネル）でもゲームを操作でき、\n"
-"このウィンドウをクリックし直さずに下でボタンや軸を割り当て\n"
-"られます。キーボードとマウスはウィンドウが前面にある必要が\n"
-"あります。"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1625,6 +1598,29 @@ msgstr "このマシンのインターフェース:"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Automatic (system)"
+msgstr "自動（システム）"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Language"
+msgstr "言語"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Background controller input"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheels and gamepads keep working while the window is\n"
+"not in front. Keyboard and mouse still need the window\n"
+"in front."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Load a game to save and restore its state."
 msgstr "ゲームを読み込むと、ステートの保存と復元ができます。"
 
@@ -1725,3 +1721,23 @@ msgstr "説明を取得中..."
 #, no-c-format
 msgid "No description available."
 msgstr "説明はありません。"
+
+#, no-c-format
+#~ msgid "Read in the background"
+#~ msgstr "バックグラウンドで読み取る"
+
+#, no-c-format
+#~ msgid ""
+#~ "Wheels and gamepads keep working while the emulator's\n"
+#~ "window is not in front: a wheel or a panel driven from\n"
+#~ "another program (a cabinet panel through vJoy, say) still\n"
+#~ "steers the game, and its buttons and axes can be bound\n"
+#~ "below without clicking back into this window. The\n"
+#~ "keyboard and the mouse still need the window in front."
+#~ msgstr ""
+#~ "エミュレーターのウィンドウが前面になくても、ハンドルと\n"
+#~ "ゲームパッドは動作します: 別のプログラムが動かすハンドルや\n"
+#~ "パネル（たとえば vJoy 経由の筐体パネル）でもゲームを操作でき、\n"
+#~ "このウィンドウをクリックし直さずに下でボタンや軸を割り当て\n"
+#~ "られます。キーボードとマウスはウィンドウが前面にある必要が\n"
+#~ "あります。"

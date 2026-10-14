@@ -533,38 +533,6 @@ void Gui::draw_settings(Config& config, const std::vector<std::string>& gpu_name
             ImGui::SameLine();
             ImGui::Checkbox(tr_id("Notifications"), &config.show_notifications);
 
-            // Overlay language; switches live.
-            {
-                const auto& languages = i18n::available();
-                std::string current   = tr("Automatic (system)");
-                if (config.language == "en") {
-                    current = "English";
-                }
-                for (const i18n::Language& language : languages) {
-                    if (language.code == config.language) {
-                        current = language_label(language);
-                    }
-                }
-                ImGui::SetNextItemWidth(220);
-                if (ImGui::BeginCombo(tr_id("Language"), current.c_str())) {
-                    if (ImGui::Selectable(tr("Automatic (system)"), config.language == "auto")) {
-                        config.language = "auto";
-                    }
-                    if (ImGui::Selectable("English", config.language == "en")) {
-                        config.language = "en";
-                    }
-                    for (const i18n::Language& language : languages) {
-                        ImGui::PushID(language.code.c_str());
-                        if (ImGui::Selectable(language_label(language).c_str(),
-                                              config.language == language.code)) {
-                            config.language = language.code;
-                        }
-                        ImGui::PopID();
-                    }
-                    ImGui::EndCombo();
-                }
-            }
-
             if (!gpu_names.empty()) {
                 ImGui::Separator();
                 ImGui::TextUnformatted(tr("GPU"));
@@ -982,6 +950,12 @@ void Gui::draw_settings(Config& config, const std::vector<std::string>& gpu_name
             ImGui::EndTabItem();
         }
 
+        // -- System tab ----------------------------------------------------
+        if (ImGui::BeginTabItem(tr_id("System"))) {
+            draw_system_tab(config);
+            ImGui::EndTabItem();
+        }
+
         // -- About tab -----------------------------------------------------
         bool on_about_tab = false;
         if (ImGui::BeginTabItem(tr_id("About"))) {
@@ -1078,20 +1052,6 @@ void Gui::draw_wheel_tab(Config& config, Input* input)
         ImGui::TextDisabled("%s", tr("Wheel connected."));
     } else {
         ImGui::TextDisabled("%s", tr("No wheel connected. Settings still apply once one is."));
-    }
-    ImGui::Spacing();
-
-    // For a wheel or a panel driven from another program's window.
-    ImGui::Checkbox(tr_id("Read in the background"), &config.input_background);
-    ImGui::SameLine();
-    ImGui::TextDisabled("(?)");
-    if (ImGui::IsItemHovered()) {
-        tooltip(tr("Wheels and gamepads keep working while the emulator's\n"
-                   "window is not in front: a wheel or a panel driven from\n"
-                   "another program (a cabinet panel through vJoy, say) still\n"
-                   "steers the game, and its buttons and axes can be bound\n"
-                   "below without clicking back into this window. The\n"
-                   "keyboard and the mouse still need the window in front."));
     }
     ImGui::Spacing();
 
@@ -2272,6 +2232,49 @@ void Gui::draw_network_tab(Config& config)
 // ---------------------------------------------------------------------------
 // States tab (save / load per-game slots)
 // ---------------------------------------------------------------------------
+
+void Gui::draw_system_tab(Config& config)
+{
+    // Overlay language; switches live.
+    const auto& languages = i18n::available();
+    std::string current   = tr("Automatic (system)");
+    if (config.language == "en") {
+        current = "English";
+    }
+    for (const i18n::Language& language : languages) {
+        if (language.code == config.language) {
+            current = language_label(language);
+        }
+    }
+    ImGui::SetNextItemWidth(220);
+    if (ImGui::BeginCombo(tr_id("Language"), current.c_str())) {
+        if (ImGui::Selectable(tr("Automatic (system)"), config.language == "auto")) {
+            config.language = "auto";
+        }
+        if (ImGui::Selectable("English", config.language == "en")) {
+            config.language = "en";
+        }
+        for (const i18n::Language& language : languages) {
+            ImGui::PushID(language.code.c_str());
+            if (ImGui::Selectable(language_label(language).c_str(),
+                                  config.language == language.code)) {
+                config.language = language.code;
+            }
+            ImGui::PopID();
+        }
+        ImGui::EndCombo();
+    }
+
+    ImGui::Spacing();
+    ImGui::Checkbox(tr_id("Background controller input"), &config.input_background);
+    ImGui::SameLine();
+    ImGui::TextDisabled("(?)");
+    if (ImGui::IsItemHovered()) {
+        tooltip(tr("Wheels and gamepads keep working while the window is\n"
+                   "not in front. Keyboard and mouse still need the window\n"
+                   "in front."));
+    }
+}
 
 void Gui::draw_states_tab()
 {

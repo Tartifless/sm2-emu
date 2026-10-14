@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-13 22:26+1000\n"
+"POT-Creation-Date: 2026-10-14 20:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -118,16 +118,6 @@ msgstr ""
 #, no-c-format
 msgid "Notifications"
 msgstr "Thông báo"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Automatic (system)"
-msgstr "Tự động (hệ thống)"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Language"
-msgstr "Ngôn ngữ"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -555,6 +545,11 @@ msgstr "Trạng thái"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "System"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "About"
 msgstr "Giới thiệu"
 
@@ -692,28 +687,6 @@ msgstr "Đã kết nối vô lăng."
 #, no-c-format
 msgid "No wheel connected. Settings still apply once one is."
 msgstr "Chưa kết nối vô lăng. Cài đặt vẫn áp dụng khi có kết nối."
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Read in the background"
-msgstr "Đọc khi chạy nền"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid ""
-"Wheels and gamepads keep working while the emulator's\n"
-"window is not in front: a wheel or a panel driven from\n"
-"another program (a cabinet panel through vJoy, say) still\n"
-"steers the game, and its buttons and axes can be bound\n"
-"below without clicking back into this window. The\n"
-"keyboard and the mouse still need the window in front."
-msgstr ""
-"Vô lăng và tay cầm vẫn hoạt động khi cửa sổ trình giả lập không\n"
-"ở phía trước: vô lăng hoặc bảng điều khiển do chương trình khác\n"
-"điều khiển (ví dụ bảng máy arcade qua vJoy) vẫn lái được trò\n"
-"chơi, và có thể gán nút và trục của nó bên dưới mà không cần\n"
-"nhấp lại vào cửa sổ này. Bàn phím và chuột vẫn cần cửa sổ ở\n"
-"phía trước."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1616,6 +1589,29 @@ msgstr "Giao diện mạng của máy này:"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Automatic (system)"
+msgstr "Tự động (hệ thống)"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Language"
+msgstr "Ngôn ngữ"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Background controller input"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheels and gamepads keep working while the window is\n"
+"not in front. Keyboard and mouse still need the window\n"
+"in front."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Load a game to save and restore its state."
 msgstr "Tải một trò chơi để lưu và khôi phục trạng thái."
 
@@ -1716,3 +1712,23 @@ msgstr "Đang tải mô tả..."
 #, no-c-format
 msgid "No description available."
 msgstr "Không có mô tả."
+
+#, no-c-format
+#~ msgid "Read in the background"
+#~ msgstr "Đọc khi chạy nền"
+
+#, no-c-format
+#~ msgid ""
+#~ "Wheels and gamepads keep working while the emulator's\n"
+#~ "window is not in front: a wheel or a panel driven from\n"
+#~ "another program (a cabinet panel through vJoy, say) still\n"
+#~ "steers the game, and its buttons and axes can be bound\n"
+#~ "below without clicking back into this window. The\n"
+#~ "keyboard and the mouse still need the window in front."
+#~ msgstr ""
+#~ "Vô lăng và tay cầm vẫn hoạt động khi cửa sổ trình giả lập không\n"
+#~ "ở phía trước: vô lăng hoặc bảng điều khiển do chương trình khác\n"
+#~ "điều khiển (ví dụ bảng máy arcade qua vJoy) vẫn lái được trò\n"
+#~ "chơi, và có thể gán nút và trục của nó bên dưới mà không cần\n"
+#~ "nhấp lại vào cửa sổ này. Bàn phím và chuột vẫn cần cửa sổ ở\n"
+#~ "phía trước."

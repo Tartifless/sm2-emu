@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-13 22:26+1000\n"
+"POT-Creation-Date: 2026-10-14 20:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -124,16 +124,6 @@ msgstr ""
 #, no-c-format
 msgid "Notifications"
 msgstr "Notifikationer"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Automatic (system)"
-msgstr "Automatisk (system)"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Language"
-msgstr "Sprog"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -561,6 +551,11 @@ msgstr "Tilstande"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "System"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "About"
 msgstr "Om"
 
@@ -699,27 +694,6 @@ msgstr "Rat tilsluttet."
 #, no-c-format
 msgid "No wheel connected. Settings still apply once one is."
 msgstr "Intet rat tilsluttet. Indstillingerne gælder, når et tilsluttes."
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Read in the background"
-msgstr "Læs i baggrunden"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid ""
-"Wheels and gamepads keep working while the emulator's\n"
-"window is not in front: a wheel or a panel driven from\n"
-"another program (a cabinet panel through vJoy, say) still\n"
-"steers the game, and its buttons and axes can be bound\n"
-"below without clicking back into this window. The\n"
-"keyboard and the mouse still need the window in front."
-msgstr ""
-"Rat og gamepads virker, selv når emulatorens vindue ikke er\n"
-"forrest: et rat eller panel, der styres af et andet program\n"
-"(et maskinpanel via vJoy, fx), styrer stadig spillet, og dets\n"
-"knapper og akser kan tildeles herunder uden at klikke tilbage\n"
-"i dette vindue. Tastatur og mus kræver stadig vinduet forrest."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1626,6 +1600,29 @@ msgstr "Denne maskines grænseflader:"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Automatic (system)"
+msgstr "Automatisk (system)"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Language"
+msgstr "Sprog"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Background controller input"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheels and gamepads keep working while the window is\n"
+"not in front. Keyboard and mouse still need the window\n"
+"in front."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Load a game to save and restore its state."
 msgstr "Indlæs et spil for at gemme og gendanne dets tilstand."
 
@@ -1726,3 +1723,22 @@ msgstr "Henter beskrivelse..."
 #, no-c-format
 msgid "No description available."
 msgstr "Ingen beskrivelse tilgængelig."
+
+#, no-c-format
+#~ msgid "Read in the background"
+#~ msgstr "Læs i baggrunden"
+
+#, no-c-format
+#~ msgid ""
+#~ "Wheels and gamepads keep working while the emulator's\n"
+#~ "window is not in front: a wheel or a panel driven from\n"
+#~ "another program (a cabinet panel through vJoy, say) still\n"
+#~ "steers the game, and its buttons and axes can be bound\n"
+#~ "below without clicking back into this window. The\n"
+#~ "keyboard and the mouse still need the window in front."
+#~ msgstr ""
+#~ "Rat og gamepads virker, selv når emulatorens vindue ikke er\n"
+#~ "forrest: et rat eller panel, der styres af et andet program\n"
+#~ "(et maskinpanel via vJoy, fx), styrer stadig spillet, og dets\n"
+#~ "knapper og akser kan tildeles herunder uden at klikke tilbage\n"
+#~ "i dette vindue. Tastatur og mus kræver stadig vinduet forrest."

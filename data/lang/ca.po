@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-13 22:26+1000\n"
+"POT-Creation-Date: 2026-10-14 20:39+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -118,16 +118,6 @@ msgstr ""
 #, no-c-format
 msgid "Notifications"
 msgstr "Notificacions"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Automatic (system)"
-msgstr "Automàtic (sistema)"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Language"
-msgstr "Idioma"
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -555,6 +545,11 @@ msgstr "Estats"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "System"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "About"
 msgstr "Quant a"
 
@@ -696,28 +691,6 @@ msgstr "Volant connectat."
 msgid "No wheel connected. Settings still apply once one is."
 msgstr ""
 "No hi ha cap volant connectat. La configuració s'aplicarà quan n'hi hagi un."
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid "Read in the background"
-msgstr "Llegeix en segon pla"
-
-#: src/osd/gui.cpp
-#, no-c-format
-msgid ""
-"Wheels and gamepads keep working while the emulator's\n"
-"window is not in front: a wheel or a panel driven from\n"
-"another program (a cabinet panel through vJoy, say) still\n"
-"steers the game, and its buttons and axes can be bound\n"
-"below without clicking back into this window. The\n"
-"keyboard and the mouse still need the window in front."
-msgstr ""
-"Els volants i els comandaments continuen funcionant quan la\n"
-"finestra de l'emulador no és al davant: un volant o un panell\n"
-"controlat per un altre programa (un panell de màquina amb vJoy,\n"
-"per exemple) segueix conduint el joc, i els seus botons i eixos\n"
-"es poden assignar a sota sense tornar a clicar aquesta finestra.\n"
-"El teclat i el ratolí encara necessiten la finestra al davant."
 
 #: src/osd/gui.cpp
 #, no-c-format
@@ -1629,6 +1602,29 @@ msgstr "Interfícies d'aquesta màquina:"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Automatic (system)"
+msgstr "Automàtic (sistema)"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Language"
+msgstr "Idioma"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Background controller input"
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Wheels and gamepads keep working while the window is\n"
+"not in front. Keyboard and mouse still need the window\n"
+"in front."
+msgstr ""
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Load a game to save and restore its state."
 msgstr "Carregueu un joc per desar i restaurar-ne l'estat."
 
@@ -1729,3 +1725,23 @@ msgstr "S'està obtenint la descripció..."
 #, no-c-format
 msgid "No description available."
 msgstr "No hi ha cap descripció disponible."
+
+#, no-c-format
+#~ msgid "Read in the background"
+#~ msgstr "Llegeix en segon pla"
+
+#, no-c-format
+#~ msgid ""
+#~ "Wheels and gamepads keep working while the emulator's\n"
+#~ "window is not in front: a wheel or a panel driven from\n"
+#~ "another program (a cabinet panel through vJoy, say) still\n"
+#~ "steers the game, and its buttons and axes can be bound\n"
+#~ "below without clicking back into this window. The\n"
+#~ "keyboard and the mouse still need the window in front."
+#~ msgstr ""
+#~ "Els volants i els comandaments continuen funcionant quan la\n"
+#~ "finestra de l'emulador no és al davant: un volant o un panell\n"
+#~ "controlat per un altre programa (un panell de màquina amb vJoy,\n"
+#~ "per exemple) segueix conduint el joc, i els seus botons i eixos\n"
+#~ "es poden assignar a sota sense tornar a clicar aquesta finestra.\n"
+#~ "El teclat i el ratolí encara necessiten la finestra al davant."

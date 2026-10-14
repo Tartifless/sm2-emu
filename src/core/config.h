@@ -178,11 +178,7 @@ struct Config {
 
     // -- steering wheel ----------------------------------------------------
 
-    /// Read wheels and gamepads while the emulator's window is not in front: a
-    /// wheel or a panel driven from another program (a cabinet's panel fed
-    /// through vJoy, say) keeps steering the game, and its buttons and axes can
-    /// be bound in the wheel settings without clicking back into the window.
-    /// The keyboard and the mouse still need the window in front.
+    /// Read wheels and gamepads while the window is not in front.
     bool input_background = false;
 
     /// Synthesised centring resistance on a wheel that supports it: a spring
@@ -194,13 +190,8 @@ struct Config {
     /// Centring resistance, 0..100 percent of the wheel's maximum torque.
     u32 wheel_ffb_strength = 30;
 
-    /// Indy 500, Touring Car, Over Rev and Super GT 24h: how their motor drive
-    /// board turns the drive board's power, 0..63 each way, into torque: none
-    /// up to the dead band, the wheel's full strength from the full power, a
-    /// straight line between. The drive board sends the two powers as 6 bits
-    /// each (CW 0-5, CCW 0-5) to the motor drive board 838-11966: in
-    /// proportion, 0 and 63, the defaults. Others only for a motor that is
-    /// known to answer otherwise.
+    /// EPR-18261 boards: the motor power (0..63) below which there is no
+    /// torque, and the power that gives full strength. Linear in between.
     u32 wheel_indy_deadband   = 0;
     u32 wheel_indy_full_power = 63;
 
@@ -237,8 +228,8 @@ struct Config {
     /// arcade buttons, which is also where a driving cabinet's view-change / VR
     /// buttons land (e.g. Daytona's VR1..VR4). Test/Service are the operator
     /// coin-door buttons; Menu is the emulator overlay (F10), not a machine
-    /// input. Gear1..4 and GearNeutral are an H shifter's positions, for the
-    /// games with a gate gearbox. Keep kCount last.
+    /// input. Gear1..4 and GearNeutral are the positions of an H shifter.
+    /// Keep kCount last.
     enum class WheelRole : u32 {
         Start, Coin, Button1, Button2, Button3, Button4, GearUp, GearDown,
         Test, Service, Menu, Gear1, Gear2, Gear3, Gear4, GearNeutral, kCount
@@ -268,15 +259,13 @@ struct Config {
         -1,  // GearNeutral
     };
 
-    /// An H shifter (Gear1..4 bound) whose lever is in none of the gears is in
-    /// neutral, as on the cabinet. Off, the last gear stays engaged until
-    /// another is selected or GearNeutral pressed.
+    /// With an H shifter, holding no gear means neutral. When off, the last
+    /// gear stays engaged.
     bool wheel_shifter_neutral = true;
 
-    /// A sequential shift (paddles, RB/LB) from one gear to another passes
-    /// through neutral this long, in milliseconds, as a lever crosses the
-    /// gate's centre; 0 shifts straight. Clamped to 0..500.
-    u32 wheel_shift_neutral_ms = 100;
+    /// A paddle or RB/LB shift between two gears passes through neutral for
+    /// this many milliseconds (0..500). 0 shifts straight through.
+    u32 wheel_shift_neutral_ms = 0;
 
     /// Which wheel axis drives each analogue control, or -1 to auto-detect
     /// (steering is axis 0; pedals are found by which axes rest at an extreme).
@@ -290,10 +279,9 @@ struct Config {
     bool wheel_accel_invert = false;
     bool wheel_brake_invert = false;
 
-    /// A pedal on half of its axis: released at the centre, pressed towards
-    /// one end, the low end when inverted (Y- rather than Y+). Two pedals can
-    /// share an axis this way. Captured during calibration, from an axis that
-    /// rests at its centre.
+    /// A pedal that uses half of its axis: released at the centre and pressed
+    /// towards the high end (the low end when inverted). Two pedals can then
+    /// share one axis.
     bool wheel_accel_half = false;
     bool wheel_brake_half = false;
 

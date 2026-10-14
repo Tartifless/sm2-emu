@@ -12,12 +12,8 @@
 // used to contribute to commercial projects or for monetary gain without the
 // express written permission of the author.
 //
-// Daytona USA's drive board as its program (EPR-16488A) behaves. The game does
-// not send torques: it turns the forces on or off and picks an effect and its
-// strength, and the board works out, from the wheel's position and at every
-// interrupt, the way its AC motor turns and the power of the clutch that
-// passes the torque to the wheel. Read in the EPROM; see
-// BackForceFeeder's docs/EPR-16488A-Daytona-DriveBoard.
+// Daytona USA's drive board (EPR-16488A). The game picks an effect; the board
+// works out the motor's way and the clutch's power from the wheel's position.
 #pragma once
 
 #include "core/types.h"
@@ -35,8 +31,7 @@ public:
 
     struct Output {
         Way way   = Way::None;
-        /// 0..63, the clutch's power. With no way, the motor stands and the
-        /// clutch holds the wheel to it: a brake.
+        /// 0..63, the clutch's power. With no way set, it brakes the wheel.
         int power = 0;
     };
 
@@ -46,13 +41,12 @@ public:
     /// A byte the game wrote to the board.
     void command(u8 value);
 
-    /// One frame: the wheel `counts` off the centre in the board's ADC counts
-    /// (128 a side, positive up, i.e. right), over `ticks` of its interrupts,
-    /// with `breakaway` the power its start-up calibration found.
+    /// Advances one frame. `counts` is the wheel's distance from the centre
+    /// (128 a side, positive is right), `ticks` the number of board interrupts
+    /// and `breakaway` the power found by the start-up calibration.
     [[nodiscard]] Output step(int counts, double ticks, int breakaway);
 
-    /// Its state for a save state, both ways. The DIP strength is a setting
-    /// and stays out.
+    /// Saves or restores the board's state, for save states.
     void serialize(Archive& ar);
 
     [[nodiscard]] bool forces_on() const { return m_enabled; }

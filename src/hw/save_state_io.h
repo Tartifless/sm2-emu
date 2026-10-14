@@ -55,12 +55,9 @@ using SerializeFn = std::function<void(Archive&)>;
                                         u32 board, bool in_frame,
                                         const SerializeFn& serialize);
 
-/// State the host keeps outside the machine but which belongs to the moment a
-/// state is taken: the force feedback's model of the drive board. Saved after
-/// the machine's payload, in a tagged section of its own: a state written
-/// before it has none and loads as it did, and an older build stops reading
-/// before it. A state loaded before this is set (--load-state, ahead of the
-/// window) keeps its section, applied when it is. An empty function unsets it.
+/// Host state (the drive board model), saved in a tagged section after the
+/// machine's payload. A section loaded before this is set is applied once it
+/// is. An empty function unsets it.
 void set_host_state(SerializeFn serialize);
 
 // ---------------------------------------------------------------------------

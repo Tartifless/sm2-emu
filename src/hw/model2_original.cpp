@@ -242,14 +242,12 @@ bool Model2Original::init(const rom::GameSpec& game, rom::RomSet roms)
     if (m_game.drive_board) {
         m_ioboard.set_drive([this] { return m_drive_board_latch; },
                             [this](u8 value) { drive_board_write(value); });
-        // The board's answer comes back on IN2 (port D), unbound otherwise: the
-        // command echoed, but for $80 and $83 the wheel's position, $81 $FF and
-        // $82 its DIP switches, all OFF (EPR-16488A). The DRIVE BD TEST shows
-        // the two answers as HANDLE VOL and DIP SW.
+        // The board answers on IN2: the command echoed, except $80/$83 (wheel
+        // position), $81 ($FF) and $82 (DIP switches, all off).
         m_ioboard.set_input(2, [this] {
             switch (m_drive_board_latch) {
                 case 0x80:
-                case 0x83: return m_inputs.analog[0];
+                case 0x83: return steering_value(m_game);
                 case 0x81:
                 case 0x82: return u8{0xff};
                 default:   return m_drive_board_latch;
