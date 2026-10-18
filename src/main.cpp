@@ -713,15 +713,18 @@ struct LoadedMachine {
 
 /// Load, build, wire, point at NVRAM and reset a machine. The one path both a
 /// --game/positional launch and the picker use, so a picked game boots exactly
-/// like a directly-launched one. nullopt (logged) on failure.
+/// like a directly-launched one. nullopt (logged, and in `error` when given)
+/// on failure.
 [[nodiscard]] std::optional<LoadedMachine> load_game(sm2::rom::GameDatabase& database,
                                                      const std::string& rom_path,
                                                      const std::string& game_name,
                                                      const std::string& nvram_dir,
-                                                     bool               log_unmapped)
+                                                     bool               log_unmapped,
+                                                     sm2::rom::LoadError* error = nullptr)
 {
     using namespace sm2;
-    std::optional<rom::LoadResult> result = rom::RomLoader::load(database, rom_path, game_name);
+    std::optional<rom::LoadResult> result =
+        rom::RomLoader::load(database, rom_path, game_name, error);
     if (!result.has_value()) {
         return std::nullopt;
     }
@@ -730,6 +733,10 @@ struct LoadedMachine {
     out.game          = result->game;
     out.machine_iface = hw::create_machine(result->game, std::move(result->roms));
     if (!out.machine_iface) {
+        if (error != nullptr) {
+            error->game    = result->game.name;
+            error->message = "The emulated machine could not be built; the log has the details.";
+        }
         return std::nullopt;
     }
 
@@ -2264,7 +2271,9 @@ int main(int argc, char** argv)
                         running = false;
                         break;
                     case SDL_EVENT_KEY_DOWN:
-                        if (event.key.key == SDLK_ESCAPE) {
+                        if (event.key.key == SDLK_ESCAPE && gui.load_error_open()) {
+                            // The dialog takes this Esc.
+                        } else if (event.key.key == SDLK_ESCAPE) {
                             // Esc returns to the game picker (unloading the
                             // current game) when there is a picker to return to;
                             // otherwise -- a single ROM launched by path with no
@@ -2891,13 +2900,22 @@ int main(int argc, char** argv)
                 backend->wait_idle();
 
                 std::optional<LoadedMachine> chosen;
+                rom::LoadError               load_error;
                 if (const std::optional<std::filesystem::path> archive =
                         find_set_archive(database, options.config.rom_dir, *pick)) {
                     chosen = load_game(database, archive->string(), *pick,
-                                       options.config.nvram_dir, options.log_unmapped);
+                                       options.config.nvram_dir, options.log_unmapped,
+                                       &load_error);
+                } else {
+                    load_error.message = "Its archive is no longer in the ROM folder.";
                 }
                 if (!chosen.has_value()) {
                     SM2_ERROR("picker: could not load '%s' from rom_dir", pick->c_str());
+                    show_picker();
+                    const rom::GameSpec* spec = database.find(*pick);
+                    gui.show_load_error(spec != nullptr ? spec->title : *pick,
+                                        std::move(load_error.message),
+                                        std::move(load_error.missing));
                 } else {
                     loaded        = std::move(chosen);
                     machine_iface = loaded->machine_iface.get();

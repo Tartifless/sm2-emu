@@ -31,6 +31,13 @@ struct LoadResult {
     RomSet   roms;
 };
 
+/// Why a load failed, worded for the player rather than the log.
+struct LoadError {
+    std::string              game;     ///< the set it was taken for, when known
+    std::string              message;
+    std::vector<std::string> missing;  ///< required chips not found
+};
+
 /// Reads a zip archive and assembles the ROM regions for whichever game it
 /// holds.
 ///
@@ -49,9 +56,12 @@ public:
     ///
     /// Parent ROMs missing from a clone's archive are looked for in
     /// `<parent>.zip` beside it, matching the usual split-set layout.
+    ///
+    /// On failure `error`, when given, says why.
     [[nodiscard]] static std::optional<LoadResult> load(const GameDatabase& database,
                                                         const std::string&  archive_path,
-                                                        const std::string&  preferred_game = {});
+                                                        const std::string&  preferred_game = {},
+                                                        LoadError*          error = nullptr);
 
     /// Whether `archive_path` holds the chips clone `clone_name` does not share
     /// with its parent: true of a merged archive, which keeps the clones beside

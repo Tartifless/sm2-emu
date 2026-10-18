@@ -166,6 +166,11 @@ public:
     /// draw(); calling this is harmless when they are off.
     void notify(std::string message);
 
+    /// A game that failed to start, shown in a dialog until dismissed.
+    void show_load_error(std::string game, std::string message,
+                         std::vector<std::string> missing);
+    [[nodiscard]] bool load_error_open() const { return m_load_error.has_value(); }
+
     /// GPU capabilities for gating the enhancement options, fed each frame so
     /// the GUI need not include the render backend header. Defaults leave the
     /// opt-in enhancements unavailable until a backend reports otherwise.
@@ -350,6 +355,15 @@ private:
     // -- on-screen notification (transient top-centered toast) -------------
     std::string m_notify_text;
     float       m_notify_seconds_left = 0.0f;  ///< counts down by DeltaTime
+
+    struct LoadErrorDialog {
+        std::string              game;
+        std::string              message;
+        std::vector<std::string> missing;
+        bool                     opened = false;
+    };
+    std::optional<LoadErrorDialog> m_load_error;
+    void draw_load_error();
 
     // -- directory picker state (Paths tab "Browse..." buttons) -------------
     // Self-drawn (std::filesystem only), avoiding a native-dialog dependency.

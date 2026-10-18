@@ -401,7 +401,8 @@ bool Gui::draw(Config& config, const std::vector<std::string>& gpu_names,
     // touching the cursor, and then SDL_HideCursor() sticks.
     // Not while the picker is up: grabbing the pointer there would confine it to
     // the window, making the title bar and resize edges unreachable.
-    const bool hide_cursor = config.lightgun && !m_visible && !m_picker_enabled;
+    const bool hide_cursor = config.lightgun && !m_visible && !m_picker_enabled
+                          && !m_load_error.has_value();
     if (hide_cursor != m_cursor_hidden) {
         ImGuiIO& io = ImGui::GetIO();
         if (hide_cursor) {
@@ -440,6 +441,10 @@ bool Gui::draw(Config& config, const std::vector<std::string>& gpu_names,
         draw_menu_bar(config);
         draw_settings(config, gpu_names, input);
         draw_status_bar(measured_hz);
+    }
+
+    if (m_load_error.has_value()) {
+        draw_load_error();
     }
 
     return true;
@@ -2486,6 +2491,73 @@ void Gui::notify(std::string message)
     m_notify_seconds_left = 2.0f;  // a couple of seconds, per the request
 }
 
+void Gui::show_load_error(std::string game, std::string message,
+                          std::vector<std::string> missing)
+{
+    m_load_error = LoadErrorDialog{std::move(game), std::move(message), std::move(missing)};
+}
+
+void Gui::draw_load_error()
+{
+    LoadErrorDialog& dialog = *m_load_error;
+    const char*      id     = "###load_error";
+    if (!dialog.opened) {
+        ImGui::OpenPopup(id);
+        dialog.opened = true;
+    }
+
+    const ImGuiViewport* viewport = ImGui::GetMainViewport();
+    ImGui::SetNextWindowPos(viewport->GetCenter(), ImGuiCond_Always, ImVec2(0.5f, 0.5f));
+    ImGui::SetNextWindowSizeConstraints(ImVec2(viewport->WorkSize.x * 0.4f, 0.0f),
+                                        ImVec2(viewport->WorkSize.x * 0.8f,
+                                               viewport->WorkSize.y * 0.8f));
+    const std::string title = std::string(tr("Could not start the game")) + id;
+    if (!ImGui::BeginPopupModal(title.c_str(), nullptr,
+                                ImGuiWindowFlags_AlwaysAutoResize
+                                    | ImGuiWindowFlags_NoSavedSettings)) {
+        m_load_error.reset();
+        return;
+    }
+
+    if (!dialog.game.empty()) {
+        ImGui::TextUnformatted(dialog.game.c_str());
+        ImGui::Spacing();
+    }
+    ImGui::PushTextWrapPos(viewport->WorkSize.x * 0.75f);
+    ImGui::TextUnformatted(dialog.message.c_str());
+    ImGui::PopTextWrapPos();
+
+    if (!dialog.missing.empty()) {
+        ImGui::Spacing();
+        ImGui::TextUnformatted(tr("Missing:"));
+        const float rows   = static_cast<float>(std::min<usize>(dialog.missing.size(), 12));
+        const float height = rows * ImGui::GetTextLineHeightWithSpacing()
+                           + ImGui::GetStyle().WindowPadding.y * 2.0f;
+        if (ImGui::BeginChild("##missing", ImVec2(0.0f, height), ImGuiChildFlags_Borders)) {
+            for (const std::string& line : dialog.missing) {
+                ImGui::TextUnformatted(line.c_str());
+            }
+        }
+        ImGui::EndChild();
+        if (ImGui::Button(tr_id("Copy list"))) {
+            std::string text;
+            for (const std::string& line : dialog.missing) {
+                text += line;
+                text += '\n';
+            }
+            ImGui::SetClipboardText(text.c_str());
+        }
+        ImGui::SameLine();
+    }
+
+    if (ImGui::Button(tr_id("OK")) || ImGui::IsKeyPressed(ImGuiKey_Escape, false)
+        || ImGui::IsKeyPressed(ImGuiKey_GamepadFaceDown, false)) {
+        ImGui::CloseCurrentPopup();
+        m_load_error.reset();
+    }
+    ImGui::EndPopup();
+}
+
 void Gui::draw_notification()
 {
     const ImGuiViewport* viewport = ImGui::GetMainViewport();
@@ -3038,7 +3110,9 @@ void Gui::draw_picker(Config& config)
     // The picker drives selection itself rather than via ImGui nav focus, so
     // the description pane and launch stay in step with the highlighted tile.
     const ImGuiIO& io      = ImGui::GetIO();
-    const auto     pressed = [](ImGuiKey k) { return ImGui::IsKeyPressed(k, true); };
+    const auto     pressed = [this](ImGuiKey k) {
+        return !m_load_error.has_value() && ImGui::IsKeyPressed(k, true);
+    };
     int            sel     = m_picker_selected;
     if (pressed(ImGuiKey_RightArrow) || pressed(ImGuiKey_GamepadDpadRight)) ++sel;
     if (pressed(ImGuiKey_LeftArrow) || pressed(ImGuiKey_GamepadDpadLeft)) --sel;
