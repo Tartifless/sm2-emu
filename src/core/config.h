@@ -98,6 +98,12 @@ struct Config {
     /// while gameplay continues. On by default.
     bool show_notifications = true;
 
+    /// Keep recent states so Backspace can step back through play.
+    bool rewind = false;
+
+    /// Memory the rewind history may use, in MiB.
+    u32 rewind_buffer_mb = 128;
+
     /// Overlay language: a catalog name from lang/ ("de", "pt_BR"), "en", or
     /// "auto" to follow the system's preferred languages.
     std::string language = "auto";

@@ -34,6 +34,7 @@
 #include "hw/model2_debug.h"
 #include "hw/model2_softrender.h"
 #include "hw/model2_softrender_async.h"
+#include "hw/rewind.h"
 #include "hw/save_state_io.h"
 #include "osd/audio.h"
 #include "osd/outputs.h"
@@ -944,6 +945,8 @@ int main(int argc, char** argv)
     options.config.software_async      = from_file.software_async;
     options.config.software_slow_cores = from_file.software_slow_cores;
     options.config.show_notifications  = from_file.show_notifications;
+    options.config.rewind              = from_file.rewind;
+    options.config.rewind_buffer_mb    = from_file.rewind_buffer_mb;
     options.config.language            = from_file.language;
     options.config.wheel_ffb           = from_file.wheel_ffb;
     options.config.wheel_ffb_strength  = from_file.wheel_ffb_strength;
@@ -2156,6 +2159,12 @@ int main(int argc, char** argv)
             gpu_stage_samples;
         bool gpu_timing_unavailable_warned = false;
 
+        // One snapshot every other frame, so a held rewind runs at twice real time.
+        constexpr u32 kRewindInterval = 2;
+        hw::Rewind                   rewind;
+        const hw::Model2MachineBase* rewind_machine = nullptr;
+        bool                         rewind_held    = false;  ///< Backspace is down.
+
         u32  frames_presented = 0;   ///< Since the loop started.
         u32  frames_written_off = 0; ///< Whole frames given up after a stall.
         bool paused             = false;
@@ -2343,6 +2352,8 @@ int main(int argc, char** argv)
                                 options.config.show_fps = !options.config.show_fps;
                             } else if (event.key.key == SDLK_TAB && !event.key.repeat) {
                                 fast_forward = true;
+                            } else if (event.key.key == SDLK_BACKSPACE) {
+                                rewind_held = true;
                             }
                         }
                         break;
@@ -2354,6 +2365,8 @@ int main(int argc, char** argv)
                     case SDL_EVENT_KEY_UP:
                         if (event.key.key == SDLK_TAB) {
                             fast_forward = false;
+                        } else if (event.key.key == SDLK_BACKSPACE) {
+                            rewind_held = false;
                         } else if (event.key.key == SDLK_F9 && quit_key_pressed) {
                             running = false;
                         }
@@ -2464,7 +2477,24 @@ int main(int argc, char** argv)
                 }
             }
 
+            rewind.configure(options.config.rewind
+                                 ? static_cast<usize>(options.config.rewind_buffer_mb) << 20
+                                 : 0,
+                             kRewindInterval);
+            if (machine_iface != rewind_machine) {
+                rewind.clear();
+                rewind_machine = machine_iface;
+            }
+            if (gui.visible()) {
+                rewind_held = false;
+            }
+
+            bool rewinding = false;
             if (machine_iface && !effective_pause) {
+                // Step back a snapshot, then run a frame from it so there is a
+                // picture; its sound is dropped.
+                rewinding = rewind_held && rewind.step_back(*machine_iface);
+
                 // Inputs are levels, sampled whenever the program polls the I/O
                 // controller during the frame, so they have to be set before the
                 // frame runs rather than after.
@@ -2529,6 +2559,9 @@ int main(int argc, char** argv)
                     auto scope = core::maybe_scope(stage_run_frame, profile_sample);
                     machine_iface->run_frame();
                 }
+                if (!rewinding) {
+                    rewind.capture(*machine_iface);
+                }
                 if (loaded->game.lightgun.present) {
                     machine_iface->video().filter_gun_flash(options.config.lightgun_hide_flash,
                                                             machine_iface->inputs().in1);
@@ -2562,7 +2595,9 @@ int main(int argc, char** argv)
                 // Handed over every frame rather than buffered here, so the only
                 // buffering is SDL's. Null on the original Model 2, whose sound
                 // board is not emulated.
-                if (sound_board != nullptr) {
+                if (sound_board != nullptr && rewinding) {
+                    sound_board->clear_pending_samples();
+                } else if (sound_board != nullptr) {
                     const std::span<const s16> produced = sound_board->pending_samples();
                     const u32 volume = options.config.volume_for(game_family(loaded->game));
                     if (volume == Config::kDefaultGameVolume) {

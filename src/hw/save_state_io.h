@@ -17,6 +17,7 @@
 #include "core/types.h"
 
 #include <functional>
+#include <span>
 #include <string>
 #include <vector>
 
@@ -40,20 +41,22 @@ namespace sm2::hw {
 using SerializeFn = std::function<void(Archive&)>;
 
 /// Write `serialize`'s payload, behind an SM2STATE header keyed by `game` /
-/// `board`, to `path`. `in_frame` must be false (save only between frames).
-/// Returns false (logged) on a bad state or an I/O error.
-[[nodiscard]] bool save_state_to_file(const std::string& path, const std::string& game,
-                                      u32 board, bool in_frame,
-                                      const SerializeFn& serialize);
-
-/// Validate and apply a state file at `path` into the live machine via
-/// `serialize`. Rejects (logged, machine untouched) on header mismatch against
-/// `game`/`board`, on `in_frame`, or on a truncated payload (rolled back).
-/// Returns false on any rejection. On success the caller still runs its own
-/// fix-ups (generation bumps etc.).
-[[nodiscard]] bool load_state_from_file(const std::string& path, const std::string& game,
+/// `board`, into `out`. `in_frame` must be false (save only between frames).
+[[nodiscard]] bool save_state_to_buffer(std::vector<u8>& out, const std::string& game,
                                         u32 board, bool in_frame,
                                         const SerializeFn& serialize);
+
+/// Validate and apply a state in `data` to the live machine via `serialize`.
+/// Rejects (logged, machine untouched) on header mismatch against
+/// `game`/`board`, on `in_frame`, or on a truncated payload (rolled back).
+/// On success the caller still runs its own fix-ups (generation bumps etc.).
+[[nodiscard]] bool load_state_from_buffer(std::span<const u8> data, const std::string& game,
+                                          u32 board, bool in_frame,
+                                          const SerializeFn& serialize);
+
+/// A state file's bytes to and from disk. False (logged) on an I/O error.
+[[nodiscard]] bool write_state_file(const std::string& path, std::span<const u8> data);
+[[nodiscard]] bool read_state_file(const std::string& path, std::vector<u8>& out);
 
 /// Host state (the drive board model), saved in a tagged section after the
 /// machine's payload. A section loaded before this is set is applied once it

@@ -249,6 +249,7 @@ the operator controls stay reachable without a pad:
 | `F11` | Toggle fullscreen (`Cmd+F` on macOS, where the OS reserves F11) |
 | `F12` | Save a screenshot |
 | `Tab` (held) | Fast-forward |
+| `Backspace` (held) | Rewind, when turned on in the **System** tab |
 
 **Virtual On** (a twin-stick cabinet) on the keyboard: `W`/`A`/`S`/`D` are the
 left lever, the arrow keys the right lever, `Q`/`E` the left shot/dash and
@@ -311,6 +312,15 @@ subdirectory of your saves directory, so relocating your saves (with `--nvram`
 or `nvram_dir`) moves the states with them. By default that is
 `~/Library/Application Support/sm2-emu/saves/states` on macOS and
 `$XDG_DATA_HOME/sm2-emu/saves/states` (usually under `~/.local/share`) on Linux.
+
+### Rewind
+
+With **Rewind** on (System tab, or `rewind = true`), holding `Backspace` steps
+back through the last stretch of play at twice real time, silently, and play
+carries on from wherever it is let go. History is kept in memory, up to
+`rewind_buffer_mb` (128 MiB by default, about half a minute), and starts afresh
+when a game is loaded. Taking the snapshots costs a little speed on every frame,
+which is why it is off by default.
 
 ## Settings
 

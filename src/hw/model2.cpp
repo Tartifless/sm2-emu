@@ -1821,17 +1821,17 @@ void Model2::serialize(Archive& ar)
     ar.raw(m_inputs);
 }
 
-bool Model2::save_state(const std::string& path) const
+bool Model2::save_state_data(std::vector<u8>& out) const
 {
     auto* self = const_cast<Model2*>(this);
-    return save_state_to_file(path, m_game.name, static_cast<u32>(m_game.board),
-                              m_in_frame, [self](Archive& ar) { self->serialize(ar); });
+    return save_state_to_buffer(out, m_game.name, static_cast<u32>(m_game.board),
+                                m_in_frame, [self](Archive& ar) { self->serialize(ar); });
 }
 
-bool Model2::load_state(const std::string& path)
+bool Model2::load_state_data(std::span<const u8> data)
 {
-    if (!load_state_from_file(path, m_game.name, static_cast<u32>(m_game.board),
-                              m_in_frame, [this](Archive& ar) { serialize(ar); })) {
+    if (!load_state_from_buffer(data, m_game.name, static_cast<u32>(m_game.board),
+                                m_in_frame, [this](Archive& ar) { serialize(ar); })) {
         return false;
     }
     ++m_texture_generation;

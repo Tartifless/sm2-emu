@@ -2374,6 +2374,22 @@ void Gui::draw_system_tab(Config& config)
                    "not in front. Keyboard and mouse still need the window\n"
                    "in front."));
     }
+
+    ImGui::Spacing();
+    ImGui::Checkbox(tr_id("Rewind"), &config.rewind);
+    ImGui::SameLine();
+    ImGui::TextDisabled("(?)");
+    if (ImGui::IsItemHovered()) {
+        tooltip(tr("Hold Backspace to step back through play.\n"
+                   "Costs a little speed on every frame while on."));
+    }
+    if (config.rewind) {
+        int buffer = static_cast<int>(config.rewind_buffer_mb);
+        ImGui::SetNextItemWidth(220);
+        if (ImGui::SliderInt(tr_id("Rewind memory"), &buffer, 32, 1024, "%d MiB")) {
+            config.rewind_buffer_mb = static_cast<u32>(buffer);
+        }
+    }
 }
 
 void Gui::draw_states_tab()

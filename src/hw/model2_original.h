@@ -189,8 +189,8 @@ public:
     void load_nvram() override;
     void save_nvram() const override;
 
-    [[nodiscard]] bool save_state(const std::string& path) const override;
-    [[nodiscard]] bool load_state(const std::string& path) override;
+    [[nodiscard]] bool save_state_data(std::vector<u8>& out) const override;
+    [[nodiscard]] bool load_state_data(std::span<const u8> data) override;
 
     /// Copy the set's shipped EEPROM image over the chip, if it ships one.
     void seed_eeprom_from_rom();

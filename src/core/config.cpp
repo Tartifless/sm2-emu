@@ -513,6 +513,14 @@ bool load_config(const std::string& path, Config* out, std::vector<std::string>*
             if (!parse_bool(value, &out->show_notifications)) {
                 bad_value();
             }
+        } else if (key == "rewind") {
+            if (!parse_bool(value, &out->rewind)) {
+                bad_value();
+            }
+        } else if (key == "rewind_buffer_mb") {
+            if (!parse_u32(value, &out->rewind_buffer_mb)) {
+                bad_value();
+            }
         } else if (key == "lightgun") {
             if (!parse_bool(value, &out->lightgun)) {
                 bad_value();
@@ -977,6 +985,10 @@ bool save_config(const std::string& path, const Config& config)
         << "# With software_async on a big.LITTLE CPU, draw on the slow cores.\n"
         << "software_slow_cores = " << bool_text(config.software_slow_cores) << "\n"
         << "show_notifications = " << bool_text(config.show_notifications) << "\n"
+        << "# Keep recent states so holding Backspace steps back through play,\n"
+        << "# using up to rewind_buffer_mb MiB of memory.\n"
+        << "rewind = " << bool_text(config.rewind) << "\n"
+        << "rewind_buffer_mb = " << config.rewind_buffer_mb << "\n"
         << "# Overlay language: auto (follow the system), en, or a file name from\n"
         << "# lang/ without .po (de, pt_BR, zh_TW, ...).\n"
         << "language = " << config.language << "\n"
