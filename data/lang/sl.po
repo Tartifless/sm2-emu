@@ -568,8 +568,8 @@ msgstr "Emulator arkadnih avtomatov Sega Model 2"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "BSD 3-Clause licence. See LICENSE."
-msgstr "Licenca BSD 3-Clause. Glejte LICENSE."
+msgid "GPL-3.0-or-later licence. See LICENSE."
+msgstr "Licenca GPL-3.0-or-later. Glejte LICENSE."
 
 #: src/osd/gui.cpp
 #, no-c-format

@@ -525,9 +525,12 @@ xBR/ScaleFX 2D upscaling described under **Settings** above.
 
 ## Licence and credits
 
-BSD 3-Clause. See `LICENSE`.
+GNU GPL version 3 or later, with additional terms under section 7: keep the
+credits, mark modified versions as modified, and give a modified version you
+distribute its own name. See `LICENSE` and `NOTICE`.
 
 I'm standing on the shoulders of giants, and SM2-Emu exists because of the MAME
 project's reverse engineering of this hardware. The emulation is derived from
 MAME's Sega Model 2 driver and its device cores, which their authors released
-under the same licence. See `NOTICE` for per-component attribution.
+under the BSD 3-Clause licence; that code keeps its licence (see
+`LICENSES/BSD-3-Clause.txt`). See `NOTICE` for per-component attribution.

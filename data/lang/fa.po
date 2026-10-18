@@ -565,8 +565,8 @@ msgstr "شبیه‌ساز آرکید Sega Model 2"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "BSD 3-Clause licence. See LICENSE."
-msgstr "مجوز BSD سه‌بندی. LICENSE را ببینید."
+msgid "GPL-3.0-or-later licence. See LICENSE."
+msgstr "مجوز GPL-3.0-or-later. LICENSE را ببینید."
 
 #: src/osd/gui.cpp
 #, no-c-format

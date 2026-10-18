@@ -565,8 +565,8 @@ msgstr "Sega Model 2 játékgép-emulátor"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "BSD 3-Clause licence. See LICENSE."
-msgstr "BSD 3-Clause licenc. Lásd: LICENSE."
+msgid "GPL-3.0-or-later licence. See LICENSE."
+msgstr "GPL-3.0-or-later licenc. Lásd: LICENSE."
 
 #: src/osd/gui.cpp
 #, no-c-format

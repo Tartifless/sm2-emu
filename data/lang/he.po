@@ -565,8 +565,8 @@ msgstr "אמולטור ארקייד של Sega Model 2"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "BSD 3-Clause licence. See LICENSE."
-msgstr "רישיון BSD בן 3 סעיפים. ראו LICENSE."
+msgid "GPL-3.0-or-later licence. See LICENSE."
+msgstr "רישיון GPL-3.0-or-later. ראו LICENSE."
 
 #: src/osd/gui.cpp
 #, no-c-format

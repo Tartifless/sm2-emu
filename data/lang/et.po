@@ -567,8 +567,8 @@ msgstr "Sega Model 2 arkaadmasinate emulaator"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "BSD 3-Clause licence. See LICENSE."
-msgstr "BSD 3-Clause litsents. Vt LICENSE."
+msgid "GPL-3.0-or-later licence. See LICENSE."
+msgstr "GPL-3.0-or-later litsents. Vt LICENSE."
 
 #: src/osd/gui.cpp
 #, no-c-format

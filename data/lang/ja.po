@@ -568,8 +568,8 @@ msgstr "セガ Model 2 アーケードエミュレーター"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "BSD 3-Clause licence. See LICENSE."
-msgstr "BSD 3条項ライセンス。LICENSE を参照してください。"
+msgid "GPL-3.0-or-later licence. See LICENSE."
+msgstr "GPL-3.0-or-later ライセンス。LICENSE を参照してください。"
 
 #: src/osd/gui.cpp
 #, no-c-format

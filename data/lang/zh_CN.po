@@ -568,8 +568,8 @@ msgstr "世嘉 Model 2 街机模拟器"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "BSD 3-Clause licence. See LICENSE."
-msgstr "BSD 3-Clause 许可证。请参阅 LICENSE。"
+msgid "GPL-3.0-or-later licence. See LICENSE."
+msgstr "GPL-3.0-or-later 许可证。请参阅 LICENSE。"
 
 #: src/osd/gui.cpp
 #, no-c-format

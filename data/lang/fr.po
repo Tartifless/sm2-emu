@@ -565,8 +565,8 @@ msgstr "Un émulateur d'arcade Sega Model 2"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "BSD 3-Clause licence. See LICENSE."
-msgstr "Licence BSD à 3 clauses. Voir LICENSE."
+msgid "GPL-3.0-or-later licence. See LICENSE."
+msgstr "Licence GPL-3.0-or-later. Voir LICENSE."
 
 #: src/osd/gui.cpp
 #, no-c-format

@@ -565,8 +565,8 @@ msgstr "Bir Sega Model 2 atari emülatörü"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "BSD 3-Clause licence. See LICENSE."
-msgstr "BSD 3-Clause lisansı. Bkz. LICENSE."
+msgid "GPL-3.0-or-later licence. See LICENSE."
+msgstr "GPL-3.0-or-later lisansı. Bkz. LICENSE."
 
 #: src/osd/gui.cpp
 #, no-c-format

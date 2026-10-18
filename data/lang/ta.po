@@ -570,8 +570,8 @@ msgstr "ஒரு Sega Model 2 ஆர்கேட் எமுலேட்டர
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "BSD 3-Clause licence. See LICENSE."
-msgstr "BSD 3-Clause உரிமம். LICENSE ஐப் பார்க்கவும்."
+msgid "GPL-3.0-or-later licence. See LICENSE."
+msgstr "GPL-3.0-or-later உரிமம். LICENSE ஐப் பார்க்கவும்."
 
 #: src/osd/gui.cpp
 #, no-c-format

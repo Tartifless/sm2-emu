@@ -571,8 +571,8 @@ msgstr "একটি Sega Model 2 আর্কেড এমুলেটর"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "BSD 3-Clause licence. See LICENSE."
-msgstr "BSD 3-Clause লাইসেন্স। LICENSE দেখুন।"
+msgid "GPL-3.0-or-later licence. See LICENSE."
+msgstr "GPL-3.0-or-later লাইসেন্স। LICENSE দেখুন।"
 
 #: src/osd/gui.cpp
 #, no-c-format

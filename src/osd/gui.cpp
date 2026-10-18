@@ -6,11 +6,11 @@
 //
 // A Sega Model 2 arcade emulator.
 // Copyright (c) 2025+ Daniel Martin (dmanlfc)
-// SPDX-License-Identifier: BSD-3-Clause
+// SPDX-License-Identifier: GPL-3.0-or-later
 //
-// This header must not be removed. The source files in this project may not be
-// used to contribute to commercial projects or for monetary gain without the
-// express written permission of the author.
+// This header must not be removed. sm2-emu is licensed under the GNU General
+// Public License, version 3 or later, with additional terms under section 7 of
+// that licence. See LICENSE and NOTICE.
 //
 #include "osd/gui.h"
 #include "core/log.h"
@@ -971,7 +971,7 @@ void Gui::draw_settings(Config& config, const std::vector<std::string>& gpu_name
             ImGui::TextUnformatted(tr("A Sega Model 2 arcade emulator"));
             ImGui::Spacing();
             ImGui::Text("Copyright (c) 2025+ Daniel Martin (dmanlfc)");
-            ImGui::TextUnformatted(tr("BSD 3-Clause licence. See LICENSE."));
+            ImGui::TextUnformatted(tr("GPL-3.0-or-later licence. See LICENSE."));
             ImGui::Spacing();
             ImGui::Separator();
             ImGui::Spacing();

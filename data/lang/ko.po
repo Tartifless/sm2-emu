@@ -568,8 +568,8 @@ msgstr "세가 Model 2 아케이드 에뮬레이터"
 
 #: src/osd/gui.cpp
 #, no-c-format
-msgid "BSD 3-Clause licence. See LICENSE."
-msgstr "BSD 3조항 라이선스. LICENSE를 참고하세요."
+msgid "GPL-3.0-or-later licence. See LICENSE."
+msgstr "GPL-3.0-or-later 라이선스. LICENSE를 참고하세요."
 
 #: src/osd/gui.cpp
 #, no-c-format
