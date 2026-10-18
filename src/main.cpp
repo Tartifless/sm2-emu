@@ -975,6 +975,7 @@ int main(int argc, char** argv)
     options.config.pad_rumble_cornering = from_file.pad_rumble_cornering;
     options.config.pad_stick_sensitivity = from_file.pad_stick_sensitivity;
     options.config.pad_stick_deadzone    = from_file.pad_stick_deadzone;
+    options.config.pad_shortcuts         = from_file.pad_shortcuts;
     options.config.pad                   = from_file.pad;
     options.config.pad_layouts           = from_file.pad_layouts;
     options.config.wheel_steer_deadzone  = from_file.wheel_steer_deadzone;
@@ -2382,9 +2383,33 @@ int main(int argc, char** argv)
                 break;
             }
 
+            // The pad's Guide shortcuts, read before poll() so their buttons stay
+            // out of the game.
+            const osd::Input::PadShortcuts pad_shortcuts =
+                input.update_pad_shortcuts(options.config.pad_shortcuts);
+            if (pad_shortcuts.exit) {
+                // As Esc: back to the games when there are some, else quit.
+                if (will_show_picker && machine_iface != nullptr) {
+                    return_to_picker_requested = true;
+                } else {
+                    running = false;
+                }
+            }
+            if (pad_shortcuts.screenshot) {
+                screenshot_requested = true;
+            }
+            if (!gui.visible() && machine_iface != nullptr) {
+                if (pad_shortcuts.save) {
+                    state_action = StateAction{StateOp::Save, hw::kQuickSlot};
+                } else if (pad_shortcuts.load) {
+                    state_action = StateAction{StateOp::Load, hw::kQuickSlot};
+                }
+            }
+
             // Fast-forward is a held key rather than a toggle, so letting go always
             // returns to real time.
-            pacer.set_throttled(options.config.throttle && !fast_forward);
+            pacer.set_throttled(options.config.throttle && !fast_forward
+                                && !pad_shortcuts.fast_forward);
 
             // Audio clock pull: nudge the frame rate toward the audio device's
             // true rate so the queue does not drift. Too full -> slower, too
@@ -2410,7 +2435,7 @@ int main(int argc, char** argv)
             // The wheel's Menu-bound button toggles the overlay, same as F1.
             // Polled every frame (not only while running) so it can also close
             // the overlay once it has paused the game.
-            if (input.menu_button_pressed()) {
+            if (input.menu_button_pressed() || pad_shortcuts.menu) {
                 gui.toggle();
             }
 
@@ -2493,7 +2518,8 @@ int main(int argc, char** argv)
             if (machine_iface && !effective_pause) {
                 // Step back a snapshot, then run a frame from it so there is a
                 // picture; its sound is dropped.
-                rewinding = rewind_held && rewind.step_back(*machine_iface);
+                rewinding = (rewind_held || pad_shortcuts.rewind)
+                         && rewind.step_back(*machine_iface);
 
                 // Inputs are levels, sampled whenever the program polls the I/O
                 // controller during the frame, so they have to be set before the

@@ -326,6 +326,7 @@ private:
     int m_pad_capture_player = -1;
     u32 m_pad_capture_role   = 0;
     int m_pad_edit_player    = 0;
+    bool m_pad_shortcuts_view = false;  ///< the Guide shortcuts in place of the bindings
 
     // Axis capture: the (player, role) awaiting a move, or -1, and the rest
     // position when it began.

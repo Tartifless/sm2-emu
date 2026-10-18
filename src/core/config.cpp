@@ -738,6 +738,10 @@ bool load_config(const std::string& path, Config* out, std::vector<std::string>*
             if (!parse_u32(value, &out->pad_stick_sensitivity)) {
                 bad_value();
             }
+        } else if (key == "pad_shortcuts") {
+            if (!parse_bool(value, &out->pad_shortcuts)) {
+                bad_value();
+            }
         } else if (key == "pad_stick_deadzone") {
             if (!parse_u32(value, &out->pad_stick_deadzone)) {
                 bad_value();
@@ -1117,6 +1121,9 @@ bool save_config(const std::string& path, const Config& config)
         << "# Stick travel about centre that reads as centre, percent (0..40).\n"
         << "# Raise it for a stick that no longer settles at rest.\n"
         << "pad_stick_deadzone = " << config.pad_stick_deadzone << "\n"
+        << "# Guide button shortcuts on a gamepad (menu, save, load, rewind...).\n"
+        << "# Off for a front end that maps its own hotkeys.\n"
+        << "pad_shortcuts = " << bool_text(config.pad_shortcuts) << "\n"
         << "# Cabinet lamps and drive-board bytes for MAMEHooker, DOFLinx and\n"
         << "# similar tools, in MAME's formats: over TCP (network) and, on\n"
         << "# Windows, as window messages.\n"

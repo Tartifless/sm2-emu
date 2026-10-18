@@ -37,6 +37,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <filesystem>
+#include <span>
 #include <string_view>
 #include <system_error>
 
@@ -1361,7 +1362,7 @@ struct PadArtLayout {
 
 constexpr PadArtLayout kPadArt = {
     {0.752f, 0.534f}, {0.818f, 0.438f}, {0.685f, 0.438f}, {0.752f, 0.337f},
-    {0.435f, 0.441f}, {0.503f, 0.286f}, {0.573f, 0.441f},
+    {0.435f, 0.441f}, {0.503f, 0.319f}, {0.573f, 0.441f},
     {0.258f, 0.441f}, {0.630f, 0.650f}, {0.260f, 0.155f}, {0.740f, 0.155f},
     {0.378f, 0.588f}, {0.378f, 0.715f}, {0.335f, 0.650f}, {0.420f, 0.650f},
     {0.245f, 0.070f}, {0.755f, 0.070f},
@@ -1592,6 +1593,12 @@ void Gui::draw_gamepad_tab(Config& config, Input* input)
         }
         ImGui::EndDisabled();
     }
+    ImGui::SameLine();
+    if (ImGui::Button(m_pad_shortcuts_view ? tr_id("Show bindings") : tr_id("Show shortcuts"))) {
+        m_pad_shortcuts_view      = !m_pad_shortcuts_view;
+        m_pad_capture_player      = -1;
+        m_pad_axis_capture_player = -1;
+    }
 
     // -- the picture, with a slot for every control around it ---------------
     // A slot per cabinet control; a stick slot binds both axes of its role.
@@ -1663,7 +1670,9 @@ void Gui::draw_gamepad_tab(Config& config, Input* input)
     const float  right_x   = img1.x + gap;
     const float  below_y   = img1.y + 20.0f * s;
     int          rows[4]   = {0, 0, 0, 0};
-    for (const Slot& slot : kSlots) {
+    const std::span<const Slot> slots =
+        m_pad_shortcuts_view ? std::span<const Slot>{} : std::span<const Slot>(kSlots);
+    for (const Slot& slot : slots) {
         const int row = rows[slot.column]++;
         ImVec2    pos;
         ImVec2    anchor;  // where the connector leaves the slot
@@ -1849,9 +1858,74 @@ void Gui::draw_gamepad_tab(Config& config, Input* input)
     if (binds == &scratch && scratch != config.pad) {
         config.pad_layouts[m_pad_family] = scratch;
     }
+
+    // The Guide shortcuts: Guide is held first, then the other control.
+    if (m_pad_shortcuts_view) {
+        struct Shortcut {
+            const char* name;
+            s32         binding;
+            const char* value;  ///< in place of the control's name, when set
+            int         column;
+            int         row;
+        };
+        // The same layout as Batocera's hotkeys.
+        static const Shortcut kShortcuts[] = {
+            {N_("Screenshot"),    SDL_GAMEPAD_BUTTON_LEFT_SHOULDER, nullptr,          0, 1},
+            {N_("Service"),       SDL_GAMEPAD_BUTTON_LEFT_STICK,    nullptr,          0, 3},
+            {N_("Rewind"),        SDL_GAMEPAD_BUTTON_DPAD_LEFT,     N_("Left held"),  0, 4},
+            {N_("Fast-forward"),  SDL_GAMEPAD_BUTTON_DPAD_RIGHT,    N_("Right held"), 0, 5},
+            {N_("Exit"),          SDL_GAMEPAD_BUTTON_START,         nullptr,          1, 0},
+            {N_("Quick-load"),    SDL_GAMEPAD_BUTTON_NORTH,         nullptr,          1, 2},
+            {N_("Quick-save"),    SDL_GAMEPAD_BUTTON_WEST,          nullptr,          1, 3},
+            {N_("Settings menu"), SDL_GAMEPAD_BUTTON_SOUTH,         nullptr,          1, 4},
+            {N_("Test"),          SDL_GAMEPAD_BUTTON_RIGHT_STICK,   nullptr,          1, 5},
+        };
+        const ImU32 kGuideColour = IM_COL32(240, 190, 90, 255);
+        const auto  label = [&](ImVec2 pos, const char* name, const std::string& value) {
+            const ImVec2 end(pos.x + slot_w, pos.y + slot_h);
+            draw->AddRectFilled(pos, end, IM_COL32(38, 41, 48, 255), 6.0f * s);
+            draw->AddRect(pos, end, IM_COL32(72, 77, 88, 255), 6.0f * s, 0, 1.5f);
+            const float text_y = pos.y + (slot_h - font) * 0.5f;
+            draw->PushClipRect(pos, end, true);
+            draw->AddText(ImVec2(pos.x + 10.0f * s, text_y), IM_COL32(230, 232, 236, 255), name);
+            const float value_w = ImGui::CalcTextSize(value.c_str()).x;
+            draw->AddText(ImVec2(end.x - 10.0f * s - value_w, text_y), IM_COL32(170, 176, 186, 255),
+                          value.c_str());
+            draw->PopClipRect();
+        };
+
+        const ImVec2 guide = at(layout.guide);
+        const ImVec2 guide_pos(guide.x - slot_w * 0.5f, origin.y + 4.0f * s);
+        label(guide_pos, tr("Hold first"), Input::pad_button_name(SDL_GAMEPAD_BUTTON_GUIDE));
+        draw->AddLine(ImVec2(guide.x, guide_pos.y + slot_h), guide, kGuideColour, 1.5f * s);
+        draw->AddCircle(guide, 14.0f * s, kGuideColour, 0, 2.5f * s);
+
+        for (const Shortcut& shortcut : kShortcuts) {
+            const float  y   = img0.y + static_cast<float>(shortcut.row) * pitch - slot_h * 0.5f;
+            const ImVec2 pos(shortcut.column == 0 ? left_x : right_x, y);
+            label(pos, tr(shortcut.name),
+                  shortcut.value != nullptr ? std::string(tr(shortcut.value))
+                                            : Input::pad_button_name(shortcut.binding));
+            const ImVec2 anchor(shortcut.column == 0 ? pos.x + slot_w : pos.x, y + slot_h * 0.5f);
+            const ImVec2 edge(shortcut.column == 0 ? img0.x - 8.0f * s : img1.x + 8.0f * s, anchor.y);
+            const ImVec2 dot    = at(art_binding_point(layout, shortcut.binding));
+            const ImU32  colour = button_colour(shortcut.binding);
+            const ImU32  line   = (colour & 0x00ffffffu) | 0x80000000u;
+            draw->AddLine(anchor, edge, line, 1.5f * s);
+            draw->AddLine(edge, dot, line, 1.5f * s);
+            draw->AddCircleFilled(dot, 4.5f * s, colour);
+        }
+    }
+
     ImGui::SetCursorScreenPos(ImVec2(origin.x, below_y + slot_h + 10.0f * s));
-    ImGui::TextDisabled("%s", tr("The left stick also moves; the shoulders also act as Button 3/4. Right Lever "
-                        "is Virtual On's. Test and Service are Guide+Start and Guide+Back."));
+    if (m_pad_shortcuts_view) {
+        ImGui::TextDisabled("%s", tr("Hold Guide, then press the other button; the game does not see "
+                            "them. Exit goes back to the games when there are some. Service and Test "
+                            "always work."));
+    } else {
+        ImGui::TextDisabled("%s", tr("The left stick also moves; the shoulders also act as Button 3/4. "
+                            "Right Lever is Virtual On's. Show shortcuts lists the Guide combinations."));
+    }
 
     // -- sticks and rumble ---------------------------------------------------
     ImGui::Separator();

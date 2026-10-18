@@ -313,6 +313,10 @@ struct Config {
     /// deflection. Raise it for a stick that no longer settles at rest.
     u32 pad_stick_deadzone = 5;
 
+    /// The Guide button shortcuts (menu, save, load, rewind...). Off for a host
+    /// that maps the hotkeys itself, such as Batocera.
+    bool pad_shortcuts = true;
+
     /// The cabinet controls a gamepad button can be bound to. Test and Service
     /// stay on the Guide chord, so they are not here. Keep kCount last.
     enum class PadRole : u32 {

@@ -221,7 +221,17 @@ rather than by label.
 | Left / right trigger | Brake / accelerate on driving titles |
 | Either stick | Aim on gun titles (no mouse needed); right trigger fires, left trigger reloads |
 | Start / Back | Start / insert a coin |
-| Guide + Start / Back | Service / Test (operator menus) |
+| Guide + L3 / R3 | Service / Test (operator menus) |
+| Guide + A | Settings menu |
+| Guide + X / Y | Quick-save / quick-load |
+| Guide + d-pad left / right (held) | Rewind (when turned on) / fast-forward |
+| Guide + LB | Screenshot |
+| Guide + Start | Back to the game picker, or quit when there is none |
+
+The Guide shortcuts follow Batocera's hotkey layout. A front end that maps its
+own hotkeys turns them off with `pad_shortcuts = false` in `sm2-emu.ini`, as
+Batocera does, so nothing fires twice; Service and Test stay on Guide + L3 /
+R3 either way.
 
 The keyboard is live at the same time, so a second player can join on it and
 the operator controls stay reachable without a pad:
