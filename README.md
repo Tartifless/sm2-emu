@@ -194,6 +194,10 @@ has none of its own.
 ./build/bin/sm2-emu --game vf2o vf2.zip
 ```
 
+A `.zip` or `.7z` dropped onto the window starts that game, from the picker or
+in place of the one running. If a set cannot start, a dialog says why and lists
+any chips that are missing.
+
 ROM layouts live in `data/games.xml`, so adding a game is a data edit. A region
 is a flat byte array and each chip contributes `chunk` bytes every `stride`
 bytes, which expresses every interleaving the hardware uses. The schema is

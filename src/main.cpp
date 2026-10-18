@@ -57,6 +57,7 @@
 #include <imgui_impl_sdl3.h>
 
 #include <algorithm>
+#include <cctype>
 #include <array>
 #include <cstdio>
 #include <cstdlib>
@@ -2164,6 +2165,7 @@ int main(int argc, char** argv)
         bool quit_key_pressed   = false;  ///< F9 went down during this run.
         bool screenshot_requested = false;  ///< Set by F12, serviced next frame.
         bool return_to_picker_requested = false;  ///< Set by Esc; unload + picker.
+        std::string dropped_path;  ///< A file dropped on the window, launched next frame.
 
         // A pending save-state action (F6/F7 or an overlay button), serviced
         // between frames next to the screenshot. `slot` is the slot name
@@ -2248,6 +2250,33 @@ int main(int argc, char** argv)
         std::unique_ptr<render::TextureReplacements> replacements;
         std::string                                  replacements_game;
 
+        // Make `next` the running game, from the picker or a dropped file.
+        const auto adopt_game = [&](LoadedMachine&& next) {
+            async_soft.forget_machine();
+            backend->wait_idle();
+            loaded        = std::move(next);
+            machine_iface = loaded->machine_iface.get();
+            machine       = loaded->machine;
+            machine_2b    = loaded->machine_2b;
+            machine_2c    = loaded->machine_2c;
+            machine_orig  = loaded->machine_orig;
+            main_cpu      = loaded->main_cpu;
+            sound_board   = loaded->sound_board;
+            sound_link    = loaded->sound_link;
+
+            if (sound_board != nullptr) {
+                static_cast<void>(audio.init(sound_board->sample_rate()));
+            }
+            configure_cabinet_link(*machine_iface, options.config);
+            if (gui.picker_active()) {
+                scraper.stop();
+                gui.release_picker_textures();
+                gui.hide_picker();
+            }
+            window.set_title(build_title());
+            pacer.resync();
+        };
+
         while (running) {
             const u64 frame_start_ns = SDL_GetTicksNS();
 
@@ -2315,6 +2344,11 @@ int main(int argc, char** argv)
                             } else if (event.key.key == SDLK_TAB && !event.key.repeat) {
                                 fast_forward = true;
                             }
+                        }
+                        break;
+                    case SDL_EVENT_DROP_FILE:
+                        if (event.drop.data != nullptr) {
+                            dropped_path = event.drop.data;
                         }
                         break;
                     case SDL_EVENT_KEY_UP:
@@ -2917,25 +2951,44 @@ int main(int argc, char** argv)
                                         std::move(load_error.message),
                                         std::move(load_error.missing));
                 } else {
-                    loaded        = std::move(chosen);
-                    machine_iface = loaded->machine_iface.get();
-                    machine       = loaded->machine;
-                    machine_2b    = loaded->machine_2b;
-                    machine_2c    = loaded->machine_2c;
-                    machine_orig  = loaded->machine_orig;
-                    main_cpu      = loaded->main_cpu;
-                    sound_board   = loaded->sound_board;
-                    sound_link    = loaded->sound_link;
-
-                    if (sound_board != nullptr) {
-                        static_cast<void>(audio.init(sound_board->sample_rate()));
-                    }
-                    configure_cabinet_link(*machine_iface, options.config);
-                    gui.hide_picker();
-                    window.set_title(build_title());
+                    adopt_game(std::move(*chosen));
                     SM2_INFO("picker: launched '%s'", loaded->game.name.c_str());
                 }
                 pacer.resync();
+                continue;
+            }
+
+            // A ROM archive dropped on the window. The running game keeps going
+            // if the new one does not load.
+            if (!dropped_path.empty()) {
+                const std::filesystem::path path(dropped_path);
+                dropped_path.clear();
+                std::string extension = path.extension().string();
+                std::transform(extension.begin(), extension.end(), extension.begin(),
+                               [](unsigned char c) { return static_cast<char>(std::tolower(c)); });
+                if (extension != ".zip" && extension != ".7z") {
+                    gui.show_load_error(path.filename().string(),
+                                        i18n::tr("Drop a .zip or .7z ROM archive to play it."), {});
+                    continue;
+                }
+                if (machine_iface != nullptr) {
+                    machine_iface->save_nvram();
+                }
+                rom::LoadError               load_error;
+                std::optional<LoadedMachine> dropped =
+                    load_game(database, path.string(), {}, options.config.nvram_dir,
+                              options.log_unmapped, &load_error);
+                if (!dropped.has_value()) {
+                    const rom::GameSpec* spec =
+                        load_error.game.empty() ? nullptr : database.find(load_error.game);
+                    gui.show_load_error(spec != nullptr ? spec->title : path.filename().string(),
+                                        std::move(load_error.message),
+                                        std::move(load_error.missing));
+                    continue;
+                }
+                input.release_force_feedback();
+                adopt_game(std::move(*dropped));
+                SM2_INFO("launched '%s' from a dropped file", loaded->game.name.c_str());
                 continue;
             }
 
