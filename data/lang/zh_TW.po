@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-18 15:39+0200\n"
+"POT-Creation-Date: 2026-10-19 18:05+1000\n"
 "PO-Revision-Date: 2026-10-09 12:00+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -317,6 +317,24 @@ msgstr "彎曲度"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Bezel"
+msgstr "邊框"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"In fullscreen, frame the 4:3 picture with an image from\n"
+"the bezels directory (Paths tab): <game>.png, the parent\n"
+"set's, or default.png. The picture fills the image's\n"
+"transparent window."
+msgstr ""
+"全螢幕時，以邊框目錄（路徑分頁）中的圖片\n"
+"框住 4:3 畫面：<game>.png、父版本的圖片\n"
+"或 default.png。畫面會填滿圖片中的\n"
+"透明視窗。"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Enhancement (cosmetic, beyond the original hardware)"
 msgstr "強化（視覺效果，超越原始硬體）"
 
@@ -516,6 +534,20 @@ msgstr "螢幕截圖目錄"
 #, no-c-format
 msgid "Where F12 screenshots are written."
 msgstr "F12 螢幕截圖的儲存位置。"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Bezels directory"
+msgstr "邊框目錄"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Bezel images: <game>.png, the parent set's, or default.png.\n"
+"Empty means a bezels folder beside sm2-emu.ini."
+msgstr ""
+"邊框圖片：<game>.png、父版本的圖片或 default.png。\n"
+"留空表示 sm2-emu.ini 旁的 bezels 資料夾。"
 
 #: src/osd/gui.cpp
 #, no-c-format

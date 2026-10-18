@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-18 15:39+0200\n"
+"POT-Creation-Date: 2026-10-19 18:05+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -315,6 +315,24 @@ msgstr "Krzywizna"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Bezel"
+msgstr "Ramka"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"In fullscreen, frame the 4:3 picture with an image from\n"
+"the bezels directory (Paths tab): <game>.png, the parent\n"
+"set's, or default.png. The picture fills the image's\n"
+"transparent window."
+msgstr ""
+"Na pełnym ekranie otacza obraz 4:3 grafiką z\n"
+"katalogu ramek (karta Ścieżki): <game>.png, grafiką\n"
+"zestawu nadrzędnego lub default.png. Obraz wypełnia\n"
+"przezroczyste okno grafiki."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Enhancement (cosmetic, beyond the original hardware)"
 msgstr "Ulepszenia (kosmetyczne, ponad oryginalny sprzęt)"
 
@@ -514,6 +532,20 @@ msgstr "Katalog zrzutów ekranu"
 #, no-c-format
 msgid "Where F12 screenshots are written."
 msgstr "Gdzie zapisywane są zrzuty ekranu z F12."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Bezels directory"
+msgstr "Katalog ramek"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Bezel images: <game>.png, the parent set's, or default.png.\n"
+"Empty means a bezels folder beside sm2-emu.ini."
+msgstr ""
+"Grafiki ramek: <game>.png, zestawu nadrzędnego lub default.png.\n"
+"Puste oznacza folder bezels obok sm2-emu.ini."
 
 #: src/osd/gui.cpp
 #, no-c-format

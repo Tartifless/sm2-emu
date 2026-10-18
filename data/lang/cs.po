@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-18 15:39+0200\n"
+"POT-Creation-Date: 2026-10-19 18:05+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -314,6 +314,24 @@ msgstr "Zakřivení"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Bezel"
+msgstr "Bezel"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"In fullscreen, frame the 4:3 picture with an image from\n"
+"the bezels directory (Paths tab): <game>.png, the parent\n"
+"set's, or default.png. The picture fills the image's\n"
+"transparent window."
+msgstr ""
+"Na celé obrazovce orámuje obraz 4:3 obrázkem z\n"
+"adresáře bezelů (karta Cesty): <game>.png, obrázkem\n"
+"rodičovské sady nebo default.png. Obraz vyplní\n"
+"průhledné okno obrázku."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Enhancement (cosmetic, beyond the original hardware)"
 msgstr "Vylepšení (kosmetická, nad rámec původního hardwaru)"
 
@@ -513,6 +531,20 @@ msgstr "Adresář snímků obrazovky"
 #, no-c-format
 msgid "Where F12 screenshots are written."
 msgstr "Kam se ukládají snímky obrazovky z F12."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Bezels directory"
+msgstr "Adresář bezelů"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Bezel images: <game>.png, the parent set's, or default.png.\n"
+"Empty means a bezels folder beside sm2-emu.ini."
+msgstr ""
+"Obrázky bezelů: <game>.png, rodičovské sady nebo default.png.\n"
+"Prázdné znamená složku bezels vedle sm2-emu.ini."
 
 #: src/osd/gui.cpp
 #, no-c-format

@@ -1747,7 +1747,7 @@ void Input::gather_lightguns(hw::Inputs* inputs, const rom::GameSpec& game) cons
     if (pointer.width > 1 && pointer.height > 1) {
         const render::Letterbox box = render::compute_game_rect(
             static_cast<u32>(pointer.width), static_cast<u32>(pointer.height),
-            m_present_aspect, m_present_method);
+            m_present_aspect, m_present_method, m_present_area);
         if (box.width > 0.0f && box.height > 0.0f) {
             ptr_fx = (pointer.x - box.x) / box.width;
             ptr_fy = (pointer.y - box.y) / box.height;
@@ -1849,7 +1849,7 @@ void Input::gather_lightguns(hw::Inputs* inputs, const rom::GameSpec& game) cons
                     && win_w > 0 && win_h > 0 && display.w > 0 && display.h > 0);
             const render::Letterbox box = render::compute_game_rect(
                 static_cast<u32>(pix_w), static_cast<u32>(pix_h), m_present_aspect,
-                m_present_method);
+                m_present_method, m_present_area);
             if (placed && box.width > 0.0f && box.height > 0.0f) {
                 if (!fullscreen) {
                     screen_x = static_cast<float>(display.x - win_x) / static_cast<float>(win_w);

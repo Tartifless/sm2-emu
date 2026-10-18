@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-18 15:39+0200\n"
+"POT-Creation-Date: 2026-10-19 18:05+1000\n"
 "PO-Revision-Date: 2026-10-09 12:00+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -317,6 +317,24 @@ msgstr "곡률"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Bezel"
+msgstr "베젤"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"In fullscreen, frame the 4:3 picture with an image from\n"
+"the bezels directory (Paths tab): <game>.png, the parent\n"
+"set's, or default.png. The picture fills the image's\n"
+"transparent window."
+msgstr ""
+"전체 화면에서 4:3 화면을 베젤 디렉터리(경로 탭)의\n"
+"이미지로 감쌉니다: <game>.png, 부모 세트의 이미지,\n"
+"또는 default.png. 게임 화면은 이미지의\n"
+"투명한 창을 채웁니다."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Enhancement (cosmetic, beyond the original hardware)"
 msgstr "향상 (시각 효과, 원래 하드웨어 이상)"
 
@@ -516,6 +534,20 @@ msgstr "스크린샷 디렉터리"
 #, no-c-format
 msgid "Where F12 screenshots are written."
 msgstr "F12 스크린샷이 저장되는 위치입니다."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Bezels directory"
+msgstr "베젤 디렉터리"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Bezel images: <game>.png, the parent set's, or default.png.\n"
+"Empty means a bezels folder beside sm2-emu.ini."
+msgstr ""
+"베젤 이미지: <game>.png, 부모 세트의 이미지, 또는 default.png.\n"
+"비워 두면 sm2-emu.ini 옆의 bezels 폴더를 사용합니다."
 
 #: src/osd/gui.cpp
 #, no-c-format

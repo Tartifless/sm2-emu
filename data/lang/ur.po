@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-18 15:39+0200\n"
+"POT-Creation-Date: 2026-10-19 18:05+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -314,6 +314,24 @@ msgstr "خمیدگی"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Bezel"
+msgstr "فریم"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"In fullscreen, frame the 4:3 picture with an image from\n"
+"the bezels directory (Paths tab): <game>.png, the parent\n"
+"set's, or default.png. The picture fills the image's\n"
+"transparent window."
+msgstr ""
+"پوری اسکرین میں 4:3 تصویر کو فریم ڈائریکٹری (راستے ٹیب)\n"
+"کی ایک تصویر سے گھیرتا ہے: <game>.png، پیرنٹ سیٹ کی\n"
+"تصویر، یا default.png۔ گیم کی تصویر فریم کی\n"
+"شفاف کھڑکی کو بھرتی ہے۔"
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Enhancement (cosmetic, beyond the original hardware)"
 msgstr "بہتری (سجاوٹی، اصل ہارڈ ویئر سے آگے)"
 
@@ -513,6 +531,20 @@ msgstr "اسکرین شاٹ ڈائریکٹری"
 #, no-c-format
 msgid "Where F12 screenshots are written."
 msgstr "جہاں F12 اسکرین شاٹ لکھے جاتے ہیں۔"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Bezels directory"
+msgstr "فریم ڈائریکٹری"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Bezel images: <game>.png, the parent set's, or default.png.\n"
+"Empty means a bezels folder beside sm2-emu.ini."
+msgstr ""
+"فریم تصاویر: <game>.png، پیرنٹ سیٹ کی تصویر، یا default.png۔\n"
+"خالی کا مطلب sm2-emu.ini کے ساتھ bezels فولڈر ہے۔"
 
 #: src/osd/gui.cpp
 #, no-c-format

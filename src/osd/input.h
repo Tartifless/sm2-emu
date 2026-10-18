@@ -19,6 +19,7 @@
 #include "osd/daytona_board.h"
 #include "osd/drive_command.h"
 #include "osd/indy_board.h"
+#include "render/backend.h"
 #include "rom/game.h"
 
 #include <SDL3/SDL.h>
@@ -361,10 +362,12 @@ public:
     /// Present-stage placement, pushed from the config each frame, so the gun /
     /// mouse pointer maps onto the same letterbox rectangle the backend draws
     /// the image into. A mismatch would offset every shot from the cursor.
-    void set_present_placement(AspectMode aspect, ScalingMethod method)
+    void set_present_placement(AspectMode aspect, ScalingMethod method,
+                               render::PictureArea area = {})
     {
         m_present_aspect = aspect;
         m_present_method = method;
+        m_present_area   = area;
     }
 
     /// Widescreen columns each side of the 4:3 screen, 0 for none: a gun can
@@ -627,6 +630,7 @@ private:
     AspectMode    m_present_aspect = AspectMode::FourThree;
     u32           m_wide_columns   = 0;
     ScalingMethod m_present_method = ScalingMethod::SharpBilinear;
+    render::PictureArea m_present_area;
     bool          m_sinden_border  = false;
 
     bool             m_started = false;

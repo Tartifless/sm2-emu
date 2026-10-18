@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-18 15:39+0200\n"
+"POT-Creation-Date: 2026-10-19 18:05+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -314,6 +314,24 @@ msgstr "Curvatura"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Bezel"
+msgstr "Moldura"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"In fullscreen, frame the 4:3 picture with an image from\n"
+"the bezels directory (Paths tab): <game>.png, the parent\n"
+"set's, or default.png. The picture fills the image's\n"
+"transparent window."
+msgstr ""
+"Em tela cheia, emoldura a imagem 4:3 com uma imagem da\n"
+"pasta de molduras (aba Pastas): <game>.png, a do jogo\n"
+"pai ou default.png. A imagem preenche a janela\n"
+"transparente da moldura."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Enhancement (cosmetic, beyond the original hardware)"
 msgstr "Aprimoramento (cosmético, além do hardware original)"
 
@@ -513,6 +531,20 @@ msgstr "Pasta de capturas de tela"
 #, no-c-format
 msgid "Where F12 screenshots are written."
 msgstr "Onde as capturas de tela do F12 são gravadas."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Bezels directory"
+msgstr "Pasta de molduras"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Bezel images: <game>.png, the parent set's, or default.png.\n"
+"Empty means a bezels folder beside sm2-emu.ini."
+msgstr ""
+"Imagens de moldura: <game>.png, a do jogo pai ou default.png.\n"
+"Vazio significa uma pasta bezels ao lado de sm2-emu.ini."
 
 #: src/osd/gui.cpp
 #, no-c-format

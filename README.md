@@ -373,6 +373,14 @@ all applied live:
   stretch (fill the window).
 - **CRT filter** — an optional cosmetic arcade-monitor look (scanlines, shadow
   mask, glow, curvature), off by default.
+- **Bezel** — frames the 4:3 picture with artwork. Put PNGs in the bezels
+  directory (Paths tab; by default a `bezels` folder beside `sm2-emu.ini`),
+  named after the set (`daytona.png`), its parent, or `default.png` for
+  everything else. The image needs a transparent window in its centre, and
+  the game is drawn inside it. A full-height 4:3 window (1440×1080 in a
+  1920×1080 image) leaves the game exactly where it is without a bezel.
+  Bezels only work in fullscreen, and obviously not when the aspect ratio is
+  16:9 or the picture is stretched.
 
 ### Enhancement (optional, GPU-gated)
 

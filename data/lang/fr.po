@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-18 15:39+0200\n"
+"POT-Creation-Date: 2026-10-19 18:05+1000\n"
 "PO-Revision-Date: 2026-10-09 12:00+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: French\n"
@@ -314,6 +314,24 @@ msgstr "Courbure"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Bezel"
+msgstr "Bezel"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"In fullscreen, frame the 4:3 picture with an image from\n"
+"the bezels directory (Paths tab): <game>.png, the parent\n"
+"set's, or default.png. The picture fills the image's\n"
+"transparent window."
+msgstr ""
+"En plein écran, encadre l'image 4:3 avec une image du\n"
+"dossier des bezels (onglet Chemins) : <game>.png, celle du\n"
+"jeu parent ou default.png. L'image remplit la fenêtre\n"
+"transparente du bezel."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Enhancement (cosmetic, beyond the original hardware)"
 msgstr "Amélioration (cosmétique, au-delà du matériel d'origine)"
 
@@ -513,6 +531,20 @@ msgstr "Dossier des captures d'écran"
 #, no-c-format
 msgid "Where F12 screenshots are written."
 msgstr "Emplacement des captures d'écran F12."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Bezels directory"
+msgstr "Dossier des bezels"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Bezel images: <game>.png, the parent set's, or default.png.\n"
+"Empty means a bezels folder beside sm2-emu.ini."
+msgstr ""
+"Images de bezel : <game>.png, celle du jeu parent ou default.png.\n"
+"Vide signifie un dossier bezels à côté de sm2-emu.ini."
 
 #: src/osd/gui.cpp
 #, no-c-format

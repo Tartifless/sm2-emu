@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-18 15:39+0200\n"
+"POT-Creation-Date: 2026-10-19 18:05+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -315,6 +315,24 @@ msgstr "الانحناء"
 
 #: src/osd/gui.cpp
 #, no-c-format
+msgid "Bezel"
+msgstr "إطار"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"In fullscreen, frame the 4:3 picture with an image from\n"
+"the bezels directory (Paths tab): <game>.png, the parent\n"
+"set's, or default.png. The picture fills the image's\n"
+"transparent window."
+msgstr ""
+"في ملء الشاشة، يُؤطَّر صورة 4:3 بصورة من\n"
+"مجلد الإطارات (تبويب المسارات): <game>.png أو صورة\n"
+"المجموعة الأم أو default.png. تملأ الصورة\n"
+"النافذة الشفافة في الإطار."
+
+#: src/osd/gui.cpp
+#, no-c-format
 msgid "Enhancement (cosmetic, beyond the original hardware)"
 msgstr "تحسين (تجميلي، يتجاوز العتاد الأصلي)"
 
@@ -514,6 +532,20 @@ msgstr "مجلد لقطات الشاشة"
 #, no-c-format
 msgid "Where F12 screenshots are written."
 msgstr "المكان الذي تُكتب فيه لقطات الشاشة بـ F12."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Bezels directory"
+msgstr "مجلد الإطارات"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Bezel images: <game>.png, the parent set's, or default.png.\n"
+"Empty means a bezels folder beside sm2-emu.ini."
+msgstr ""
+"صور الإطارات: <game>.png أو صورة المجموعة الأم أو default.png.\n"
+"الفارغ يعني مجلد bezels بجوار sm2-emu.ini."
 
 #: src/osd/gui.cpp
 #, no-c-format
