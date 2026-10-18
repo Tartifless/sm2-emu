@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-18 15:17+1000\n"
+"POT-Creation-Date: 2026-10-18 15:39+0200\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -725,6 +725,68 @@ msgstr ""
 #, no-c-format
 msgid "Resistance"
 msgstr "Takistus"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"A gain on every force of the drive board. At 100 %, the\n"
+"board's full power (63) gives the wheel's full force, every\n"
+"force in proportion. 200 % doubles every force: those above\n"
+"half the board's power (32, Sega Rally's strongest torque)\n"
+"then saturate."
+msgstr ""
+"Võimendus ajamiplaadi igale jõule. 100 % juures annab plaadi\n"
+"täisvõimsus (63) rooli täisjõu, iga jõud proportsionaalselt.\n"
+"200 % kahekordistab iga jõu: plaadi poolest võimsusest (32,\n"
+"Sega Rally tugevaim pöördemoment) suuremad jõud küllastuvad\n"
+"siis."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Panel spring"
+msgstr "Paneeli vedru"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"The centring spring of the Sega Rally Championship and\n"
+"Daytona USA cabinets: very light, it brings the wheel\n"
+"back and is barely felt when held against. A share of\n"
+"the resistance above. The other games' cabinets drive\n"
+"the wheel with no spring, and ignore this setting."
+msgstr ""
+"Sega Rally Championshipi ja Daytona USA automaatide\n"
+"tsentreeriv vedru: väga kerge, toob rooli tagasi ja on\n"
+"vastu hoides vaevu tuntav. Osa ülalolevast takistusest.\n"
+"Teiste mängude automaadid liigutavad rooli vedruta ega\n"
+"arvesta seda seadet."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Sega Rally Championship and Daytona USA only, all versions."
+msgstr "Ainult Sega Rally Championship ja Daytona USA, kõik versioonid."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Drive board DIP strength"
+msgstr "Ajamiplaadi DIP-tugevus"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"The motor strength set on the drive board's DIP switches,\n"
+"the switches ON counted in binary: 0 = all OFF.\n"
+"Sega Rally: switches 1-3, 0 to 7 added to every torque.\n"
+"Daytona USA: switches 1-3, 4 times that.\n"
+"Indy 500, Touring Car, Over Rev, Super GT 24h:\n"
+"switches 1-1 to 1-3, 0 to 7 added to every force."
+msgstr ""
+"Ajamiplaadi DIP-lülititega määratud mootori tugevus, ON-asendis\n"
+"lülitid kahendsüsteemis: 0 = kõik OFF. Sega Rally:\n"
+"lülitid 1-3, 0 kuni 7 lisatakse igale pöördemomendile. Daytona\n"
+"USA: lülitid 1-3, neli korda rohkem. Indy 500, Touring Car, Over\n"
+"Rev, Super GT 24h: lülitid 1-1 kuni 1-3, 0 kuni 7 lisatakse\n"
+"igale jõule."
 
 #: src/osd/gui.cpp
 #, no-c-format
