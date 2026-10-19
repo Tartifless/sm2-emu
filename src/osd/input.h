@@ -271,6 +271,7 @@ public:
         bool  calibrating = false;
         float win_x       = 0.5f;
         float win_y       = 0.5f;
+        bool  idle        = false;
     };
     [[nodiscard]] const std::array<GunAim, kPlayers>& gun_aims() const { return m_gun_aims; }
 
@@ -561,6 +562,14 @@ private:
     /// Latest per-player aim in game-image space, for the crosshair overlay.
     /// Written by gather_lightguns, read by the GUI. Mutable for the same reason.
     mutable std::array<GunAim, kPlayers> m_gun_aims{};
+
+    /// Each player's last raw aim and when it last moved or fired, for GunAim::idle.
+    /// A gun counts as idle until it is first used.
+    mutable std::array<bool, kPlayers>  m_gun_sampled{};
+    mutable std::array<bool, kPlayers>  m_gun_used{};
+    mutable std::array<float, kPlayers> m_gun_prev_x{};
+    mutable std::array<float, kPlayers> m_gun_prev_y{};
+    mutable std::array<u64, kPlayers>   m_gun_last_use_ms{};
 
     /// Recoil settings and the previous trigger level per gun, so a pulse fires
     /// once on the press edge rather than every frame the trigger is held.

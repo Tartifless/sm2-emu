@@ -2766,7 +2766,7 @@ void Gui::draw_crosshairs(const Input* input)
 
     for (usize player = 0; player < aims.size(); ++player) {
         const Input::GunAim& aim = aims[player];
-        if (!aim.active || aim.calibrating) {
+        if (!aim.active || aim.calibrating || aim.idle) {
             continue;
         }
         float fx = aim.x;
