@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-19 18:05+1000\n"
+"POT-Creation-Date: 2026-10-19 22:31+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -551,6 +551,26 @@ msgid ""
 msgstr ""
 "বেজেল ছবি: <game>.png, প্যারেন্ট সেটের ছবি, বা default.png।\n"
 "খালি থাকলে sm2-emu.ini-এর পাশের bezels ফোল্ডার।"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Crosshairs directory"
+msgstr "ক্রসহেয়ার ফোল্ডার"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Crosshair images: <game>-p1.png (-p2 for player 2) or\n"
+"<game>.png for both, then the parent set's, then default.\n"
+"Drawn at their own size on a 1080-line picture. Without\n"
+"one the built-in crosshair is drawn.\n"
+"Empty means a crosshairs folder beside sm2-emu.ini."
+msgstr ""
+"ক্রসহেয়ার ছবি: <game>-p1.png (খেলোয়াড় 2-এর জন্য -p2) অথবা\n"
+"দুজনের জন্য <game>.png, তারপর প্যারেন্ট সেটের, তারপর default।\n"
+"1080-লাইনের ছবিতে নিজস্ব আকারে আঁকা হয়। না থাকলে\n"
+"বিল্ট-ইন ক্রসহেয়ার আঁকা হয়।\n"
+"খালি মানে sm2-emu.ini-এর পাশে একটি crosshairs ফোল্ডার।"
 
 #: src/osd/gui.cpp
 #, no-c-format

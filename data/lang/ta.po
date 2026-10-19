@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-19 18:05+1000\n"
+"POT-Creation-Date: 2026-10-19 22:31+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -550,6 +550,26 @@ msgid ""
 msgstr ""
 "சட்டகப் படங்கள்: <game>.png, பெற்றோர் தொகுப்பின் படம், அல்லது default.png.\n"
 "காலியெனில் sm2-emu.ini அருகிலுள்ள bezels கோப்புறை."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Crosshairs directory"
+msgstr "குறிவைப்பு கோப்புறை"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Crosshair images: <game>-p1.png (-p2 for player 2) or\n"
+"<game>.png for both, then the parent set's, then default.\n"
+"Drawn at their own size on a 1080-line picture. Without\n"
+"one the built-in crosshair is drawn.\n"
+"Empty means a crosshairs folder beside sm2-emu.ini."
+msgstr ""
+"குறிவைப்பு படங்கள்: <game>-p1.png (வீரர் 2-க்கு -p2) அல்லது\n"
+"இருவருக்கும் <game>.png, பின் மூல தொகுப்பினுடையது, பின் default.\n"
+"1080-வரி படத்தில் சொந்த அளவில் வரையப்படும். இல்லையெனில்\n"
+"உள்ளமைந்த குறிவைப்பு வரையப்படும்.\n"
+"காலியாக இருந்தால் sm2-emu.ini அருகே crosshairs கோப்புறை."
 
 #: src/osd/gui.cpp
 #, no-c-format

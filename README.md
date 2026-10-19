@@ -290,6 +290,11 @@ in the settings overlay (`F10`):
   calibration tool that holds `KEY_CONFIG` (Batocera's gun calibrators) gets
   its targets drawn on screen, so a gun can be recalibrated without leaving
   the game.
+  The crosshairs can be your own PNGs: put them in the crosshairs directory
+  (Paths tab; by default a `crosshairs` folder beside `sm2-emu.ini`), named
+  `hotd-p1.png` and `hotd-p2.png` per player or `hotd.png` for both, with the
+  parent set's or `default.png` as the fallback. They are drawn at their own
+  size on a 1080-line picture and scale with it.
 - **Gamepad rumble** on the driving games, driven from the emulated drive board.
 
 #### Light guns on Windows

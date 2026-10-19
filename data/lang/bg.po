@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-19 18:05+1000\n"
+"POT-Creation-Date: 2026-10-19 22:31+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -549,6 +549,26 @@ msgid ""
 msgstr ""
 "Изображения за рамка: <game>.png, на родителския набор или default.png.\n"
 "Празно означава папка bezels до sm2-emu.ini."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Crosshairs directory"
+msgstr "Папка с мерници"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Crosshair images: <game>-p1.png (-p2 for player 2) or\n"
+"<game>.png for both, then the parent set's, then default.\n"
+"Drawn at their own size on a 1080-line picture. Without\n"
+"one the built-in crosshair is drawn.\n"
+"Empty means a crosshairs folder beside sm2-emu.ini."
+msgstr ""
+"Изображения на мерници: <game>-p1.png (-p2 за играч 2) или\n"
+"<game>.png за двамата, след това на родителския набор, после default.\n"
+"Рисуват се в собствения си размер върху картина от 1080 реда. Без\n"
+"такова се рисува вградената мерник.\n"
+"Празно означава папка crosshairs до sm2-emu.ini."
 
 #: src/osd/gui.cpp
 #, no-c-format

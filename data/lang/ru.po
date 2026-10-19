@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-19 18:05+1000\n"
+"POT-Creation-Date: 2026-10-19 22:31+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -550,6 +550,26 @@ msgid ""
 msgstr ""
 "Изображения рамок: <game>.png, родительского набора или default.png.\n"
 "Пусто — папка bezels рядом с sm2-emu.ini."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Crosshairs directory"
+msgstr "Папка прицелов"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Crosshair images: <game>-p1.png (-p2 for player 2) or\n"
+"<game>.png for both, then the parent set's, then default.\n"
+"Drawn at their own size on a 1080-line picture. Without\n"
+"one the built-in crosshair is drawn.\n"
+"Empty means a crosshairs folder beside sm2-emu.ini."
+msgstr ""
+"Изображения прицелов: <game>-p1.png (-p2 для игрока 2) или\n"
+"<game>.png для обоих, затем родительского набора, затем default.\n"
+"Рисуются в своём размере на картинке в 1080 строк. Без\n"
+"них рисуется встроенный прицел.\n"
+"Пусто означает папку crosshairs рядом с sm2-emu.ini."
 
 #: src/osd/gui.cpp
 #, no-c-format

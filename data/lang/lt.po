@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-19 18:05+1000\n"
+"POT-Creation-Date: 2026-10-19 22:31+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -548,6 +548,26 @@ msgid ""
 msgstr ""
 "Rėmelių paveikslėliai: <game>.png, pagrindinio rinkinio arba default.png.\n"
 "Tuščias reiškia aplanką bezels šalia sm2-emu.ini."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Crosshairs directory"
+msgstr "Taikiklių aplankas"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Crosshair images: <game>-p1.png (-p2 for player 2) or\n"
+"<game>.png for both, then the parent set's, then default.\n"
+"Drawn at their own size on a 1080-line picture. Without\n"
+"one the built-in crosshair is drawn.\n"
+"Empty means a crosshairs folder beside sm2-emu.ini."
+msgstr ""
+"Taikiklių vaizdai: <game>-p1.png (-p2 2 žaidėjui) arba\n"
+"<game>.png abiem, tada tėvinio rinkinio, tada default.\n"
+"Piešiami savo dydžiu 1080 eilučių vaizde. Be\n"
+"jo piešiamas įtaisytas taikiklis.\n"
+"Tuščia reiškia aplanką crosshairs šalia sm2-emu.ini."
 
 #: src/osd/gui.cpp
 #, no-c-format

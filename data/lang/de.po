@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-19 18:05+1000\n"
+"POT-Creation-Date: 2026-10-19 22:31+1000\n"
 "PO-Revision-Date: 2026-10-09 12:00+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: German\n"
@@ -545,6 +545,26 @@ msgid ""
 msgstr ""
 "Bezel-Bilder: <game>.png, das des Eltern-Sets oder default.png.\n"
 "Leer bedeutet ein Ordner bezels neben sm2-emu.ini."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Crosshairs directory"
+msgstr "Fadenkreuz-Ordner"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Crosshair images: <game>-p1.png (-p2 for player 2) or\n"
+"<game>.png for both, then the parent set's, then default.\n"
+"Drawn at their own size on a 1080-line picture. Without\n"
+"one the built-in crosshair is drawn.\n"
+"Empty means a crosshairs folder beside sm2-emu.ini."
+msgstr ""
+"Fadenkreuz-Bilder: <game>-p1.png (-p2 für Spieler 2) oder\n"
+"<game>.png für beide, dann die des Eltern-Sets, dann default.\n"
+"In eigener Größe auf einem 1080-Zeilen-Bild gezeichnet. Ohne\n"
+"Bild wird das eingebaute Fadenkreuz gezeichnet.\n"
+"Leer bedeutet ein Ordner crosshairs neben sm2-emu.ini."
 
 #: src/osd/gui.cpp
 #, no-c-format

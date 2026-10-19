@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-19 18:05+1000\n"
+"POT-Creation-Date: 2026-10-19 22:31+1000\n"
 "PO-Revision-Date: 2026-10-09 12:00+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -548,6 +548,26 @@ msgid ""
 msgstr ""
 "边框图片：<game>.png、父版本的图片或 default.png。\n"
 "留空表示 sm2-emu.ini 旁边的 bezels 文件夹。"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Crosshairs directory"
+msgstr "准星目录"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Crosshair images: <game>-p1.png (-p2 for player 2) or\n"
+"<game>.png for both, then the parent set's, then default.\n"
+"Drawn at their own size on a 1080-line picture. Without\n"
+"one the built-in crosshair is drawn.\n"
+"Empty means a crosshairs folder beside sm2-emu.ini."
+msgstr ""
+"准星图片：<game>-p1.png（玩家 2 用 -p2）或\n"
+"两人共用 <game>.png，其次是母版的，然后是 default。\n"
+"按图片原尺寸绘制在 1080 行画面上。\n"
+"没有图片时绘制内置准星。\n"
+"留空表示 sm2-emu.ini 旁的 crosshairs 文件夹。"
 
 #: src/osd/gui.cpp
 #, no-c-format

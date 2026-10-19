@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-19 18:05+1000\n"
+"POT-Creation-Date: 2026-10-19 22:31+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -550,6 +550,26 @@ msgid ""
 msgstr ""
 "बेज़ल इमेज: <game>.png, पैरेंट सेट की इमेज, या default.png।\n"
 "खाली का अर्थ है sm2-emu.ini के पास bezels फ़ोल्डर।"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Crosshairs directory"
+msgstr "क्रॉसहेयर फ़ोल्डर"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Crosshair images: <game>-p1.png (-p2 for player 2) or\n"
+"<game>.png for both, then the parent set's, then default.\n"
+"Drawn at their own size on a 1080-line picture. Without\n"
+"one the built-in crosshair is drawn.\n"
+"Empty means a crosshairs folder beside sm2-emu.ini."
+msgstr ""
+"क्रॉसहेयर चित्र: <game>-p1.png (खिलाड़ी 2 के लिए -p2) या\n"
+"दोनों के लिए <game>.png, फिर पैरेंट सेट का, फिर default।\n"
+"1080-लाइन चित्र पर अपने आकार में बनाए जाते हैं। इनके बिना\n"
+"बिल्ट-इन क्रॉसहेयर बनाया जाता है।\n"
+"खाली का अर्थ है sm2-emu.ini के पास crosshairs फ़ोल्डर।"
 
 #: src/osd/gui.cpp
 #, no-c-format

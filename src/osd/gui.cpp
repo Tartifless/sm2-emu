@@ -283,6 +283,7 @@ void Gui::shutdown()
 {
     release_pad_art();
     release_bezel();
+    release_crosshair_images();
     if (!m_initialised) return;
 
     ImGui_ImplSDL3_Shutdown();
@@ -436,7 +437,7 @@ bool Gui::draw(Config& config, const std::vector<std::string>& gpu_names,
     if (config.lightgun && !m_picker_enabled) {
         draw_sinden_border(config);
         if (config.lightgun_crosshair) {
-            draw_crosshairs(input);
+            draw_crosshairs(config, input);
         }
         draw_calibration_markers(input);
     }
@@ -935,6 +936,14 @@ void Gui::draw_settings(Config& config, const std::vector<std::string>& gpu_name
                       DirPickerTarget::BezelDir,
                       N_("Bezel images: <game>.png, the parent set's, or default.png.\n"
                          "Empty means a bezels folder beside sm2-emu.ini."));
+            ImGui::Spacing();
+            dir_field(N_("Crosshairs directory"), "##crosshairs", config.crosshair_dir,
+                      DirPickerTarget::CrosshairDir,
+                      N_("Crosshair images: <game>-p1.png (-p2 for player 2) or\n"
+                         "<game>.png for both, then the parent set's, then default.\n"
+                         "Drawn at their own size on a 1080-line picture. Without\n"
+                         "one the built-in crosshair is drawn.\n"
+                         "Empty means a crosshairs folder beside sm2-emu.ini."));
 
             ImGui::Spacing();
             ImGui::Separator();
@@ -1640,6 +1649,76 @@ void Gui::draw_bezel(const Config& config)
     m_present_area.height = m_bezel.window_h * scale / io.DisplaySize.y;
     ImGui::GetBackgroundDrawList()->AddImage(
         reinterpret_cast<ImTextureID>(m_backend->texture_imgui_id(m_bezel.handle)), p0, p1);
+}
+
+void Gui::update_crosshair_images(const Config& config)
+{
+    namespace fs = std::filesystem;
+    const fs::path dir = config.crosshair_dir.empty()
+                             ? fs::path(m_config_path.empty() ? default_config_path() : m_config_path)
+                                       .parent_path()
+                                   / "crosshairs"
+                             : fs::path(config.crosshair_dir);
+    const std::string lookup = dir.string() + '\n' + m_current_game;
+    if (lookup == m_crosshair_lookup) {
+        return;
+    }
+    m_crosshair_lookup = lookup;
+    for (usize player = 0; player < m_crosshair_images.size(); ++player) {
+        const std::string suffix = "-p" + std::to_string(player + 1);
+        std::string       found;
+        for (const std::string& stem : {m_current_game, m_current_family, std::string("default")}) {
+            if (stem.empty()) {
+                continue;
+            }
+            for (const std::string& name : {stem + suffix, stem}) {
+                std::error_code error;
+                const fs::path  candidate = dir / (name + ".png");
+                if (fs::exists(candidate, error)) {
+                    found = candidate.string();
+                    break;
+                }
+            }
+            if (!found.empty()) {
+                break;
+            }
+        }
+        CrosshairImage& image = m_crosshair_images[player];
+        if (found == image.path) {
+            continue;
+        }
+        if (image.handle != 0 && m_backend != nullptr) {
+            m_backend->destroy_texture(image.handle);
+        }
+        image      = CrosshairImage{};
+        image.path = found;
+        if (found.empty() || m_backend == nullptr) {
+            continue;
+        }
+        int            w = 0, h = 0, channels = 0;
+        unsigned char* rgba = stbi_load(found.c_str(), &w, &h, &channels, 4);
+        if (rgba == nullptr) {
+            SM2_WARN("crosshair: could not read '%s'", found.c_str());
+            continue;
+        }
+        image.handle = m_backend->create_texture(static_cast<u32>(w), static_cast<u32>(h), rgba);
+        image.w      = static_cast<float>(w);
+        image.h      = static_cast<float>(h);
+        stbi_image_free(rgba);
+        SM2_INFO("crosshair: player %u %s (%dx%d)", static_cast<unsigned>(player + 1),
+                 found.c_str(), w, h);
+    }
+}
+
+void Gui::release_crosshair_images()
+{
+    for (CrosshairImage& image : m_crosshair_images) {
+        if (image.handle != 0 && m_backend != nullptr) {
+            m_backend->destroy_texture(image.handle);
+        }
+        image = CrosshairImage{};
+    }
+    m_crosshair_lookup.clear();
 }
 
 void Gui::release_pad_art()
@@ -2862,11 +2941,12 @@ void Gui::draw_notification()
 // Light-gun crosshairs
 // ---------------------------------------------------------------------------
 
-void Gui::draw_crosshairs(const Input* input)
+void Gui::draw_crosshairs(const Config& config, const Input* input)
 {
     if (input == nullptr) {
         return;
     }
+    update_crosshair_images(config);
 
     // Each aim is a 0..1 fraction of the game image. Map it back onto the same
     // letterboxed 4:3 rectangle the frame is presented into, so the crosshair
@@ -2918,6 +2998,14 @@ void Gui::draw_crosshairs(const Input* input)
         }
         const float cx = box.x + fx * box.width;
         const float cy = box.y + fy * box.height;
+        if (player < m_crosshair_images.size() && m_crosshair_images[player].handle != 0) {
+            const CrosshairImage& image = m_crosshair_images[player];
+            const float           scale = box.height / 1080.0f;
+            const ImVec2          half(image.w * scale * 0.5f, image.h * scale * 0.5f);
+            list->AddImage(reinterpret_cast<ImTextureID>(m_backend->texture_imgui_id(image.handle)),
+                           ImVec2(cx - half.x, cy - half.y), ImVec2(cx + half.x, cy + half.y));
+            continue;
+        }
         const ImU32 colour = colours[player < colours.size() ? player : 0];
         list->AddCircle(ImVec2(cx, cy), radius, colour, 24, 2.0f);
         list->AddLine(ImVec2(cx - radius * 1.6f, cy), ImVec2(cx - radius * 0.4f, cy), colour, 2.0f);
@@ -3145,6 +3233,7 @@ void Gui::draw_dir_picker_popup(Config& config)
             case DirPickerTarget::NvramDir:      config.nvram_dir      = m_dir_picker_path; break;
             case DirPickerTarget::ScreenshotDir: config.screenshot_dir = m_dir_picker_path; break;
             case DirPickerTarget::BezelDir: config.bezel_dir = m_dir_picker_path; break;
+            case DirPickerTarget::CrosshairDir: config.crosshair_dir = m_dir_picker_path; break;
             case DirPickerTarget::None: break;
         }
         m_dir_picker_target = DirPickerTarget::None;

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-19 18:05+1000\n"
+"POT-Creation-Date: 2026-10-19 22:31+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -545,6 +545,26 @@ msgid ""
 msgstr ""
 "تصاویر قاب: <game>.png، تصویر مجموعه والد یا default.png.\n"
 "خالی یعنی پوشه bezels کنار sm2-emu.ini."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Crosshairs directory"
+msgstr "پوشه نشانگرهای هدف"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Crosshair images: <game>-p1.png (-p2 for player 2) or\n"
+"<game>.png for both, then the parent set's, then default.\n"
+"Drawn at their own size on a 1080-line picture. Without\n"
+"one the built-in crosshair is drawn.\n"
+"Empty means a crosshairs folder beside sm2-emu.ini."
+msgstr ""
+"تصاویر نشانگر هدف: <game>-p1.png (-p2 برای بازیکن 2) یا\n"
+"<game>.png برای هر دو، سپس مال مجموعه والد، سپس default.\n"
+"با اندازه خودشان روی تصویر 1080 خطی کشیده می‌شوند. بدون\n"
+"آن، نشانگر داخلی کشیده می‌شود.\n"
+"خالی یعنی پوشه crosshairs کنار sm2-emu.ini."
 
 #: src/osd/gui.cpp
 #, no-c-format

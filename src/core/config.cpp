@@ -905,6 +905,8 @@ bool load_config(const std::string& path, Config* out, std::vector<std::string>*
             out->screenshot_dir = value;
         } else if (key == "bezel_dir") {
             out->bezel_dir = value;
+        } else if (key == "crosshair_dir") {
+            out->crosshair_dir = value;
         } else if (key == "scrape_artwork") {
             if (!parse_bool(value, &out->scrape_artwork)) {
                 bad_value();
@@ -1241,6 +1243,9 @@ bool save_config(const std::string& path, const Config& config)
         << "\n"
         << "# Empty means a bezels folder beside this file.\n"
         << "bezel_dir = " << config.bezel_dir << "\n"
+        << "# Crosshair images: <game>-p1.png or <game>.png, the parent's, or\n"
+        << "# default-p1.png / default.png. Empty means a crosshairs folder beside this file.\n"
+        << "crosshair_dir = " << config.crosshair_dir << "\n"
         << "\n"
         << "# Let the game picker fetch box art and descriptions from ArcadeDB\n"
         << "# over the network. Off keeps the emulator offline: the picker still\n"

@@ -495,6 +495,9 @@ struct Config {
     /// Empty means `bezels` beside the ini.
     std::string bezel_dir;
 
+    /// Empty means `crosshairs` beside the ini.
+    std::string crosshair_dir;
+
     /// Game-picker art/metadata cache. Always derived as `<config dir>/artwork` by
     /// resolve_default_paths(). A runtime field only, for the picker to read.
     std::string artwork_dir;

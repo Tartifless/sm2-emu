@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-19 18:05+1000\n"
+"POT-Creation-Date: 2026-10-19 22:31+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -545,6 +545,26 @@ msgid ""
 msgstr ""
 "Keretképek: <game>.png, a szülő készleté vagy default.png.\n"
 "Az üres egy bezels mappát jelent az sm2-emu.ini mellett."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Crosshairs directory"
+msgstr "Célkereszt mappa"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Crosshair images: <game>-p1.png (-p2 for player 2) or\n"
+"<game>.png for both, then the parent set's, then default.\n"
+"Drawn at their own size on a 1080-line picture. Without\n"
+"one the built-in crosshair is drawn.\n"
+"Empty means a crosshairs folder beside sm2-emu.ini."
+msgstr ""
+"Célkereszt képek: <game>-p1.png (-p2 a 2. játékosnak) vagy\n"
+"<game>.png mindkettőnek, aztán a szülő készleté, aztán default.\n"
+"Saját méretükben rajzolódnak egy 1080 soros képen. Ha\n"
+"nincs, a beépített célkereszt rajzolódik.\n"
+"Üres esetén a sm2-emu.ini melletti crosshairs mappa."
 
 #: src/osd/gui.cpp
 #, no-c-format

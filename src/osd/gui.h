@@ -267,11 +267,11 @@ private:
     void draw_status_bar(float measured_hz);
     void draw_fps_overlay(float measured_hz, const char* renderer_label);
     void draw_notification();
-    void draw_crosshairs(const class Input* input);
+    void draw_crosshairs(const Config& config, const class Input* input);
     void draw_calibration_markers(const class Input* input);
     void draw_sinden_border(const Config& config);
 
-    enum class DirPickerTarget { None, RomDir, NvramDir, ScreenshotDir, BezelDir };
+    enum class DirPickerTarget { None, RomDir, NvramDir, ScreenshotDir, BezelDir, CrosshairDir };
 
     void open_dir_picker(DirPickerTarget target, const std::string& initial);
 
@@ -412,6 +412,17 @@ private:
     void draw_bezel(const Config& config);
     void load_bezel(const std::string& path);
     void release_bezel();
+
+    struct CrosshairImage {
+        std::string                    path;
+        render::Backend::TextureHandle handle = 0;
+        float                          w      = 0.0f;
+        float                          h      = 0.0f;
+    };
+    std::array<CrosshairImage, 2> m_crosshair_images;
+    std::string                   m_crosshair_lookup;
+    void update_crosshair_images(const Config& config);
+    void release_crosshair_images();
 
     // -- game picker state -------------------------------------------------
     bool                       m_picker_enabled = false;

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-19 18:05+1000\n"
+"POT-Creation-Date: 2026-10-19 22:31+1000\n"
 "PO-Revision-Date: 2026-10-09 12:00+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: Italian\n"
@@ -545,6 +545,26 @@ msgid ""
 msgstr ""
 "Immagini bezel: <game>.png, quella del set padre o default.png.\n"
 "Vuoto significa una cartella bezels accanto a sm2-emu.ini."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Crosshairs directory"
+msgstr "Cartella dei mirini"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Crosshair images: <game>-p1.png (-p2 for player 2) or\n"
+"<game>.png for both, then the parent set's, then default.\n"
+"Drawn at their own size on a 1080-line picture. Without\n"
+"one the built-in crosshair is drawn.\n"
+"Empty means a crosshairs folder beside sm2-emu.ini."
+msgstr ""
+"Immagini del mirino: <game>-p1.png (-p2 per il giocatore 2) o\n"
+"<game>.png per entrambi, poi quelle del set padre, poi default.\n"
+"Disegnate alla loro dimensione su un'immagine di 1080 righe. Senza\n"
+"immagine si disegna il mirino integrato.\n"
+"Vuoto significa una cartella crosshairs accanto a sm2-emu.ini."
 
 #: src/osd/gui.cpp
 #, no-c-format

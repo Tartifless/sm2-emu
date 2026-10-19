@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-19 18:05+1000\n"
+"POT-Creation-Date: 2026-10-19 22:31+1000\n"
 "PO-Revision-Date: 2026-10-09 12:00+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -548,6 +548,26 @@ msgid ""
 msgstr ""
 "ベゼル画像: <game>.png、親セットの画像、または default.png。\n"
 "空の場合は sm2-emu.ini と同じ場所の bezels フォルダー。"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Crosshairs directory"
+msgstr "照準ディレクトリ"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Crosshair images: <game>-p1.png (-p2 for player 2) or\n"
+"<game>.png for both, then the parent set's, then default.\n"
+"Drawn at their own size on a 1080-line picture. Without\n"
+"one the built-in crosshair is drawn.\n"
+"Empty means a crosshairs folder beside sm2-emu.ini."
+msgstr ""
+"照準画像: <game>-p1.png（プレイヤー2は -p2）または\n"
+"両方に <game>.png、次に親セットのもの、次に default。\n"
+"1080ラインの画面上で画像そのままの大きさで描画されます。\n"
+"画像がなければ内蔵の照準を描画します。\n"
+"空欄は sm2-emu.ini の隣の crosshairs フォルダーです。"
 
 #: src/osd/gui.cpp
 #, no-c-format

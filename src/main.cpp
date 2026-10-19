@@ -915,6 +915,7 @@ int main(int argc, char** argv)
     options.config.crt_curvature         = from_file.crt_curvature;
     options.config.bezel                 = from_file.bezel;
     options.config.bezel_dir             = from_file.bezel_dir;
+    options.config.crosshair_dir         = from_file.crosshair_dir;
 
     options.config.texture_filter = from_file.texture_filter;
     options.config.anisotropy     = from_file.anisotropy;

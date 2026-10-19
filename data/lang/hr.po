@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-19 18:05+1000\n"
+"POT-Creation-Date: 2026-10-19 22:31+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -547,6 +547,26 @@ msgid ""
 msgstr ""
 "Slike okvira: <game>.png, roditeljskog skupa ili default.png.\n"
 "Prazno znači mapu bezels pokraj sm2-emu.ini."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Crosshairs directory"
+msgstr "Mapa nišana"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Crosshair images: <game>-p1.png (-p2 for player 2) or\n"
+"<game>.png for both, then the parent set's, then default.\n"
+"Drawn at their own size on a 1080-line picture. Without\n"
+"one the built-in crosshair is drawn.\n"
+"Empty means a crosshairs folder beside sm2-emu.ini."
+msgstr ""
+"Slike nišana: <game>-p1.png (-p2 za igrača 2) ili\n"
+"<game>.png za oba, zatim od roditeljskog seta, zatim default.\n"
+"Crtaju se u vlastitoj veličini na slici od 1080 redaka. Bez\n"
+"slike crta se ugrađeni nišan.\n"
+"Prazno znači mapa crosshairs pokraj sm2-emu.ini."
 
 #: src/osd/gui.cpp
 #, no-c-format

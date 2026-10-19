@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-19 18:05+1000\n"
+"POT-Creation-Date: 2026-10-19 22:31+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -548,6 +548,26 @@ msgid ""
 msgstr ""
 "Rāmju attēli: <game>.png, vecākkopas attēls vai default.png.\n"
 "Tukšs nozīmē mapi bezels blakus sm2-emu.ini."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Crosshairs directory"
+msgstr "Tēmekļu mape"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Crosshair images: <game>-p1.png (-p2 for player 2) or\n"
+"<game>.png for both, then the parent set's, then default.\n"
+"Drawn at their own size on a 1080-line picture. Without\n"
+"one the built-in crosshair is drawn.\n"
+"Empty means a crosshairs folder beside sm2-emu.ini."
+msgstr ""
+"Tēmekļu attēli: <game>-p1.png (-p2 2. spēlētājam) vai\n"
+"<game>.png abiem, tad vecākkopas, tad default.\n"
+"Zīmēti savā izmērā uz 1080 rindu attēla. Bez\n"
+"tā tiek zīmēts iebūvētais tēmeklis.\n"
+"Tukšs nozīmē mapi crosshairs blakus sm2-emu.ini."
 
 #: src/osd/gui.cpp
 #, no-c-format

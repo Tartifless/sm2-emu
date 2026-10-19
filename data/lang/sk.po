@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sm2-emu\n"
 "Report-Msgid-Bugs-To: https://github.com/dmanlfc/sm2-emu/issues\n"
-"POT-Creation-Date: 2026-10-19 18:05+1000\n"
+"POT-Creation-Date: 2026-10-19 22:31+1000\n"
 "PO-Revision-Date: 2026-10-09 00:35+1000\n"
 "Last-Translator: machine translation, needs review\n"
 "Language-Team: none\n"
@@ -545,6 +545,26 @@ msgid ""
 msgstr ""
 "Obrázky rámikov: <game>.png, rodičovskej sady alebo default.png.\n"
 "Prázdne znamená priečinok bezels vedľa sm2-emu.ini."
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid "Crosshairs directory"
+msgstr "Priečinok zameriavačov"
+
+#: src/osd/gui.cpp
+#, no-c-format
+msgid ""
+"Crosshair images: <game>-p1.png (-p2 for player 2) or\n"
+"<game>.png for both, then the parent set's, then default.\n"
+"Drawn at their own size on a 1080-line picture. Without\n"
+"one the built-in crosshair is drawn.\n"
+"Empty means a crosshairs folder beside sm2-emu.ini."
+msgstr ""
+"Obrázky zameriavačov: <game>-p1.png (-p2 pre hráča 2) alebo\n"
+"<game>.png pre oboch, potom rodičovskej sady, potom default.\n"
+"Kreslia sa vo vlastnej veľkosti na obraz s 1080 riadkami. Bez\n"
+"nich sa kreslí vstavaný zameriavač.\n"
+"Prázdne znamená priečinok crosshairs vedľa sm2-emu.ini."
 
 #: src/osd/gui.cpp
 #, no-c-format
