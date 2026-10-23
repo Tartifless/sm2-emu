@@ -758,6 +758,10 @@ bool load_config(const std::string& path, Config* out, std::vector<std::string>*
             if (!parse_bool(value, &out->pad_shortcuts)) {
                 bad_value();
             }
+        } else if (key == "pad1_device") {
+            out->pad_device[0] = value;
+        } else if (key == "pad2_device") {
+            out->pad_device[1] = value;
         } else if (key == "pad_stick_deadzone") {
             if (!parse_u32(value, &out->pad_stick_deadzone)) {
                 bad_value();
@@ -1160,6 +1164,10 @@ bool save_config(const std::string& path, const Config& config)
         << "# Guide button shortcuts on a gamepad (menu, save, load, rewind...).\n"
         << "# Off for a front end that maps its own hotkeys.\n"
         << "pad_shortcuts = " << bool_text(config.pad_shortcuts) << "\n"
+        << "# The pad each player wants, by device path (/dev/input/eventN on\n"
+        << "# Linux). Empty gives the slot to the first pad found.\n"
+        << "pad1_device = " << config.pad_device[0] << "\n"
+        << "pad2_device = " << config.pad_device[1] << "\n"
         << "# Cabinet lamps and drive-board bytes for MAMEHooker, DOFLinx and\n"
         << "# similar tools, in MAME's formats: over TCP (network) and, on\n"
         << "# Windows, as window messages.\n"

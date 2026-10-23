@@ -983,6 +983,7 @@ int main(int argc, char** argv)
     options.config.pad_stick_sensitivity = from_file.pad_stick_sensitivity;
     options.config.pad_stick_deadzone    = from_file.pad_stick_deadzone;
     options.config.pad_shortcuts         = from_file.pad_shortcuts;
+    options.config.pad_device            = from_file.pad_device;
     options.config.pad                   = from_file.pad;
     options.config.pad_layouts           = from_file.pad_layouts;
     options.config.wheel_steer_deadzone  = from_file.wheel_steer_deadzone;
@@ -2070,6 +2071,7 @@ int main(int argc, char** argv)
         osd::Input input;
         bool input_background = options.config.input_background;
         apply_input_background(input_background);
+        input.set_pad_devices(options.config.pad_device);
         if (!input.init(wheel_settings_from(options.config))) {
             SM2_WARN("gamepads are unavailable; the keyboard still works");
         }
