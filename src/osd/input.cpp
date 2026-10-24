@@ -2054,7 +2054,7 @@ void Input::gather_lightguns(hw::Inputs* inputs, const rom::GameSpec& game) cons
             }
             // Keyboard aim only for player one (arrows), so it does not fight P2.
             int         key_count = 0;
-            const bool* keys      = SDL_GetKeyboardState(&key_count);
+            const bool* keys        = game_keyboard_state(&key_count);
             if (player == 0 && keys != nullptr) {
                 const auto kd = [&](SDL_Scancode sc) {
                     return static_cast<int>(sc) < key_count && keys[sc];
