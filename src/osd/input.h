@@ -161,6 +161,12 @@ public:
 
     /// The device path each player's pad must have; set before init().
     void set_pad_devices(const std::array<std::string, 2>& paths) { m_pad_devices = paths; }
+
+    /// Keys bound to the front-end shortcuts (Config::key_*). They are hidden
+    /// from the cabinet controls, so that a shortcut on F1..F5 never also
+    /// shifts a gear, nor a shortcut on a letter presses a cabinet button.
+    void set_reserved_keys(std::span<const SDL_Keycode> keys);
+
     void shutdown();
 
     /// Offer an SDL event. Consumes connection and disconnection only; everything
@@ -529,6 +535,12 @@ private:
 
     std::vector<Pad> m_pads;
     std::array<std::string, 2> m_pad_devices;
+    
+    /// SDL keyboard state without the reserved shortcut keys.
+    [[nodiscard]] const bool* game_keyboard_state(int* key_count) const;
+    std::array<bool, SDL_SCANCODE_COUNT>         m_reserved_keys{};
+    mutable std::array<bool, SDL_SCANCODE_COUNT> m_game_keys{};
+
     Wheel            m_wheel;
     WheelSettings    m_wheel_settings;
 

@@ -344,6 +344,19 @@ struct Config {
     /// comes first. A front end with its own player order sets these.
     std::array<std::string, 2> pad_device;
 
+    /// Keyboard shortcuts, as SDL key names ("F1", "F", "Tab", "Backspace"...,
+    /// see SDL_GetKeyFromName). An empty or unknown name keeps the default, so
+    /// a front end can match its own hotkey layout. The keys bound here are
+    /// not seen by the cabinet controls.
+    std::string key_menu = "F10";
+    std::string key_fullscreen = "F11";
+    std::string key_screenshot = "F12";
+    std::string key_pause = "P";
+    std::string key_save_state = "F6";
+    std::string key_load_state = "F7";
+    std::string key_fast_forward = "Tab";       ///< held
+    std::string key_rewind = "Backspace";       ///< held, when rewind is on
+
     /// The cabinet controls a gamepad button can be bound to. Test and Service
     /// stay on the Guide chord, so they are not here. Keep kCount last.
     enum class PadRole : u32 {

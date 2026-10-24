@@ -205,6 +205,20 @@ constexpr std::array<const char*, Config::kPadAxisCount> kPadAxisNames = {
     "aim_x", "aim_y", "accel", "brake", "lever_x", "lever_y",
 };
 
+/// The keyboard-shortcut field a `key_*` setting names, or null.
+[[nodiscard]] std::string* shortcut_field(Config* config, const std::string& key)
+{
+    if (key == "key_menu") return &config->key_menu;
+    if (key == "key_fullscreen") return &config->key_fullscreen;
+    if (key == "key_screenshot") return &config->key_screenshot;
+    if (key == "key_pause") return &config->key_pause;
+    if (key == "key_save_state") return &config->key_save_state;
+    if (key == "key_load_state") return &config->key_load_state;
+    if (key == "key_fast_forward") return &config->key_fast_forward;
+    if (key == "key_rewind") return &config->key_rewind;
+    return nullptr;
+}
+
 [[nodiscard]] bool parse_s32(const std::string& value, s32* out)
 {
     std::istringstream stream(value);
@@ -878,6 +892,11 @@ bool load_config(const std::string& path, Config* out, std::vector<std::string>*
             if (!parse_bool(value, &out->wheel_brake_half)) {
                 bad_value();
             }
+        } else if (std::string* shortcut = shortcut_field(out, key); shortcut != nullptr) {
+            // Empty keeps the default; an unknown name is caught at startup.
+            if (!value.empty()) {
+                *shortcut = value;
+            }
         } else if (key.rfind("gun1_button_", 0) == 0 || key.rfind("gun2_button_", 0) == 0) {
             const usize player = key[3] == '2' ? 1 : 0;
             const std::string role = key.substr(std::strlen("gun1_button_"));
@@ -1168,6 +1187,16 @@ bool save_config(const std::string& path, const Config& config)
         << "# Linux). Empty gives the slot to the first pad found.\n"
         << "pad1_device = " << config.pad_device[0] << "\n"
         << "pad2_device = " << config.pad_device[1] << "\n"
+        << "# Keyboard shortcuts, as SDL key names (F1, F, Tab, Backspace...).\n"
+        << "# The keys used here are not seen by the cabinet controls.\n"
+        << "key_menu = " << config.key_menu << "\n"
+        << "key_fullscreen = " << config.key_fullscreen << "\n"
+        << "key_screenshot = " << config.key_screenshot << "\n"
+        << "key_pause = " << config.key_pause << "\n"
+        << "key_save_state = " << config.key_save_state << "\n"
+        << "key_load_state = " << config.key_load_state << "\n"
+        << "key_fast_forward = " << config.key_fast_forward << "\n"
+        << "key_rewind = " << config.key_rewind << "\n"
         << "# Cabinet lamps and drive-board bytes for MAMEHooker, DOFLinx and\n"
         << "# similar tools, in MAME's formats: over TCP (network) and, on\n"
         << "# Windows, as window messages.\n"

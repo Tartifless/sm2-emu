@@ -517,6 +517,33 @@ u32 Input::player_for(SDL_JoystickID id) const
     return found;
 }
 
+void Input::set_reserved_keys(std::span<const SDL_Keycode> keys)
+{
+    m_reserved_keys.fill(false);
+    for (const SDL_Keycode key : keys) {
+        const SDL_Scancode sc = SDL_GetScancodeFromKey(key, nullptr);
+        if (sc > SDL_SCANCODE_UNKNOWN && sc < SDL_SCANCODE_COUNT) {
+            m_reserved_keys[sc] = true;
+        }
+    }
+}
+
+const bool* Input::game_keyboard_state(int* key_count) const
+{
+    int         count = 0;
+    const bool* keys = SDL_GetKeyboardState(&count);
+    if (keys == nullptr) {
+        *key_count = 0;
+        return nullptr;
+    }
+    count = std::min(count, static_cast<int>(SDL_SCANCODE_COUNT));
+    for (int sc = 0; sc < count; ++sc) {
+        m_game_keys[sc] = keys[sc] && !m_reserved_keys[sc];
+    }
+    *key_count = count;
+    return m_game_keys.data();
+}
+
 void Input::add_gamepad(SDL_JoystickID id)
 {
     if (std::any_of(m_pads.begin(), m_pads.end(),
@@ -2237,7 +2264,7 @@ void Input::poll(hw::Inputs* inputs, const rom::GameSpec& game) const
     const bool is_skytgt = game.name == "skytargt" || game.parent == "skytargt";
 
     int         key_count = 0;
-    const bool* keys      = SDL_GetKeyboardState(&key_count);
+    const bool* keys        = game_keyboard_state(&key_count);
     if (keys != nullptr) {
         gather_keys(&ports[0], keys, key_count, kOperatorKeys);
         if (!is_ski && !is_wski && !is_skytgt) {

@@ -984,6 +984,14 @@ int main(int argc, char** argv)
     options.config.pad_stick_deadzone    = from_file.pad_stick_deadzone;
     options.config.pad_shortcuts         = from_file.pad_shortcuts;
     options.config.pad_device            = from_file.pad_device;
+    options.config.key_menu              = from_file.key_menu;
+    options.config.key_fullscreen        = from_file.key_fullscreen;
+    options.config.key_screenshot        = from_file.key_screenshot;
+    options.config.key_pause             = from_file.key_pause;
+    options.config.key_save_state        = from_file.key_save_state;
+    options.config.key_load_state        = from_file.key_load_state;
+    options.config.key_fast_forward      = from_file.key_fast_forward;
+    options.config.key_rewind            = from_file.key_rewind;
     options.config.pad                   = from_file.pad;
     options.config.pad_layouts           = from_file.pad_layouts;
     options.config.wheel_steer_deadzone  = from_file.wheel_steer_deadzone;
@@ -2198,6 +2206,29 @@ int main(int argc, char** argv)
         bool return_to_picker_requested = false;  ///< Set by Esc; unload + picker.
         std::string dropped_path;  ///< A file dropped on the window, launched next frame.
 
+        // Keyboard shortcuts from the settings (key_*), defaults when a name is
+        // empty or unknown to SDL.
+        const auto shortcut_key = [](const std::string& name, SDL_Keycode fallback) {
+            const SDL_Keycode key = name.empty() ? SDLK_UNKNOWN : SDL_GetKeyFromName(name.c_str());
+            if (key == SDLK_UNKNOWN && !name.empty()) {
+                SM2_WARN("unknown key name '%s'; using the default shortcut", name.c_str());
+            }
+            return key == SDLK_UNKNOWN ? fallback : key;
+            };
+        const SDL_Keycode key_menu = shortcut_key(options.config.key_menu, SDLK_F10);
+        const SDL_Keycode key_fullscreen = shortcut_key(options.config.key_fullscreen, SDLK_F11);
+        const SDL_Keycode key_screenshot = shortcut_key(options.config.key_screenshot, SDLK_F12);
+        const SDL_Keycode key_pause = shortcut_key(options.config.key_pause, SDLK_P);
+        const SDL_Keycode key_save_state = shortcut_key(options.config.key_save_state, SDLK_F6);
+        const SDL_Keycode key_load_state = shortcut_key(options.config.key_load_state, SDLK_F7);
+        const SDL_Keycode key_fast_forward = shortcut_key(options.config.key_fast_forward, SDLK_TAB);
+        const SDL_Keycode key_rewind = shortcut_key(options.config.key_rewind, SDLK_BACKSPACE);
+        const SDL_Keycode reserved_keys[] = {
+            key_menu, key_fullscreen, key_screenshot, key_pause,
+            key_save_state, key_load_state, key_fast_forward, key_rewind,
+        };
+        input.set_reserved_keys(reserved_keys);
+
         // A pending save-state action (F6/F7 or an overlay button), serviced
         // between frames next to the screenshot. `slot` is the slot name
         // (kQuickSlot for the hotkeys).
@@ -2346,9 +2377,9 @@ int main(int argc, char** argv)
                             }
                         } else if (event.key.key == SDLK_F9 && !event.key.repeat) {
                             quit_key_pressed = true;
-                        } else if (event.key.key == SDLK_F10 && !event.key.repeat) {
+                        } else if (event.key.key == key_menu && !event.key.repeat) {
                             gui.toggle();
-                        } else if ((event.key.key == SDLK_F11
+                        } else if ((event.key.key == key_fullscreen
                                     || (event.key.key == SDLK_F
                                         && (event.key.mod & SDL_KMOD_GUI) != 0))
                                    && !event.key.repeat) {
@@ -2356,25 +2387,25 @@ int main(int argc, char** argv)
                             // reserves F11 (Show Desktop), so it never reaches us.
                             options.config.fullscreen = !window.fullscreen();
                             window.set_fullscreen(options.config.fullscreen);
-                        } else if (event.key.key == SDLK_F12 && !event.key.repeat) {
+                        } else if (event.key.key == key_screenshot && !event.key.repeat) {
                             screenshot_requested = true;
                         } else if (!gui.visible()) {
                             // Only process game keys when the overlay is hidden.
-                            if (event.key.key == SDLK_P && !event.key.repeat) {
+                            if (event.key.key == key_pause && !event.key.repeat) {
                                 paused = !paused;
-                            } else if (event.key.key == SDLK_F6 && !event.key.repeat
+                            } else if (event.key.key == key_save_state && !event.key.repeat
                                        && machine_iface != nullptr) {
                                 // Quick-save / quick-load the reserved slot. Only
                                 // with a game running; serviced between frames.
                                 state_action = StateAction{StateOp::Save, hw::kQuickSlot};
-                            } else if (event.key.key == SDLK_F7 && !event.key.repeat
+                            } else if (event.key.key == key_load_state && !event.key.repeat
                                        && machine_iface != nullptr) {
                                 state_action = StateAction{StateOp::Load, hw::kQuickSlot};
                             } else if (event.key.key == SDLK_F8 && !event.key.repeat) {
                                 options.config.show_fps = !options.config.show_fps;
-                            } else if (event.key.key == SDLK_TAB && !event.key.repeat) {
+                            } else if (event.key.key == key_fast_forward && !event.key.repeat) {
                                 fast_forward = true;
-                            } else if (event.key.key == SDLK_BACKSPACE) {
+                            } else if (event.key.key == key_rewind) {
                                 rewind_held = true;
                             }
                         }
@@ -2385,9 +2416,9 @@ int main(int argc, char** argv)
                         }
                         break;
                     case SDL_EVENT_KEY_UP:
-                        if (event.key.key == SDLK_TAB) {
+                        if (event.key.key == key_fast_forward) {
                             fast_forward = false;
-                        } else if (event.key.key == SDLK_BACKSPACE) {
+                        } else if (event.key.key == key_rewind) {
                             rewind_held = false;
                         } else if (event.key.key == SDLK_F9 && quit_key_pressed) {
                             running = false;
