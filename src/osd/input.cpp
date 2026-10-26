@@ -3208,6 +3208,7 @@ void Input::print_bindings()
     std::printf("  F6 F7                quick-save, quick-load state (more slots in F10)\n");
     std::printf("  F8                   toggle FPS counter\n");
     std::printf("  F10 F11 F12          settings menu, fullscreen, screenshot\n");
+    std::printf("  (Escape to F12 are the defaults; the System tab rebinds them)\n");
     std::printf("\nVirtual On (keyboard): WASD left lever, arrows right lever,\n");
     std::printf("Q/E left shot/dash, Right Shift/Right Ctrl right shot/dash.\n");
     std::printf("\nThe first gamepad to connect is player 1. Gamepads and the keyboard\n");
